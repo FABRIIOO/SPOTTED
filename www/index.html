@@ -74,6 +74,11 @@
 .space_upload{
 	margin-bottom: 10px;
 }
+
+/*space in DIV of top at bottom*/
+#image-holder,#image-holder-wall {
+	height: 250px;
+}
    </style> 
   </head>
   <body>
@@ -418,8 +423,8 @@
 			  <div id="wrapper">       
 			    <input id="fileUpload" type="file">
 			  </div>
-              <button class="col button button-big col button button-fill color-green">Próximo</button>
-                <a class="link popup-open" href="#" data-popup=".popup-wallpaper" id="res">eee</a></p>
+              <button class="col button button-big col button button-fill color-green" onclick="NextPhoto()">Próximo</button>
+                <a class="link popup-open" href="#" data-popup=".popup-wallpaper" id="open_wall"></a></p>
             </div>
           </div>
          </div>
@@ -449,13 +454,16 @@
           <div class="item-inner" >
             <br>
             <div class="item-input-wrap">
-              <label for='foto_perfil'>
-              	<center>
-                  <img for="foto_perfil" src="img/capa.jpg" style="width: 70%;" />
+              <label for='foto_wall'>
+              	<center>            
+                   <div id="image-holder-wall"> <img for="foto_wall" src="img/capa.jpg" style="width: 70%;" /></div>
              	</center>
               </label>
-               <button class="col button button-fill" style="margin-bottom: 10px;">Escolher</button>
-               <button class="col button button-big col button button-fill color-green">Finalizar</button>
+ 			  <label for="fileUploadWall" class="col button button-big col button button-fill color-blue space_upload">Escolher</label>
+			  <div id="wrapper">       
+			    <input id="fileUploadWall" type="file">
+			  </div>
+               <button class="col button button-big col button button-fill color-green" onclick="EntrarFeed()">Finalizar</button>
             </div>
           </div>
          </div>
@@ -482,7 +490,35 @@
 		  position: 'top',
 		  closeTimeout: 2500,
 		});
+
+		// select img profile 
+		var photo_perfil = app.toast.create({
+		  text: 'Por favor, selecione uma foto de perfil.',
+		  position: 'top',
+		  closeTimeout: 2500,
+		});
+
+	    // select wallpaper 
+		var photo_wallp = app.toast.create({
+		  text: 'Por favor, selecione uma foto de fundo.',
+		  position: 'top',
+		  closeTimeout: 2500,
+		});
 			
+	    // password incomplet 
+		var quant_senha = app.toast.create({
+		  text: 'A senha deve possuir 8 caractére.',
+		  position: 'top',
+		  closeTimeout: 2500,
+		});	
+
+		// number phone  
+		var num_celular = app.toast.create({
+		  text: 'Digite um número de celular valido.',
+		  position: 'top',
+		  closeTimeout: 2500,
+		});	
+
   function nextstep () {
 
   	var estado = $("#estado").val();
@@ -506,15 +542,24 @@
   		senha ==  '' ||
   		conf_senha == '' || 
   		sexo ==  ''  ||
-  		link_rede == ''  ||
-  		numero_cell == '') {
-  		  document.getElementById('open_perfil').click();
-  	 $("#open_perfil").disabled = true;
-  	 input_vazio.open();
+  		numero_cell == '') 
+  	{
+
+  	  $("#open_perfil").disabled = true;
+  	  input_vazio.open();
+  	
   	}
   	else {
   	  if (senha !== conf_senha) {
 		senhas.open();
+  	  	return 0;
+  	  }
+  	  if (senha.length < 8 || senha.length > 8) {
+  	    quant_senha.open();
+  	  	return 0;
+  	  }
+  	  if (numero_cell.length < 13 || numero_cell.match(['[@!#$%¨&*+_´`^~;:?abcdefghijklmnopqrstuvwyxzáÁéÉíÍóÓúÚãÃçÇ|\?,./{}"<>() ]'])) {
+  	  	num_celular.open(); 
   	  	return 0;
   	  }
   	  else {
@@ -523,7 +568,7 @@
    }		 
 }
 
-
+//sobe imagem de perfil para o front-end
 $("#fileUpload").on('change', function () {
  
     if (typeof (FileReader) != "undefined") {
@@ -547,8 +592,48 @@ $("#fileUpload").on('change', function () {
     }
 });
 
+//valida se existe uma imagem de perfil
+function NextPhoto () {
+	var img = $("#fileUpload").val();
+	if (img) {
+		document.getElementById('open_wall').click();
+	} else {
+		photo_perfil.open();
+	}
+}
 
+//sobe imagem de fundo para o front-end
+$("#fileUploadWall").on('change', function () {
+ 
+    if (typeof (FileReader) != "undefined") {
+ 
+        var image_holder = $("#image-holder-wall");
+        image_holder.empty();
+ 
+        var reader = new FileReader();
+        reader.onload = function (e) {
+             $("#image-holder-wall").innerHTML = '';
+            $("<img />", {
+                "src": e.target.result,
+                "class": "thumb-image"
+            }).appendTo(image_holder);
 
+        }
+        image_holder.show();
+        reader.readAsDataURL($(this)[0].files[0]);
+    } else{
+        alert("Este navegador nao suporta FileReader.");
+    }
+});
+
+function EntrarFeed () {
+	var img_wall = $("#fileUploadWall").val();
+	if (img_wall) {
+		//window.open('feed.html');
+	} else {
+		photo_wallp.open();
+	}
+}
 
 </script>
   </body>
