@@ -65,7 +65,15 @@
   padding: 6px 20px
 }
 
+/*class dimensão foto perfil*/
+.thumb-image{
+	width: 70%;
+}
 
+/*class space to button space_upload */
+.space_upload{
+	margin-bottom: 10px;
+}
    </style> 
   </head>
   <body>
@@ -275,20 +283,6 @@
                     </div>
                   </div>
                 </li>
-                 <li class="item-content item-input">
-                  <div class="item">
-                    <i class="icon demo-list-icon"></i>
-                  </div>
-                  <div class="item-inner">
-                    <div class="item-title item-label">* Você utiliza óculos diariamente?</div>
-                    <div class="item-input-wrap">
-                      <select id="oculos">
-                        <option>SIM</option>
-                        <option>NÃO</option>
-                      </select>
-                    </div>
-                  </div>
-                </li>
                 <li class="item-content item-input">
                   <div class="item">
                     <i class="icon demo-list-icon"></i>
@@ -358,6 +352,20 @@
                     <i class="icon demo-list-icon"></i>
                   </div>
                   <div class="item-inner">
+                    <div class="item-title item-label">* Você utiliza óculos diariamente?</div>
+                    <div class="item-input-wrap">
+                      <select id="oculos">
+                        <option>SIM</option>
+                        <option>NÃO</option>
+                      </select>
+                    </div>
+                  </div>
+                </li>
+                <li class="item-content item-input">
+                  <div class="item">
+                    <i class="icon demo-list-icon"></i>
+                  </div>
+                  <div class="item-inner">
                     <div class="item-title item-label">* Número Celular</div>
                     <div class="item-input-wrap">
                       <input type="text" maxlength="13" OnKeyPress="formatar('##-#####-####', this)" id="numero_cell">
@@ -402,12 +410,15 @@
             <br>
             <div class="item-input-wrap">
               <label for='foto_perfil'>
-              	<center>
-                  <img for="foto_perfil" src="img/perfil.jpg" style="width: 70%;"/>
+              	<center>            
+                   <div id="image-holder"><img for="foto_perfil" src="img/perfil.jpg" style="width: 70%;"/></div>
              	</center>
               </label>
-               <button class="col button button-fill" style="margin-bottom: 10px;">Escolher</button>
-               <button class="col button button-big col button button-fill color-green">Próximo</button>
+ 			  <label for="fileUpload" class="col button button-big col button button-fill color-blue space_upload">Escolher</label>
+			  <div id="wrapper">       
+			    <input id="fileUpload" type="file">
+			  </div>
+              <button class="col button button-big col button button-fill color-green">Próximo</button>
                 <a class="link popup-open" href="#" data-popup=".popup-wallpaper" id="res">eee</a></p>
             </div>
           </div>
@@ -461,12 +472,14 @@
   	    // msg for passwords
 		var senhas = app.toast.create({
 		  text: 'As senhas digitadas são diferentes!',
+		  position: 'top',
 		  closeTimeout: 2000,
 		});
 
 	  	// msg for inputs 
 		var input_vazio = app.toast.create({
-		  text: 'Existe um campo vazio,por favor preencha!',
+		  text: 'Por favor, preencha todos os campos obrigatórios.',
+		  position: 'top',
 		  closeTimeout: 2500,
 		});
 			
@@ -495,6 +508,7 @@
   		sexo ==  ''  ||
   		link_rede == ''  ||
   		numero_cell == '') {
+  		  document.getElementById('open_perfil').click();
   	 $("#open_perfil").disabled = true;
   	 input_vazio.open();
   	}
@@ -508,7 +522,33 @@
       } 
    }		 
 }
-	
+
+
+$("#fileUpload").on('change', function () {
+ 
+    if (typeof (FileReader) != "undefined") {
+ 
+        var image_holder = $("#image-holder");
+        image_holder.empty();
+ 
+        var reader = new FileReader();
+        reader.onload = function (e) {
+             $("#image-holder").innerHTML = '';
+            $("<img />", {
+                "src": e.target.result,
+                "class": "thumb-image"
+            }).appendTo(image_holder);
+
+        }
+        image_holder.show();
+        reader.readAsDataURL($(this)[0].files[0]);
+    } else{
+        alert("Este navegador nao suporta FileReader.");
+    }
+});
+
+
+
 
 </script>
   </body>
