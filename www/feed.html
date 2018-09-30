@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- Color theme for statusbar -->
+    <meta name="theme-color" content="#2196f3">
+    <!-- Your app title -->
+    <title></title>
+    <!-- Path to Framework7 Library CSS -->
+    <link rel="stylesheet" href="css/framework7.min.css">
+    <link rel="stylesheet" href="css/framework7.css">
+    <link rel="stylesheet" href="css/framework7.md.css">
+
+    <!--fontes do google-->
+    <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet">
+    <script src="https://github.com/lazd/iNoBounce/blob/master/inobounce.min.js"></script>
+
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <link rel="stylesheet" href="css\icons\framework7icons.css">
+
+    <style type="text/css">
+    /*estilo do titulo*/
+   /*estilo do titulo*/
+    .titulo {
+      text-align: center;
+      font-family: 'Damion', cursive;
+      font-size: 30px;
+       color: white;
+    }
+    .spacee{
+        margin-top: 5px;
+    }  
+
+    /*position to title at search */
+    .positionn_title {
+        padding-top: 6px;
+        font-family: 'Indie Flower', cursive;
+        font-size: 200%;
+    }
+
+    /*style do select */
+    .style_select {
+        width: 100%;
+         border: 1px solid silver;
+         padding: 5px;
+         border-radius: 10px;
+    }
+
+    /*padding in the components*/
+    #style-to-block{
+        padding: 30px;
+    }
+
+    /*padding to button*/
+    .padding-to-button{
+        padding: 20px;
+        margin-top: -100px;
+    }
+
+    /*brand to about */
+    .brand {
+        text-align: center;
+        font-family: 'Damion', cursive;
+        font-size: 30px;
+        color: #2196f3;
+    }
+    </style>
+</head>
+
+<body>
+<div class="page">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a class="link popover-open" href="#" data-popover=".popover-about">
+                <i class="f7-icons size-22">bars</i>
+                </a>
+            </div>
+            <p class="titulo">SPOTTED</p>
+            <div class="right">
+                <a class="link popup-open" href="#" data-popup=".popup-about">
+                <i class="f7-icons size-22">search</i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <a class="link popup-open" data-popup=".popup-people" style="margin-top: 100px;">Perfil Buscado</a>
+    <input type="file" value="res">
+    
+</div>
+
+<!-- Popovers -->
+<div class="popover popover-about">
+    <div class="popover-inner">
+        <ul style="list-style-type: none " class="block">
+            <li><button class="col button button-fill spacee link popup-open popover-close" data-popup=".popup-perfil">Seu Perfil</button></li>
+            <li><button class="col button button-fill spacee link popup-open popover-close" data-popup=".popup-sobre">Sobre</button></li>
+            <li><button class="col button button-fill spacee link popup-open popover-close" data-popup=".popup-password">Trocar Senha</button></li>
+            <li><button class="col button button-fill color-red spacee">Sair</button></li>
+        </ul>
+    </div>
+</div>
+
+ <!-- window to select data -->   
+<div class="popup popup-about">
+    <div>
+        <div data-page="index" class="page">
+            <div class="page-content" id="style-to-block">
+            <!-- Close Popup -->
+            <p>
+               <div>
+                     <div>
+                        <center> 
+                            <a class="link popup-close padding-to-button" href="#">
+                                <i class="f7-icons size-22">chevron_down</i>
+                            </a>
+                        </center>
+                     </div>
+              </div>
+              <div class="item">
+                 <i class="icon demo-list-icon"></i>
+              </div>
+                <div class="item-inner">
+                    <div class="item-title item-label">* Estado</div>
+                      <div class="item-input">
+                         <select class="style_select">
+                            <option value="" disabled>Selecione um Estado</option>
+                            <option>São Paulo</option>
+                         </select>
+                      </div>
+                </div>   
+                <br>  
+                <div class="item-inner">
+                   <div class="item-title item-label">* Município</div>
+                      <div class="item-input">           
+                        <select class="style_select">
+                            <option value="" disabled>Selecione um município</option>
+                            <option>Bauru</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="item-inner">
+                   <div class="item-title item-label">Universidade</div>
+                      <div class="item-input">
+                        <select class="style_select">
+                            <option value="" disabled>Selecione uma Universidade</option>
+                            <option>Universidade do Sagrado Coração (USC)</option>
+                            <option>Universidade Paulista (UNIP)</option>
+                            <option>UNESP</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="item-inner">
+                  <div class="item-title item-label">Curso</div>
+                     <div class="item-input">
+                        <select class="style_select">
+                            <option value="" disabled>Selecione o Curso da Pessoa</option>
+                            <option>Ciências da Computação</option>
+                            <option>Engenhria Elétrica</option>
+                            <option>Matematica</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="item-inner">
+                   <div class="item-title item-label">Altura</div>
+                     <div class="item-input">
+                        <select class="style_select">
+                            <option value="" disabled>Selecione a altura da pessoa</option>
+                            <option>Pessoa Alta</option>
+                            <option>Pessoa Média</option>
+                            <option>Pessoa Baixa</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="item-inner">
+                  <div class="item-title item-label">Óculos</div>
+                    <div class="item-input">
+                        <select class="style_select">
+                            <option value="">Selecione se a pessoa utiliza óculos</option>
+                            <option>Sim, utiliza óculos</option>
+                            <option>Não, utiliza óculos</option>
+                        </select>
+                    </div>
+                </div>
+             <br>
+            </p>
+              <button class="col button button-big col button button-fill color-green" id="button-serach">Buscar a Pessoa
+            </button>
+        </div>
+     </div>
+   </div>       
+</div>
+
+<!-- opem windows perfil -->
+<div class="popup popup-perfil">
+    <div>
+        <div data-page="index" class="page">
+            <div class="page-content">
+            <a class="link popup-close color-white" href="#" style="position: absolute; top:10px; left: 5%; ">
+                <i class="f7-icons">close</i>
+            </a>
+              <i class="f7-icons" style="position: absolute; left: 85%; top: 11px; color: white; ">camera</i>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVf0jjieex0a-qoPZTepzpfa9MDWVHzGFIIijeFHCtunfCDmj0" style="width:100%">
+                <center><img src="https://www.aceshowbiz.com/images/photo/john_goodman.jpg" style="width: 40%; border-radius:90px; margin-top: -100px;">
+                </center>
+             
+                 <h2 class="text-align-center">John Magaster</h2>
+            <br>
+            <ul>
+                <li>Sexo: Masculino</li>
+                <li>Número: (11) 99745-3266</li>
+                <li>Universidade: USC</li>
+                <li>Curso: Engenhria Elétrica</li>
+                <li>Perfil Facebook: John Magaster  </li>
+                <li>Perfil Twitter: John Magaster  </li>
+            </ul>
+                </div>
+                </div>
+                </div>
+
+        <!--window open to people -->
+        <div class="popup popup-people">
+            <div>
+                <div data-page="index" class="page">
+                    <div class="page-content">
+                        <a class="link popup-close color-white" href="#" style="position: absolute; top:10px; left: 5%; ">
+                            <i class="f7-icons">close</i>
+                        </a>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVf0jjieex0a-qoPZTepzpfa9MDWVHzGFIIijeFHCtunfCDmj0" style="width:100%">
+                        <center>
+                            <img src="https://www.aceshowbiz.com/images/photo/john_goodman.jpg" style="width: 40%; border-radius:90px; margin-top: -100px;">
+                        </center>
+        
+                        <h2 class="text-align-center">John Magaster</h2>
+                        <br>
+                        <ul>
+                            <li>Sexo: Masculino</li>
+                            <li>Número: (11) 99745-3266</li>
+                            <li>Universidade: USC</li>
+                            <li>Curso: Engenhria Elétrica</li>
+                            <li>Perfil Facebook: John Magaster </li>
+                            <li>Perfil Twitter: John Magaster </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--window about we -->
+            <div class="popup popup-sobre">
+                <div>
+                    <div data-page="index" class="page">
+                        <div class="page-content">
+                            <a class="link popup-close color-grey" href="#" style="position: absolute; top:10px; left: 5%; ">
+                                <i class="f7-icons">close</i>
+                            </a>
+                                <p class="brand">SPOTTED</p>
+                                
+                                    <p style="padding: 15px; color: dimgrey;">SPOTTED: É uma rede social voltada para interação de universitários. Eles podem se interagir dentro de sua própria universidade, como
+                                    também interagir com outros estudantes de outras universidades.<br><br>Nós temos um endereço de e-mai no qual recebemos propostas de melhoria do aplicativo, se você tiver alguma sugestão, entre
+                                    em contato conosco.<br> E-mail: spotted@yahool.com
+                                     <br><br>
+                                     Equipe de desenvolvimento: ------------   
+                                </p>
+                                    
+                                
+                        </div>
+                    </div>
+                </div>
+              <!-- window to exchange password -->
+            <div class="popup popup-password">
+                <div>
+                    <div data-page="index" class="page">
+                        <div class="page-content">
+                            <a class="link popup-close color-grey" href="#" style="position: absolute; top:10px; left: 5%; ">
+                                <i class="f7-icons">close</i>
+                            </a>
+                            <!-- insert your password-->
+                            
+                            <div class="list no-hairlines-md">
+                                <p style="padding: 15px; color: grey"><b>Trocar de Senha</b><br>
+                                <l style="font-size: 15px;">Para que você possa recuperar sua senha ou reforça-la,entre com sua senha antiga e insira uma nova senha.</l></p>
+                                <ul>
+                                    <li class="item-content item-input">
+                                        <div class="item">
+                                            <i class="icon demo-list-icon"></i>
+                                        </div>
+                                        <div class="item-inner">
+                                            <div class="item-title item-floating-label">Digite sua senha atual</div>
+                                            <div class="item-input-wrap">
+                                                <input type="password" placeholder="Your password">
+                                                <span class="input-clear-button"></span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- insert your new password-->
+                                    <li class="item-content item-input">
+                                        <div class="item    ">
+                                            <i class="icon demo-list-icon"></i>
+                                        </div>
+                                        <div class="item-inner">
+                                            <div class="item-title item-floating-label">Digite Sua Nova Senha</div>
+                                            <div class="item-input-wrap">
+                                                <input type="text" placeholder="Your name">
+                                                <span class="input-clear-button"></span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- confirmed your new password-->
+                                    <li class="item-content item-input">
+                                        <div class="item    ">
+                                            <i class="icon demo-list-icon"></i>
+                                        </div>
+                                        <div class="item-inner">
+                                            <div class="item-title item-floating-label">Digite Novamente Sua Nova Senha</div>
+                                            <div class="item-input-wrap">
+                                                <input type="text" placeholder="Your name">
+                                                <span class="input-clear-button"></span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                         </ul>
+                                         <div style="padding: 15px">
+                                        <button class="col button button-big col button button-fill color-green">Trocar Senha
+                                        </button></div>
+                                       </div>
+                                     </div>
+                                  </div>
+                               </div>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+     <script>
+        var app = new Framework7();  
+     </script>
+  </body>
+</html>

@@ -1,0 +1,517 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Color theme for statusbar -->
+    <meta name="theme-color" content="#2196f3">
+    <!-- Your app title -->
+    <title></title>
+    <!-- Path to Framework7 Library CSS -->
+    <link rel="stylesheet" href="css/framework7.min.css">
+    <link rel="stylesheet" href="css/framework7.css">
+    <link rel="stylesheet" href="css/framework7.md.css">
+
+    <!--fontes do google-->
+    <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet">
+     <script src="https://github.com/lazd/iNoBounce/blob/master/inobounce.min.js"></script>
+
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+  
+  <style type="text/css">
+  
+    /*estilo do titulo*/
+    .titulo {
+      text-align: center;
+      padding-top: 15px;
+      font-family: 'Damion', cursive;
+      font-size: 48px;
+       color: #2196f3;
+    }
+
+    /*estilo dos campos input*/ 
+    #login {
+      margin-top: 40px;  
+    }
+   
+   /*estilo recupera senha */
+   .recupera_senha {
+     color: #2196f3;
+     margin-left: 15px;
+   }
+
+   /*estilo dos botors*/
+   #buttonss {
+     margin-top: 80px;
+   }
+
+   /*display file */
+  input[type='file'] {
+    display: none
+  }
+
+  /*Botao seleciona foto */
+ .tag {
+  background-color: #2196f3;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  margin: 10px;
+  padding: 6px 20px
+}
+
+
+   </style> 
+  </head>
+  <body>
+<script>
+
+  //functio for validate phone
+  function formatar(mascara, documento) {
+    var i = documento.value.length;
+    var saida = mascara.substring(0, 1);
+    var texto = mascara.substring(i);
+      if (texto.substring(0, 1) != saida) {
+      documento.value += texto.substring(0, 1);
+    }
+
+  }
+
+
+
+</script>
+   
+   <div data-page="index" class="page">
+    <div class="page-content">
+     <!-- start window login -->
+     <p class="titulo">SPOTTED</p>
+      <!-- login -->
+      <div class="list no-hairlines-md" id="login">
+        <ul>
+          <li class="item-content item-input">
+            <div class="item">
+              <i class="icon demo-list-icon"></i>
+            </div>
+            <div class="item-inner">
+              <div class="item-title item-floating-label">E-mail</div>
+              <div class="item-input-wrap">
+                  <input type="text">
+                <span class="input-clear-button"></span>
+              </div>
+            </div>
+          </li>
+          <li class="item-content item-input">
+            <div class="item">
+              <i class="icon demo-list-icon"></i>
+            </div>
+            <div class="item-inner">
+              <div class="item-title item-floating-label">Senha</div>
+              <div class="item-input-wrap">
+                <input type="password" placeholder="Your password">
+                <span class="input-clear-button"></span>
+              </div>
+            </div>
+          </li>
+          </ul>
+          <p class="recupera_senha"><a class="link popup-open" href="#" data-popup=".esqueceu-senha">Esqueceu a senha?</a></p>
+       </div>
+      <!-- button of login or create a account-->
+       <div class="block" id="buttonss">
+          <p>
+            <a href="feed.html" class="link external">teste</a>
+           <button class="col button button-big button-fill">Entrar</button>
+          </p>
+          <p class="row">
+            <button class="col button button-big">
+             <a class="link popup-open" href="#"  data-popup=".my-popup" id="criar">Criar conta</a>
+            </button>
+          </p>
+       </div>
+    </div>
+  </div>
+
+<!-- window to new passsword -->
+<div class="popup esqueceu-senha">
+  <div class="view">
+    <div class="page">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="title">Redefinir sua senha</div>
+          <div class="right">
+            <a class="link popup-close">Voltar</a>
+          </div>
+        </div>
+      </div>
+          <div class="page-content" style="margin-top: 30px;">
+            <div data-page="index" class="page">
+              <div class="page-content">
+                <div class="list no-hairlines-md">
+                  <ul>
+                  <li class="item-content item-input">
+                    <div class="item">
+                      <i class="icon demo-list-icon"></i>
+                    </div>
+                    <div class="item-inner">
+                      <div class="item-title item-floating-label">E-mail</div>
+                      <div class="item-input-wrap">
+                        <input type="text">
+                        <span class="input-clear-button"></span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="item-content item-input">
+                    <div class="item">
+                      <i class="icon demo-list-icon"></i>
+                    </div>
+                    <div class="item-inner">
+                      <div class="item-title item-floating-label">Nova senha</div>
+                      <div class="item-input-wrap">
+                        <input type="text">
+                        <span class="input-clear-button"></span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="item-content item-input">
+                    <div class="item">
+                      <i class="icon demo-list-icon"></i>
+                    </div>
+                    <div class="item-inner">
+                      <div class="item-title item-floating-label">Confirma senha</div>
+                      <div class="item-input-wrap">
+                        <input type="text">
+                        <span class="input-clear-button"></span>
+                      </div>
+                    </div>
+                  </li>
+                  <div class="block">
+                    <p class="row">
+                      <button class="col button button-big col button button-fill color-green">Confirmar</button>
+                    </p>
+                  </div>
+               </ul>
+             </div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- window to create account -->
+<div class="popup my-popup">
+  <div class="view">
+    <div class="page">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="title">Criar Conta</div>
+          <div class="right">
+            <a class="link popup-close">Voltar</a>
+          </div>
+        </div>
+      </div>
+      <div class="page-content">
+         <div data-page="index" class="page">
+           <div class="page-content">
+            <div class="list no-hairlines-md">
+              <ul>
+              <li class="item-content item-input">
+                <div class="item">
+                  <i class="icon demo-list-icon"></i>
+                </div>
+                <div class="item-inner">
+                  <div class="item-title item-label">* Estado</div>
+                  <div class="item-input-wrap">
+                    <select id="estado">
+                        <option>Selecione um Estado</option>
+                        <option>SP</option>
+                    </select>
+                  </div>
+                </div>
+              </li>
+              <li class="item-content item-input">
+                <div class="item">
+                  <i class="icon demo-list-icon"></i>
+                </div>
+                <div class="item-inner">
+                  <div class="item-title item-label">* Cidade</div>
+                  <div class="item-input-wrap">
+                    <select id="cidade">
+                      <option >Selecione sua Cidade</option>
+                      <option >Bauru</option>
+                    
+                    </select>
+                  </div>
+                </div>
+              </li>
+              <li class="item-content item-input">
+                <div class="item">
+                  <i class="icon demo-list-icon"></i>
+                </div>
+                <div class="item-inner">
+                  <div class="item-title item-label">* Universidade</div>
+                  <div class="item-input-wrap">
+                    <select id="univer">
+                      <!--select dinamico feito pelo back end-->
+                      <option>Selecione sua Universidade</option>
+                      <option>USC</option>
+                    </select>
+                  </div>
+                </div>
+              </li>
+                <li class="item-content item-input">
+                  <div class="item">
+                    <i class="icon demo-list-icon"></i>
+                  </div>
+                  <div class="item-inner">
+                    <div class="item-title item-label">* Nome</div>
+                    <div class="item-input-wrap">
+                      <input type="text" placeholder="Seu nome" id="nome">
+                      <span class="input-clear-button"></span>
+                    </div>
+                  </div>
+                </li>
+                 <li class="item-content item-input">
+                  <div class="item">
+                    <i class="icon demo-list-icon"></i>
+                  </div>
+                  <div class="item-inner">
+                    <div class="item-title item-label">* Você utiliza óculos diariamente?</div>
+                    <div class="item-input-wrap">
+                      <select id="oculos">
+                        <option>SIM</option>
+                        <option>NÃO</option>
+                      </select>
+                    </div>
+                  </div>
+                </li>
+                <li class="item-content item-input">
+                  <div class="item">
+                    <i class="icon demo-list-icon"></i>
+                  </div>
+                  <div class="item-inner">
+                    <div class="item-title item-label">* E-mail</div>
+                    <div class="item-input-wrap">
+                      <input type="text" placeholder="Seu e-mail" id="email">
+                      <span class="input-clear-button"></span>
+                    </div>
+                  </div>
+                </li>
+                <li class="item-content item-input">
+                  <div class="item">
+                    <i class="icon demo-list-icon"></i>
+                  </div>
+                  <div class="item-inner">
+                    <div class="item-title item-label">* Senha</div>
+                    <div class="item-input-wrap">
+                      <input type="password" placeholder="Sua senha" id="senha">
+                      <span class="input-clear-button"></span>
+                    </div>
+                  </div>
+                </li>
+                <li class="item-content item-input">
+                  <div class="item">
+                    <i class="icon demo-list-icon"></i>
+                  </div>
+                  <div class="item-inner">
+                    <div class="item-title item-label">* Confirma Senha</div>
+                    <div class="item-input-wrap">
+                      <input type="password" placeholder="Confirma senha" id="conf_senha">
+                      <span class="input-clear-button"></span>
+                    </div>
+                  </div>
+                </li>
+                <li class="item-content item-input">
+                  <div class="item">
+                    <i class="icon demo-list-icon"></i>
+                  </div>
+                  <div class="item-inner">
+                    <div class="item-title item-label">* Sexo</div>
+                    <div class="item-input-wrap">
+                      <select id="sexo">
+                        <option>Masculino</option>
+                        <option>Feminino</option>
+                        <option>Outros  </option>
+                        
+                      </select>
+                    </div>
+                  </div>
+                </li>
+                <li class="item-content item-input">
+                  <div class="item">
+                    <i class="icon demo-list-icon"></i>
+                  </div>
+                  <div class="item-inner">
+                    <div class="item-title item-label">Link de redes sociais</div>
+                    <div class="item-input-wrap">
+                      <input type="text" placeholder="Link" id="link_rede">
+                      <span class="input-clear-button"></span>
+                    </div>
+                  </div>
+                </li>
+                <li class="item-content item-input">
+                  <div class="item">
+                    <i class="icon demo-list-icon"></i>
+                  </div>
+                  <div class="item-inner">
+                    <div class="item-title item-label">* Número Celular</div>
+                    <div class="item-input-wrap">
+                      <input type="text" maxlength="13" OnKeyPress="formatar('##-#####-####', this)" id="numero_cell">
+                      <span class="input-clear-button"></span>
+                    </div>
+                  </div>
+                </li>
+                <div class="block">
+                  <p class="row">
+                  	<center>
+                     <a class="popup-open" href="#" data-popup=".popup-photo_perfil" id="open_perfil"></a>
+                       <button class="col button button-big col button button-fill color-green" onclick="nextstep()">Próximo</button>
+                  </p>
+                </div>
+             </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--photo profile -->
+ <div class="popup popup-photo_perfil">
+   <div class="view">
+    <div class="page">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="title">Foto de Perfil</div>
+          <div class="right">
+            <a class="link popup-close">Voltar</a>
+          </div>
+        </div>
+      </div>
+      <div data-page="index" class="page">  
+      <div class="page-content block">
+        <p>Escolha uma foto de perfil.</p>
+          <div class="item">
+            <i class="icon demo-list-icon"></i>
+          </div>
+          <div class="item-inner" >
+            <br>
+            <div class="item-input-wrap">
+              <label for='foto_perfil'>
+              	<center>
+                  <img for="foto_perfil" src="img/perfil.jpg" style="width: 70%;"/>
+             	</center>
+              </label>
+               <button class="col button button-fill" style="margin-bottom: 10px;">Escolher</button>
+               <button class="col button button-big col button button-fill color-green">Próximo</button>
+                <a class="link popup-open" href="#" data-popup=".popup-wallpaper" id="res">eee</a></p>
+            </div>
+          </div>
+         </div>
+       </div>
+     </div>
+   </div>  
+ </div>
+
+<!--wallpaper -->
+ <div class="popup popup-wallpaper">
+   <div class="view">
+    <div class="page">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="title">Foto de Capa</div>
+          <div class="right">
+            <a class="link popup-close">Voltar</a>
+          </div>
+        </div>
+      </div>
+      <div data-page="index" class="page">  
+      <div class="page-content block">
+        <p>Escolha uma foto para sua capa.</p>
+          <div class="item">
+            <i class="icon demo-list-icon"></i>
+          </div>
+          <div class="item-inner" >
+            <br>
+            <div class="item-input-wrap">
+              <label for='foto_perfil'>
+              	<center>
+                  <img for="foto_perfil" src="img/capa.jpg" style="width: 70%;" />
+             	</center>
+              </label>
+               <button class="col button button-fill" style="margin-bottom: 10px;">Escolher</button>
+               <button class="col button button-big col button button-fill color-green">Finalizar</button>
+            </div>
+          </div>
+         </div>
+       </div>
+     </div>
+   </div>  
+ </div>
+
+<script>
+
+
+  var app = new Framework7();
+  	  var $$ = Dom7;
+  	    // msg for passwords
+		var senhas = app.toast.create({
+		  text: 'As senhas digitadas são diferentes!',
+		  closeTimeout: 2000,
+		});
+
+	  	// msg for inputs 
+		var input_vazio = app.toast.create({
+		  text: 'Existe um campo vazio,por favor preencha!',
+		  closeTimeout: 2500,
+		});
+			
+  function nextstep () {
+
+  	var estado = $("#estado").val();
+  	var cidade = $("#cidade").val();
+  	var univer = $("#univer").val();
+  	var nome = $("#nome").val();
+  	var oculos = $("#oculos").val();
+  	var email = $("#email").val();
+  	var senha = $("#senha").val();
+  	var conf_senha = $("#conf_senha").val();
+    var sexo = $("#sexo").val();
+  	var link_rede = $("#link_rede").val();
+  	var numero_cell = $("#numero_cell").val();
+  	
+  	if (estado == '' ||  
+  		cidade == '' || 
+  		univer == '' ||
+  		nome ==  ''  ||
+  		oculos == '' ||
+  		email ==  '' ||
+  		senha ==  '' ||
+  		conf_senha == '' || 
+  		sexo ==  ''  ||
+  		link_rede == ''  ||
+  		numero_cell == '') {
+ document.getElementById('open_perfil').click();
+  	 $("#open_perfil").disabled = true;
+  	 input_vazio.open();
+
+  	}
+  	else {
+  	  if (senha !== conf_senha) {
+		senhas.open();
+  	  	return 0;
+  	  }
+  	  else {
+  	    document.getElementById('open_perfil').click();
+      } 
+   }		 
+}
+	
+
+</script>
+  </body>
+</html>
