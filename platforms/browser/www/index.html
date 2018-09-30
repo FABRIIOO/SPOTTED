@@ -5,7 +5,7 @@
     <!-- Required meta tags-->
     <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/jquery.js"></script>
 
     <!-- Color theme for statusbar -->
     <meta name="theme-color" content="#2196f3">
@@ -495,10 +495,8 @@
   		sexo ==  ''  ||
   		link_rede == ''  ||
   		numero_cell == '') {
- document.getElementById('open_perfil').click();
   	 $("#open_perfil").disabled = true;
   	 input_vazio.open();
-
   	}
   	else {
   	  if (senha !== conf_senha) {
