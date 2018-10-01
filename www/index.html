@@ -172,7 +172,7 @@
                     <div class="item-inner">
                       <div class="item-title item-floating-label">E-mail</div>
                       <div class="item-input-wrap">
-                        <input type="text">
+                        <input type="text" id="email_user">
                         <span class="input-clear-button"></span>
                       </div>
                     </div>
@@ -184,7 +184,7 @@
                     <div class="item-inner">
                       <div class="item-title item-floating-label">Nova senha</div>
                       <div class="item-input-wrap">
-                        <input type="text">
+                        <input type="text" id="new_pass">
                         <span class="input-clear-button"></span>
                       </div>
                     </div>
@@ -196,14 +196,14 @@
                     <div class="item-inner">
                       <div class="item-title item-floating-label">Confirma senha</div>
                       <div class="item-input-wrap">
-                        <input type="text">
+                        <input type="text" id="conf_pass">
                         <span class="input-clear-button"></span>
                       </div>
                     </div>
                   </li>
                   <div class="block">
                     <p class="row">
-                      <button class="col button button-big col button button-fill color-green">Confirmar</button>
+                      <button class="col button button-big col button button-fill color-green" onclick="TrocarSenha()">Confirmar</button>
                     </p>
                   </div>
                </ul>
@@ -626,6 +626,7 @@ $("#fileUploadWall").on('change', function () {
     }
 });
 
+//enter in the feed people 
 function EntrarFeed () {
 	var img_wall = $("#fileUploadWall").val();
 	if (img_wall) {
@@ -635,6 +636,20 @@ function EntrarFeed () {
 	}
 }
 
+
+//new password for user 
+function TrocarSenha () {
+	var senha  = $("#new_pass").val();
+	var conf_pas = $("#conf_pass").val();
+	var email = $("#email_user").val();
+	
+	if (senha !== conf_pas) {
+		senhas.open();
+		return 0;
+	} else {
+		//chamada ajax para enviar a aprovação por email.
+	}
+}
 </script>
   </body>
 </html>
