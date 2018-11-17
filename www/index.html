@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -81,7 +80,17 @@
 #image-holder,#image-holder-wall {
 	height: 250px;
 }
-   </style> 
+
+#space_line {
+  margin: 15px;
+}
+
+ #itens {
+  border: 1px solid #2196f3;
+  border-radius: 9px;
+  margin: 10px;
+}
+  </style> 
   </head>
   <body>
 <script>
@@ -234,13 +243,13 @@
            <div class="page-content">
             <div class="list no-hairlines-md">
               <ul>
-              <li class="item-content item-input">
+              <li class="item-content item-input" id="itens">
                 <div class="item">
                   <i class="icon demo-list-icon"></i>
                 </div>
                 <!-- estado onde a pessoa mora-->
                 <div class="item-inner">
-                  <div class="item-title item-label">* Estado onde você mora.</div>
+                  <div class="item-title item-label"><h3>* Estado onde você mora.</h3></div>
                   <div class="item-input-wrap">
                     <select id="estado_m">
                         <option value="">Selecione o Estado onde você mora.</option>
@@ -275,26 +284,28 @@
                   </div>
                 </div>
               </li>
-              <li class="item-content item-input">
+              <div id="space_line"></div>
+              <li class="item-content item-input"  id="itens">
                 <div class="item">
                   <i class="icon demo-list-icon"></i>
                 </div>
                 <div class="item-inner">
-                  <div class="item-title item-label">* Cidade onde você mora.</div>
+                  <div class="item-title item-label"><h3>* Cidade onde você mora.</h3></div>
                   <div class="item-input-wrap">
                     <select id="cidade_m">
-                        <option >Selecione a Cidade onde você mora.</option>
+                        <option value=''>Selecione a Cidade onde você mora  .</option>;
                     </select>
                   </div>
                 </div>
               </li>
-             <li class="item-content item-input">
+              <div id="space_line"></div>
+             <li class="item-content item-input"  id="itens">
               <div class="item">
                 <i class="icon demo-list-icon"></i>
               </div>
               <!--estado onde a pessoa estudo-->
               <div class="item-inner">
-                <div class="item-title item-label">* Estado onde você estuda.</div>
+                <div class="item-title item-label"><h3>* Estado onde você estuda.</h3></div>
                 <div class="item-input-wrap">
                   <select id="estado_e">
                       <option value="">Selecione o Estado onde você estuda.</option>
@@ -329,403 +340,25 @@
                 </div>
               </div>
             </li> 
-            <li class="item-content item-input">
+            <div id="space_line"></div>
+            <li class="item-content item-input" id="itens">
               <div class="item">
                 <i class="icon demo-list-icon"></i>
               </div>
               <div class="item-inner">
-                <div class="item-title item-label">* Cidade onde você estuda.</div>
+                <div class="item-title item-label"><h3>* Cidade onde você estuda.</h3></div>
                 <div class="item-input-wrap">
                   <select id="cidade_e">
-                    <option >Selecione a Cidade onde você estuda</option>
+                      <option value=''>Selecione a Cidade onde você estuda.</option>;
                   </select>
                 </div>
               </div>
             </li>
-              <li class="item-content item-input">
-                <div class="item">
-                  <i class="icon demo-list-icon"></i>
-                </div>
-                <div class="item-inner">
-                  <div class="item-title item-label">* Universidade onde você estuda.</div>
-                  <div class="item-input-wrap">
-                    <select id="univer" onkeypress="acionaw">
-                      <!--select dinamico feito pelo back end-->
-                      <option>Selecione sua Universidade</option>
-                    </select>
-                  </div>
-                </div>
-              </li>
-              <li class="item-content item-input">
-                <div class="item">
-                  <i class="icon demo-list-icon"></i>
-                </div>
-                <div class="item-inner">
-                  <div class="item-title item-label">* O que você cursa?</div>
-                  <div class="item-input-wrap">
-                    <select id="curso">
-                      <option>Selecione seu curso</option>
-                        <optgroup label="Ciências biológicas e da Saúde">
-                          <option>Biologia</option>
-                          <option>Biologia marinha</option>
-                          <option>Biomedicina</option>
-                          <option>Botânica</option>
-                          <option>Ciências Agrárias</option>
-                          <option>Ciências Ambientais</option>
-                          <option>Ciências Biológicas</option>
-                          <option>Ciências da Saúde</option>
-                          <option>Ciências do Meio Aquático</option>
-                          <option>Ecologia</option>
-                          <option>Educação física</option>
-                          <option>Enfermagem</option>
-                          <option>Fisioterapia</option>
-                          <option>Fonoaudiologia</option>
-                          <option>Gerontologia</option>
-                          <option>Medicina</option>
-                          <option>Medicina veterinária</option>
-                          <option>Meteorologia</option>
-                          <option>Microbiologia e Imunologia</option>
-                          <option>Naturologia</option>
-                          <option>Neurociência</option>
-                          <option>Nutrição</option>
-                          <option>Odontologia</option>
-                          <option>Quiropraxia</option>
-                          <option>Saúde Coletiva</option>
-                          <option>Terapia ocupacional</option>
-                          <option>Zootecnia</option>
-                          <option>Aquacultura</option>
-                          <option>Cafeicultura</option>
-                          <option>Biotecnologia</option>
-                          <option>Ciência dos Alimentos</option>
-                          <option>Cosmetologia</option>
-                          <option>Drenagem e Irrigação</option>
-                          <option>Enologia</option>
-                          <option>Fruticultura</option>
-                          <option>Gestão de Recursos Hídricos</option>
-                          <option>Horticultura</option>
-                          <option>Meliponicultura</option>
-                          <option>Oftálmica</option>
-                          <option>Radiologia</option>
-                          <option>Silvicultura</option>
-                          <option>Sistemas Biomédicos</option>                            
-                        </optgroup>
-                        <optgroup label="Ciências Exatas">
-                          <option>Agronomia</option>
-                          <option>Astronomia</option>
-                          <option>Bioengenharia</option>
-                          <option>Biofísica</option>
-                          <option>Ciências Contábeis</option>
-                          <option>Ciência da Computação</option>
-                          <option>Ciências Biomoleculares</option>
-                          <option>Ciências Matemáticas da Terra</option>
-                          <option>Ciências Naturais </option>
-                          <option>Ciências Náuticas</option>
-                          <option>Ciência & Tecnologia</option>
-                          <option>Educação do Campo </option>
-                          <option>Engenharia aeroespacial</option>
-                          <option>Engenharia aeronáutica</option>
-                          <option>Engenharia Agrícola</option>
-                          <option>Engenharia de Alimentos</option>
-                          <option>Engenharia Ambiental</option>
-                          <option>Engenharia biomédica</option>
-                          <option>Engenharia Cartográfica</option>
-                          <option>Engenharia Civil</option>
-                          <option>Engenharia de Computação</option>
-                          <option>Engenharia de controle e automação</option>
-                          <option>Engenharia Elétrica</option>
-                          <option>Engenharia Física</option>
-                          <option>Engenharia Florestal</option>
-                          <option>Engenharia geológica</option>
-                          <option>Engenharia Industrial Madeireira</option>
-                          <option>Engenharia de manufatura</option>
-                          <option>Engenharia de Materiais</option>
-                          <option>Engenharia Mecânica</option>
-                          <option>Engenharia Mecatrônica</option>
-                          <option>Engenharia Metalúrgica</option>
-                          <option>Engenharia Militar</option>
-                          <option>Engenharia de Minas</option>
-                          <option>Engenharia Naval e Oceânica</option>
-                          <option>Engenharia Nuclear</option>
-                          <option>Engenharia de Pesca</option>
-                          <option>Engenharia de Petróleo</div>
-                          <option>Engenharia de Produção</option>
-                          <option>Engenharia Química</option>
-                          <option>Engenharia Sanitária</option>
-                          <option>Engenharia de Sistemas Eletrônicos</option>
-                          <option>Engenharia de Software</option>
-                          <option>Engenharia de Tecidos</option>
-                          <option>Engenharia de Telecomunicações</option>
-                          <option>Engenharia Têxtil</option>
-                          <option>Estatística</option>
-                          <option>Farmácia (ou Bioquímica)</option>
-                          <option>Física</option>
-                          <option>Física computacional</option>
-                          <option>Física médica</option>
-                          <option>Geofísica</option>
-                          <option>Geologia</option>
-                          <option>Geoprocessamento e Sensoriamento Remoto</option>
-                          <option>Informática</option>
-                          <option>Informática biomédica</option>
-                          <option>Matemática</option>
-                          <option>Matemática Aplicada</option>
-                          <option>Matemática computacional</option>
-                          <option>Nanotecnologia</option>
-                          <option>Oceanografia </option>
-                          <option>Química </option>
-                          <option>Química ambiental</option>
-                          <option>Química industrial</option>
-                          <option>Sistemas de Informação</option>
-                          <option>Agrimensura</option>
-                          <option>Agroindústria</option>
-                          <option>Análise e Desenvolvimento de Sistemas</option>
-                          <option>Automação Industrial</option>
-                          <option>Biocombustíveis</option>
-                          <option>Ciências Aeronáuticas</option>
-                          <option>Ciência dos materiais</option>
-                          <option>Construção de Edifícios</option>
-                          <option>Construção de Estradas</option>
-                          <option>Construção Naval</option>
-                          <option>Energias Renováveis</option>
-                          <option>Gestão da Tecnologia da Informação</option>
-                          <option>Gestão de Petróleo e Gás</option>
-                          <option>Gestão Portuária</option>
-                          <option>Manutenção Industrial</option>
-                          <option>Mecatrônica e Mecânica de Precisão</option>
-                          <option>Mineração</option>
-                          <option>Processos Metalúrgicos</option>
-                          <option>Processamento de Dados</option>
-                          <option>Produção de Laticínios</option>
-                          <option>Produção de Materiais Plásticos</option>
-                          <option>Produção Têxtil</option>
-                          <option>Produção Sucroalcooeira</option>
-                          <option>Projetos de Estruturas Aeronáuticas</option>
-                          <option>Redes de Computadores</option>
-                          <option>Redes de Telecomunicações</option>
-                          <option>Saneamento Ambiental</option>
-                          <option>Segurança da Informação</option>
-                          <option>Sistemas Biomédicos</option>
-                          <option>Sistemas Elétricos</option>
-                          <option>Sistemas Embarcados</option>
-                          <option>Sistemas de Navegação Fluvial</option>
-                          <option>Sistemas para Internet</option>
-                          <option>Telemática</option>
-                        </optgroup>
-                        <optgroup label="Ciências Humanas">
-                          <option>Administração</option>
-                          <option>Antropologia</option>
-                          <option>Arqueologia</option>
-                          <option>Arquitetura</option>
-                          <option>Arquivística</option>
-                          <option>Artes Cênicas</option>
-                          <option>Artes Visuais </option>
-                          <option>Biblioteconomia</option>
-                          <option>Ciências Atuariais</option>
-                          <option>Ciências Contábeis</option>
-                          <option>Ciências Humanas</option>
-                          <option>Ciência Política (ou Ciências do Estado)</option>
-                          <option>Ciências Sociais</option>
-                          <option>Cinema</option>
-                          <option>Comunicação social</option>
-                          <option>Dança</option>
-                          <option>Defesa e Gestão Estratégica Internacional</option>
-                          <option>Desenho Industrial</option>
-                          <option>Design de Interiores</option>
-                          <option>Design de Moda</option>
-                          <option>Direito</option>
-                          <option>Economia</option>
-                          <option>Economia Doméstica</option>
-                          <option>Editoração</option>
-                          <option>Educação Artística</option>
-                          <option>Escultura</option>
-                          <option>Filosofia </option>
-                          <option>Gastronomia</option>
-                          <option>Geografia</option>
-                          <option>Gestão Ambiental</option>
-                          <option>Gestão Pública</option>
-                          <option>Gravurismo</option>
-                          <option>História</option>
-                          <option>História da Arte</option>
-                          <option>Hotelaria</option>
-                          <option>Jornalismo</option>
-                          <option>Letras</option>
-                          <option>Linguística</option>
-                          <option>Museologia</option>
-                          <option>Música</option>
-                          <option>Ordenamento do Território</option>
-                          <option>Paisagismo</option>
-                          <option>Pedagogia</option>
-                          <option>Pintura</option>
-                          <option>Psicologia</option>
-                          <option>Publicidade & Propaganda</option>
-                          <option>Produção Audiovisual</option>
-                          <option>Produção Cultural</option>
-                          <option>Relações Internacionais</option>
-                          <option>Relações Públicas</option>
-                          <option>Segurança Pública</option>
-                          <option>Serviço Social</option>
-                          <option>Sociologia</option>
-                          <option>Teatro</option>
-                          <option>Teologia</option>
-                          <option>Transporte Terrestre</option>
-                          <option>Turismologia</option>
-                          <option>Urbanismo</option>
-                          <option>Agroecologia</option>
-                          <option>Comércio Exterior</option>
-                          <option>Cooperativismo</option>
-                          <option>Design de Jogos Digitais</option>
-                          <option>Design de produto</option>
-                          <option>Design gráfico</option>
-                          <option>Eventos</option>
-                          <option>Esporte e Lazer</option>
-                          <option>Fotografia</option>
-                          <option>Gestão do Agronegócio</option>
-                          <option>Gestão Comercial</option>
-                          <option>Gestão Financeira</option>
-                          <option>Gestão Hospitalar</option>
-                          <option>Gestão de Segurança Privada</option>
-                          <option>Gestão da Qualidade</option>
-                          <option>Logística</option>
-                          <option>Mercadologia</option>
-                          <option>Negócios Imobiliários</option>
-                          <option>Processos Escolares</option>
-                          <option>Produção de Aguardente</option>
-                          <option>Produção Fonográfica</option>
-                          <option>Recursos Humanos</option>
-                          <option>Secretariado</option>
-                          <option>Segurança no Trabalho</option>
-                          <option>Transporte Aéreo</option>
-                          <option>Gestão em serviços jurídicos e notariais</option>
-                            </optgroup>
-                      </select>
-                  </div>
-                </div>
-              </li>
-              <li class="item-content item-input">
-                <div class="item">
-                  <i class="icon demo-list-icon"></i>
-                </div>
-                <div class="item-inner">
-                  <div class="item-title item-label">* Grau Académico</div>
-                  <div class="item-input-wrap">
-                    <select id="grau">
-                          <option>Bacharelado</option> 
-                          <option>Licenciatura</option>
-                          <option>Pós graduação</option>
-                          <option>Mestrado</option>
-                          <option>Doutorado</option>
-                    </select>
-                  </div>
-                </div>
-              </li>
-                <li class="item-content item-input">
-                  <div class="item">
-                    <i class="icon demo-list-icon"></i>
-                  </div>
-                  <div class="item-inner">
-                    <div class="item-title item-label">* Nome</div>
-                    <div class="item-input-wrap">
-                      <input type="text" placeholder="Seu nome" id="nome">
-                      <span class="input-clear-button"></span>
-                    </div>
-                  </div>
-                </li>
-                <li class="item-content item-input">
-                  <div class="item">
-                    <i class="icon demo-list-icon"></i>
-                  </div>
-                  <div class="item-inner">
-                    <div class="item-title item-label">* E-mail</div>
-                    <div class="item-input-wrap">
-                      <input type="text" placeholder="Seu e-mail" id="email">
-                      <span class="input-clear-button"></span>
-                    </div>
-                  </div>
-                </li>
-                <li class="item-content item-input">
-                  <div class="item">
-                    <i class="icon demo-list-icon"></i>
-                  </div>
-                  <div class="item-inner">
-                    <div class="item-title item-label">* Senha</div>
-                    <div class="item-input-wrap">
-                      <input type="password" placeholder="Sua senha" id="senha">
-                      <span class="input-clear-button"></span>
-                    </div>
-                  </div>
-                </li>
-                <li class="item-content item-input">
-                  <div class="item">
-                    <i class="icon demo-list-icon"></i>
-                  </div>
-                  <div class="item-inner">
-                    <div class="item-title item-label">* Confirma Senha</div>
-                    <div class="item-input-wrap">
-                      <input type="password" placeholder="Confirma senha" id="conf_senha">
-                      <span class="input-clear-button"></span>
-                    </div>
-                  </div>
-                </li>
-                <li class="item-content item-input">
-                  <div class="item">
-                    <i class="icon demo-list-icon"></i>
-                  </div>
-                  <div class="item-inner">
-                    <div class="item-title item-label">* Sexo</div>
-                    <div class="item-input-wrap">
-                      <select id="sexo">
-                        <option>Masculino</option>
-                        <option>Feminino</option>
-                        <option>Outros  </option>
-                        
-                      </select>
-                    </div>
-                  </div>
-                </li>
-                <li class="item-content item-input">
-                  <div class="item">
-                    <i class="icon demo-list-icon"></i>
-                  </div>
-                  <!--estado onde a pessoa estudo-->
-                  <div class="item-inner">
-                    <div class="item-title item-label">* Estado onde você estuda.</div>
-                    <div class="item-input-wrap">
-                      <select id="estado_civil">
-                          <option value="">Estado Civil.</option>
-                          <option value="1">Solteiro</option>
-                          <option value="2">Em um relacionamento sério</option>
-                      </select>
-                    </div>
-                  </div>
-                </li> 
-                <li class="item-content item-input">
-                  <div class="item">
-                    <i class="icon demo-list-icon"></i>
-                  </div>
-                  <div class="item-inner">
-                    <div class="item-title item-label">Link de redes sociais</div>
-                    <div class="item-input-wrap">
-                      <input type="text" placeholder="Link" id="link_rede">
-                      <span class="input-clear-button"></span>
-                    </div>
-                  </div>
-                </li>
-                <li class="item-content item-input">
-                  <div class="item">
-                    <i class="icon demo-list-icon"></i>
-                  </div>
-                  <div class="item-inner">
-                    <div class="item-title item-label">* Número Celular</div>
-                    <div class="item-input-wrap">
-                      <input type="text" maxlength="13" OnKeyPress="formatar('##-#####-####', this)" id="numero_cell">
-                      <span class="input-clear-button"></span>
-                    </div>
-                  </div>
-                </li>
                 <div class="block">
                   <p class="row">
                   	<center>
-                     <a class="popup-open" href="#" data-popup=".popup-photo_perfil" id="open_perfil"></a>
-                       <button class="col button button-big col button button-fill color-green" onclick="nextstep();cadastra_usuario()">Próximo</button>
+                     <a class="popup-open" href="#" data-popup=".popup-estuda" id="open_estuda"></a>
+                       <button class="col button button-big col button button-fill color-green" onclick="nextstep()">Próximo</button>
                   </p>
                 </div>
              </ul>
@@ -736,6 +369,515 @@
   </div>
 </div>
 
+
+<!--where studing  -->
+<div class="popup popup-estuda">
+    <div class="view">
+     <div class="page">
+       <div class="navbar">
+         <div class="navbar-inner">
+           <div class="title">nao sei o que por</div>
+           <div class="right">
+             <a class="link popup-close">Voltar</a>
+           </div>
+         </div>
+       </div>
+         <div class="page-content">
+            <div data-page="index" class="page">
+              <div class="page-content">
+               <div class="list no-hairlines-md">
+                 <ul>
+                    <div id="space_line"></div>
+                    <li class="item-content item-input" id="itens">
+                      <div class="item">
+                        <i class="icon demo-list-icon"></i>
+                      </div>
+                      <div class="item-inner">
+                        <div class="item-title item-label"><h3>* Universidade onde você estuda.</h3></div>
+                        <div class="item-input-wrap">
+                          <select id="univer" onkeypress="acionaw">
+                            <!--select dinamico feito pelo back end-->
+                            <option value='0'>Selecione sua Universidade</option>
+                          </select>
+                        </div>
+                      </div>
+                    </li>
+                    <div id="space_line"></div>
+                    <li class="item-content item-input" id="itens">
+                      <div class="item">
+                        <i class="icon demo-list-icon"></i>
+                      </div>
+                      <div class="item-inner">
+                        <div class="item-title item-label"><h3>* O que você cursa?</h3></div>
+                        <div class="item-input-wrap">
+                          <select id="curso">
+                            <option value="0">Selecione seu curso</option>
+                              <optgroup label="Ciências biológicas e da Saúde">
+                                <option>Biologia</option>
+                                <option>Biologia marinha</option>
+                                <option>Biomedicina</option>
+                                <option>Botânica</option>
+                                <option>Ciências Agrárias</option>
+                                <option>Ciências Ambientais</option>
+                                <option>Ciências Biológicas</option>
+                                <option>Ciências da Saúde</option>
+                                <option>Ciências do Meio Aquático</option>
+                                <option>Ecologia</option>
+                                <option>Educação física</option>
+                                <option>Enfermagem</option>
+                                <option>Fisioterapia</option>
+                                <option>Fonoaudiologia</option>
+                                <option>Gerontologia</option>
+                                <option>Medicina</option>
+                                <option>Medicina veterinária</option>
+                                <option>Meteorologia</option>
+                                <option>Microbiologia e Imunologia</option>
+                                <option>Naturologia</option>
+                                <option>Neurociência</option>
+                                <option>Nutrição</option>
+                                <option>Odontologia</option>
+                                <option>Quiropraxia</option>
+                                <option>Saúde Coletiva</option>
+                                <option>Terapia ocupacional</option>
+                                <option>Zootecnia</option>
+                                <option>Aquacultura</option>
+                                <option>Cafeicultura</option>
+                                <option>Biotecnologia</option>
+                                <option>Ciência dos Alimentos</option>
+                                <option>Cosmetologia</option>
+                                <option>Drenagem e Irrigação</option>
+                                <option>Enologia</option>
+                                <option>Fruticultura</option>
+                                <option>Gestão de Recursos Hídricos</option>
+                                <option>Horticultura</option>
+                                <option>Meliponicultura</option>
+                                <option>Oftálmica</option>
+                                <option>Radiologia</option>
+                                <option>Silvicultura</option>
+                                <option>Sistemas Biomédicos</option>                            
+                              </optgroup>
+                              <optgroup label="Ciências Exatas">
+                                <option>Agronomia</option>
+                                <option>Astronomia</option>
+                                <option>Bioengenharia</option>
+                                <option>Biofísica</option>
+                                <option>Ciências Contábeis</option>
+                                <option>Ciência da Computação</option>
+                                <option>Ciências Biomoleculares</option>
+                                <option>Ciências Matemáticas da Terra</option>
+                                <option>Ciências Naturais </option>
+                                <option>Ciências Náuticas</option>
+                                <option>Ciência & Tecnologia</option>
+                                <option>Educação do Campo </option>
+                                <option>Engenharia aeroespacial</option>
+                                <option>Engenharia aeronáutica</option>
+                                <option>Engenharia Agrícola</option>
+                                <option>Engenharia de Alimentos</option>
+                                <option>Engenharia Ambiental</option>
+                                <option>Engenharia biomédica</option>
+                                <option>Engenharia Cartográfica</option>
+                                <option>Engenharia Civil</option>
+                                <option>Engenharia de Computação</option>
+                                <option>Engenharia de controle e automação</option>
+                                <option>Engenharia Elétrica</option>
+                                <option>Engenharia Física</option>
+                                <option>Engenharia Florestal</option>
+                                <option>Engenharia geológica</option>
+                                <option>Engenharia Industrial Madeireira</option>
+                                <option>Engenharia de manufatura</option>
+                                <option>Engenharia de Materiais</option>
+                                <option>Engenharia Mecânica</option>
+                                <option>Engenharia Mecatrônica</option>
+                                <option>Engenharia Metalúrgica</option>
+                                <option>Engenharia Militar</option>
+                                <option>Engenharia de Minas</option>
+                                <option>Engenharia Naval e Oceânica</option>
+                                <option>Engenharia Nuclear</option>
+                                <option>Engenharia de Pesca</option>
+                                <option>Engenharia de Petróleo</div>
+                                <option>Engenharia de Produção</option>
+                                <option>Engenharia Química</option>
+                                <option>Engenharia Sanitária</option>
+                                <option>Engenharia de Sistemas Eletrônicos</option>
+                                <option>Engenharia de Software</option>
+                                <option>Engenharia de Tecidos</option>
+                                <option>Engenharia de Telecomunicações</option>
+                                <option>Engenharia Têxtil</option>
+                                <option>Estatística</option>
+                                <option>Farmácia (ou Bioquímica)</option>
+                                <option>Física</option>
+                                <option>Física computacional</option>
+                                <option>Física médica</option>
+                                <option>Geofísica</option>
+                                <option>Geologia</option>
+                                <option>Geoprocessamento e Sensoriamento Remoto</option>
+                                <option>Informática</option>
+                                <option>Informática biomédica</option>
+                                <option>Matemática</option>
+                                <option>Matemática Aplicada</option>
+                                <option>Matemática computacional</option>
+                                <option>Nanotecnologia</option>
+                                <option>Oceanografia </option>
+                                <option>Química </option>
+                                <option>Química ambiental</option>
+                                <option>Química industrial</option>
+                                <option>Sistemas de Informação</option>
+                                <option>Agrimensura</option>
+                                <option>Agroindústria</option>
+                                <option>Análise e Desenvolvimento de Sistemas</option>
+                                <option>Automação Industrial</option>
+                                <option>Biocombustíveis</option>
+                                <option>Ciências Aeronáuticas</option>
+                                <option>Ciência dos materiais</option>
+                                <option>Construção de Edifícios</option>
+                                <option>Construção de Estradas</option>
+                                <option>Construção Naval</option>
+                                <option>Energias Renováveis</option>
+                                <option>Gestão da Tecnologia da Informação</option>
+                                <option>Gestão de Petróleo e Gás</option>
+                                <option>Gestão Portuária</option>
+                                <option>Manutenção Industrial</option>
+                                <option>Mecatrônica e Mecânica de Precisão</option>
+                                <option>Mineração</option>
+                                <option>Processos Metalúrgicos</option>
+                                <option>Processamento de Dados</option>
+                                <option>Produção de Laticínios</option>
+                                <option>Produção de Materiais Plásticos</option>
+                                <option>Produção Têxtil</option>
+                                <option>Produção Sucroalcooeira</option>
+                                <option>Projetos de Estruturas Aeronáuticas</option>
+                                <option>Redes de Computadores</option>
+                                <option>Redes de Telecomunicações</option>
+                                <option>Saneamento Ambiental</option>
+                                <option>Segurança da Informação</option>
+                                <option>Sistemas Biomédicos</option>
+                                <option>Sistemas Elétricos</option>
+                                <option>Sistemas Embarcados</option>
+                                <option>Sistemas de Navegação Fluvial</option>
+                                <option>Sistemas para Internet</option>
+                                <option>Telemática</option>
+                              </optgroup>
+                              <optgroup label="Ciências Humanas">
+                                <option>Administração</option>
+                                <option>Antropologia</option>
+                                <option>Arqueologia</option>
+                                <option>Arquitetura</option>
+                                <option>Arquivística</option>
+                                <option>Artes Cênicas</option>
+                                <option>Artes Visuais </option>
+                                <option>Biblioteconomia</option>
+                                <option>Ciências Atuariais</option>
+                                <option>Ciências Contábeis</option>
+                                <option>Ciências Humanas</option>
+                                <option>Ciência Política (ou Ciências do Estado)</option>
+                                <option>Ciências Sociais</option>
+                                <option>Cinema</option>
+                                <option>Comunicação social</option>
+                                <option>Dança</option>
+                                <option>Defesa e Gestão Estratégica Internacional</option>
+                                <option>Desenho Industrial</option>
+                                <option>Design de Interiores</option>
+                                <option>Design de Moda</option>
+                                <option>Direito</option>
+                                <option>Economia</option>
+                                <option>Economia Doméstica</option>
+                                <option>Editoração</option>
+                                <option>Educação Artística</option>
+                                <option>Escultura</option>
+                                <option>Filosofia </option>
+                                <option>Gastronomia</option>
+                                <option>Geografia</option>
+                                <option>Gestão Ambiental</option>
+                                <option>Gestão Pública</option>
+                                <option>Gravurismo</option>
+                                <option>História</option>
+                                <option>História da Arte</option>
+                                <option>Hotelaria</option>
+                                <option>Jornalismo</option>
+                                <option>Letras</option>
+                                <option>Linguística</option>
+                                <option>Museologia</option>
+                                <option>Música</option>
+                                <option>Ordenamento do Território</option>
+                                <option>Paisagismo</option>
+                                <option>Pedagogia</option>
+                                <option>Pintura</option>
+                                <option>Psicologia</option>
+                                <option>Publicidade & Propaganda</option>
+                                <option>Produção Audiovisual</option>
+                                <option>Produção Cultural</option>
+                                <option>Relações Internacionais</option>
+                                <option>Relações Públicas</option>
+                                <option>Segurança Pública</option>
+                                <option>Serviço Social</option>
+                                <option>Sociologia</option>
+                                <option>Teatro</option>
+                                <option>Teologia</option>
+                                <option>Transporte Terrestre</option>
+                                <option>Turismologia</option>
+                                <option>Urbanismo</option>
+                                <option>Agroecologia</option>
+                                <option>Comércio Exterior</option>
+                                <option>Cooperativismo</option>
+                                <option>Design de Jogos Digitais</option>
+                                <option>Design de produto</option>
+                                <option>Design gráfico</option>
+                                <option>Eventos</option>
+                                <option>Esporte e Lazer</option>
+                                <option>Fotografia</option>
+                                <option>Gestão do Agronegócio</option>
+                                <option>Gestão Comercial</option>
+                                <option>Gestão Financeira</option>
+                                <option>Gestão Hospitalar</option>
+                                <option>Gestão de Segurança Privada</option>
+                                <option>Gestão da Qualidade</option>
+                                <option>Logística</option>
+                                <option>Mercadologia</option>
+                                <option>Negócios Imobiliários</option>
+                                <option>Processos Escolares</option>
+                                <option>Produção de Aguardente</option>
+                                <option>Produção Fonográfica</option>
+                                <option>Recursos Humanos</option>
+                                <option>Secretariado</option>
+                                <option>Segurança no Trabalho</option>
+                                <option>Transporte Aéreo</option>
+                                <option>Gestão em serviços jurídicos e notariais</option>
+                                  </optgroup>
+                            </select>
+                        </div>
+                      </div>
+                    </li>
+                    <div id="space_line"></div>
+                    <li class="item-content item-input" id="itens">
+                      <div class="item">
+                        <i class="icon demo-list-icon"></i>
+                      </div>
+                      <div class="item-inner">
+                        <div class="item-title item-label"><h3>* Grau Académico</h3></div>
+                        <div class="item-input-wrap">
+                          <select id="grau">
+                                <option value='0'>Selecione seu grau</option> 
+                                <option>Bacharelado</option> 
+                                <option>Licenciatura</option>
+                                <option>Pós graduação</option>
+                                <option>Mestrado</option>
+                                <option>Doutorado</option>
+                          </select>
+                        </div>
+                      </div>
+                    </li>
+              <div class="block">
+                <p class="row">
+                  <center>
+                      <a class="popup-open" href="#" data-popup=".popup-dados_estudante"  id="dados_estudante"></a>
+                      <button class="col button button-big col button button-fill color-green" onclick="nextstep2()">Próximo</button>
+                </p>
+              </div>
+           </ul>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
+
+
+<!--where studing  -->
+<div class="popup popup-dados_estudante">
+    <div class="view">
+     <div class="page">
+       <div class="navbar">
+         <div class="navbar-inner">
+           <div class="title">Seus dados</div>
+           <div class="right">
+             <a class="link popup-close">Voltar</a>
+           </div>
+         </div>
+       </div>
+         <div class="page-content">
+            <div data-page="index" class="page">
+              <div class="page-content">
+               <div class="list no-hairlines-md">
+                 <ul>
+                    <div id="space_line"></div>
+                    <li class="item-content item-input" id="itens">
+                        <div class="item">
+                          <i class="icon demo-list-icon"></i>
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title item-label"><h3>* Nome</h3></div>
+                          <div class="item-input-wrap">
+                            <input type="text" placeholder="Seu nome" id="nome">
+                            <span class="input-clear-button"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <div id="space_line"></div>
+                      <li class="item-content item-input" id="itens">
+                        <div class="item">
+                          <i class="icon demo-list-icon"></i>
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title item-label"><h3>* E-mail</h3></div>
+                          <div class="item-input-wrap">
+                            <input type="text" placeholder="Seu e-mail" id="email">
+                            <span class="input-clear-button"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <div id="space_line"></div>
+                      <li class="item-content item-input" id="itens">
+                        <div class="item">
+                          <i class="icon demo-list-icon"></i>
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title item-label">* Senha</div>
+                          <div class="item-input-wrap">
+                            <input type="password" placeholder="Sua senha" id="senha">
+                            <span class="input-clear-button"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <div id="space_line"></div>
+                      <li class="item-content item-input" id="itens">
+                        <div class="item">
+                          <i class="icon demo-list-icon"></i>
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title item-label">* Confirma Senha</div>
+                          <div class="item-input-wrap">
+                            <input type="password" placeholder="Confirma senha" id="conf_senha">
+                            <span class="input-clear-button"></span>
+                          </div>
+                        </div>
+                      </li>
+                        <div class="block">
+                            <p class="row">
+                              <center>
+                                  <a class="popup-open" href="#" data-popup=".popup-dados_caracteristicas" id="dados_caracteristicas"></a>
+                                  <button class="col button button-big col button button-fill color-green" onclick="nextstep3()">Próximo</button>
+                            </p>
+                          </div>
+                    </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
+
+
+
+<!--where studing  -->
+<div class="popup popup-dados_caracteristicas">
+    <div class="view">
+     <div class="page">
+       <div class="navbar">
+         <div class="navbar-inner">
+           <div class="title">Seus dados</div>
+           <div class="right">
+             <a class="link popup-close">Voltar</a>
+           </div>
+         </div>
+       </div>
+         <div class="page-content">
+            <div data-page="index" class="page">
+              <div class="page-content">
+               <div class="list no-hairlines-md">
+                 <ul>
+                    <div id="space_line"></div>
+                    <li class="item-content item-input" id="itens">
+                        <div class="item">
+                          <i class="icon demo-list-icon"></i>
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title item-label">* Sexo</div>
+                          <div class="item-input-wrap">
+                            <select id="sexo">
+                              <option>Masculino</option>
+                              <option>Feminino</option>
+                              <option>Outros  </option>
+                            </select>
+                          </div>
+                        </div>
+                      </li>
+                      <div id="space_line"></div>
+                      <li class="item-content item-input" id="itens">
+                        <div class="item">
+                          <i class="icon demo-list-icon"></i>
+                        </div>
+                        <!--estado onde a pessoa estudo-->
+                        <div class="item-inner">
+                          <div class="item-title item-label">* Estado Civil.</div>
+                          <div class="item-input-wrap">
+                            <select id="estado_civil">
+                                <option value="">Estado Civil.</option>
+                                <option value="1">Solteiro</option>
+                                <option value="2">Em um relacionamento sério</option>
+                            </select>
+                          </div>
+                        </div>
+                      </li>
+                      <div id="space_line"></div>
+                      <li class="item-content item-input" id="itens">
+                        <div class="item">
+                          <i class="icon demo-list-icon"></i>
+                        </div>
+                        <!--estado onde a pessoa estudo-->
+                        <div class="item-inner">
+                          <div class="item-title item-label"><h3>* Cor do Cabelo.</h3></div>
+                          <div class="item-input-wrap">
+                            <select id="cor_cabelo">
+                              <optgroup label="Selecione a ele e claro ou escuro">
+                                  <option>Selecione</option>
+                                <option value="1">Loiro</option>
+                                <option value="2">E</option>
+                                <option value="4">Outros ex.: </option>
+                              </optgroup>
+                            </select>
+                          </div>
+                        </div>
+                      </li> 
+                      <div id="space_line"></div>
+                      <li class="item-content item-input" id="itens">
+                        <div class="item">
+                          <i class="icon demo-list-icon"></i>
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title item-label">Link de redes sociais</div>
+                          <div class="item-input-wrap">
+                            <input type="text" placeholder="Link" id="link_rede">
+                            <span class="input-clear-button"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <div id="space_line"></div>
+                      <li class="item-content item-input" id="itens">
+                        <div class="item">
+                          <i class="icon demo-list-icon"></i>
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title item-label">* Número Celular</div>
+                          <div class="item-input-wrap">
+                            <input type="text" maxlength="13" OnKeyPress="formatar('##-#####-####', this)" id="numero_cell">
+                            <span class="input-clear-button"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <div class="block">
+                          <p class="row">
+                            <center>
+                                <a class="popup-open" href="#" data-popup=".popup-photo_perfil" id="foto_perfi"> </a>
+                                <button class="col button button-big col button button-fill color-green" onclick="nextstep4()">Próximo</button>
+                          </p>
+                        </div>
+
+                      
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
 <!--photo profile -->
  <div class="popup popup-photo_perfil">
    <div class="view">
@@ -863,53 +1005,108 @@
 		});	
 
   function nextstep () {
+      var estado_m = $("#estado_m").val();
+      var cidade_m = $("#cidade_m").val();
+      var estado_e = $("#estado_e").val();
+      var cidade_e = $("#cidade_e").val();
+      alert(cidade_e);
+      if (estado_m == '' || cidade_m == '' || estado_e == '' || cidade_e == ''){
+         input_vazio.open();
+      } else{
+          document.getElementById('open_estuda').click();
+      }
+  }
 
-  	var estado = $("#estado").val();
-  	var cidade = $("#cidade").val();
-  	var univer = $("#univer").val();
-  	var nome = $("#nome").val();
-  	var email = $("#email").val();
-  	var senha = $("#senha").val();
-  	var conf_senha = $("#conf_senha").val();
-    var sexo = $("#sexo").val();
-  	var link_rede = $("#link_rede").val();
-  	var numero_cell = $("#numero_cell").val();
-    var estado_civil = $("#estado_civil").val();
-  	
-  	if (estado == '' ||  
-  		cidade == '' || 
-  		univer == '' ||
-  		nome ==  ''  ||
-  		email ==  '' ||
-  		senha ==  '' ||
-  		conf_senha == '' || 
-  		sexo ==  ''  ||
-  		numero_cell == '' ||
-      estado_civil == '') 
-  	{
+  function nextstep2 () {
+      var univer = $("#univer").val();
+      var curso = $("#curso").val();
+      var grau = $("#grau").val();
 
-  	  $("#open_perfil").disabled = true;
-  	  input_vazio.open();
+      //universidade esta com 1 temporariamente
+      univer = 1;
+      if (univer == 0 || curso == 0 || grau == 0){
+         input_vazio.open();
+      } else{
+          document.getElementById('dados_estudante').click();
+      }
+  }
+  
+  function nextstep3 () {
+      var nome = $("#nome").val();
+      var email = $("#email").val();
+      var senha = $("#senha").val();
+      
+      alert(nome+'=>'+email+'=>'+senha);
+
+      var confsenha = $("#conf_senha").val();
+      if (nome == '' || email == '' || senha == '' || confsenha == ''){
+         input_vazio.open();
+      }
+      else if (senha !== confsenha ) {
+          senhas.open();
+          return 0; 
+      } else{
+          document.getElementById('dados_caracteristicas').click();
+      }
+  }
+
+  //fabricio
+  function nextstep4 () {
+      var nome = $("#sexo").val();
+      var email = $("#estado_civil").val();
+      var senha = $("#cor_cabelo").val();
+      var senha = $("#link_red").val();
+      var senha = $("#numero_cell").val();
+      alert(nome+'=>'+email+'=>'+senha);
+
+      var confsenha = $("#conf_senha").val();
+      if (nome == '' || email == '' || senha == '' || confsenha == ''){
+         input_vazio.open();
+      }
+      else if (senha !== confsenha ) {
+          senhas.open();
+          return 0; 
+      } else{
+          document.getElementById('foto_perfi').click();
+      }
+  }
+  	// if (estado == '' ||  
+  	// 	cidade == '' || 
+  	// 	univer == '' ||
+  	// 	nome ==  ''  ||
+  	// 	email ==  '' ||
+  	// 	senha ==  '' ||
+  	// 	conf_senha == '' || 
+  	// 	sexo ==  ''  ||
+  	// 	numero_cell == '' ||
+    //   estado_civil == '') 
+  	// {
+
+  	//   $("#open_perfil").disabled = true;
+  	//   input_vazio.open();
   	
-  	}
-  	else {
-  	  if (senha !== conf_senha) {
-		senhas.open();
-  	  	return 0;
-  	  }
-  	  if (senha.length < 8 || senha.length > 8) {
-  	    quant_senha.open();
-  	  	return 0;
-  	  }
-  	  if (numero_cell.length < 13 || numero_cell.match(['[@!#$%¨&*+_´`^~;:?abcdefghijklmnopqrstuvwyxzáÁéÉíÍóÓúÚãÃçÇ|\?,./{}"<>() ]'])) {
-  	  	num_celular.open(); 
-  	  	return 0;
-  	  }
-  	  else {
-  	    document.getElementById('open_perfil').click();
-      } 
-   }		 
-}
+  	// }
+
+
+//   //parte da senha 
+//   	else {
+//   	  if (senha !== conf_senha) {
+// 		senhas.open();
+//   	  	return 0;
+//   	  }
+//   	  if (senha.length < 8 || senha.length > 8) {
+//   	    quant_senha.open();
+//   	  	return 0;
+//   	  }
+//   	  if (numero_cell.length < 13 || numero_cell.match(['[@!#$%¨&*+_´`^~;:?abcdefghijklmnopqrstuvwyxzáÁéÉíÍóÓúÚãÃçÇ|\?,./{}"<>() ]'])) {
+//   	  	num_celular.open(); 
+//   	  	return 0;
+//   	  }
+//   	  else {
+//   	    document.getElementById('open_perfil').click();
+//       } 
+//    }		 
+// }
 
 //sobe imagem de perfil para o front-end
 $("#fileUpload").on('change', function () {
@@ -1003,7 +1200,7 @@ function crt_cont () {
 $('#estado_m').on('change', function() {
   var estado = $("#estado_m").val();
        $.ajax({
-          url : "https://b108ed6a.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+          url : "http://localhost/REDE_SOCIAL/BACK-END/request.php",
           dataType: 'JSON',
           type : 'post',
           data : {
@@ -1017,7 +1214,7 @@ $('#estado_m').on('change', function() {
      })
      .done(function(msg){
         var jsonData = msg; 
-        var cidades = "<option >Selecione a Cidade onde você mora.</option>";
+        var cidades = "<option value=''>Selecione a Cidade onde você mora.</option>";
         for (var i = 0; i < jsonData.length; i++) {
           cidades += "<option>"+jsonData[i].cidade+"</option>";
          }
@@ -1032,7 +1229,7 @@ $('#estado_m').on('change', function() {
   $('#estado_e').on('change', function() {
     var estado = $("#estado_e").val();
          $.ajax({
-            url :"https://b108ed6a.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+            url :"http://localhost/REDE_SOCIAL/BACK-END/request.php",
             dataType: 'JSON',
             type : 'post',
             data : {
@@ -1046,7 +1243,7 @@ $('#estado_m').on('change', function() {
        })
        .done(function(msg){
              var jsonData = msg; 
-            var cidades = "<option >Selecione a Cidade onde você estuda.</option>";
+            var cidades = "<option value=''>Selecione a Cidade onde você estuda.</option>";
             for (var i = 0; i < jsonData.length; i++) {
               cidades += "<option>"+jsonData[i].cidade+"</option>";
             }
