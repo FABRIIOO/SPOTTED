@@ -1,132 +1,5 @@
 
-
-<!DOCTYPE html><script type="text/javascript" src="/socket.io/socket.io.js"></script><script type="text/javascript">//
-// Reload the app if server detects local change
-//
-(function() {
-    var url = 'http://' + document.location.host + '/__api__/autoreload';
-
-    function postStatus() {
-        var xhr = new XMLHttpRequest();
-        xhr.open('post', url, true);
-        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-        xhr.onreadystatechange = function() {
-            if (this.readyState === 4 && /^[2]/.test(this.status)) {
-            }
-        };
-        xhr.send();
-    }
-
-    function checkForReload() {
-        var xhr = new XMLHttpRequest();
-        xhr.open('get', url, true);
-        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-        xhr.onreadystatechange = function() {
-            if (this.readyState === 4 && /^[2]/.test(this.status)) {
-                var response = JSON.parse(this.responseText);
-                if (response.content.outdated) {
-                    postStatus();
-                    window.location.reload();
-                }
-            }
-        };
-        xhr.send();
-    }
-
-    setInterval(checkForReload, 1000 * 3);
-})(window);
-</script>
-<script type="text/javascript">(function(window) {
-    var socket = io('http://' + document.location.host);
-
-    // Copy the functions to avoid stack overflow
-    var previousConsole = Object.assign({}, window.console);
-
-    // Overwrite these individually to preserve other log properties
-    window.console.log = function() {
-        if(previousConsole.log) {
-            previousConsole.log.apply(previousConsole, arguments);
-        }
-        socket.emit('console','log', Array.prototype.slice.call(arguments).join(' '));
-    };
-
-    window.console.warn = function() {
-        if(previousConsole.warn) {
-            previousConsole.warn.apply(previousConsole, arguments);
-        }
-        socket.emit('console','warn', Array.prototype.slice.call(arguments).join(' '));
-    };
-
-    window.console.error = function() {
-        if(previousConsole.error) {
-            previousConsole.error.apply(previousConsole, arguments);
-        }
-        socket.emit('console','error', Array.prototype.slice.call(arguments).join(' '));
-    };
-
-    window.console.assert = function(assertion) {
-        if(previousConsole.assert) {
-            previousConsole.assert.apply(previousConsole, arguments);
-        }
-        if(assertion) {
-            socket.emit('console','assert', Array.prototype.slice.call(arguments, 1).join(' '));
-        }
-    };
-})(window);
-</script>
-<script type="text/javascript">//
-// Proxy
-///
-// Intercept XHR calls that would violate single-origin policy.
-// These requests will be proxied through the server.
-//
-(function() {
-    var xhr = {};
-    xhr.open = XMLHttpRequest.prototype.open;
-
-    XMLHttpRequest.prototype.open = function(method, url) {
-        var parser = document.createElement('a');
-        parser.href = url;
-
-        // WP8 does not set hostname on some XHRs
-        if (!parser.hostname) {
-            parser.hostname = window.location.hostname;
-        }
-
-        // proxy the cross-origin request
-        if (!parser.hostname.match(window.location.hostname)) {
-            url = '/proxy/' + encodeURIComponent(url);
-        }
-
-        xhr.open.apply(this, arguments);
-    };
-})(window);
-</script>
-<script type="text/javascript">//
-// Push notification
-//
-(function() {
-    document.addEventListener('deviceready', function() {
-        var oldPushNotification;
-        if (window.PushNotification) {
-            oldPushNotification = window.PushNotification;
-            window.PushNotification.init = function(options) {
-                if (options.android) {
-                    options.android.senderID = "996231231186";
-                    options.android.icon = "pushicon";
-                    options.android.iconColor = "blue";
-                }
-                var pgdevPush = new oldPushNotification.PushNotification(options);
-                pgdevPush.on('registration', function(data) {
-                    console.log('Device Push ID: \n' + data.registrationId);
-                });
-                return pgdevPush;
-            };
-        }
-    });
-})(window);
-</script>
-
+<!DOCTYPE html>
 <html>
   <head>
     <!-- Required meta tags-->
@@ -241,9 +114,26 @@
 
 /* div onde esta localizado os radios da tamanho do cabelo */
 #quadro_cabelo {
-  margin-top: -60px;
+   border-radius: 9px;
+   border: 1px solid #2196f3;
+   margin-left: 20px;
+   margin-right: 20px;
+   padding-top: 10px;
 }
 
+/* titulo inicial das caracteristicas */
+.titulo_carac_ini {
+  font-size: 15px;
+  color: #454545;
+  margin: 20px;
+
+}
+
+/* titulo dos radios */
+.title_carac {
+  color: #454545; 
+  font-size: 18px;
+}
 
   </style> 
   </head>
@@ -412,7 +302,7 @@
             <div class="tab tab-active" id="tab1">
               <div class="block">
                 <div id="pass_one">
-                  <ul>
+                  <ul style="margin-top: -80px">
                       <li class="item-content item-input" id="itens">
                         <!-- estado onde a pessoa mora-->
                         <div class="item-inner">
@@ -908,40 +798,137 @@
                    </div>
                 </div>
              </div>
+
             <div class="tab" id="tab3">
-              <div class="block">
-                          <div id="quadro_cabelo">
-                              <h4>Diga nos o tamanho do seu cabelo</h4>
-                              <label><label class="radio"><input type="radio" name="cabelo"><i class="icon-radio"></i></label> Cabelo Curto </label>
-                              <div id="space_radio"></div>
-                              <label><label class="radio"><input type="radio" name="cabelo"><i class="icon-radio"></i></label> Cabelo Médio </label>
-                              <div id="space_radio"></div>
-                              <label><label class="radio"><input type="radio" name="cabelo"><i class="icon-radio"></i></label> Cabelo Longo </label>
-                            </p>
-                          </div>
-                          <div id="space_line"></div>
-                          <div>
-                              <h4>Diga nos se você usa relógio com frequência.</h4>
-                              <label><label class="radio"><input type="radio" name="relogio"><i class="icon-radio"></i></label> Sim, uso relógio.</label>
-                              <div id="space_radio"></div>
-                              <label><label class="radio"><input type="radio" name="relogio"><i class="icon-radio"></i></label> Não, uso relógio.</label>
-                              <div id="space_radio"></div>
-                             </p>
-                          </div>
-                          <div id="space_line"></div>
-                          <div>
-                              <h4>Diga nos se você usa alguma pulseira.</h4>
-                              <label><label class="radio"><input type="radio" name="pulseira"><i class="icon-radio"></i></label> Sim, uso pulseira.</label>
-                              <div id="space_radio"></div>
-                              <label><label class="radio"><input type="radio" name="pulseira"><i class="icon-radio"></i></label> Não, uso com muita frequência.</label>
-                              <div id="space_radio"></div>
-                             </p>
-                          </div>
-                          
-                
-
-
-              </div>
+              <div style="margin-top: -80px;">      
+                    <div id="quadro_cabelo" class="block">
+                      <p class="title_carac">Diga nos o tamanho do seu cabelo</p>
+                          <label>
+                            <label class="radio">
+                              <input type="radio" name="cabelo" autofocus>
+                              <i class="icon-radio"></i>
+                            </label> 
+                            Cabelo Curto
+                          </label>
+                        <div id="space_radio"></div>
+                          <label>
+                            <label class="radio">
+                              <input type="radio" name="cabelo">
+                              <i class="icon-radio"></i>
+                            </label> 
+                            Cabelo Médio 
+                          </label>
+                        <div id="space_radio"></div>
+                          <label>
+                            <label class="radio">
+                              <input type="radio" name="cabelo">
+                              <i class="icon-radio"></i>
+                            </label> 
+                          Cabelo Longo
+                        </label>
+                      <div id="space_radio"></div>
+                    </div>
+                  <div id="space_line"></div>
+                    <div id="quadro_cabelo" class="block">
+                      <p class="title_carac">Diga nos se você usa relógio com frequência.</p>
+                        <label>
+                          <label class="radio">
+                            <input type="radio" name="relogio">
+                            <i class="icon-radio"></i>
+                          </label> 
+                        Sim, uso relógio.
+                        </label>
+                      <div id="space_radio"></div>
+                        <label>
+                          <label class="radio">
+                            <input type="radio" name="relogio">
+                            <i class="icon-radio"></i>
+                          </label>
+                          Não, uso relógio.
+                        </label>
+                      <div id="space_radio"></div>
+                    </div>
+                  <div id="space_line"></div>
+                    <div id="quadro_cabelo" class="block">
+                      <p class="title_carac">Diga nos se você usa alguma pulseira.</p>
+                        <label>
+                          <label class="radio">
+                            <input type="radio" name="pulseira">
+                            <i class="icon-radio"></i>
+                          </label>
+                            Sim, uso pulseira.
+                        </label>
+                      <div id="space_radio"></div>
+                        <label>
+                          <label class="radio">
+                            <input type="radio" name="pulseira">
+                            <i class="icon-radio"></i>
+                          </label> 
+                          Não, uso com muita frequência.
+                        </label>
+                      <div id="space_radio"></div>
+                    </div>
+                  <div id="space_line"></div>
+                    <div id="quadro_cabelo" class="block">
+                      <p class="title_carac">Diga nos se você usa piercings.</p>
+                        <label>
+                          <label class="radio">
+                            <input type="radio" name="piercings">
+                            <i class="icon-radio"></i>
+                          </label> 
+                          Sim, possuo piercings.
+                        </label>
+                      <div id="space_radio"></div>
+                        <label>
+                          <label class="radio">
+                            <input type="radio" name="piercings">
+                            <i class="icon-radio"></i>
+                          </label>
+                          Não, possuo piercings.
+                        </label>
+                      <div id="space_radio"></div>
+                  </div>
+                <div id="space_line"></div>
+                  <div id="quadro_cabelo" class="block">
+                    <p class="title_carac">Diga nos se você usa boné.</p>
+                      <label>
+                        <label class="radio">
+                          <input type="radio" name="bone">
+                          <i class="icon-radio"></i>
+                        </label> 
+                        Sim, uso bone com frequência.
+                      </label>
+                    <div id="space_radio"></div>
+                      <label>
+                        <label class="radio">
+                          <input type="radio" name="bone">
+                          <i class="icon-radio"></i>
+                        </label>
+                        Não, uso bone com frequência.
+                      </label>
+                    <div id="space_radio"></div>
+                </div>
+                <div id="space_line"></div>
+                  <div id="quadro_cabelo" class="block">
+                    <p class="title_carac">Diga nos se você tem alguma tatuagem.</p>
+                      <label>
+                        <label class="radio">
+                          <input type="radio" name="tatuagem">
+                          <i class="icon-radio"></i>
+                        </label> 
+                        Sim, tenho tatuagem.
+                      </label>
+                    <div id="space_radio"></div>
+                      <label>
+                        <label class="radio">
+                          <input type="radio" name="tatuagem">
+                          <i class="icon-radio"></i>
+                        </label>
+                        Não, tenho tatuagem.
+                      </label>
+                    <div id="space_radio"></div>
+                </div>
+            </div>
             </div>
               <div class="tab" id="tab4">
                   <div class="block">
@@ -997,13 +984,7 @@
 
   var app = new Framework7();
   	  var $$ = Dom7;
-  	    // msg for passwords
-		var senhas = app.toast.create({
-		  text: 'As senhas digitadas são diferentes!',
-		  position: 'top',
-		  closeTimeout: 2000,
-		});
-
+  
 	  	// msg for inputs 
 		var input_vazio = app.toast.create({
 		  text: 'Por favor, preencha todos os campos obrigatórios.',
@@ -1025,7 +1006,7 @@
 		  closeTimeout: 2500,
 		});
 			
-	    // password incomplet 
+	  // password incomplet 
 		var quant_senha = app.toast.create({
 		  text: 'A senha deve possuir 8 caractére.',
 		  position: 'top',
@@ -1037,7 +1018,16 @@
 		  text: 'Digite um número de celular valido.',
 		  position: 'top',
 		  closeTimeout: 2500,
-		});	
+		});
+    
+    // Create notification with close button
+    var notificationWithButton = app.notification.create({
+      icon: '',
+      title: 'SPOTTED',
+      subtitle: '<h3>Importante!</h3>',
+      text: 'Diga nos algumas informações pessoais sobre você. Isso é muito importante, pois outras pessoas iram te encontrar através dessas características',
+      closeButton: true,
+    });
 
   //botao do "proximo" da primeira tela de cadastro
   function nextstep () {
@@ -1049,6 +1039,7 @@
   function nextstep2 () {
       document.getElementById('tabe3').click();
       $("#voltar").html("<a class='link tab-link' href='#tab2' onclick='voltar2()'>Voltar</a>");
+      notificationWithButton.open();
 
   }
 
@@ -1105,25 +1096,49 @@ $("#fileUpload").on('change', function () {
 });
 
 
-            $("#btn").on('click', function(){
+//sobe imagem de fundo para o front-end
+$("#fileUploadWall").on('change', function () {
+ 
+ if (typeof (FileReader) != "undefined") {
 
-                var data = new FormData();
-                data.append('fileimagem', $('#fileUploadWall')[0].files[0]);
+     var image_holder = $("#image-holder-wall");
+     image_holder.empty();
 
-                $.ajax({
-                    url: 'http://localhost/REDE_SOCIAL/BACK-END/up.php',
-                    data: data,
-                    processData: false,
-                    contentType: false,
-                    type: 'POST',
-                    success: function(data) 
-                    {
-                        alert(data);
-                    }
-                });
+     var reader = new FileReader();
+     reader.onload = function (e) {
+          $("#image-holder-wall").innerHTML = '';
+         $("<img />", {
+             "src": e.target.result,
+             "class": "thumb-image"
+         }).appendTo(image_holder);
 
+     }
+     image_holder.show();
+     reader.readAsDataURL($(this)[0].files[0]);
+ } else{
+     alert("Este navegador nao suporta FileReader.");
+ }
+});
+
+        // faz o upload da foto 
+        $("#btn").on('click', function(){
+            var data = new FormData();
+            data.append('fileimagem', $('#fileUploadWall')[0].files[0]);
+
+            $.ajax({
+                url: 'http://localhost/REDE_SOCIAL/BACK-END/up.php',
+                data: data,
+                processData: false,
+                contentType: false,
+                type: 'POST',
+                success: function(data) 
+                {
+                    alert(data);
+                }
             });
-        
+
+        });
+    
 
         
 		//document.getElementById('open_wall').click();
@@ -1132,31 +1147,6 @@ $("#fileUpload").on('change', function () {
 	//}
 
 
-
-
-//sobe imagem de fundo para o front-end
-$("#fileUploadWall").on('change', function () {
- 
-    if (typeof (FileReader) != "undefined") {
- 
-        var image_holder = $("#image-holder-wall");
-        image_holder.empty();
- 
-        var reader = new FileReader();
-        reader.onload = function (e) {
-             $("#image-holder-wall").innerHTML = '';
-            $("<img />", {
-                "src": e.target.result,
-                "class": "thumb-image"
-            }).appendTo(image_holder);
-
-        }
-        image_holder.show();
-        reader.readAsDataURL($(this)[0].files[0]);
-    } else{
-        alert("Este navegador nao suporta FileReader.");
-    }
-});
 
 //enter in the feed people 
 function EnterFeed () {
@@ -1187,92 +1177,64 @@ function changePsw () {
 // function flame city
 $('#estado_m').on('change', function() {
   var estado = $("#estado_m").val();
-       $.ajax({
-          url : "http://localhost/REDE_SOCIAL/BACK-END/request.php",
+       $.ajax({
+          url : "http://localhost/REDE_SOCIAL/BACK-END/request.php",
           dataType: 'JSON',
-          type : 'post',
-          data : {
+          type : 'post',
+          data : {
                "F":"ListaCidade",
-               "estado" : estado
-          },
-       
-          beforeSend : function(){
-               console.log("Enviando requisição...");
-          }
-     })
-     .done(function(msg){
+               "estado" : estado
+          },
+          beforeSend : function(){
+               console.log("Enviando requisição...");
+          }
+     })
+     .done(function(msg){
         var jsonData = msg; 
         var cidades = "<option value=''>Selecione a Cidade onde você mora.</option>";
         for (var i = 0; i < jsonData.length; i++) {
           cidades += "<option>"+jsonData[i].cidade+"</option>";
          }
-          $("#cidade_m").html(cidades);
-         
-     })
-     .fail(function(jqXHR, textStatus, msg){
-          console.log(msg);
-     }); 
+          $("#cidade_m").html(cidades);
+         
+     })
+     .fail(function(jqXHR, textStatus, msg){
+          console.log(msg);
+     }); 
 });
 
   $('#estado_e').on('change', function() {
     var estado = $("#estado_e").val();
-         $.ajax({
-            url :"http://localhost/REDE_SOCIAL/BACK-END/request.php",
+         $.ajax({
+            url :"http://localhost/REDE_SOCIAL/BACK-END/request.php",
             dataType: 'JSON',
-            type : 'post',
-            data : {
+            type : 'post',
+            data : {
                 "F":"ListaCidade",
-                 "estado" : estado
-            },
+                 "estado" : estado
+            },
         
-            beforeSend : function(){
-                 console.log("Enviando requisição...");
-            }
-       })
-       .done(function(msg){
-             var jsonData = msg; 
+            beforeSend : function(){
+                 console.log("Enviando requisição...");
+            }
+       })
+       .done(function(msg){
+             var jsonData = msg; 
             var cidades = "<option value=''>Selecione a Cidade onde você estuda.</option>";
             for (var i = 0; i < jsonData.length; i++) {
               cidades += "<option>"+jsonData[i].cidade+"</option>";
             }
-             $("#cidade_e").html(cidades);
-       })
-       .fail(function(jqXHR, textStatus, msg){
-            console.log(msg);
-       }); 
+             $("#cidade_e").html(cidades);
+       })
+       .fail(function(jqXHR, textStatus, msg){
+            console.log(msg);
+       }); 
   });
 
 //funcao para buscar as universidades 
 function acionaw () {
      alert("funciona");
   }
-
-function teste () {
-   alert("Entrou na funcao");
-    var img  =$("#fileUpload").val();
-    $.ajax({
-        url: 'http://localhost/REDE_SOCIAL/BACK-END/request.php',
-        type: 'POST',
-        data: {
-           "F":"FotodePerfil", 
-           "X1": img
-        },
-        success: function (data) {
-            alert(data)
-        }
-        // cache: false,
-        // contentType: false,
-        // processData: false,
-        // xhr: function() { 
-        //     var myXhr = $.ajaxSettings.xhr();
-        //     if (myXhr.upload) { 
-        //         myXhr.upload.addEventListener('progress', function () {
-        //         }, false);
-        //     }
-        // return myXhr;
-        // }
-    });
-}
 
 //funcao para finalizar cadastro de usuario
 function cadastra_usuario () {
@@ -1350,131 +1312,5 @@ function cadastra_usuario () {
 
 
 </script>
-  <script type="text/javascript" src="/socket.io/socket.io.js"></script><script type="text/javascript">//
-// Reload the app if server detects local change
-//
-(function() {
-    var url = 'http://' + document.location.host + '/__api__/autoreload';
-
-    function postStatus() {
-        var xhr = new XMLHttpRequest();
-        xhr.open('post', url, true);
-        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-        xhr.onreadystatechange = function() {
-            if (this.readyState === 4 && /^[2]/.test(this.status)) {
-            }
-        };
-        xhr.send();
-    }
-
-    function checkForReload() {
-        var xhr = new XMLHttpRequest();
-        xhr.open('get', url, true);
-        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-        xhr.onreadystatechange = function() {
-            if (this.readyState === 4 && /^[2]/.test(this.status)) {
-                var response = JSON.parse(this.responseText);
-                if (response.content.outdated) {
-                    postStatus();
-                    window.location.reload();
-                }
-            }
-        };
-        xhr.send();
-    }
-
-    setInterval(checkForReload, 1000 * 3);
-})(window);
-</script>
-<script type="text/javascript">(function(window) {
-    var socket = io('http://' + document.location.host);
-
-    // Copy the functions to avoid stack overflow
-    var previousConsole = Object.assign({}, window.console);
-
-    // Overwrite these individually to preserve other log properties
-    window.console.log = function() {
-        if(previousConsole.log) {
-            previousConsole.log.apply(previousConsole, arguments);
-        }
-        socket.emit('console','log', Array.prototype.slice.call(arguments).join(' '));
-    };
-
-    window.console.warn = function() {
-        if(previousConsole.warn) {
-            previousConsole.warn.apply(previousConsole, arguments);
-        }
-        socket.emit('console','warn', Array.prototype.slice.call(arguments).join(' '));
-    };
-
-    window.console.error = function() {
-        if(previousConsole.error) {
-            previousConsole.error.apply(previousConsole, arguments);
-        }
-        socket.emit('console','error', Array.prototype.slice.call(arguments).join(' '));
-    };
-
-    window.console.assert = function(assertion) {
-        if(previousConsole.assert) {
-            previousConsole.assert.apply(previousConsole, arguments);
-        }
-        if(assertion) {
-            socket.emit('console','assert', Array.prototype.slice.call(arguments, 1).join(' '));
-        }
-    };
-})(window);
-</script>
-<script type="text/javascript">//
-// Proxy
-///
-// Intercept XHR calls that would violate single-origin policy.
-// These requests will be proxied through the server.
-//
-(function() {
-    var xhr = {};
-    xhr.open = XMLHttpRequest.prototype.open;
-
-    XMLHttpRequest.prototype.open = function(method, url) {
-        var parser = document.createElement('a');
-        parser.href = url;
-
-        // WP8 does not set hostname on some XHRs
-        if (!parser.hostname) {
-            parser.hostname = window.location.hostname;
-        }
-
-        // proxy the cross-origin request
-        if (!parser.hostname.match(window.location.hostname)) {
-            url = '/proxy/' + encodeURIComponent(url);
-        }
-
-        xhr.open.apply(this, arguments);
-    };
-})(window);
-</script>
-<script type="text/javascript">//
-// Push notification
-//
-(function() {
-    document.addEventListener('deviceready', function() {
-        var oldPushNotification;
-        if (window.PushNotification) {
-            oldPushNotification = window.PushNotification;
-            window.PushNotification.init = function(options) {
-                if (options.android) {
-                    options.android.senderID = "996231231186";
-                    options.android.icon = "pushicon";
-                    options.android.iconColor = "blue";
-                }
-                var pgdevPush = new oldPushNotification.PushNotification(options);
-                pgdevPush.on('registration', function(data) {
-                    console.log('Device Push ID: \n' + data.registrationId);
-                });
-                return pgdevPush;
-            };
-        }
-    });
-})(window);
-</script>
-</body>
+  </body>
 </html>
