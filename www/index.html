@@ -3,24 +3,24 @@
 <html>
   <head>
     <!-- Required meta tags-->
-    <meta charset="utf-8">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-  <script src="js/jquery.js"></script>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="js/jquery.js"></script>
+    <script src="js/croppie.js"></script>
 
     <!-- Color theme for statusbar -->
     <meta name="theme-color" content="#2196f3">
-    <!-- Your app title -->
-    <title></title>
+
     <!-- Path to Framework7 Library CSS -->
     <link rel="stylesheet" href="css/framework7.min.css">
     <link rel="stylesheet" href="css/framework7.css">
     <link rel="stylesheet" href="css/framework7.md.css">
-
+    <!-- croppie -->
+    <link rel="stylesheet" href="css/croppie.css">
+    
     <!--fontes do google-->
     <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet">
-     <script src="https://github.com/lazd/iNoBounce/blob/master/inobounce.min.js"></script>
-
+    <script src="https://github.com/lazd/iNoBounce/blob/master/inobounce.min.js"></script>
     <script type="text/javascript" src="js/framework7.min.js"></script>
     <link rel="stylesheet" href="css\icons\framework7icons.css">
     <script type="text/javascript" src="cordova.js"></script>
@@ -135,26 +135,25 @@
   font-size: 18px;
 }
 
+/* enviar email, troca senha */
+#eviar_email{
+  border: 1px solid #2196f3;
+  border-radius: 9px;
+  margin: 15px;
+  margin-top: -10px;
+}
+
+/* estilo do input, (email para trocar senha) */
+#envia_email {
+  border-bottom: 1px solid #2196f3;
+}
+ 
+  
   </style> 
   </head>
   <body>
-<script>
 
-  //functio for validate phone
-  function formatar(mascara, documento) {
-    var i = documento.value.length;
-    var saida = mascara.substring(0, 1);
-    var texto = mascara.substring(i);
-      if (texto.substring(0, 1) != saida) {
-      documento.value += texto.substring(0, 1);
-    }
-
-  }
-
-
-
-</script>
-   
+ <main id="inicio">   
    <div data-page="index" class="page">
     <div class="page-content">
      <!-- start window login -->
@@ -169,7 +168,7 @@
             <div class="item-inner">
               <div class="item-title item-floating-label">E-mail</div>
               <div class="item-input-wrap">
-                  <input type="text">
+                  <input type="text" placeholder="E-mail" id="email_user">
                 <span class="input-clear-button"></span>
               </div>
             </div>
@@ -181,7 +180,7 @@
             <div class="item-inner">
               <div class="item-title item-floating-label">Senha</div>
               <div class="item-input-wrap">
-                <input type="password" placeholder="Your password">
+                <input type="password" placeholder="Senha" id="senha_user">
                 <span class="input-clear-button"></span>
               </div>
             </div>
@@ -193,7 +192,7 @@
        <div class="block" id="buttonss">
           <p>
             <a href="feed.html" class="link external">teste</a>
-           <button class="col button button-big button-fill">Entrar</button>
+           <button class="col button button-big button-fill" onclick="login()">Entrar</button>
           </p>
           <p class="row">
             <button class="col button button-big">
@@ -216,52 +215,32 @@
           </div>
         </div>
       </div>
-          <div class="page-content" style="margin-top: 30px;">
+          <div class="page-content">
             <div data-page="index" class="page">
               <div class="page-content">
+                  <p style="margin: 15px; font-size:18px; margin-top: 70px;">
+                    &nbsp;&nbsp;Insira  seu E-mail para redefinir sua senha de acesso. 
+                    Fique atento, pois iremos lhe enviar uma mensagem para que você possa redefinir sua senha.</h3>
+                      
                 <div class="list no-hairlines-md">
-                  <ul>
-                  <li class="item-content item-input">
-                    <div class="item">
-                      <i class="icon demo-list-icon"></i>
-                    </div>
-                    <div class="item-inner">
-                      <div class="item-title item-floating-label">E-mail</div>
-                      <div class="item-input-wrap">
-                        <input type="text" id="email_user">
-                        <span class="input-clear-button"></span>
+                      <ul>
+                        <li class="item-content item-input" id="eviar_email">
+                          <div class="item">
+                            <i class="icon demo-list-icon"></i>
+                          </div>
+                          <div class="item-inner">
+                            <div class="item-title item-label">* Seu E-mail.</div>
+                            <div class="item-input-wrap">
+                             <input type="text" id="envia_email">
+                            </div>
+                          </div>
+                        </li>                          
+                      <div class="block">
+                          <p class="row">
+                            <a class="popup-open" href="#" data-popup=".popup-dados_caracteristicas" id="dados_caracteristicas"></a>
+                            <button class="col button button-big col button button-fill color-green" onclick="TrocarSenha()" id="space_but">Próximo</button>
+                          </p>
                       </div>
-                    </div>
-                  </li>
-                  <li class="item-content item-input">
-                    <div class="item">
-                      <i class="icon demo-list-icon"></i>
-                    </div>
-                    <div class="item-inner">
-                      <div class="item-title item-floating-label">Nova senha</div>
-                      <div class="item-input-wrap">
-                        <input type="text" id="new_pass">
-                        <span class="input-clear-button"></span>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="item-content item-input">
-                    <div class="item">
-                      <i class="icon demo-list-icon"></i>
-                    </div>
-                    <div class="item-inner">
-                      <div class="item-title item-floating-label">Confirma senha</div>
-                      <div class="item-input-wrap">
-                        <input type="text" id="conf_pass">
-                        <span class="input-clear-button"></span>
-                      </div>
-                    </div>
-                  </li>
-                  <div class="block">
-                    <p class="row">
-                      <button class="col button button-big col button button-fill color-green" onclick="changePsw()">Confirmar</button>
-                    </p>
-                  </div>
                </ul>
              </div>
            </div>
@@ -293,7 +272,8 @@
                   <a class="button tab-link" href="#tab1"></a> 
                   <a class="button tab-link" href="#tab2" id="tabe2"></a> 
                   <a class="button tab-link" href="#tab3" id="tabe3"></a>
-                  <a class="button tab-link" href="#tab4"></a>
+                  <a class="button tab-link" href="#tab4" id="tabe4"></a>
+                  <a class="button tab-link" href="#tab5" id="tabe5"></a>
                 </div>
               </div>
 
@@ -309,7 +289,7 @@
                           <div class="item-title item-label"><h3>* Estado onde você mora.</h3></div>
                           <div class="item-input-wrap">
                             <select id="estado_m">
-                                <option value="">Selecione o Estado onde você mora.</option>
+                                <option value="0">Selecione o Estado onde você mora.</option>
                                 <option value="1">AC</option>
                                 <option value="2">AL</option>
                                 <option value="3">AM</option>
@@ -350,7 +330,7 @@
                           <div class="item-title item-label"><h3>* Cidade onde você mora.</h3></div>
                           <div class="item-input-wrap">
                             <select id="cidade_m">
-                                <option value=''>Selecione a Cidade onde você mora  .</option>;
+                                <option value='0'>Selecione a Cidade onde você mora  .</option>;
                             </select>
                           </div>
                         </div>
@@ -365,7 +345,7 @@
                         <div class="item-title item-label"><h3>* Estado onde você estuda.</h3></div>
                         <div class="item-input-wrap">
                           <select id="estado_e">
-                              <option value="">Selecione o Estado onde você estuda.</option>
+                              <option value="0">Selecione o Estado onde você estuda.</option>
                               <option value="1">AC</option>
                               <option value="2">AL</option>
                               <option value="3">AM</option>
@@ -406,7 +386,7 @@
                         <div class="item-title item-label"><h3>* Cidade onde você estuda.</h3></div>
                         <div class="item-input-wrap">
                           <select id="cidade_e">
-                              <option value=''>Selecione a Cidade onde você estuda.</option>;
+                              <option value='0'>Selecione a Cidade onde você estuda.</option>;
                           </select>
                         </div>
                       </div>
@@ -421,7 +401,7 @@
                           <div class="item-input-wrap">
                             <select id="univer" onkeypress="acionaw">
                               <!--select dinamico feito pelo back end-->
-                              <option value='0'>Selecione sua Universidade</option>
+                              <option value='1'>Selecione sua Universidade</option>
                             </select>
                           </div>
                         </div>
@@ -718,6 +698,7 @@
                           </div>
                           <div class="item-inner">
                             <div class="item-title item-label"><h3>* Senha</h3></div>
+                            <small>A senha deve possuir entre 8 a 10 dígitos.</small>
                             <div class="item-input-wrap">
                               <input type="password" placeholder="Insrira uma Senha" id="senha">
                               <span class="input-clear-button"></span>
@@ -756,38 +737,7 @@
                                   </select>
                                 </div>
                               </div>
-                            </li>
-                            <div id="space_line"></div>
-                            <div id="itens">
-                                <li class="item-content item-input" >
-                                  <div class="item">
-                                    <i class="icon demo-list-icon"></i>
-                                  </div>
-                                  <div class="item-inner">
-                                    <div class="item-title item-label">
-                                        <h4>*Opcional</h4>
-                                      Insira o link ou o nome de perfil do seu facebook.
-                                      </div>
-                                    <div class="item-input-wrap">
-                                      <input type="text" placeholder="Facebook" id="facebook">
-                                      <span class="input-clear-button"></span>
-                                    </div>
-                                  </div>
-                                </li>
-                            </div>
-                            <div id="space_line"></div>
-                            <li class="item-content item-input" id="itens">
-                              <div class="item">
-                                <i class="icon demo-list-icon"></i>
-                              </div>
-                              <div class="item-inner">
-                                <div class="item-title item-label">* Número do WhatsApp</div>
-                                <div class="item-input-wrap">
-                                  <input type="text" maxlength="13" OnKeyPress="formatar('##-#####-####', this)" id="numero_cell">
-                                  <span class="input-clear-button"></span>
-                                </div>
-                              </div>
-                            </li>
+                            </li>                          
                           <div class="block">
                               <p class="row">
                                 <a class="popup-open" href="#" data-popup=".popup-dados_caracteristicas" id="dados_caracteristicas"></a>
@@ -802,173 +752,177 @@
             <div class="tab" id="tab3">
               <div style="margin-top: -80px;">      
                     <div id="quadro_cabelo" class="block">
-                      <p class="title_carac">Diga nos o tamanho do seu cabelo</p>
+                      <p class="title_carac">Qual o tamanho do seu cabelo?</p>
                           <label>
                             <label class="radio">
-                              <input type="radio" name="cabelo" autofocus>
+                            <input type="radio" id="cabelo" name="cabelo" value="curto">
                               <i class="icon-radio"></i>
                             </label> 
-                            Cabelo Curto
+                             Curto
                           </label>
                         <div id="space_radio"></div>
                           <label>
                             <label class="radio">
-                              <input type="radio" name="cabelo">
+                              <input type="radio" id="cabelo" name="cabelo" value="medio">
                               <i class="icon-radio"></i>
                             </label> 
-                            Cabelo Médio 
+                             Médio 
                           </label>
                         <div id="space_radio"></div>
                           <label>
                             <label class="radio">
-                              <input type="radio" name="cabelo">
+                              <input type="radio" name="cabelo" value="longo">
                               <i class="icon-radio"></i>
                             </label> 
-                          Cabelo Longo
+                           Longo
                         </label>
                       <div id="space_radio"></div>
                     </div>
                   <div id="space_line"></div>
                     <div id="quadro_cabelo" class="block">
-                      <p class="title_carac">Diga nos se você usa relógio com frequência.</p>
+                      <p class="title_carac">Cor do cabelo?</p>
                         <label>
                           <label class="radio">
-                            <input type="radio" name="relogio">
+                            <input type="radio" name="cor_cabelo" value="claro">
                             <i class="icon-radio"></i>
                           </label> 
-                        Sim, uso relógio.
+                          Claro
                         </label>
                       <div id="space_radio"></div>
                         <label>
                           <label class="radio">
-                            <input type="radio" name="relogio">
+                            <input type="radio" name="cor_cabelo" value="escuro">
                             <i class="icon-radio"></i>
                           </label>
-                          Não, uso relógio.
+                          Escuro
                         </label>
                       <div id="space_radio"></div>
                     </div>
                   <div id="space_line"></div>
                     <div id="quadro_cabelo" class="block">
-                      <p class="title_carac">Diga nos se você usa alguma pulseira.</p>
+                      <p class="title_carac">Cor da pele ?</p>
                         <label>
                           <label class="radio">
-                            <input type="radio" name="pulseira">
+                            <input type="radio" name="pele" value="branca">
                             <i class="icon-radio"></i>
                           </label>
-                            Sim, uso pulseira.
+                            Branca
                         </label>
                       <div id="space_radio"></div>
                         <label>
                           <label class="radio">
-                            <input type="radio" name="pulseira">
+                            <input type="radio" name="pele" value="negra">
                             <i class="icon-radio"></i>
                           </label> 
-                          Não, uso com muita frequência.
+                          Negra
+                        </label>
+                        <div id="space_radio"></div>
+                        <label>
+                          <label class="radio">
+                            <input type="radio" name="pele" value="parda">
+                            <i class="icon-radio"></i>
+                          </label> 
+                          Parda
                         </label>
                       <div id="space_radio"></div>
                     </div>
                   <div id="space_line"></div>
                     <div id="quadro_cabelo" class="block">
-                      <p class="title_carac">Diga nos se você usa piercings.</p>
+                      <p class="title_carac">Você usa relógio ?</p>
                         <label>
                           <label class="radio">
-                            <input type="radio" name="piercings">
+                            <input type="radio" name="relogio" value="sim">
                             <i class="icon-radio"></i>
                           </label> 
-                          Sim, possuo piercings.
+                          Sim
                         </label>
                       <div id="space_radio"></div>
                         <label>
                           <label class="radio">
-                            <input type="radio" name="piercings">
+                            <input type="radio" name="relogio" value="nao">
                             <i class="icon-radio"></i>
                           </label>
-                          Não, possuo piercings.
+                          Não
                         </label>
                       <div id="space_radio"></div>
                   </div>
-                <div id="space_line"></div>
-                  <div id="quadro_cabelo" class="block">
-                    <p class="title_carac">Diga nos se você usa boné.</p>
-                      <label>
-                        <label class="radio">
-                          <input type="radio" name="bone">
-                          <i class="icon-radio"></i>
-                        </label> 
-                        Sim, uso bone com frequência.
+              <div id="space_line"></div>
+                <div id="quadro_cabelo" class="block">
+                  <p class="title_carac">Utiliza aparelho dentário ?</p>
+                    <label>
+                      <label class="radio">
+                        <input type="radio" name="dente" value="sim">
+                        <i class="icon-radio"></i>
+                      </label> 
+                      Sim
+                    </label>
+                  <div id="space_radio"></div>
+                    <label>
+                      <label class="radio">
+                        <input type="radio" name="dente" value="nao">
+                        <i class="icon-radio"></i>
                       </label>
-                    <div id="space_radio"></div>
-                      <label>
-                        <label class="radio">
-                          <input type="radio" name="bone">
-                          <i class="icon-radio"></i>
-                        </label>
-                        Não, uso bone com frequência.
-                      </label>
-                    <div id="space_radio"></div>
-                </div>
-                <div id="space_line"></div>
-                  <div id="quadro_cabelo" class="block">
-                    <p class="title_carac">Diga nos se você tem alguma tatuagem.</p>
-                      <label>
-                        <label class="radio">
-                          <input type="radio" name="tatuagem">
-                          <i class="icon-radio"></i>
-                        </label> 
-                        Sim, tenho tatuagem.
-                      </label>
-                    <div id="space_radio"></div>
-                      <label>
-                        <label class="radio">
-                          <input type="radio" name="tatuagem">
-                          <i class="icon-radio"></i>
-                        </label>
-                        Não, tenho tatuagem.
-                      </label>
-                    <div id="space_radio"></div>
-                </div>
+                      Não
+                    </label>
+                  <div id="space_radio"></div>
+              </div>
+              <div class="block">
+                <p class="row">
+                  <a class="popup-open" href="#" data-popup=".popup-dados_caracteristicas" id="dados_caracteristicas"></a>
+                  <button class="col button button-big col button button-fill color-green" onclick="nextstep3()" id="space_but">Próximo</button>
+                </p>
             </div>
             </div>
+          </div>
+
+
+
               <div class="tab" id="tab4">
-                  <div class="block">
-                      <div class="item-inner" >
-                          <br>
-                          <div class="item-input-wrap">
-                             <label for='foto_wall'>
-                               <center>            
-                                 <div id="image-holder-wall"> <img for="foto_wall" src="img/perfil.jpg" style="width: 75%;" /></div>
-                               </center>
-                             </label>
-                             <label for="fileUploadWall" class="col button button-big col button button-fill color-blue space_upload">Escolher</label>
-                               <div id="wrapper">
-                                 <input id="fileUploadWall" type="file">
-                               </div>
-                             <button class="col button button-big col button button-fill color-green" id="btn">Finalizar</button>
+                  <div class="block" style="margin-top: -50px;">
+                      <div>		
+                        <center>
+                          <div id="user">
+                             <!-- <img src="img/user.png" style="width: 300px;"> -->
                           </div>
-                      </div>
+                        </center>	
+                      
+                          <div id="image_demo" style="width:100%; margin-top: -70px;"></div> 
+                            <label class="col button button-big col button button-fill color-blue" style="margin-bottom: 5px;">
+                              Escolha uma foto
+                              <input type="file" name="upload_image" id="upload_image" accept="image/png, image/jpeg" />
+                            </label>
+                            <button class="col button button-big col button button-fill color-green btn btn-success crop_image">Proximo</button>
+                          </div>
                    </div>
+               </div>
+  
+
+
+
+
+
+                <div class="tab" id="tab5">
+                  <div class="block" style="margin-top: -50px;">
+                     <div>
+                          <div id="image_demo_capa"></div> 
+                            <label class="col button button-big col button button-fill color-blue" style="margin-bottom: 2px;">
+                              Escolher Imagem
+                               <input type="file" name="upload_image_capa" id="upload_image_capa" />
+                            </label>
+                         
+                            <button class="col button button-big col button button-fill color-green btn btn-success crop_image_capa">Finalizar</button>
+                          
+      
+                           </div> 
+                  </div>
                 </div>
-                <div class="tab" id="tab6">
-                  <div class="block">
-                    <div class="item-inner" >
-                      <br>
-                        <div class="item-input-wrap">
-                          <label for='foto_wall'>
-                             <center>            
-                               <div id="image-holder-wall"> <img for="foto_wall" src="img/capa.jpg" style="width: 70%;" /></div>
-                              </center>
-                              </label>
-                                <label for="fileUploadWall" class="col button button-big col button button-fill color-blue space_upload">Escolher</label>
-                                  <div id="wrapper">
-                                    <input id="fileUploadWall" type="file">
-                                  </div>
-                                <button class="col button button-big col button button-fill color-green" onclick="EnterFeed()" id="space_but">Finalizar</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                 
+
+
+
+
+
+              </div>
                   </div>
                 </div>
               </div>
@@ -979,7 +933,44 @@
     </div>
 
 
-
+<!-- </main>
+<main id="feed">
+  
+<body>
+    <div class="page">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="left">
+                    <a class="link popover-open" href="#" data-popover=".popover-about">
+                    <i class="f7-icons size-22">bars</i>
+                    </a>
+                </div>
+                <p class="titulo">SPOTTED</p>
+                <div class="right">
+                    <a class="link popup-open" href="#" data-popup=".popup-about">
+                    <i class="f7-icons size-22">search</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <a class="link popup-open" data-popup=".popup-people" style="margin-top: 100px;">Perfil Buscado</a>
+        <input type="file" value="res">
+        
+    </div>
+    
+     Popovers
+    <div class="popover popover-about">
+        <div class="popover-inner">
+            <ul style="list-style-type: none " class="block">
+                <li><button class="col button button-fill spacee link popup-open popover-close" data-popup=".popup-perfil">Seu Perfil</button></li>
+                <li><button class="col button button-fill spacee link popup-open popover-close" data-popup=".popup-sobre">Sobre</button></li>
+                <li><button class="col button button-fill spacee link popup-open popover-close" data-popup=".popup-password">Trocar Senha</button></li>
+                <li><button class="col button button-fill color-red spacee" onclick="logout()">Sair</button></li>
+            </ul>
+        </div>
+    </div>
+  
+</main> -->
 <script>
 
   var app = new Framework7();
@@ -1008,18 +999,31 @@
 			
 	  // password incomplet 
 		var quant_senha = app.toast.create({
-		  text: 'A senha deve possuir 8 caractére.',
+		  text: 'A senha deve possuir entre 8 a 10 dígitos.',
 		  position: 'top',
 		  closeTimeout: 2500,
 		});	
-
-		// number phone  
-		var num_celular = app.toast.create({
-		  text: 'Digite um número de celular valido.',
+    
+    // email  
+		var alertemail = app.toast.create({
+		  text: 'Digite um e-mail valido.',
 		  position: 'top',
 		  closeTimeout: 2500,
 		});
-    
+
+    // email ja existe   
+		var EmailExistente = app.toast.create({
+		  text: 'Este E-mail já está cadastrado.',
+		  position: 'top',
+		  closeTimeout: 2500,
+		});
+
+    // tipo imagem  
+		var AlertImg = app.toast.create({
+		  text: '<h3>Insira somente imagens.</h3>',
+		  position: 'top',
+		  closeTimeout: 2500,
+		});
     // Create notification with close button
     var notificationWithButton = app.notification.create({
       icon: '',
@@ -1027,154 +1031,299 @@
       subtitle: '<h3>Importante!</h3>',
       text: 'Diga nos algumas informações pessoais sobre você. Isso é muito importante, pois outras pessoas iram te encontrar através dessas características',
       closeButton: true,
+      closeTimeout: 5000,
     });
+    
+    // Create toast with icon
+    var toastIcon = app.toast.create({
+      text: '<h2>Falta Pouco!</h3>',
+      position: 'center',
+      closeTimeout: 2000,
+    });
+    
+    //usuario e/ou senha incorretos 
+    var msg_login = app.toast.create({
+		  text: '<p>Usuário e ou senhas inválido.</p>',
+		  position: 'top',
+		  closeTimeout: 2500,
+		});
+
+    //numero alto de caractere no email 
+    var carac_email = app.toast.create({
+		  text: '<p>Número elevado de caractere no e-mail.</p>',
+		  position: 'top',
+		  closeTimeout: 2500,
+		});
+
+    //numero alto de caractere na senha 
+    var carac_senha = app.toast.create({
+		  text: '<p>Número elevado de caractere na senha.</p>',
+		  position: 'top',
+		  closeTimeout: 2500,
+		});
+
 
   //botao do "proximo" da primeira tela de cadastro
   function nextstep () {
+
+      var estado_m = $("#estado_m").val();
+      var cidade_m = $("#cidade_m").val();
+      var estado_e = $("#estado_e").val();
+      var cidade_e = $("#cidade_e").val();
+      var univer = $("#univer").val();
+      var curso = $("#curso").val();
+
+      if (estado_m == '0' || 
+          cidade_m == '0' ||
+          estado_e == '0' ||
+          cidade_e == '0' ||
+           univer == '0' ||
+          curso == '0') 
+          {
+            input_vazio.open();
+            return 0;
+          }
+      
       $("#voltar").html("<a class='link tab-link' href='#tab1' onclick='voltar()'>Voltar</a>");
         document.getElementById('tabe2').click();
   }
 
   //botao do "proximo" da segunda pagina 
   function nextstep2 () {
-      document.getElementById('tabe3').click();
-      $("#voltar").html("<a class='link tab-link' href='#tab2' onclick='voltar2()'>Voltar</a>");
-      notificationWithButton.open();
+      
+      var nome = $("#nome").val(); 
+      var email = $("#email").val(); 
+      var senha = $("#senha").val(); 
+      var sexo = $("#sexo").val(); 
+      var estado_civil = $("#estado_civil").val(); 
 
+    //condiçoes de entrada 
+    if (nome == '' || email == '' || senha == '' || sexo == '0' || estado_civil == '0') {
+            input_vazio.open();
+            return 0;
+          }else {
+            if (email) {
+              var txt = $("#email").val();
+                if ((txt.length != 0) && ((txt.indexOf("@") < 1) || (txt.indexOf('.') < 7)))
+                {
+                  alertemail.open();
+                  $("#email").focus();
+                  return 0; 
+                } else {
+                  if (senha.length < 8 || senha.length > 10) {
+                    quant_senha.open();   
+                    return 0;
+                }
+              }
+            }
+          } 
+        //ajax para verificar email existente 
+          $.ajax({
+            url : "http://localhost/REDE_SOCIAL/BACK-END/request.php",
+            dataType: 'JSON',
+            type : 'post',
+            data : {
+                "F":"EmailExiste",
+                 "email" : email
+            },
+            beforeSend : function(){
+                 console.log("Enviando requisição...");
+            }
+       })
+       .done(function(msg){
+          var jsonData = msg;
+          var flag = 0;
+            for (var i = 0; i < jsonData.length; i++) {
+              if (jsonData[i].email) {
+                flag += 1;
+              } 
+            }
+            if(flag > 0) {
+              EmailExistente.open();
+              return false; 
+            }else {
+                  document.getElementById('tabe3').click();
+                  $("#voltar").html("<a class='link tab-link' href='#tab2' onclick='voltar2()'>Voltar</a>");
+                  notificationWithButton.open();
+              }
+         })
+       .fail(function(jqXHR, textStatus, msg){
+          console.log(msg);
+      });      
+    }
+
+//insere o voltar na tela foto de perfil para voltar para a tela de caracteristicas
+function nextstep3 () 
+  {
+    var tam_cabelo = $("input[type=radio][name='cabelo']:checked").val();
+    var cor_cabelo = $("input[type=radio][name='cor_cabelo']:checked").val();
+    var cor_pele = $("input[type=radio][name='pele']:checked").val();
+    var relogio = $("input[type=radio][name='relogio']:checked").val();
+    var dente = $("input[type=radio][name='dente']:checked").val();
+
+    if (tam_cabelo == undefined || cor_cabelo == undefined || cor_pele == undefined || relogio == undefined || dente == undefined) {
+      input_vazio.open();
+      return 0;
+    } else {
+    toastIcon.open();
+    document.getElementById("tabe4").click();
+    $("#voltar").html("");
+    $(".title").html('<p>Escolha uma foto de perfil.</p>');
+    $(document).ready(function(){
+    $image_crop = $('#image_demo').croppie({
+      enableExif: true,
+      viewport: {
+        width:288,
+        height:288,
+        type:'circle', //square
+      },
+      boundary:{
+        width: "100%",
+        height:400,
+      }
+    });
+
+    $('#upload_image').on('change', function(){
+       var img = $('#upload_image').val();
+          img = img.substr(-4);
+        if (img == "jpeg" || img == ".jpg" || img == ".png") {         
+        var reader = new FileReader();
+        reader.onload = function (event) {
+          $image_crop.croppie('bind', {
+            url: event.target.result
+          }).then(function(){
+            console.log('completo.');
+          });
+        }
+        reader.readAsDataURL(this.files[0]);
+      } else {
+        AlertImg.open();
+        return 0; 
+      }
+    });
+    
+
+    $('.crop_image').click(function(event){
+      $image_crop.croppie('result', {
+        type: 'canvas',
+        size: 'viewport'
+      }).then(function(response){
+        $.ajax({
+          url:"http://localhost/REDE_SOCIAL/BACK-END/request.php",
+          type: "POST",
+          data:{
+            "F":"FotoPerfil",
+            "image": response},
+          success:function(data)
+          {
+            console.log(data);
+            var foto = JSON.parse(data);
+            localStorage.setItem('foto_perfil',foto.img);
+            nextstep4();
+          }
+          });
+        });
+      });
+    }); 
+  } 
+}
+
+//insere o voltar na tela de foto de capa para voltar para foto d
+function nextstep4 () 
+  {
+    document.getElementById("tabe5").click();
+    $("#voltar").html("");
+     $(".title").html('<p>Escolha uma foto de capa.</p>');
+    $(document).ready(function(){
+      $image_crop = $('#image_demo_capa').croppie({
+        enableExif: false,
+        viewport: {
+          width: 289,
+          height:200,
+          type:'square' //circle
+        },
+        boundary:{
+          width: "100%",
+          height:300
+        }
+      });
+      
+      $('#upload_image_capa').on('change', function(){
+        var img = $('#upload_image_capa').val();
+          img = img.substr(-4);
+        if (img == "jpeg" || img == ".jpg" || img == ".png") {       
+        var reader = new FileReader();
+        reader.onload = function (event) {
+          $image_crop.croppie('bind', {
+            url: event.target.result
+          }).then(function(){
+           console.log("completo.");
+          });
+        }
+        reader.readAsDataURL(this.files[0]);
+        } else{
+          AlertImg.open();
+          return 0;
+        }
+      });
+    
+
+    $('.crop_image_capa').click(function(event){
+        $image_crop.croppie('result', {
+          type: 'canvas',
+          size: 'viewport'
+        }).then(function(response2){
+          $.ajax({
+            url:"http://localhost/REDE_SOCIAL/BACK-END/request.php",
+            type: "POST",
+            data:{
+              "F":"FotoCapa",
+              "image_capa": response2
+            },
+            success:function(data)
+            {
+              console.log(data);
+              var foto = JSON.parse(data);
+              localStorage.setItem('foto_capa',foto.img);
+              cadastra_usuario();
+            }
+          });
+        });
+      });
+    });
   }
 
 //funcao voltar para o login
-function voltar () {
-      $("#voltar").html("<a class='link popup-close'>Voltar</a>");
-  }
+function voltar () 
+   {
+    $("#voltar").html("<a class='link popup-close'>Voltar</a>");
+    $(".title").html('<p>Criar Conta</p>');
+   }
+
 //funcao voltar para a primeira tala do cadastro   
-function voltar2 () {
-      $("#voltar").html("<a class='link tab-link' href='#tab1' onclick='voltar()'>Voltar</a>");
+function voltar2 () 
+  {
+    $("#voltar").html("<a class='link tab-link' href='#tab1' onclick='voltar()'>Voltar</a>");
+    $(".title").html('<p>Criar Conta</p>');
   }
 
-  
+ //funcao para voltar para a segunda tela de cadasro  
+// function voltar3() 
+//   {
+//     $("#voltar").html("<a class='link tab-link' href='#tab2' onclick='voltar2()'>Voltar</a>");
+//     $(".title").html('<p>Criar Conta</p>');
+//   }
 
-  function nextstep4 () {
-
-      var sexo = $("#sexo").val();
-      var estado_c = $("#estado_civil").val();
-      var tm_cabe = $("#tamanho_cabelo").val();
-      var facebook = $("#facebook").val();
-      var instagram = $("#instagram").val();
-      var num_cell = $("#numero_cell").val();
-  
-      if (sexo == 0 || estado_c == 0 || tm_cabe == 0 || num_cell == ''){
-         input_vazio.open();
-      }
-    else{
-          document.getElementById('foto_perfil').click();
-      } 
-  }
-
-//sobe imagem de perfil para o front-end
-$("#fileUpload").on('change', function () {
- 
-    if (typeof (FileReader) != "undefined") {
- 
-        var image_holder = $("#image-holder");
-        image_holder.empty();
- 
-        var reader = new FileReader();
-        reader.onload = function (e) {
-             $("#image-holder").innerHTML = '';
-            $("<img />", {
-                "src": e.target.result,
-                "class": "thumb-image"
-            }).appendTo(image_holder);
-
-        }
-        image_holder.show();
-        reader.readAsDataURL($(this)[0].files[0]);
-    } else{
-        alert("Este navegador nao suporta FileReader.");
-    }
-});
+// //funcao para voltar para a terceira tela de cadasro 
+// function voltar4() 
+//   {
+//     $("#voltar").html("<a class='link tab-link' href='#tab3' onclick='voltar3()'>Voltar</a>");
+//     $(".title").html('<p>Escolha uma foto de perfil.</p>');
+//     nextstep3();
+//   }
 
 
-//sobe imagem de fundo para o front-end
-$("#fileUploadWall").on('change', function () {
- 
- if (typeof (FileReader) != "undefined") {
-
-     var image_holder = $("#image-holder-wall");
-     image_holder.empty();
-
-     var reader = new FileReader();
-     reader.onload = function (e) {
-          $("#image-holder-wall").innerHTML = '';
-         $("<img />", {
-             "src": e.target.result,
-             "class": "thumb-image"
-         }).appendTo(image_holder);
-
-     }
-     image_holder.show();
-     reader.readAsDataURL($(this)[0].files[0]);
- } else{
-     alert("Este navegador nao suporta FileReader.");
- }
-});
-
-        // faz o upload da foto 
-        $("#btn").on('click', function(){
-            var data = new FormData();
-            data.append('fileimagem', $('#fileUploadWall')[0].files[0]);
-
-            $.ajax({
-                url: 'http://localhost/REDE_SOCIAL/BACK-END/up.php',
-                data: data,
-                processData: false,
-                contentType: false,
-                type: 'POST',
-                success: function(data) 
-                {
-                    alert(data);
-                }
-            });
-
-        });
-    
-
-        
-		//document.getElementById('open_wall').click();
-	//else {
-		//photo_perfil.open();
-	//}
-
-
-
-//enter in the feed people 
-function EnterFeed () {
-	var img_wall = $("#fileUploadWall").val();
-	if (img_wall) {
-		//window.open('feed.html');
-	} else {
-		photo_wallp.open();
-	}
-}
-
-
-//new password for user 
-function changePsw () {
-	var senha  = $("#new_pass").val();
-	var conf_pas = $("#conf_pass").val();
-	var email = $("#email_user").val();
-	
-	if (senha !== conf_pas) {
-		senhas.open();
-		return 0;
-	} else {
-		//chamada ajax para enviar a aprovação por email.
-	}
-}
-
-
-// function flame city
+// lista cidade onde o usuario mora
 $('#estado_m').on('change', function() {
   var estado = $("#estado_m").val();
        $.ajax({
@@ -1191,18 +1340,18 @@ $('#estado_m').on('change', function() {
      })
      .done(function(msg){
         var jsonData = msg; 
-        var cidades = "<option value=''>Selecione a Cidade onde você mora.</option>";
+        var cidades = "<option value='0'>Selecione a Cidade onde você mora.</option>";
         for (var i = 0; i < jsonData.length; i++) {
-          cidades += "<option>"+jsonData[i].cidade+"</option>";
+          cidades += "<option>"+jsonData[i].nome+"</option>";
          }
           $("#cidade_m").html(cidades);
-         
-     })
+       })
      .fail(function(jqXHR, textStatus, msg){
-          console.log(msg);
-     }); 
-});
+        console.log(msg);
+    }); 
+ });
 
+//lista cidade onde o usuario estuda
   $('#estado_e').on('change', function() {
     var estado = $("#estado_e").val();
          $.ajax({
@@ -1213,16 +1362,15 @@ $('#estado_m').on('change', function() {
                 "F":"ListaCidade",
                  "estado" : estado
             },
-        
             beforeSend : function(){
                  console.log("Enviando requisição...");
             }
        })
        .done(function(msg){
              var jsonData = msg; 
-            var cidades = "<option value=''>Selecione a Cidade onde você estuda.</option>";
+            var cidades = "<option value='0'>Selecione a Cidade onde você estuda.</option>";
             for (var i = 0; i < jsonData.length; i++) {
-              cidades += "<option>"+jsonData[i].cidade+"</option>";
+              cidades += "<option>"+jsonData[i].nome+"</option>";
             }
              $("#cidade_e").html(cidades);
        })
@@ -1245,72 +1393,198 @@ function cadastra_usuario () {
       var cidade_e = $("#cidade_e").val();
       var univer = $("#univer").val();
       var curso = $("#curso").val();
-      var grau = $("#grau").val();
       var nome = $("#nome").val();
       var email = $("#email").val();
       var senha = $("#senha").val();
-      var conf_senha = $("#conf_senha").val();
       var sexo = $("#sexo").val();
       var estado_c = $("#estado_civil").val();
-      var tm_cabe = $("#tamanho_cabelo").val();
-      var facebook = $("#facebook").val();
-      var instagram = $("#instagram").val();
-      var num_cell = $("#numero_cell").val();
+      var tam_cabelo = $("input[type=radio][name='cabelo']:checked").val();
+      var cor_cabelo = $("input[type=radio][name='cor_cabelo']:checked").val();
+      var cor_pele = $("input[type=radio][name='pele']:checked").val();
+      var relogio = $("input[type=radio][name='relogio']:checked").val();
+      var dente = $("input[type=radio][name='dente']:checked").val();
+      var foto_perfil =  localStorage.getItem('foto_perfil');
+      var foto_capa =  localStorage.getItem('foto_capa');
 
-      alert("Parametro:"+estado_m+"=>"+
-            "Parametro:"+cidade_m+"=>"+
-            "Parametro:"+estado_e+"=>"+
-            "Parametro:"+cidade_e+"=>"+
-            "Parametro:"+univer+"=>"+
-            "Parametro:"+curso+"=>"+
-            "Parametro:"+grau+"=>"+
-            "Parametro:"+nome+"=>"+
-            "Parametro:"+email+"=>"+
-            "Parametro:"+senha+"=>"+
-            "Parametro:"+conf_senha+"=>"+
-            "Parametro:"+sexo+"=>"+
-            "Parametro:"+estado_c+"=>"+
-            "Parametro:"+tm_cabe +"=>"+
-            "Parametro:"+facebook+"=>"+
-            "Parametro:"+instagram +"=>"+
-            "Parametro:"+num_cell);
-
-
-       img_perfill= $("#fileUpload").val();
-       alert(img_perfill);
-    //    $.ajax({
-
-    //       url :"http://localhost/REDE_SOCIAL/BACK-END/request.php",
-    //       type : 'post',
-    //       data : {
-    //            "F": "CadastraUsuario",
-    //            'x1' : estado_m,
-    //            'x2' : cidade_m,
-    //            'x3' : estado_e,
-    //            'x4' : cidade_m,
-    //            'x5' : universi,
-    //            'x6' : nome,
-    //            'x7' : email,
-    //            'x8' : senha,
-    //            'x9' : sexo,
-    //            'x10' : link_r,
-    //            'x11' : oculos,
-    //            'x12' : numero
-    //       },
-    //       beforeSend : function(){
-    //          console.log("Enviando requisição...");
-    //       }
-    //  })
-    //  .done(function(result){
-    //      alert(result);
-    // })
-    //  .fail(function(jqXHR, textStatus, msg){
-    //       alert(msg);
-    //  }); 
-
+       $.ajax({
+          url :"http://localhost/REDE_SOCIAL/BACK-END/request.php",
+           type : 'post',
+             data : {
+                "F": "CadastraUsuario",
+                'x1' : estado_m,  
+                'x2' : cidade_m,  
+                'x3' : estado_e,  
+                'x4' : cidade_e, 
+                'x5' : univer,
+                'x6' : curso,
+                'x7' : nome,
+                'x8' : email,
+                'x9' : senha,
+                'x10' : sexo, 
+                'x11' : estado_c,
+                'x12' : tam_cabelo, 
+                'x13' : cor_cabelo,
+                'x14' : cor_pele,
+                'x15' : relogio,
+                'x16' : dente,
+                'x17' : foto_perfil,
+                'x18' : foto_capa
+              },
+          beforeSend : function(){
+             console.log("Enviando requisição...");
+          }
+     })
+     .done(function(result){
+         console.log(result);
+    })
+     .fail(function(jqXHR, textStatus, msg){
+          alert(msg);
+     }); 
 }  
 
 
+//funcao para trocar de senha
+//nao pode estar em funcionamene enquanto nao estiver no hospedado
+function TrocarSenha () {
+
+  var email = $("#envia_email").val();
+     $.ajax({
+      url : "https://00c4761d.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+      dataType: 'JSON',
+      type : 'post',
+        data : {
+           "F":"EmailExiste",
+           "email" : email
+         },
+        beforeSend : function(){
+          console.log("Enviando requisição...");
+        }
+     })
+     .done(function(msg){
+      var jsonData = msg;
+      var flag = 0;
+        for (var i = 0; i < jsonData.length; i++) {
+          if (jsonData[i].email) {
+            flag += 1;
+          } 
+        }
+        if(flag > 0) {
+
+             $.ajax({
+                url : "https://00c4761d.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+                dataType: 'JSON',
+                type : 'post',
+                  data : {
+                    "F":"TrocaSenha",
+                     "email" : email
+                   },
+                   beforeSend : function(){
+                     console.log("Enviando requisição...");
+                    }
+                  }).done(function(msg){
+                     console.log(msg);
+                    //  var jsonData = msg;
+                    //  alert(JSON.stringify(jsonData));
+                    //  alert(JSON.stringify(jsonData));
+                    
+                }).fail(function(jqXHR, textStatus, msg){
+                  console.log(msg);
+            }); 
+        }else {
+           alert("Email não existe");
+           return 0;
+          }
+       })
+       .fail(function(jqXHR, textStatus, msg){
+          console.log(msg);
+      }); 
+}
+
+function login () {
+       
+        var email = $("#email_user").val();
+        var senha = $("#senha_user").val();
+        if (email.length >= 50) {
+           carac_email.open();
+           return 0;
+        } else {
+          if (senha.length >= 16) {
+            carac_senha.open();
+            return 0;
+          }
+        }
+       $.ajax({
+          url :"https://00c4761d.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+          type : 'post',
+          data : {
+                "F": "Login",
+                'email' : email,  
+                'senha' : senha,  
+              },
+            beforeSend : function(){
+              console.log("Enviando requisição...");
+            }
+          }).done(function(msg){
+             console.log(msg);
+             jsonData = JSON.parse(msg);
+             for (var i = 0; i < jsonData.length; i++) {
+                var email = jsonData[i].email;
+                var senha = jsonData[i].senha;
+            }
+              console.log(email);
+              console.log(senha);
+             if (email == undefined && senha == undefined || email == "" && senha == ""){
+                 msg_login.open();
+                 return 0;
+              } else {
+                localStorage.setItem('email',email);
+                localStorage.setItem('senha',senha);
+              //  $("#inicio").css({"display":"none"});
+              //  $("#feed").css({"display":"block"});
+              // var user = localStorage.setItem('email');
+              // var pass = localStorage.setItem('senha');
+              // alert(user);
+              // alert(pass);
+            }
+        }).fail(function(jqXHR, textStatus, msg){
+          alert(msg);
+      }); 
+}
+   
+var user = localStorage.email;
+var pass = localStorage.senha;
+if (user !== "" && pass !== "")
+    alert("usuario "+user+" senha "+pass);
+    $.ajax({
+          url :"https://00c4761d.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+          type : 'post',
+          data : {
+                "F": "Login",
+                'email' : user,  
+                'senha' : pass,  
+              },
+            beforeSend : function(){
+              console.log("Enviando requisição...");
+            }
+          }).done(function(msg){
+             console.log(msg);
+             jsonData = JSON.parse(msg);
+             for (var i = 0; i < jsonData.length; i++) {
+                var email = jsonData[i].email;
+                var senha = jsonData[i].senha;
+            }
+            console.log(email);
+            console.log(senha);
+        }).fail(function(jqXHR, textStatus, msg){
+          alert(msg);
+      }); 
+
+
+function logout() {
+  alert("chamu::");
+  // $("#feed").css({"display":"none"});
+  // $("#inicio").css({"display":"block"});
+}
 </script>
   </body>
 </html>
