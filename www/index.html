@@ -4,6 +4,7 @@
   <head>
     <!-- Required meta tags-->
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <script src="js/jquery.js"></script>
     <script src="js/croppie.js"></script>
@@ -21,9 +22,15 @@
     <!--fontes do google-->
     <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet">
     <script src="https://github.com/lazd/iNoBounce/blob/master/inobounce.min.js"></script>
+    <script src="https://use.fontawesome.com/a33705502a.js"></script>
     <script type="text/javascript" src="js/framework7.min.js"></script>
     <link rel="stylesheet" href="css\icons\framework7icons.css">
     <script type="text/javascript" src="cordova.js"></script>
+    
+    <!-- jsgrid  -->
+    <link type="text/css" rel="stylesheet" href="grade/jsgrid.css" />
+    <link type="text/css" rel="stylesheet" href="grade/jsgrid-theme.css" />
+    <script type="text/javascript" src="grade/jsgrid.js"></script>
   
   <style type="text/css">
   
@@ -32,7 +39,7 @@
       text-align: center;
       padding-top: 15px;
       font-family: 'Damion', cursive;
-      font-size: 48px;
+      font-size: 450%;
        color: #2196f3;
     }
 
@@ -147,13 +154,200 @@
 #envia_email {
   border-bottom: 1px solid #2196f3;
 }
- 
+
+/* foto pequena do menu  */
+.mini_img {
+  width: 20%; 
+  float:left; 
+  margin-left: 15px;
+} 
+
+/* mini nome do menu */
+.mini_nome {
+  position: relative;
+  top:5px; 
+  left: 10px; 
+  font-size: 20px;
+  color:dimgray;
+}
+
+/* ver meu perfil no menu */
+.ver_meu_perfil {
+  position: relative; 
+  top:-6px; 
+  left: 10px;
+  font-size: 120%;
+}
+
+/* sobre do menu */
+.sobre_menu {
+  position: relative; 
+  left: 17px; 
+  font-size: 150%; 
+}
+
+/* troca senha do menu */
+.troca_senha {
+   position: relative; 
+   left: 17px; 
+   font-size: 150%; 
+   color:grey;
+  }
   
+  /* sair -> menu  */
+  .sair {
+    position: relative; 
+    left: 17px; 
+    font-size: 150%;
+  }
+
+  /* editar informações (perfil)*/
+  .editar {
+    float:right;
+    color: grey;
+    margin-right: 10%;
+  }
+
+/* universidade do usuario logado (perfil)*/
+  .sua_universidade {
+    width: 80%; 
+    padding: 5px; 
+    background-color:white;
+    color: #ff9800; 
+    border: 2px solid #ff9800;
+    border-radius: 5px; 
+    font-size: 19px;
+  }
+
+  /* curso do usuario logado (perfil)*/
+  .seu_curso {
+    width: 80%; 
+    padding: 5px; 
+    background-color:white;
+    color: #4cd964; 
+    border: 2px solid #4cd964;
+    border-radius: 5px; 
+    font-size: 19px;
+  }
+
+  /* estado civil do usuario logado (perfil) */
+  .seu_estado_civil {
+    width: 80%; 
+    padding: 5px; 
+    background-color: white; 
+    color: #e91e63; 
+    border: 2px solid #e91e63;
+    border-radius: 5px; 
+    font-size: 19px;
+  }
+   
+   /* interrese em mulheres ou homens (perfil) */
+  .seu_interesse {
+    width: 80%; 
+    padding: 5px; 
+    margin-bottom: 20%;
+    background-color:white; 
+    color: #f44336; 
+    border:2px solid #f44336;
+    border-radius: 5px; 
+    font-size: 19px;
+  }
+
+  /* sua biografia (perfil) */
+  .sua_biografia {
+    width: 290px; 
+    padding: 5px; 
+    background-color:white;
+    color: grey; 
+    border-radius: 5px; 
+    font-size: 19px; 
+    text-align: center;
+  }
+
+   /* sua foto de perfil (perfil) */
+  .sua_foto_perfil {
+    width: 50%; 
+    margin-top: -120px;
+  }
+
+  /* sua foto da capa (perfil) */
+  .sua_foto_capa {
+    width: 100%; 
+    margin-top: -95px;
+  }
+
+  /* nome do perfil logado */
+  #nome_perfil {
+    margin-top: -10px;
+  }
+ .cr-overlay {
+   background-color: white; 
+   opacity: 0.1;
+ }
+
+
+
+/* universidade do usuarios*/
+.user_universidade {
+    width: 80%; 
+    padding: 5px; 
+    background-color:white;
+    color: #ff9800; 
+    border: 2px solid #ff9800;
+    border-radius: 5px; 
+    font-size: 19px;
+  }
+
+  /* curso dos usuarios */
+  .user_curso {
+    width: 80%; 
+    padding: 5px; 
+    background-color:white;
+    color: #4cd964; 
+    border: 2px solid #4cd964;
+    border-radius: 5px; 
+    font-size: 19px;
+  }
+
+  /* estado civil dos usuarios */
+  .user_estado_civil {
+    width: 80%; 
+    padding: 5px; 
+    background-color: white; 
+    color: #e91e63; 
+    border: 2px solid #e91e63;
+    border-radius: 5px; 
+    font-size: 19px;
+  }
+   
+   /* interrese dos usuarios */
+  .user_interesse {
+    width: 80%; 
+    padding: 5px; 
+    margin-bottom: 20%;
+    background-color:white; 
+    color: #f44336; 
+    border:2px solid #f44336;
+    border-radius: 5px; 
+    font-size: 19px;
+  }
+
+  /* biografia dos usuarios */
+  .user_biografia {
+    width: 290px; 
+    padding: 5px; 
+    background-color:white;
+    color: grey; 
+    border-radius: 5px; 
+    font-size: 19px; 
+    text-align: center;
+  }
+
   </style> 
   </head>
   <body>
 
- <main id="inicio">   
+ <main id="inicio" style="display: none">   
    <div data-page="index" class="page">
     <div class="page-content">
      <!-- start window login -->
@@ -191,12 +385,12 @@
       <!-- button of login or create a account-->
        <div class="block" id="buttonss">
           <p>
-            <a href="feed.html" class="link external">teste</a>
+            <!-- <a href="feed.html" class="link external">teste</a> -->
            <button class="col button button-big button-fill" onclick="login()">Entrar</button>
           </p>
           <p class="row">
-            <button class="col button button-big">
-             <a class="link popup-open" href="#"  data-popup=".my-popup" id="criar">Criar conta</a>
+            <button href="#"  data-popup=".my-popup" id="criar" class="link popup-open col button button-big" style="background-color: rgba(245, 241, 241, 0.993)">
+              Criar conta
             </button>
           </p>
        </div>
@@ -255,17 +449,17 @@
   <div class="view">
     <div class="page">
       <div class="navbar">
-        <div class="navbar-inner">
+        <div class="navbar-inner" style="background-color: #2196f3; color: white">
           <div class="title">Criar Conta</div>
           <div class="right" id="voltar">
             <a class="link popup-close">Voltar</a>
           </div>
         </div>
       </div>
-      <div class="page-content">
+      <div>
          <div data-page="index" class="page">
            <div class="page-content">
-            <div class="list no-hairlines-md">
+            <div>
 
              <div class="subnavbar-inner" style="margin-top: -10px; width: 100%">
                 <div class="segmented" style="display: none">
@@ -279,10 +473,10 @@
 
         <div class="page-content hide-navbar-on-scroll">
           <div class="tabs">
-            <div class="tab tab-active" id="tab1">
+            <div class="tab tab-active list" id="tab1">
               <div class="block">
                 <div id="pass_one">
-                  <ul style="margin-top: -80px">
+                  <ul>
                       <li class="item-content item-input" id="itens">
                         <!-- estado onde a pessoa mora-->
                         <div class="item-inner">
@@ -402,6 +596,7 @@
                             <select id="univer" onkeypress="acionaw">
                               <!--select dinamico feito pelo back end-->
                               <option value='1'>Selecione sua Universidade</option>
+                              <option value="Universidade do sagrado coração">Universidade do sagrado coração</option>
                             </select>
                           </div>
                         </div>
@@ -654,14 +849,14 @@
                         <div class="block">
                           <p class="row">
                              <a class="popup-open" href="#" data-popup=".popup-estuda" id="open_estuda"></a>
-                             <button class="col button button-big col button button-fill color-green" onclick="nextstep()" id="space_but">Próximo</button>
+                             <button class="col button button-big col button button-fill color-blue" onclick="nextstep()" id="space_but">Próximo</button>
                           </p>
                         </div>
                      </ul>
                   </div>
                </div>
             </div>
-            <div class="tab" id="tab2">
+            <div class="tab list" id="tab2">
               <div class="block">
                   <div id="pass_one">
                   <ul>
@@ -715,8 +910,8 @@
                               <div class="item-input-wrap">
                                 <select id="sexo">
                                   <option value="0">Interessado em</option>
-                                  <option value="M">Homens</option>
-                                  <option value="F">Mulheres</option>
+                                  <option value="Homens">Homens</option>
+                                  <option value="Mulheres">Mulheres</option>
                                 </select>
                               </div>
                             </div>
@@ -732,8 +927,8 @@
                                 <div class="item-input-wrap">
                                   <select id="estado_civil">
                                       <option value="0">Estado Civil.</option>
-                                      <option value="1">Solteiro</option>
-                                      <option value="2">Em um relacionamento sério</option>
+                                      <option value="Solteiro">Solteiro</option>
+                                      <option value="Em um relacionamento sério">Em um relacionamento sério</option>
                                   </select>
                                 </div>
                               </div>
@@ -741,7 +936,7 @@
                           <div class="block">
                               <p class="row">
                                 <a class="popup-open" href="#" data-popup=".popup-dados_caracteristicas" id="dados_caracteristicas"></a>
-                                <button class="col button button-big col button button-fill color-green" onclick="nextstep2()" id="space_but">Próximo</button>
+                                <button class="col button button-big col button button-fill color-blue" onclick="nextstep2()" id="space_but">Próximo</button>
                               </p>
                           </div>
                        </ul>
@@ -749,13 +944,13 @@
                 </div>
              </div>
 
-            <div class="tab" id="tab3">
-              <div style="margin-top: -80px;">      
+            <div class="tab list" id="tab3">
+              <div style="margin-top: -60px;">      
                     <div id="quadro_cabelo" class="block">
                       <p class="title_carac">Qual o tamanho do seu cabelo?</p>
                           <label>
                             <label class="radio">
-                            <input type="radio" id="cabelo" name="cabelo" value="curto">
+                            <input type="radio" id="cabelo" name="cabelo" value="curto" autofocus>
                               <i class="icon-radio"></i>
                             </label> 
                              Curto
@@ -847,7 +1042,7 @@
                       <div id="space_radio"></div>
                   </div>
               <div id="space_line"></div>
-                <div id="quadro_cabelo" class="block">
+                <div id="quadro_cabelo" class="block">  
                   <p class="title_carac">Utiliza aparelho dentário ?</p>
                     <label>
                       <label class="radio">
@@ -869,60 +1064,39 @@
               <div class="block">
                 <p class="row">
                   <a class="popup-open" href="#" data-popup=".popup-dados_caracteristicas" id="dados_caracteristicas"></a>
-                  <button class="col button button-big col button button-fill color-green" onclick="nextstep3()" id="space_but">Próximo</button>
+                  <button class="col button button-big col button button-fill color-blue" onclick="nextstep3()" id="space_but">Próximo</button>
                 </p>
-            </div>
-            </div>
-          </div>
-
-
-
-              <div class="tab" id="tab4">
-                  <div class="block" style="margin-top: -50px;">
-                      <div>		
-                        <center>
-                          <div id="user">
-                             <!-- <img src="img/user.png" style="width: 300px;"> -->
-                          </div>
-                        </center>	
-                      
-                          <div id="image_demo" style="width:100%; margin-top: -70px;"></div> 
-                            <label class="col button button-big col button button-fill color-blue" style="margin-bottom: 5px;">
-                              Escolha uma foto
-                              <input type="file" name="upload_image" id="upload_image" accept="image/png, image/jpeg" />
-                            </label>
-                            <button class="col button button-big col button button-fill color-green btn btn-success crop_image">Proximo</button>
-                          </div>
-                   </div>
-               </div>
-  
-
-
-
-
-
-                <div class="tab" id="tab5">
-                  <div class="block" style="margin-top: -50px;">
-                     <div>
-                          <div id="image_demo_capa"></div> 
-                            <label class="col button button-big col button button-fill color-blue" style="margin-bottom: 2px;">
-                              Escolher Imagem
-                               <input type="file" name="upload_image_capa" id="upload_image_capa" />
-                            </label>
-                         
-                            <button class="col button button-big col button button-fill color-green btn btn-success crop_image_capa">Finalizar</button>
-                          
-      
-                           </div> 
-                  </div>
-                </div>
-                 
-
-
-
-
-
               </div>
+              </div>
+             </div>
+                <!-- inicio da foto de perfil -->
+                  <div class="tab list" id="tab4">
+                      <div class="" style="margin-top: -73px;">
+                          	
+                              <div id="image_demo"></div> 
+                              <div class="row block">	
+                                <label class="col button button-big col button button-fill color-blue" style="margin-bottom: 5px;">
+                                  Escolher foto
+                                  <input type="file" name="upload_image" id="upload_image" accept="image/png, image/jpeg" />
+                                </label>
+                              <button class="col button button-big col button button-fill color-blue btn btn-success crop_image">Proximo</button>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- inicio da foto da capa -->
+                  <div class="tab" id="tab5">
+                      <div style="margin-top: -50px;">
+                      
+                              <div id="image_demo_capa"></div> 
+                              <div class="row block">
+                              <label class="col button button-big col button button-fill color-blue" style="margin-bottom: 2px;">
+                                  Escolher foto
+                                  <input type="file" name="upload_image_capa" id="upload_image_capa" />
+                                </label>
+                                <button class="col button button-big col button button-fill color-blue btn btn-success crop_image_capa">Finalizar</button>
+                          </div> 
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -931,12 +1105,11 @@
         </div>
       </div>
     </div>
-
-
-<!-- </main>
-<main id="feed">
-  
-<body>
+  </div>
+</main>
+<!-- fim do login e criar conta -->
+<!-- inicio do feed -->
+<main id="feed" style="display:none">
     <div class="page">
         <div class="navbar">
             <div class="navbar-inner">
@@ -945,38 +1118,1264 @@
                     <i class="f7-icons size-22">bars</i>
                     </a>
                 </div>
-                <p class="titulo">SPOTTED</p>
+               
                 <div class="right">
                     <a class="link popup-open" href="#" data-popup=".popup-about">
-                    <i class="f7-icons size-22">search</i>
+                          
                     </a>
                 </div>
             </div>
+          
         </div>
-        <a class="link popup-open" data-popup=".popup-people" style="margin-top: 100px;">Perfil Buscado</a>
-        <input type="file" value="res">
-        
-    </div>
+        <div style="margin-top: 70px">
+         <div id="mostra_pessoas"> 
+            <div id="grade_pessoas"></div>
+         </div>
+         <div id="mostra_publicacoes">    
+            <div id="grade_public">       
+              <center>                      
+              <a href="#" style="width: 60%;" class="popup-open item-content item-link col button button-raised button-fill button-round" data-popup=".popup-fazer_publicacao">
+                 Fazer publicação 
+                </a>
+              </center>
+           </div>
+        </div>
+
+        <div style="position: absolute">
+          <div class="navbar-inner">
+              <div class="left">
+                  <a class="link popover-open" href="#" data-popover=".popover-about">
+                  <i class="f7-icons size-22">bars</i>
+                  </a>
+              </div>
+             
+              <div class="right">
+                  <a class="link popup-open" href="#" data-popup=".popup-about">
+                        
+                  </a>
+              </div>
+          </div>
     
-     Popovers
-    <div class="popover popover-about">
-        <div class="popover-inner">
-            <ul style="list-style-type: none " class="block">
-                <li><button class="col button button-fill spacee link popup-open popover-close" data-popup=".popup-perfil">Seu Perfil</button></li>
-                <li><button class="col button button-fill spacee link popup-open popover-close" data-popup=".popup-sobre">Sobre</button></li>
-                <li><button class="col button button-fill spacee link popup-open popover-close" data-popup=".popup-password">Trocar Senha</button></li>
-                <li><button class="col button button-fill color-red spacee" onclick="logout()">Sair</button></li>
-            </ul>
+      </div>
+        <!-- rodape  -->
+        <div style="position: absolute; bottom: 0; width: 100%; height: 50px;">
+          <div style="background-color: #2196f3;">
+            <div class="row" style="color: white; padding: 10px">
+              <i class="f7-icons"  id="lista_pessoas"  style="font-size: 30px; margin-left: 10%;">persons_round_fill</i>
+                  
+              <!-- lupa de busca  -->
+              <a class="popup-open" href="#" data-popup=".popup-busca">
+                 <i class="f7-icons" style="font-size: 30px; color: white;">search</i>  
+              </a>  
+
+              <i class="f7-icons" id="lista_public" style=" font-size: 30px; margin-right: 10%;">list</i>     
+            
+            </div>
+          </div>
+      </div>
+
+      <!-- abre modal de busca  -->
+        <div class="popup popup-busca"> 
+          <div data-page="index" class="page">
+            <div class="page-content">
+              <p>
+                <a class="link popup-close f7-icons" href="#"style="position: absolute; top: 4px; left: 8px; z-index:9999; font-size: 25px; color: black;">close</a>
+              </p> 
+              <div class="block">
+              <div id="pass_one">
+                    <div id="itens" style="margin-top: 80px; border: 4px solid silver;padding:10px">
+                     <!-- estado onde a pessoa mor -->
+                      <div class="item-inner">
+                        <div class="item-title item-label"><h3 style="font-size:18px;">* Estado onde a pessoa mora.</h3></div>
+                          <select id="estado_m_edit" style="padding: 10px; font-size:18px;">
+                              <option value="0">Selecione.</option>
+                              <option value="1">AC</option>
+                              <option value="2">AL</option>
+                              <option value="3">AM</option>
+                              <option value="4">AP</option>
+                              <option value="5">BA</option>
+                              <option value="6">CE</option>
+                              <option value="7">DF</option>
+                              <option value="8">ES</option>
+                              <option value="9">GO</option>
+                              <option value="10">MA</option>
+                              <option value="11">MG</option>
+                              <option value="12">MS</option>
+                              <option value="13">MT</option>
+                              <option value="14">PA</option>
+                              <option value="15">PB</option>
+                              <option value="16">PE</option>
+                              <option value="17">PI</option>
+                              <option value="18">PR</option>
+                              <option value="19">RJ</option>
+                              <option value="20">RN</option>
+                              <option value="21">RO</option>
+                              <option value="22">RR</option>
+                              <option value="23">RS</option>
+                              <option value="24">SC</option>
+                              <option value="25">SE</option>
+                              <option value="26">SP</option>
+                              <option value="27">TO</option>
+                          </select>
+                       </div>
+                      </div>
+                      <!-- lista cidade onde o usuario mora -->
+                    <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px">
+                      <div class="item-inner">
+                        <div class="item-title item-label"><h3 style=" font-size:18px;">* Cidade onde a pessoa mora.</h3></div>
+                            <select id="cidade_m_edit" style="padding: 10px; font-size:18px;">
+                              <option value='0'>Selecione.</option>;
+                            </select>
+                        </div> 
+                      </div>
+                      <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px">
+                        <!-- estado onde a pessoa estuda-->
+                         <div class="item-inner">
+                           <div class="item-title item-label"><h3 style=" font-size:18px;">* Estado onde a pessoa estuda.</h3></div>
+                             <select id="estado_e_edit" style="padding: 10px; font-size:18px;">
+                                 <option value="0">Selecione.</option>
+                                 <option value="1">AC</option>
+                                 <option value="2">AL</option>
+                                 <option value="3">AM</option>
+                                 <option value="4">AP</option>
+                                 <option value="5">BA</option>
+                                 <option value="6">CE</option>
+                                 <option value="7">DF</option>
+                                 <option value="8">ES</option>
+                                 <option value="9">GO</option>
+                                 <option value="10">MA</option>
+                                 <option value="11">MG</option>
+                                 <option value="12">MS</option>
+                                 <option value="13">MT</option>
+                                 <option value="14">PA</option>
+                                 <option value="15">PB</option>
+                                 <option value="16">PE</option>
+                                 <option value="17">PI</option>
+                                 <option value="18">PR</option>
+                                 <option value="19">RJ</option>
+                                 <option value="20">RN</option>
+                                 <option value="21">RO</option>
+                                 <option value="22">RR</option>
+                                 <option value="23">RS</option>
+                                 <option value="24">SC</option>
+                                 <option value="25">SE</option>
+                                 <option value="26">SP</option>
+                                 <option value="27">TO</option>
+                             </select>
+                          </div>
+                         </div>
+                         <!-- lista cidade onde o usuario estuda -->
+                       <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px">
+                         <div class="item-inner">
+                           <div class="item-title item-label"><h3 style=" font-size:18px;">* Cidade onde a pessoa estuda.</h3></div>
+                               <select id="cidade_e_edit" style="padding: 10px; font-size:18px;">
+                                 <option value='0'>Selecione.</option>;
+                               </select>
+                           </div> 
+                         </div>
+                        <!-- universidade onde o usuario estuda -->
+                       <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px">
+                          <div class="item-inner">
+                           <div class="item-title item-label"><h3  style=" font-size:18px;">* Universidade onde a pessoa estuda.</h3></div>
+                              <select id="univer_edit" style="padding: 10px; font-size:18px;">
+                                <option value='0'>Selecione.</option>;
+                              </select>
+                          </div> 
+                       </div>
+                       <!-- Curos que o usuario faz -->
+                       <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px">
+                        <div class="item-inner">
+                         <div class="item-title item-label"><h3  style=" font-size:18px;">* O que você a pessoa cursa.</h3></div>
+                            <select id="curso_edit" style="padding: 10px; font-size:18px;">
+                              <option value='0'>Selecione.</option>;
+                              <optgroup label="Ciências biológicas e da Saúde">
+                                <option>Biologia</option>
+                                <option>Biologia marinha</option>
+                                <option>Biomedicina</option>
+                                <option>Botânica</option>
+                                <option>Ciências Agrárias</option>
+                                <option>Ciências Ambientais</option>
+                                <option>Ciências Biológicas</option>
+                                <option>Ciências da Saúde</option>
+                                <option>Ciências do Meio Aquático</option>
+                                <option>Ecologia</option>
+                                <option>Educação física</option>
+                                <option>Enfermagem</option>
+                                <option>Fisioterapia</option>
+                                <option>Fonoaudiologia</option>
+                                <option>Gerontologia</option>
+                                <option>Medicina</option>
+                                <option>Medicina veterinária</option>
+                                <option>Meteorologia</option>
+                                <option>Microbiologia e Imunologia</option>
+                                <option>Naturologia</option>
+                                <option>Neurociência</option>
+                                <option>Nutrição</option>
+                                <option>Odontologia</option>
+                                <option>Quiropraxia</option>
+                                <option>Saúde Coletiva</option>
+                                <option>Terapia ocupacional</option>
+                                <option>Zootecnia</option>
+                                <option>Aquacultura</option>
+                                <option>Cafeicultura</option>
+                                <option>Biotecnologia</option>
+                                <option>Ciência dos Alimentos</option>
+                                <option>Cosmetologia</option>
+                                <option>Drenagem e Irrigação</option>
+                                <option>Enologia</option>
+                                <option>Fruticultura</option>
+                                <option>Gestão de Recursos Hídricos</option>
+                                <option>Horticultura</option>
+                                <option>Meliponicultura</option>
+                                <option>Oftálmica</option>
+                                <option>Radiologia</option>
+                                <option>Silvicultura</option>
+                                <option>Sistemas Biomédicos</option>                            
+                              </optgroup>
+                              <optgroup label="Ciências Exatas">
+                                <option>Agronomia</option>
+                                <option>Astronomia</option>
+                                <option>Bioengenharia</option>
+                                <option>Biofísica</option>
+                                <option>Ciências Contábeis</option>
+                                <option>Ciência da Computação</option>
+                                <option>Ciências Biomoleculares</option>
+                                <option>Ciências Matemáticas da Terra</option>
+                                <option>Ciências Naturais </option>
+                                <option>Ciências Náuticas</option>
+                                <option>Ciência & Tecnologia</option>
+                                <option>Educação do Campo </option>
+                                <option>Engenharia aeroespacial</option>
+                                <option>Engenharia aeronáutica</option>
+                                <option>Engenharia Agrícola</option>
+                                <option>Engenharia de Alimentos</option>
+                                <option>Engenharia Ambiental</option>
+                                <option>Engenharia biomédica</option>
+                                <option>Engenharia Cartográfica</option>
+                                <option>Engenharia Civil</option>
+                                <option>Engenharia de Computação</option>
+                                <option>Engenharia de controle e automação</option>
+                                <option>Engenharia Elétrica</option>
+                                <option>Engenharia Física</option>
+                                <option>Engenharia Florestal</option>
+                                <option>Engenharia geológica</option>
+                                <option>Engenharia Industrial Madeireira</option>
+                                <option>Engenharia de manufatura</option>
+                                <option>Engenharia de Materiais</option>
+                                <option>Engenharia Mecânica</option>
+                                <option>Engenharia Mecatrônica</option>
+                                <option>Engenharia Metalúrgica</option>
+                                <option>Engenharia Militar</option>
+                                <option>Engenharia de Minas</option>
+                                <option>Engenharia Naval e Oceânica</option>
+                                <option>Engenharia Nuclear</option>
+                                <option>Engenharia de Pesca</option>
+                                <option>Engenharia de Petróleo</div>
+                                <option>Engenharia de Produção</option>
+                                <option>Engenharia Química</option>
+                                <option>Engenharia Sanitária</option>
+                                <option>Engenharia de Sistemas Eletrônicos</option>
+                                <option>Engenharia de Software</option>
+                                <option>Engenharia de Tecidos</option>
+                                <option>Engenharia de Telecomunicações</option>
+                                <option>Engenharia Têxtil</option>
+                                <option>Estatística</option>
+                                <option>Farmácia (ou Bioquímica)</option>
+                                <option>Física</option>
+                                <option>Física computacional</option>
+                                <option>Física médica</option>
+                                <option>Geofísica</option>
+                                <option>Geologia</option>
+                                <option>Geoprocessamento e Sensoriamento Remoto</option>
+                                <option>Informática</option>
+                                <option>Informática biomédica</option>
+                                <option>Matemática</option>
+                                <option>Matemática Aplicada</option>
+                                <option>Matemática computacional</option>
+                                <option>Nanotecnologia</option>
+                                <option>Oceanografia </option>
+                                <option>Química </option>
+                                <option>Química ambiental</option>
+                                <option>Química industrial</option>
+                                <option>Sistemas de Informação</option>
+                                <option>Agrimensura</option>
+                                <option>Agroindústria</option>
+                                <option>Análise e Desenvolvimento de Sistemas</option>
+                                <option>Automação Industrial</option>
+                                <option>Biocombustíveis</option>
+                                <option>Ciências Aeronáuticas</option>
+                                <option>Ciência dos materiais</option>
+                                <option>Construção de Edifícios</option>
+                                <option>Construção de Estradas</option>
+                                <option>Construção Naval</option>
+                                <option>Energias Renováveis</option>
+                                <option>Gestão da Tecnologia da Informação</option>
+                                <option>Gestão de Petróleo e Gás</option>
+                                <option>Gestão Portuária</option>
+                                <option>Manutenção Industrial</option>
+                                <option>Mecatrônica e Mecânica de Precisão</option>
+                                <option>Mineração</option>
+                                <option>Processos Metalúrgicos</option>
+                                <option>Processamento de Dados</option>
+                                <option>Produção de Laticínios</option>
+                                <option>Produção de Materiais Plásticos</option>
+                                <option>Produção Têxtil</option>
+                                <option>Produção Sucroalcooeira</option>
+                                <option>Projetos de Estruturas Aeronáuticas</option>
+                                <option>Redes de Computadores</option>
+                                <option>Redes de Telecomunicações</option>
+                                <option>Saneamento Ambiental</option>
+                                <option>Segurança da Informação</option>
+                                <option>Sistemas Biomédicos</option>
+                                <option>Sistemas Elétricos</option>
+                                <option>Sistemas Embarcados</option>
+                                <option>Sistemas de Navegação Fluvial</option>
+                                <option>Sistemas para Internet</option>
+                                <option>Telemática</option>
+                              </optgroup>
+                              <optgroup label="Ciências Humanas">
+                                <option>Administração</option>
+                                <option>Antropologia</option>
+                                <option>Arqueologia</option>
+                                <option>Arquitetura</option>
+                                <option>Arquivística</option>
+                                <option>Artes Cênicas</option>
+                                <option>Artes Visuais </option>
+                                <option>Biblioteconomia</option>
+                                <option>Ciências Atuariais</option>
+                                <option>Ciências Contábeis</option>
+                                <option>Ciências Humanas</option>
+                                <option>Ciência Política (ou Ciências do Estado)</option>
+                                <option>Ciências Sociais</option>
+                                <option>Cinema</option>
+                                <option>Comunicação social</option>
+                                <option>Dança</option>
+                                <option>Defesa e Gestão Estratégica Internacional</option>
+                                <option>Desenho Industrial</option>
+                                <option>Design de Interiores</option>
+                                <option>Design de Moda</option>
+                                <option>Direito</option>
+                                <option>Economia</option>
+                                <option>Economia Doméstica</option>
+                                <option>Editoração</option>
+                                <option>Educação Artística</option>
+                                <option>Escultura</option>
+                                <option>Filosofia </option>
+                                <option>Gastronomia</option>
+                                <option>Geografia</option>
+                                <option>Gestão Ambiental</option>
+                                <option>Gestão Pública</option>
+                                <option>Gravurismo</option>
+                                <option>História</option>
+                                <option>História da Arte</option>
+                                <option>Hotelaria</option>
+                                <option>Jornalismo</option>
+                                <option>Letras</option>
+                                <option>Linguística</option>
+                                <option>Museologia</option>
+                                <option>Música</option>
+                                <option>Ordenamento do Território</option>
+                                <option>Paisagismo</option>
+                                <option>Pedagogia</option>
+                                <option>Pintura</option>
+                                <option>Psicologia</option>
+                                <option>Publicidade & Propaganda</option>
+                                <option>Produção Audiovisual</option>
+                                <option>Produção Cultural</option>
+                                <option>Relações Internacionais</option>
+                                <option>Relações Públicas</option>
+                                <option>Segurança Pública</option>
+                                <option>Serviço Social</option>
+                                <option>Sociologia</option>
+                                <option>Teatro</option>
+                                <option>Teologia</option>
+                                <option>Transporte Terrestre</option>
+                                <option>Turismologia</option>
+                                <option>Urbanismo</option>
+                                <option>Agroecologia</option>
+                                <option>Comércio Exterior</option>
+                                <option>Cooperativismo</option>
+                                <option>Design de Jogos Digitais</option>
+                                <option>Design de produto</option>
+                                <option>Design gráfico</option>
+                                <option>Eventos</option>
+                                <option>Esporte e Lazer</option>
+                                <option>Fotografia</option>
+                                <option>Gestão do Agronegócio</option>
+                                <option>Gestão Comercial</option>
+                                <option>Gestão Financeira</option>
+                                <option>Gestão Hospitalar</option>
+                                <option>Gestão de Segurança Privada</option>
+                                <option>Gestão da Qualidade</option>
+                                <option>Logística</option>
+                                <option>Mercadologia</option>
+                                <option>Negócios Imobiliários</option>
+                                <option>Processos Escolares</option>
+                                <option>Produção de Aguardente</option>
+                                <option>Produção Fonográfica</option>
+                                <option>Recursos Humanos</option>
+                                <option>Secretariado</option>
+                                <option>Segurança no Trabalho</option>
+                                <option>Transporte Aéreo</option>
+                                <option>Gestão em serviços jurídicos e notariais</option>
+                                  </optgroup>
+                            </select>
+                        </div> 
+                     </div>
+                    <!-- tamanho do cabelo do usuario -->
+                    <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px; border-radius: 9px;" class="block">
+                      <div class="item-inner">
+                      <p class="title_carac"><b>Qual o tamanho do cabelo da pessoa ?</b></p>
+                          <label>
+                            <label class="radio color-gray">
+                            <input type="radio" id="cabelo_edit" name="cabelo_edit" value="curto">
+                              <i class="icon-radio"></i>
+                            </label> 
+                             Curto
+                          </label>
+                         <div id="space_radio"></div>
+                          <label>
+                            <label class="radio color-gray">
+                              <input type="radio" id="cabelo_edit" name="cabelo_edit" value="medio">
+                              <i class="icon-radio"></i>
+                            </label> 
+                             Médio 
+                          </label>
+                        <div id="space_radio"></div>
+                          <label>
+                            <label class="radio color-gray">
+                              <input type="radio" id="cabelo_edit" name="cabelo_edit" value="longo">
+                              <i class="icon-radio"></i>
+                            </label> 
+                           Longo
+                        </label>
+                        </div>
+                      <div id="space_radio"></div>
+                    </div>
+                  <!-- cor do cabelo do usuario -->
+                    <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px; border-radius: 9px;" class="block">
+                      <div class="item-inner">
+                        <p class="title_carac"><b>Qula a cor do cabelo da pessoa?</b></p>
+                          <label>
+                            <label class="radio color-gray">
+                            <input type="radio" id="cor_cabelo_edit" name="cor_cabelo_edit" value="claro">
+                              <i class="icon-radio"></i>
+                            </label> 
+                             Claro
+                          </label>
+                         <div id="space_radio"></div>
+                          <label>
+                            <label class="radio color-gray">
+                              <input type="radio" id="cor_cabelo_edit" name="cor_cabelo_edit" value="escuro">
+                              <i class="icon-radio"></i>
+                            </label> 
+                             Escuro 
+                          </label>
+                        </div>
+                      <div id="space_radio"></div>
+                    </div>
+                   <!-- relogio do usuario -->
+                     <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px; border-radius: 9px;" class="block">
+                      <div class="item-inner">
+                        <p class="title_carac"><b>Essa pessoa usa relógio ?</b></p>
+                          <label>
+                            <label class="radio color-gray">
+                            <input type="radio" id="relogio_edit" name="relogio_edit" value="sim">
+                              <i class="icon-radio"></i>
+                            </label> 
+                             Sim
+                          </label>
+                         <div id="space_radio"></div>
+                          <label>
+                            <label class="radio color-gray">
+                              <input type="radio" id="relogio_edit" name="relogio_edit" value="nao">
+                              <i class="icon-radio"></i>
+                            </label> 
+                             Não 
+                          </label>
+                        </div>
+                      <div id="space_radio"></div>
+                    </div>
+                   <!-- aparelho dentario do usuario -->
+                     <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px; border-radius: 9px;" class="block">
+                      <div class="item-inner">
+                        <p class="title_carac"><b>Essa pessoa utiliza aparelho dentario ?</b></p>
+                          <label>
+                            <label class="radio color-gray">
+                            <input type="radio" id="" name="dente_edit" value="sim">
+                              <i class="icon-radio"></i>
+                            </label> 
+                             Sim
+                          </label>
+                         <div id="space_radio"></div>
+                          <label>
+                            <label class="radio color-gray">
+                              <input type="radio" id="" name="dente_edit" value="nao">
+                              <i class="icon-radio"></i>
+                            </label> 
+                             Não 
+                          </label>
+                        </div>
+                    </div>
+                 </div>   
+            </div>
+          </div> 
+        </div>  
+
+
+        <!-- abre modal de publicações  -->
+        <div class="popup popup-fazer_publicacao">
+            <div data-page="index" class="page">    
+                <div class="page-content">
+                  <div>                                   
+                     <!-- fecha janela de edição -->
+                     <div class="row">
+                       <i class="icon f7-icons color-blue link popup-close" id="popup-close" href="#" style="margin: 20px">close</i>
+                        <div style="margin-top: 5px; margin-right: 10px;">
+                          <h1 style="padding: 8px; font-size: 20px; border-radius: 90px; background-color: #2196f3; color: white;">Publicar <span class="icon f7-icons" style="font-size: 20px;">paper_plane</span></h1>
+                        </div>
+                     </div> 
+                     <div style="margin-top: 20px">
+                      <div class="row"> 
+                        <div id="foto_per_publicacao"> 
+                        </div>
+                       <textarea type="text" style="font-size: 17px; margin-top: -40px; margin-left: 70px; width: 70%" placeholder="O que você esta pensando?" autofocus rows="5" cols="25"></textarea>
+                     </div>
+                    </div>
+                  </div>
+                 <div style="position: absolute; bottom: 0px;"> 
+                   <span class="icon f7-icons" style="color: white; background-color: #2196f3; padding: 2px 10px 0px 10px; margin-left: 10px; border-radius:90px;">images</span>
+                 </div>
+                </div>
+            </div>
+         </div>
+
+
+
+    
+      <div class="popover popover-about" style="width: 97%">
+          <div class="popover-inner" style="width: 100%">
+              <div id="container">
+                <p>
+                  <p id="foto_menu"></p>
+                  <p class="mini_nome" id="mini_nome"></p>
+                  <p><a class="link popup-open popover-close ver_meu_perfil" href="#" data-popup=".popup-perfil" id="ver_meu_perfil">Ver perfil</a></p>
+                </p>
+                <hr style="width: 89%">
+                <p>
+                  <a class="popup-open popover-close sobre_menu" style="color:grey" href="#" data-popup=".popup-sobre">
+                      <i class="fa fa-newspaper-o" aria-hidden="true"></i>&nbsp;Sobre
+                    </a>
+                </p>
+                <p>
+                  <a class="popup-open popover-close troca_senha" style="color: grey" href="#" data-popup=".popup-teste">
+                      <i class="fa fa-lock" aria-hidden="true"></i>&nbsp;Trocar Senha
+                  </a>
+                </p>
+                <p> 
+                  <a class="link popover-close color-red sair" onclick="logout()">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Sair
+                  </a>
+                </p>
+              </div>       
+          </div>
+      </div>
+
+      <!-- perfil de usuario logado -->
+      <div class="popup popup-perfil">
+          <div data-page="index" class="page">  
+              <div class="page-content">
+                 <!-- Close Popup -->
+                 <p>
+                   <a class="link popup-close" href="#" id="seu_perfil_close"><i class="f7-icons size-24" style="color: white; margin-top:-10px;margin-left: 10px">close</i></a>
+                </p>   
+                  <center>
+                    <!-- foto da capa usuario logado -->
+                    <p id="sua_foto_capa"></p>
+                     <!-- editar a foto da capa do usuario  -->
+                     <a class="popup-open" href="#" data-popup=".popup-foto_capa_edit" onclick="editar_foto();edita_foto_capa()">
+                        <p style="color: black; margin-left: 80%; margin-top: -20px; padding:2px;"><b class="fa fa-camera">&nbsp;Editar</b></p>
+                    </a>
+
+                    <!-- foto perfil usuario logado -->
+                    <p id="sua_foto_perfil"></p>
+                    <!-- editar foto de perfil do usuario -->
+                    <a class="popup-open" href="#" data-popup=".popup-foto_perfil_edit" onclick="editar_foto();edita_foto_perfil()">
+                        <p style="color: black; margin-top:-23px; padding:2px;"><b class="fa fa-camera">&nbsp;Editar</b></p>
+                    </a>
+                      
+                    <p>
+                     <h1 id="nome_perfil"></h1>
+                     <div class="accordion-item" id="add_biograf">
+                        <a href="#" style="width: 60%;" class="item-content item-link col button button-raised button-fill button-round" >
+                          <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add biografia
+                        </a>
+                          <div class="accordion-item-content">   
+                            <p>
+                              <p id="qt_carac">400</p>
+                                <textarea style="border: 2px solid grey; width: 84%; border-radius: 9px; padding: 5px; color: dimgray; font-size: 18px; font-family: sans-serif" rows="7" onkeyUp="conta_carac()" id="text_biograf" maxlength="400"></textarea>
+                               <p>
+                                  <button class="col button button-fill color-green" style="width: 20%" onclick="salvar_biograf()">Salvar</button>
+                               </p>
+                              <hr style="width:80%">  
+                            </p>
+                          </div>
+                      </div>
+                      <br>
+
+                      <!-- arrumar depois a parte de add  musica  -->
+
+                      <!-- adiciona uma musica favorita  -->
+                      <div class="accordion-item" id="add_biograf">
+                        <a href="#" style="width: 60%;" class="item-content item-link col button button-raised button-fill button-round color-pink" >
+                          <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add música favorita
+                        </a>
+                          <div class="accordion-item-content">   
+                            <p>
+                              <p id="qt_carac">400</p>
+                                <textarea style="border: 2px solid grey; width: 84%; border-radius: 9px; padding: 5px; color: dimgray; font-size: 18px; font-family: sans-serif" rows="7" onkeyUp="conta_carac()" id="text_biograf" maxlength="400"></textarea>
+                               <p>
+                                  <button class="col button button-fill color-green" style="width: 20%" onclick="salvar_biograf()">Salvar</button>
+                               </p>
+                              <hr style="width:80%">  
+                            </p>
+                          </div>
+                      </div>
+                    </center>
+                   <!-- botao de editar informações-->
+                   
+                   <a class="popup-open" href="#" data-popup=".popup-edit_infor" id="open_modal_edit"></a> <!--abre modal de edição-->
+                  <div class="fab fab-extended fab-center-bottom color-white"  style="position: fixed; bottom:10px;">
+                        <div class="fab-text">
+                            <p class="fa fa-pencil col button button-fill button-round" style="color: #2196f3; box-shadow: 1px 2px 2px silver" onclick="editar_info();">&nbsp;<b>Editar Info</b></p>      
+                        </div>
+                    </div>
+                      <center>
+                    <p id="biografia"></p>  
+                    <!-- inicio primeiro bloco -->
+                    <p class="sua_universidade" id="sua_univer"></p>
+                    <!-- fim primeiro bloco -->
+                    <!-- inicio segundo bloco -->
+                    <p class="seu_curso" id="seu_curso"></p>
+                    <!-- fim segundo bloco -->
+                    <!-- inicio terceiro bloco -->
+                    <p class="seu_estado_civil" id="seu_est_civil"></p>
+                    <!-- fim do terceiro bloco -->
+                    <!-- inicio do quarto bloco -->
+                    <p class="seu_interesse" id="seu_intere"><i class="fa fa-female" aria-hidden="true"><br>Interessado em mulheres</i></p>
+                    <!-- fim do quarto bloco -->
+                  </center> 
+              </div>
+           </div>
+         </div>
+
+        <!-- sobre o app  -->
+        <div class="popup popup-sobre">
+          <div class="block">
+            <p>sobre</p>
+            <!-- Close Popup -->
+            <p><a class="link popup-close" href="#">Close popup</a></p>
+            <p>Lorem ipsum dolor sit amet...</p>
+          </div>
         </div>
-    </div>
-  
-</main> -->
+
+        <!-- trocar senha do usuario logado -->
+        <div class="popup popup-teste">
+          <div class="block">
+            <p>Senha</p>
+            <!-- Close Popup -->
+            <p><a class="link popup-close" href="#">Close popup</a></p>
+            <p>Lorem ipsum dolor sit amet...</p>
+          </div>
+        </div>
+
+         <!-- editar informações do usuario -->
+         <div class="popup popup-edit_infor">
+            <div data-page="index" class="page">  
+                <div class="page-content">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                              <p style="margin: 10px">Editar informações</p>
+                            <div class="right">
+                                <p style="margin: 10px;" onclick="update();add_vlr_edit()">Concluído</p>
+                                <!-- fecha janela de edição -->
+                                <a class="link popup-close" id="popup-close" href="#"></a>
+                              </div>
+                        </div>
+                    </div>
+              
+              <!-- Close Popup -->
+              <!-- <p><a class="link popup-close" onclick="abre_seu_perfil()" href="#">Close popup</a></p> -->
+              <div class="block">
+                  <div id="pass_one">
+                        <div id="itens" style="margin-top: 80px; border: 4px solid silver;padding:10px">
+                         <!-- estado onde a pessoa mor -->
+                          <div class="item-inner">
+                            <div class="item-title item-label"><h3 style="font-size:18px;">* Estado onde você mora.</h3></div>
+                              <select id="estado_m_edit" style="padding: 10px; font-size:18px;">
+                                  <option value="0">Selecione.</option>
+                                  <option value="1">AC</option>
+                                  <option value="2">AL</option>
+                                  <option value="3">AM</option>
+                                  <option value="4">AP</option>
+                                  <option value="5">BA</option>
+                                  <option value="6">CE</option>
+                                  <option value="7">DF</option>
+                                  <option value="8">ES</option>
+                                  <option value="9">GO</option>
+                                  <option value="10">MA</option>
+                                  <option value="11">MG</option>
+                                  <option value="12">MS</option>
+                                  <option value="13">MT</option>
+                                  <option value="14">PA</option>
+                                  <option value="15">PB</option>
+                                  <option value="16">PE</option>
+                                  <option value="17">PI</option>
+                                  <option value="18">PR</option>
+                                  <option value="19">RJ</option>
+                                  <option value="20">RN</option>
+                                  <option value="21">RO</option>
+                                  <option value="22">RR</option>
+                                  <option value="23">RS</option>
+                                  <option value="24">SC</option>
+                                  <option value="25">SE</option>
+                                  <option value="26">SP</option>
+                                  <option value="27">TO</option>
+                              </select>
+                           </div>
+                          </div>
+                          <!-- lista cidade onde o usuario mora -->
+                        <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px">
+                          <div class="item-inner">
+                            <div class="item-title item-label"><h3 style=" font-size:18px;">* Cidade onde você mora.</h3></div>
+                                <select id="cidade_m_edit" style="padding: 10px; font-size:18px;">
+                                  <option value='0'>Selecione.</option>;
+                                </select>
+                            </div> 
+                          </div>
+                          <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px">
+                            <!-- estado onde a pessoa estuda-->
+                             <div class="item-inner">
+                               <div class="item-title item-label"><h3 style=" font-size:18px;">* Estado onde você estuda.</h3></div>
+                                 <select id="estado_e_edit" style="padding: 10px; font-size:18px;">
+                                     <option value="0">Selecione.</option>
+                                     <option value="1">AC</option>
+                                     <option value="2">AL</option>
+                                     <option value="3">AM</option>
+                                     <option value="4">AP</option>
+                                     <option value="5">BA</option>
+                                     <option value="6">CE</option>
+                                     <option value="7">DF</option>
+                                     <option value="8">ES</option>
+                                     <option value="9">GO</option>
+                                     <option value="10">MA</option>
+                                     <option value="11">MG</option>
+                                     <option value="12">MS</option>
+                                     <option value="13">MT</option>
+                                     <option value="14">PA</option>
+                                     <option value="15">PB</option>
+                                     <option value="16">PE</option>
+                                     <option value="17">PI</option>
+                                     <option value="18">PR</option>
+                                     <option value="19">RJ</option>
+                                     <option value="20">RN</option>
+                                     <option value="21">RO</option>
+                                     <option value="22">RR</option>
+                                     <option value="23">RS</option>
+                                     <option value="24">SC</option>
+                                     <option value="25">SE</option>
+                                     <option value="26">SP</option>
+                                     <option value="27">TO</option>
+                                 </select>
+                              </div>
+                             </div>
+                             <!-- lista cidade onde o usuario estuda -->
+                           <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px">
+                             <div class="item-inner">
+                               <div class="item-title item-label"><h3 style=" font-size:18px;">* Cidade onde você estuda.</h3></div>
+                                   <select id="cidade_e_edit" style="padding: 10px; font-size:18px;">
+                                     <option value='0'>Selecione.</option>;
+                                   </select>
+                               </div> 
+                             </div>
+                            <!-- universidade onde o usuario estuda -->
+                           <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px">
+                              <div class="item-inner">
+                               <div class="item-title item-label"><h3  style=" font-size:18px;">* Universidade onde você estuda.</h3></div>
+                                  <select id="univer_edit" style="padding: 10px; font-size:18px;">
+                                    <option value='0'>Selecione.</option>;
+                                  </select>
+                              </div> 
+                           </div>
+                           <!-- Curos que o usuario faz -->
+                           <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px">
+                            <div class="item-inner">
+                             <div class="item-title item-label"><h3  style=" font-size:18px;">* O que você cursa.</h3></div>
+                                <select id="curso_edit" style="padding: 10px; font-size:18px;">
+                                  <option value='0'>Selecione.</option>;
+                                  <optgroup label="Ciências biológicas e da Saúde">
+                                    <option>Biologia</option>
+                                    <option>Biologia marinha</option>
+                                    <option>Biomedicina</option>
+                                    <option>Botânica</option>
+                                    <option>Ciências Agrárias</option>
+                                    <option>Ciências Ambientais</option>
+                                    <option>Ciências Biológicas</option>
+                                    <option>Ciências da Saúde</option>
+                                    <option>Ciências do Meio Aquático</option>
+                                    <option>Ecologia</option>
+                                    <option>Educação física</option>
+                                    <option>Enfermagem</option>
+                                    <option>Fisioterapia</option>
+                                    <option>Fonoaudiologia</option>
+                                    <option>Gerontologia</option>
+                                    <option>Medicina</option>
+                                    <option>Medicina veterinária</option>
+                                    <option>Meteorologia</option>
+                                    <option>Microbiologia e Imunologia</option>
+                                    <option>Naturologia</option>
+                                    <option>Neurociência</option>
+                                    <option>Nutrição</option>
+                                    <option>Odontologia</option>
+                                    <option>Quiropraxia</option>
+                                    <option>Saúde Coletiva</option>
+                                    <option>Terapia ocupacional</option>
+                                    <option>Zootecnia</option>
+                                    <option>Aquacultura</option>
+                                    <option>Cafeicultura</option>
+                                    <option>Biotecnologia</option>
+                                    <option>Ciência dos Alimentos</option>
+                                    <option>Cosmetologia</option>
+                                    <option>Drenagem e Irrigação</option>
+                                    <option>Enologia</option>
+                                    <option>Fruticultura</option>
+                                    <option>Gestão de Recursos Hídricos</option>
+                                    <option>Horticultura</option>
+                                    <option>Meliponicultura</option>
+                                    <option>Oftálmica</option>
+                                    <option>Radiologia</option>
+                                    <option>Silvicultura</option>
+                                    <option>Sistemas Biomédicos</option>                            
+                                  </optgroup>
+                                  <optgroup label="Ciências Exatas">
+                                    <option>Agronomia</option>
+                                    <option>Astronomia</option>
+                                    <option>Bioengenharia</option>
+                                    <option>Biofísica</option>
+                                    <option>Ciências Contábeis</option>
+                                    <option>Ciência da Computação</option>
+                                    <option>Ciências Biomoleculares</option>
+                                    <option>Ciências Matemáticas da Terra</option>
+                                    <option>Ciências Naturais </option>
+                                    <option>Ciências Náuticas</option>
+                                    <option>Ciência & Tecnologia</option>
+                                    <option>Educação do Campo </option>
+                                    <option>Engenharia aeroespacial</option>
+                                    <option>Engenharia aeronáutica</option>
+                                    <option>Engenharia Agrícola</option>
+                                    <option>Engenharia de Alimentos</option>
+                                    <option>Engenharia Ambiental</option>
+                                    <option>Engenharia biomédica</option>
+                                    <option>Engenharia Cartográfica</option>
+                                    <option>Engenharia Civil</option>
+                                    <option>Engenharia de Computação</option>
+                                    <option>Engenharia de controle e automação</option>
+                                    <option>Engenharia Elétrica</option>
+                                    <option>Engenharia Física</option>
+                                    <option>Engenharia Florestal</option>
+                                    <option>Engenharia geológica</option>
+                                    <option>Engenharia Industrial Madeireira</option>
+                                    <option>Engenharia de manufatura</option>
+                                    <option>Engenharia de Materiais</option>
+                                    <option>Engenharia Mecânica</option>
+                                    <option>Engenharia Mecatrônica</option>
+                                    <option>Engenharia Metalúrgica</option>
+                                    <option>Engenharia Militar</option>
+                                    <option>Engenharia de Minas</option>
+                                    <option>Engenharia Naval e Oceânica</option>
+                                    <option>Engenharia Nuclear</option>
+                                    <option>Engenharia de Pesca</option>
+                                    <option>Engenharia de Petróleo</div>
+                                    <option>Engenharia de Produção</option>
+                                    <option>Engenharia Química</option>
+                                    <option>Engenharia Sanitária</option>
+                                    <option>Engenharia de Sistemas Eletrônicos</option>
+                                    <option>Engenharia de Software</option>
+                                    <option>Engenharia de Tecidos</option>
+                                    <option>Engenharia de Telecomunicações</option>
+                                    <option>Engenharia Têxtil</option>
+                                    <option>Estatística</option>
+                                    <option>Farmácia (ou Bioquímica)</option>
+                                    <option>Física</option>
+                                    <option>Física computacional</option>
+                                    <option>Física médica</option>
+                                    <option>Geofísica</option>
+                                    <option>Geologia</option>
+                                    <option>Geoprocessamento e Sensoriamento Remoto</option>
+                                    <option>Informática</option>
+                                    <option>Informática biomédica</option>
+                                    <option>Matemática</option>
+                                    <option>Matemática Aplicada</option>
+                                    <option>Matemática computacional</option>
+                                    <option>Nanotecnologia</option>
+                                    <option>Oceanografia </option>
+                                    <option>Química </option>
+                                    <option>Química ambiental</option>
+                                    <option>Química industrial</option>
+                                    <option>Sistemas de Informação</option>
+                                    <option>Agrimensura</option>
+                                    <option>Agroindústria</option>
+                                    <option>Análise e Desenvolvimento de Sistemas</option>
+                                    <option>Automação Industrial</option>
+                                    <option>Biocombustíveis</option>
+                                    <option>Ciências Aeronáuticas</option>
+                                    <option>Ciência dos materiais</option>
+                                    <option>Construção de Edifícios</option>
+                                    <option>Construção de Estradas</option>
+                                    <option>Construção Naval</option>
+                                    <option>Energias Renováveis</option>
+                                    <option>Gestão da Tecnologia da Informação</option>
+                                    <option>Gestão de Petróleo e Gás</option>
+                                    <option>Gestão Portuária</option>
+                                    <option>Manutenção Industrial</option>
+                                    <option>Mecatrônica e Mecânica de Precisão</option>
+                                    <option>Mineração</option>
+                                    <option>Processos Metalúrgicos</option>
+                                    <option>Processamento de Dados</option>
+                                    <option>Produção de Laticínios</option>
+                                    <option>Produção de Materiais Plásticos</option>
+                                    <option>Produção Têxtil</option>
+                                    <option>Produção Sucroalcooeira</option>
+                                    <option>Projetos de Estruturas Aeronáuticas</option>
+                                    <option>Redes de Computadores</option>
+                                    <option>Redes de Telecomunicações</option>
+                                    <option>Saneamento Ambiental</option>
+                                    <option>Segurança da Informação</option>
+                                    <option>Sistemas Biomédicos</option>
+                                    <option>Sistemas Elétricos</option>
+                                    <option>Sistemas Embarcados</option>
+                                    <option>Sistemas de Navegação Fluvial</option>
+                                    <option>Sistemas para Internet</option>
+                                    <option>Telemática</option>
+                                  </optgroup>
+                                  <optgroup label="Ciências Humanas">
+                                    <option>Administração</option>
+                                    <option>Antropologia</option>
+                                    <option>Arqueologia</option>
+                                    <option>Arquitetura</option>
+                                    <option>Arquivística</option>
+                                    <option>Artes Cênicas</option>
+                                    <option>Artes Visuais </option>
+                                    <option>Biblioteconomia</option>
+                                    <option>Ciências Atuariais</option>
+                                    <option>Ciências Contábeis</option>
+                                    <option>Ciências Humanas</option>
+                                    <option>Ciência Política (ou Ciências do Estado)</option>
+                                    <option>Ciências Sociais</option>
+                                    <option>Cinema</option>
+                                    <option>Comunicação social</option>
+                                    <option>Dança</option>
+                                    <option>Defesa e Gestão Estratégica Internacional</option>
+                                    <option>Desenho Industrial</option>
+                                    <option>Design de Interiores</option>
+                                    <option>Design de Moda</option>
+                                    <option>Direito</option>
+                                    <option>Economia</option>
+                                    <option>Economia Doméstica</option>
+                                    <option>Editoração</option>
+                                    <option>Educação Artística</option>
+                                    <option>Escultura</option>
+                                    <option>Filosofia </option>
+                                    <option>Gastronomia</option>
+                                    <option>Geografia</option>
+                                    <option>Gestão Ambiental</option>
+                                    <option>Gestão Pública</option>
+                                    <option>Gravurismo</option>
+                                    <option>História</option>
+                                    <option>História da Arte</option>
+                                    <option>Hotelaria</option>
+                                    <option>Jornalismo</option>
+                                    <option>Letras</option>
+                                    <option>Linguística</option>
+                                    <option>Museologia</option>
+                                    <option>Música</option>
+                                    <option>Ordenamento do Território</option>
+                                    <option>Paisagismo</option>
+                                    <option>Pedagogia</option>
+                                    <option>Pintura</option>
+                                    <option>Psicologia</option>
+                                    <option>Publicidade & Propaganda</option>
+                                    <option>Produção Audiovisual</option>
+                                    <option>Produção Cultural</option>
+                                    <option>Relações Internacionais</option>
+                                    <option>Relações Públicas</option>
+                                    <option>Segurança Pública</option>
+                                    <option>Serviço Social</option>
+                                    <option>Sociologia</option>
+                                    <option>Teatro</option>
+                                    <option>Teologia</option>
+                                    <option>Transporte Terrestre</option>
+                                    <option>Turismologia</option>
+                                    <option>Urbanismo</option>
+                                    <option>Agroecologia</option>
+                                    <option>Comércio Exterior</option>
+                                    <option>Cooperativismo</option>
+                                    <option>Design de Jogos Digitais</option>
+                                    <option>Design de produto</option>
+                                    <option>Design gráfico</option>
+                                    <option>Eventos</option>
+                                    <option>Esporte e Lazer</option>
+                                    <option>Fotografia</option>
+                                    <option>Gestão do Agronegócio</option>
+                                    <option>Gestão Comercial</option>
+                                    <option>Gestão Financeira</option>
+                                    <option>Gestão Hospitalar</option>
+                                    <option>Gestão de Segurança Privada</option>
+                                    <option>Gestão da Qualidade</option>
+                                    <option>Logística</option>
+                                    <option>Mercadologia</option>
+                                    <option>Negócios Imobiliários</option>
+                                    <option>Processos Escolares</option>
+                                    <option>Produção de Aguardente</option>
+                                    <option>Produção Fonográfica</option>
+                                    <option>Recursos Humanos</option>
+                                    <option>Secretariado</option>
+                                    <option>Segurança no Trabalho</option>
+                                    <option>Transporte Aéreo</option>
+                                    <option>Gestão em serviços jurídicos e notariais</option>
+                                      </optgroup>
+                                </select>
+                            </div> 
+                         </div>
+                         <!-- nome do usuario  -->
+                         <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px">
+                          <div class="item-inner">
+                           <div class="item-title item-label"><h3 style=" font-size:18px;">* Seu nome.</h3></div>
+                              <input type="text" style="padding: 5px; font-size:18px;" id="nome_edit">
+                          </div> 
+                       </div>
+                          <!-- nome do usuario  -->
+                          <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px">
+                            <div class="item-inner">
+                             <div class="item-title item-label"><h3 style=" font-size:18px;">* Sua biografia.</h3></div>
+                             <p id="qt_carac_edit">400</p>
+                             <textarea style="border: 1px solid silver;width: 100%; border-radius: 9px; padding: 5px; color: dimgray; font-size: 18px; font-family: sans-serif" rows="7" onkeyUp="conta_carac_edit()" id="text_biograf_edit" maxlength="400"></textarea>
+                            <p>
+                            </div> 
+                         </div>
+                       <!-- iteresse do usuario homens/mulheres -->
+                        <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px">
+                          <div class="item-inner">
+                            <div class="item-title item-label"><h3 style=" font-size:18px;">* Interessado em.</h3></div>
+                              <select id="interesse_edit" style="padding: 10px; font-size:18px;">
+                                  <option value="0">Interessado em</option>
+                                  <option value="Homens">Homens</option>
+                                  <option value="Mulheres">Mulheres</option>
+                              </select>
+                          </div> 
+                        </div>
+                       <!-- estado civil do usuario -->
+                       <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px">
+                          <div class="item-inner">
+                            <div class="item-title item-label"><h3 style=" font-size:18px;">* Estado Civil.</h3></div>
+                              <select id="estado_c_edit" style="padding: 10px; font-size:18px;">
+                                  <option value="0">Estado Civil.</option>
+                                  <option value="Solteiro">Solteiro</option>
+                                  <option value="Em um relacionamento sério">Em um relacionamento sério</option>
+                              </select>
+                          </div> 
+                        </div>
+                        <!-- tamanho do cabelo do usuario -->
+                        <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px; border-radius: 9px;" class="block">
+                          <div class="item-inner">
+                          <p class="title_carac"><b>Qual o tamanho do seu cabelo ?</b></p>
+                              <label>
+                                <label class="radio color-gray">
+                                <input type="radio" id="cabelo_edit" name="cabelo_edit" value="curto">
+                                  <i class="icon-radio"></i>
+                                </label> 
+                                 Curto
+                              </label>
+                             <div id="space_radio"></div>
+                              <label>
+                                <label class="radio color-gray">
+                                  <input type="radio" id="cabelo_edit" name="cabelo_edit" value="medio">
+                                  <i class="icon-radio"></i>
+                                </label> 
+                                 Médio 
+                              </label>
+                            <div id="space_radio"></div>
+                              <label>
+                                <label class="radio color-gray">
+                                  <input type="radio" id="cabelo_edit" name="cabelo_edit" value="longo">
+                                  <i class="icon-radio"></i>
+                                </label> 
+                               Longo
+                            </label>
+                            </div>
+                          <div id="space_radio"></div>
+                        </div>
+                      <!-- cor do cabelo do usuario -->
+                        <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px; border-radius: 9px;" class="block">
+                          <div class="item-inner">
+                            <p class="title_carac"><b>Cor do cabelo ?</b></p>
+                              <label>
+                                <label class="radio color-gray">
+                                <input type="radio" id="cor_cabelo_edit" name="cor_cabelo_edit" value="claro">
+                                  <i class="icon-radio"></i>
+                                </label> 
+                                 Claro
+                              </label>
+                             <div id="space_radio"></div>
+                              <label>
+                                <label class="radio color-gray">
+                                  <input type="radio" id="cor_cabelo_edit" name="cor_cabelo_edit" value="escuro">
+                                  <i class="icon-radio"></i>
+                                </label> 
+                                 Escuro 
+                              </label>
+                            </div>
+                          <div id="space_radio"></div>
+                        </div>
+                       <!-- relogio do usuario -->
+                         <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px; border-radius: 9px;" class="block">
+                          <div class="item-inner">
+                            <p class="title_carac"><b>Você usa relógio ?</b></p>
+                              <label>
+                                <label class="radio color-gray">
+                                <input type="radio" id="relogio_edit" name="relogio_edit" value="sim">
+                                  <i class="icon-radio"></i>
+                                </label> 
+                                 Sim
+                              </label>
+                             <div id="space_radio"></div>
+                              <label>
+                                <label class="radio color-gray">
+                                  <input type="radio" id="relogio_edit" name="relogio_edit" value="nao">
+                                  <i class="icon-radio"></i>
+                                </label> 
+                                 Não 
+                              </label>
+                            </div>
+                          <div id="space_radio"></div>
+                        </div>
+                       <!-- aparelho dentario do usuario -->
+                         <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px; border-radius: 9px;" class="block">
+                          <div class="item-inner">
+                            <p class="title_carac"><b>Utiliza aparelho dentario ?</b></p>
+                              <label>
+                                <label class="radio color-gray">
+                                <input type="radio" id="" name="dente_edit" value="sim">
+                                  <i class="icon-radio"></i>
+                                </label> 
+                                 Sim
+                              </label>
+                             <div id="space_radio"></div>
+                              <label>
+                                <label class="radio color-gray">
+                                  <input type="radio" id="" name="dente_edit" value="nao">
+                                  <i class="icon-radio"></i>
+                                </label> 
+                                 Não 
+                              </label>
+                            </div>
+                        </div>
+                     </div>
+                  </div> 
+               </div>
+            </div>
+          <!-- altera foto de perfil do usuario logado -->
+             <div class="popup popup-foto_perfil_edit">
+               <div data-page="index" class="page">  
+                  <div class="page-content">
+                   <p>
+                     <a class="link popup-close f7-icons" href="#" onclick="abre_seu_perfil()" style="position: absolute; top: 4px; left: 8px; z-index:9999; font-size: 25px; color: white;">close</a>
+                   </p>       
+                     <!-- edit foto de perfil -->
+                     <div id="foto_perfil_edit" style="width: 100%; margin-top: -15px;"></div> 
+                        <div class="block" style="margin-top: -150px;">
+                           <label class="col button button-big col button button-fill color-blue" style="margin-bottom: 5px;">
+                             Escolha uma nova foto 
+                             <input type="file" id="upload_perfil_edit" accept="image/png, image/jpeg" />
+                            </label>
+                           <button class="col button button-big col button button-fill color-blue btn btn-success salva_foto_edit">Proximo</button>
+                        </div>
+                   </div>
+                </div> 
+              </div> 
+             <!-- altera foto da capa do usuario logado -->
+             <div class="popup popup-foto_capa_edit">
+                <div data-page="index" class="page">
+                   <div class="page-content">
+                    <p>
+                      <a class="link popup-close f7-icons" href="#" onclick="abre_seu_perfil()" style="position: absolute; top: 4px; left: 8px; z-index:9999; font-size: 25px; color: white;">close</a>
+                    </p>       
+                      <div id="foto_capa_edit" style="width: 100%; margin-top: -15px;"></div> 
+                         <div class="block" style="margin-top: -150px;">
+                            <label class="col button button-big col button button-fill color-blue" style="margin-bottom: 5px;">
+                              Escolha uma nova foto 
+                              <input type="file" id="upload_capa_edit" accept="image/png, image/jpeg" />
+                             </label>
+                            <button class="col button button-big col button button-fill color-blue btn btn-success salva_capa_edit">Proximo</button>
+                         </div> 
+                    </div>
+                </div> 
+              </div>  
+             
+            <!-- link para abrir perfil de usuarios  -->
+            <a class="link popup-open popover-close" href="#" data-popup=".popup-perfil_usuarios" id="perfil_usuarios"></a>
+            <!-- abre modal de usuarios  -->
+            <div class="popup popup-perfil_usuarios" id="fundo_ft_perfil"> 
+              <div data-page="index" class="page">
+                <div class="page-content">
+                  <p>
+                    <a class="link popup-close f7-icons" href="#"style="position: absolute; top: 4px; left: 8px; z-index:9999; font-size: 25px; color: white;">close</a>
+                  </p>   
+                 <center>
+                    <p id="foto_capa_usuarios"></p> 
+                    <p id="foto_perfil_usuarios"></p>
+                    <p><i class="fa fa-chevron-down" aria-hidden="true" id="zero_zoom"></i></p>
+                    <h1 id="nome_usuario"></h1>
+                    <a href="#" style="width: 60%;" class="item-content item-link col button button-raised button-fill button-round" >
+                      <i class="fa fa-comments" aria-hidden="true"></i>&nbsp;Enviar mensagem
+                    </a>
+                    <p id="biograf_usuario" class="user_biografia"></p>
+                    <p id="univer_usuario" class="user_universidade"></p>
+                    <p id="curso_usuario" class="user_curso"></p>
+                    <p id="est_civil_usuario" class="user_estado_civil"></p>
+                    <p id="intere_usuario" class="user_interesse"></p>
+               
+                </center>
+          
+
+
+                </div>
+              </div> 
+            </div>  
+           
+
+</main>
 <script>
+  
+  var one = 0; //one e uma variavel de controle de upload, para que o ajax nao 
+  //faça mais que uma requisição por foto, utilizamos uma variavel global para 
+  //liberar a funcao somente quando ela for one == 0, assim que executada a funcao
+  //ela passa a receber o valor 1, assim ela nao executa a funcao que pede a condicional
+  //one == 0
+
+
 
   var app = new Framework7();
-  	  var $$ = Dom7;
-  
-	  	// msg for inputs 
+  	var $$ = Dom7;
+    
+    //erro de conexão com a internet 
+    var erroconexao = app.toast.create({
+		  text: 'Erro de conexão. verifique a conexão com a internet',
+		  position: 'top',
+		  closeTimeout: 2500,
+		});
+	  
+    // msg for inputs 
 		var input_vazio = app.toast.create({
 		  text: 'Por favor, preencha todos os campos obrigatórios.',
 		  position: 'top',
@@ -1024,6 +2423,13 @@
 		  position: 'top',
 		  closeTimeout: 2500,
 		});
+
+     // inserir image,  
+		var AlertInsIMG = app.toast.create({
+		  text: '<h3>Insira uma imagem.</h3>',
+		  position: 'top',
+		  closeTimeout: 2500,
+		});
     // Create notification with close button
     var notificationWithButton = app.notification.create({
       icon: '',
@@ -1062,10 +2468,31 @@
 		  closeTimeout: 2500,
 		});
 
+    //mensagem de carregamento
+    // Create center toast
+    var toastCenter = app.toast.create({
+      text: '<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i><span class="sr-only">Loading...</span>',
+      position: 'center',
+      // closeTimeout: 2000,
+    });
+
+     // email vazio   
+		var insira_email = app.toast.create({
+		  text: 'Insira um e-mail.',
+		  position: 'top',
+		  closeTimeout: 2500,
+		});
+  
+     // senha vazio   
+		var insira_senha = app.toast.create({
+		  text: 'Insira uma senha.',
+		  position: 'top',
+		  closeTimeout: 2500,
+		});
 
   //botao do "proximo" da primeira tela de cadastro
   function nextstep () {
-
+      document.getElementById("nome").autofocus;
       var estado_m = $("#estado_m").val();
       var cidade_m = $("#cidade_m").val();
       var estado_e = $("#estado_e").val();
@@ -1090,13 +2517,17 @@
 
   //botao do "proximo" da segunda pagina 
   function nextstep2 () {
-      
+      document.getElementById("cabelo").autofocus;
       var nome = $("#nome").val(); 
       var email = $("#email").val(); 
       var senha = $("#senha").val(); 
       var sexo = $("#sexo").val(); 
       var estado_civil = $("#estado_civil").val(); 
-
+      
+      //armazena para logar assim que a conta e criada 
+      localStorage.setItem('email',email);
+      localStorage.setItem('senha',senha);
+    
     //condiçoes de entrada 
     if (nome == '' || email == '' || senha == '' || sexo == '0' || estado_civil == '0') {
             input_vazio.open();
@@ -1119,7 +2550,7 @@
           } 
         //ajax para verificar email existente 
           $.ajax({
-            url : "http://localhost/REDE_SOCIAL/BACK-END/request.php",
+            url : "http://192.168.0.105/REDE_SOCIAL/BACK-END/request.php",
             dataType: 'JSON',
             type : 'post',
             data : {
@@ -1128,6 +2559,7 @@
             },
             beforeSend : function(){
                  console.log("Enviando requisição...");
+               toastCenter.open();
             }
        })
        .done(function(msg){
@@ -1146,9 +2578,11 @@
                   $("#voltar").html("<a class='link tab-link' href='#tab2' onclick='voltar2()'>Voltar</a>");
                   notificationWithButton.open();
               }
+              toastCenter.close();
          })
        .fail(function(jqXHR, textStatus, msg){
-          console.log(msg);
+            erroconexao.open();
+            return 0;
       });      
     }
 
@@ -1169,8 +2603,10 @@ function nextstep3 ()
     document.getElementById("tabe4").click();
     $("#voltar").html("");
     $(".title").html('<p>Escolha uma foto de perfil.</p>');
+    
     $(document).ready(function(){
     $image_crop = $('#image_demo').croppie({
+      url:'img/perfil.png',
       enableExif: true,
       viewport: {
         width:288,
@@ -1179,14 +2615,21 @@ function nextstep3 ()
       },
       boundary:{
         width: "100%",
-        height:400,
-      }
+        height: 450,
+      },
+      showZoomer: false,
     });
 
     $('#upload_image').on('change', function(){
+      
        var img = $('#upload_image').val();
-          img = img.substr(-4);
-        if (img == "jpeg" || img == ".jpg" || img == ".png") {         
+       img = img.substr(-4);
+        if (img == "jpeg" || 
+            img == ".jpg" ||
+            img == ".png" ||
+            img == "JPEG" ||
+            img == ".JPG" ||
+            img == ".PNG") {         
         var reader = new FileReader();
         reader.onload = function (event) {
           $image_crop.croppie('bind', {
@@ -1199,29 +2642,44 @@ function nextstep3 ()
       } else {
         AlertImg.open();
         return 0; 
-      }
+        }
     });
     
 
     $('.crop_image').click(function(event){
+      var img = $('#upload_image').val();
+       if (img == '') {
+        AlertInsIMG.open();
+        return 0;
+       }
       $image_crop.croppie('result', {
         type: 'canvas',
         size: 'viewport'
-      }).then(function(response){
+      }).then(function(response){ 
         $.ajax({
-          url:"http://localhost/REDE_SOCIAL/BACK-END/request.php",
+          url:"http://192.168.0.105/REDE_SOCIAL/BACK-END/request.php",
           type: "POST",
           data:{
             "F":"FotoPerfil",
             "image": response},
+            beforeSend : function(){
+               console.log("Enviando requisição...");
+              $('#upload_image').prop('disabled',true);
+              toastCenter.open();
+          },
           success:function(data)
           {
             console.log(data);
             var foto = JSON.parse(data);
             localStorage.setItem('foto_perfil',foto.img);
             nextstep4();
+            toastCenter.close();
+            $('#upload_image').prop('disabled',false);
           }
-          });
+          }).fail(function(jqXHR, textStatus, msg){
+          erroconexao.open();
+          return 0;
+    }); 
         });
       });
     }); 
@@ -1237,6 +2695,7 @@ function nextstep4 ()
     $(document).ready(function(){
       $image_crop = $('#image_demo_capa').croppie({
         enableExif: false,
+        url: 'img/capa.jpg',
         viewport: {
           width: 289,
           height:200,
@@ -1244,14 +2703,20 @@ function nextstep4 ()
         },
         boundary:{
           width: "100%",
-          height:300
-        }
+          height: 450
+        },
+        showZoomer: false,
       });
       
       $('#upload_image_capa').on('change', function(){
         var img = $('#upload_image_capa').val();
           img = img.substr(-4);
-        if (img == "jpeg" || img == ".jpg" || img == ".png") {       
+          if (img == "jpeg" || 
+            img == ".jpg" ||
+            img == ".png" ||
+            img == "JPEG" ||
+            img == ".JPG" ||
+            img == ".PNG") {        
         var reader = new FileReader();
         reader.onload = function (event) {
           $image_crop.croppie('bind', {
@@ -1266,32 +2731,47 @@ function nextstep4 ()
           return 0;
         }
       });
-    
+
+  
 
     $('.crop_image_capa').click(function(event){
+      var img = $('#upload_image_capa').val();
+       if (img == '') {
+        AlertInsIMG.open();
+        return 0;
+       }
         $image_crop.croppie('result', {
           type: 'canvas',
           size: 'viewport'
         }).then(function(response2){
           $.ajax({
-            url:"http://localhost/REDE_SOCIAL/BACK-END/request.php",
+            url:"http://192.168.0.105/REDE_SOCIAL/BACK-END/request.php",
             type: "POST",
             data:{
               "F":"FotoCapa",
               "image_capa": response2
             },
+            beforeSend : function(){
+              console.log("Enviando requisição...");
+              $('#upload_image_capa').prop('disabled',true);
+              toastCenter.open();
+            },
             success:function(data)
             {
-              console.log(data);
               var foto = JSON.parse(data);
-              localStorage.setItem('foto_capa',foto.img);
-              cadastra_usuario();
+               localStorage.setItem('foto_capa',foto.img);
+               cadastra_usuario();
+               $('#upload_image_capa').prop('disabled',false);
+               toastCenter.close();
             }
-          });
-        });
-      });
-    });
-  }
+          }).fail(function(jqXHR, textStatus, msg){
+              erroconexao.open();
+            return 0;
+         }); 
+       });
+     });
+   });
+ }
 
 //funcao voltar para o login
 function voltar () 
@@ -1327,7 +2807,7 @@ function voltar2 ()
 $('#estado_m').on('change', function() {
   var estado = $("#estado_m").val();
        $.ajax({
-          url : "http://localhost/REDE_SOCIAL/BACK-END/request.php",
+          url : "http://192.168.0.105/REDE_SOCIAL/BACK-END/request.php",
           dataType: 'JSON',
           type : 'post',
           data : {
@@ -1336,6 +2816,7 @@ $('#estado_m').on('change', function() {
           },
           beforeSend : function(){
                console.log("Enviando requisição...");
+              toastCenter.open();
           }
      })
      .done(function(msg){
@@ -1345,9 +2826,11 @@ $('#estado_m').on('change', function() {
           cidades += "<option>"+jsonData[i].nome+"</option>";
          }
           $("#cidade_m").html(cidades);
+         toastCenter.close();
        })
      .fail(function(jqXHR, textStatus, msg){
-        console.log(msg);
+          erroconexao.open();
+          return 0;
     }); 
  });
 
@@ -1355,7 +2838,7 @@ $('#estado_m').on('change', function() {
   $('#estado_e').on('change', function() {
     var estado = $("#estado_e").val();
          $.ajax({
-            url :"http://localhost/REDE_SOCIAL/BACK-END/request.php",
+            url :"http://192.168.0.105/REDE_SOCIAL/BACK-END/request.php",
             dataType: 'JSON',
             type : 'post',
             data : {
@@ -1364,6 +2847,7 @@ $('#estado_m').on('change', function() {
             },
             beforeSend : function(){
                  console.log("Enviando requisição...");
+               toastCenter.open();
             }
        })
        .done(function(msg){
@@ -1373,9 +2857,11 @@ $('#estado_m').on('change', function() {
               cidades += "<option>"+jsonData[i].nome+"</option>";
             }
              $("#cidade_e").html(cidades);
+            toastCenter.close();
        })
        .fail(function(jqXHR, textStatus, msg){
-            console.log(msg);
+              erroconexao.open();
+            return 0;
        }); 
   });
 
@@ -1407,7 +2893,7 @@ function cadastra_usuario () {
       var foto_capa =  localStorage.getItem('foto_capa');
 
        $.ajax({
-          url :"http://localhost/REDE_SOCIAL/BACK-END/request.php",
+          url :"http://192.168.0.105/REDE_SOCIAL/BACK-END/request.php",
            type : 'post',
              data : {
                 "F": "CadastraUsuario",
@@ -1434,11 +2920,17 @@ function cadastra_usuario () {
              console.log("Enviando requisição...");
           }
      })
-     .done(function(result){
-         console.log(result);
+     .done(function(data){
+         console.log(data);
+         var data = JSON.parse(data);
+         if (data.aprovacao == 1){
+          location.reload();
+         }
+         insira_senha.open();
     })
      .fail(function(jqXHR, textStatus, msg){
-          alert(msg);
+          erroconexao.open();
+        return 0;
      }); 
 }  
 
@@ -1449,7 +2941,7 @@ function TrocarSenha () {
 
   var email = $("#envia_email").val();
      $.ajax({
-      url : "https://00c4761d.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+      url : "http://192.168.0.105/REDE_SOCIAL/BACK-END/request.php",
       dataType: 'JSON',
       type : 'post',
         data : {
@@ -1471,7 +2963,7 @@ function TrocarSenha () {
         if(flag > 0) {
 
              $.ajax({
-                url : "https://00c4761d.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+                url : "http://192.168.0.105/REDE_SOCIAL/BACK-END/request.php",
                 dataType: 'JSON',
                 type : 'post',
                   data : {
@@ -1496,14 +2988,33 @@ function TrocarSenha () {
           }
        })
        .fail(function(jqXHR, textStatus, msg){
-          console.log(msg);
+            erroconexao.open();
+           return 0;
       }); 
 }
 
 function login () {
-       
+
         var email = $("#email_user").val();
         var senha = $("#senha_user").val();
+        if (email !== '' && senha !== '') {
+          email = $("#email_user").val();
+          senha = $("#senha_user").val();
+        } else {
+          email = localStorage.getItem('email');
+          senha = localStorage.getItem('senha');
+        }
+        
+        if (email == '') {
+           insira_email.open();
+          return 0;
+        } else {  
+         if (senha == '') {
+            insira_senha.open();
+           return 0;
+          }
+        }
+
         if (email.length >= 50) {
            carac_email.open();
            return 0;
@@ -1514,7 +3025,7 @@ function login () {
           }
         }
        $.ajax({
-          url :"https://00c4761d.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+          url :"http://192.168.0.105/REDE_SOCIAL/BACK-END/request.php",
           type : 'post',
           data : {
                 "F": "Login",
@@ -1523,40 +3034,60 @@ function login () {
               },
             beforeSend : function(){
               console.log("Enviando requisição...");
+              toastCenter.open();
             }
           }).done(function(msg){
              console.log(msg);
+             localStorage.setItem('Duser_spotted',msg);
              jsonData = JSON.parse(msg);
              for (var i = 0; i < jsonData.length; i++) {
                 var email = jsonData[i].email;
                 var senha = jsonData[i].senha;
+                var perfil = jsonData[i].foto_perfil;
+                var capa = jsonData[i].foto_capa;
+                var nome = jsonData[i].nome;
+                var univer = jsonData[i].univer;
+                var curso = jsonData[i].curso;
+                var est_civil = jsonData[i].estado_c;
+                var intere = jsonData[i].sexo;
+                var biograf = jsonData[i].biografia;
+                var id = jsonData[i].id;
+
             }
-              console.log(email);
-              console.log(senha);
              if (email == undefined && senha == undefined || email == "" && senha == ""){
                  msg_login.open();
+                 $("#inicio").css({"display":"block"});
+                 $("#feed").css({"display":"none"});
                  return 0;
               } else {
-                localStorage.setItem('email',email);
-                localStorage.setItem('senha',senha);
-              //  $("#inicio").css({"display":"none"});
-              //  $("#feed").css({"display":"block"});
-              // var user = localStorage.setItem('email');
-              // var pass = localStorage.setItem('senha');
-              // alert(user);
-              // alert(pass);
+                 localStorage.setItem('email',email);
+                 localStorage.setItem('senha',senha);
+                 localStorage.setItem('id',id);
+                 localStorage.setItem('foto_perfil',perfil);
+                 $("#inicio").css({"display":"none"});
+                 $("#feed").css({"display":"block"});
+                 coloca_dados(perfil,nome,capa,univer,curso,est_civil,intere,biograf) 
+                 toastCenter.close();
             }
         }).fail(function(jqXHR, textStatus, msg){
-          alert(msg);
+          erroconexao.open();
+         return 0;
       }); 
 }
    
-var user = localStorage.email;
-var pass = localStorage.senha;
-if (user !== "" && pass !== "")
-    alert("usuario "+user+" senha "+pass);
+var user = localStorage.getItem('email');
+var pass = localStorage.getItem('senha');
+
+if(user == "" && pass == "" || user == null && pass == null || user == undefined && pass == undefined) {
+  $("#feed").css({"display":"none"});
+  $("#inicio").css({"display":"block"})
+  
+}else {
+
+    $("#feed").css({"display":"block"});
+    $("#inicio").css({"display":"none"});
     $.ajax({
-          url :"https://00c4761d.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+          url :"http://192.168.0.105/REDE_SOCIAL/BACK-END/request.php",
           type : 'post',
           data : {
                 "F": "Login",
@@ -1567,24 +3098,672 @@ if (user !== "" && pass !== "")
               console.log("Enviando requisição...");
             }
           }).done(function(msg){
-             console.log(msg);
+            localStorage.setItem('Duser_spotted',msg);
              jsonData = JSON.parse(msg);
+           
+             if (jsonData) {
              for (var i = 0; i < jsonData.length; i++) {
                 var email = jsonData[i].email;
                 var senha = jsonData[i].senha;
-            }
-            console.log(email);
-            console.log(senha);
-        }).fail(function(jqXHR, textStatus, msg){
-          alert(msg);
-      }); 
+                var perfil = jsonData[i].foto_perfil;
+                var capa = jsonData[i].foto_capa;
+                var nome = jsonData[i].nome;
+                var univer = jsonData[i].univer;
+                var curso = jsonData[i].curso;
+                var est_civil = jsonData[i].estado_c;
+                var intere = jsonData[i].sexo;
+                var biograf = jsonData[i].biografia;
+                var id = jsonData[i].id;
+              }
+            }    
+            if (email == undefined && senha == undefined || email == "" && senha == ""){
+                 $("#inicio").css({"display":"block"});
+                 $("#feed").css({"display":"none"});
+                 logout();
+                 return 0;
+             } else {
+                 localStorage.setItem('email',email);
+                 localStorage.setItem('senha',senha);
+                 localStorage.setItem('id',id);
+                 localStorage.setItem('foto_perfil',perfil);
+                 localStorage.setItem('foto_capa',capa);
 
+                 $("#inicio").css({"display":"none"});
+                 $("#feed").css({"display":"block"});
+                 coloca_dados(perfil,nome,capa,univer,curso,est_civil,intere,biograf);
+            }
+        }).fail(function(jqXHR, textStatus, msg){
+          $("#inicio").css({"display":"block"});
+          $("#feed").css({"display":"none"});
+          erroconexao.open();
+         return 0;
+      }); 
+}
 
 function logout() {
-  alert("chamu::");
-  // $("#feed").css({"display":"none"});
-  // $("#inicio").css({"display":"block"});
+  
+  $("#feed").css({"display":"none"});
+  $("#inicio").css({"display":"block"});
+  localStorage.setItem('email','');
+  localStorage.setItem('senha','');
+  localStorage.setItem('id','');
+  localStorage.setItem('foto_capa','');
+  localStorage.setItem('foto_perfil','');
+  localStorage.setItem('nome','');
+  localStorage.setItem('Duser_spotted','');
+  $("#senha_user").val("");
 }
+
+//  a funcao coloca dados e responsavel por inserir do js para o html os dados do usario
+function coloca_dados(perfil,nome,capa,univer,curso,est_civil,intere,biograf) {
+  //foto de perfil do bloco de publicacao 
+  $("#foto_per_publicacao").html('<img src="http://192.168.0.105/REDE_SOCIAL/BACK-END/'+perfil+'" style="width: 15%; margin-left:10px;">');  
+  $("#foto_menu").html('<img src="http://192.168.0.105/REDE_SOCIAL/BACK-END/'+perfil+'" class="mini_img">');  
+  $("#nome_perfil").html(nome); 
+  $("#mini_nome").html(nome);
+  $("#sua_univer").html('<i class="fa fa-university" aria-hidden="true"></i><br>'+univer); 
+  $("#seu_curso").html('<i class="fa fa-graduation-cap" aria-hidden="true"></i><br>'+curso); 
+  $("#seu_est_civil").html('<i class="fa fa-heart" aria-hidden="true"></i><br>'+est_civil);
+  $("#sua_foto_capa").html('<img src="http://192.168.0.105/REDE_SOCIAL/BACK-END/'+capa+'" class="sua_foto_capa">');
+  $("#sua_foto_perfil").html('<img src="http://192.168.0.105/REDE_SOCIAL/BACK-END/'+perfil+'" class="sua_foto_perfil">');
+   
+  $("#seu_intere").html('<i class="fa fa-heart-o" aria-hidden="true"></i><br>'+intere);              
+   if (biograf == "" || biograf == null || biograf== undefined) {
+      $("#add_biograf").css({"display":"block"});
+      $("#biografia").css({"display":"none"});
+   } else {
+    $("#biografia").css({"display":"block"});
+    $("#biografia").html('<p class="sua_biografia"><i class="fa fa-book" aria-hidden="true"></i><br>Biografia<br>'+biograf+'</p>');
+    $("#add_biograf").css({"display":"none"});
+   }   
+}
+
+
+// funcao para incluir biografia 
+function salvar_biograf () {
+  var texto = $('#text_biograf').val();
+  var id = localStorage.getItem('id');
+  $.ajax({
+          url :"http://192.168.0.105/REDE_SOCIAL/BACK-END/request.php",
+           type : 'post',
+             data : {
+                "F": "Add_biografia",
+                "x1": texto,
+                "x2": id
+              },
+          beforeSend : function(){
+             console.log("Enviando requisição...");
+          }
+     })
+     .done(function(data){
+        var data = JSON.parse(data);
+        if (data.resultado == '1') {
+          $("#biografia").css({"display":"block"});
+          $("#biografia").html('<p class="sua_biografia"><i class="fa fa-book" aria-hidden="true"></i><br>Biografia<br>'+texto+'</p>');
+          $("#add_biograf").css({"display":"none"});
+        }
+    })
+     .fail(function(jqXHR, textStatus, msg){
+         erroconexao.open();
+       return 0;
+    }); 
+}
+
+// funcao para contar caractere na biografia
+function conta_carac () {
+  
+    var qt_max = 400;
+    var qt_digit = $('#text_biograf').val();
+    var qt_final = qt_max - qt_digit.length;
+    $('#qt_carac').html(qt_final);
+    
+}
+// funcao para contar caractere na biografia (edit)
+function conta_carac_edit () {
+  
+  var qt_max = 400;
+  var qt_digit = $('#text_biograf_edit').val();
+  var qt_final = qt_max - qt_digit.length;
+  $('#qt_carac_edit').html(qt_final);
+  
+}
+ 
+$(document).ready(function () {
+  
+  $.ajax({
+          url :"http://192.168.0.105/REDE_SOCIAL/BACK-END/request.php",
+          type : 'post',
+          data : {
+                "F": "PegaDadosUser",
+                "id": localStorage.getItem('id'),
+                "email": localStorage.getItem('email')  
+              },
+            beforeSend : function(){
+              console.log("Enviando requisição...");
+            }
+          }).done(function(msg){
+               console.log(msg);
+              Duser = JSON.parse(msg);
+              $('#estado_m_edit').val(Duser[0].estado_m);
+              $('#cidade_m_edit').html('<option selected="selected">'+Duser[0].cidade_m+'</option>');
+              $('#estado_e_edit').val(Duser[0].estado_e);
+              $('#cidade_e_edit').html('<option selected="selected">'+Duser[0].cidade_e+'</option>');
+              $('#univer_edit').html('<option selected="selected">'+Duser[0].univer+'</option>');
+              $('#curso_edit').val(Duser[0].curso);
+              $('#nome_edit').val(Duser[0].nome);
+              $('#interesse_edit').val(Duser[0].sexo);
+              $('#estado_c_edit').val(Duser[0].estado_c);
+              $("input[name=cabelo_edit][value="+Duser[0].tam_cabelo+"]").prop("checked",true);
+              $("input[name=cor_cabelo_edit][value="+Duser[0].cor_cabelo+"]").prop("checked",true);
+              $("input[name=relogio_edit][value="+Duser[0].relogio+"]").prop("checked",true);
+              $("input[name=dente_edit][value="+Duser[0].dente+"]").prop("checked", true);
+              $('#text_biograf_edit').val(Duser[0].biografia);
+        }).fail(function(jqXHR, textStatus, msg){
+          erroconexao.open();
+         return 0;
+      }); 
+     });  
+    
+
+
+//funcao para a edição de informações do usuario 
+function editar_info () { 
+     
+      document.getElementById('seu_perfil_close').click();
+      document.getElementById('open_modal_edit').click();     
+}
+
+
+function abre_seu_perfil () {
+  document.getElementById('ver_meu_perfil').click();
+}
+
+function editar_foto () {
+  document.getElementById('seu_perfil_close').click();
+}
+
+
+// lista cidade onde você mora.(parte de edição de informações)
+$('#cidade_m_edit').click('change', function() {
+  aciona ();
+  function aciona () {
+  var estado = $("#estado_m_edit").val(); 
+    
+       $.ajax({
+          url : "http://192.168.0.105/REDE_SOCIAL/BACK-END/request.php",
+          dataType: 'JSON',
+          type : 'post',
+          data : {
+               "F":"ListaCidade",
+               "estado" : estado
+          },
+          beforeSend : function(){
+               console.log("Enviando requisição...");
+               toastCenter.open();
+          }
+     })
+     .done(function(msg){
+        var jsonData = msg; 
+        var cidades = "<option value='0'>Selecione uma cidade</option>";
+        for (var i = 0; i < jsonData.length; i++) {
+          cidades += "<option>"+jsonData[i].nome+"</option>";
+         }
+          $("#cidade_m_edit").html(cidades);
+         toastCenter.close(); 
+       })
+     .fail(function(jqXHR, textStatus, msg){
+         erroconexao.open();
+       return 0;
+    });
+}
+ });
+
+$('#cidade_e_edit').click('change', function() {
+  
+    var estado = $("#estado_m_edit").val();   
+       $.ajax({
+          url : "http://192.168.0.105/REDE_SOCIAL/BACK-END/request.php",
+          dataType: 'JSON',
+          type : 'post',
+          data : {
+               "F":"ListaCidade",
+               "estado" : estado
+          },
+          beforeSend : function(){
+               console.log("Enviando requisição...");
+               toastCenter.open();
+          }
+     })
+     .done(function(msg){
+        var jsonData = msg; 
+        var cidades = "<option value='0'>Selecione uma cidade</option>";
+        for (var i = 0; i < jsonData.length; i++) {
+          cidades += "<option>"+jsonData[i].nome+"</option>";
+         }
+          $("#cidade_e_edit").html(cidades);
+         toastCenter.close(); 
+       })
+     .fail(function(jqXHR, textStatus, msg){
+         erroconexao.open();
+       return 0;
+    });
+  });
+
+
+
+
+// lista cidade onde o usuario mora (EDIÇÃO)
+$('#estado_e_edit').on('change', function() {
+  
+  var estado = $("#estado_e_edit").val();
+  
+       $.ajax({
+          url : "http://192.168.0.105/REDE_SOCIAL/BACK-END/request.php",
+          dataType: 'JSON',
+          type : 'post',
+          data : {
+               "F":"ListaCidade",
+               "estado" : estado
+          },
+          beforeSend : function(){
+               console.log("Enviando requisição...");
+               toastCenter.open();
+          }
+     })
+     .done(function(msg){
+        var jsonData = msg; 
+        var cidades = "<option value='0'>Selecione.</option>";
+        for (var i = 0; i < jsonData.length; i++) {
+          cidades += "<option>"+jsonData[i].nome+"</option>";
+         }
+          $("#cidade_e_edit").html(cidades);
+         toastCenter.close();
+       })
+     .fail(function(jqXHR, textStatus, msg){
+         erroconexao.open();
+       return 0;
+    }); 
+ });
+
+//funcao de upload foto de perfil no modo edição
+function edita_foto_perfil (){
+  
+ $image_crop = $('#foto_perfil_edit').croppie({
+    enableExif: true,
+    url:'img/perfil.png', 
+    viewport: {
+      width: 289,
+      height:289,
+      type:'circle', //square
+    },
+    boundary:{
+      width: "100%",
+      height:400,
+    },
+    showZoomer: false,
+  });
+
+  $('#upload_perfil_edit').on('change', function(){
+     var img = $('#upload_perfil_edit').val();
+        img = img.substr(-4);
+      if (img == "jpeg" || img == ".jpg" || img == ".png") {         
+      var reader = new FileReader();
+      reader.onload = function (event) {
+        $image_crop.croppie('bind', {
+          url: event.target.result
+        }).then(function(){
+          console.log('completo.');
+        });
+      }
+      reader.readAsDataURL(this.files[0]);
+    } else {
+      AlertImg.open();
+      return 0; 
+    }
+  });
+  
+
+  $('.salva_foto_edit').click(function(){
+    var img = $('#upload_perfil_edit').val();
+       if (img == '') { 
+        AlertInsIMG.open();
+        return 0;
+       } else {
+          if (one == 0) {
+          one = 1;
+          var img_delet = localStorage.getItem('foto_perfil');
+          $image_crop.croppie('result', {
+            type: 'canvas',
+            size: 'viewport'
+          }).then(function(response){
+            $.ajax({
+              url:"http://192.168.0.105/REDE_SOCIAL/BACK-END/request.php",
+              type: "POST",
+              data:{
+                    "F":"FotoPerfilEdit",
+                    "image_edit": response,
+                    "del_image" : img_delet
+                },
+                beforeSend : function(){
+        
+                     console.log("Enviando requisição...");
+                      toastCenter.open();
+                      $('.salva_foto_edit').prop('disabled',true);
+                      $('#upload_perfil_edit').prop('disabled',true);
+                }
+           }).done(function(data){      
+                  console.log(data);
+                    var foto = JSON.parse(data);
+                    localStorage.setItem('foto_perfil',foto.img);
+                    if (foto.img !== "" || foto.img !== null || foto.img !== undefined) {            
+                      $('.salva_foto_edit').prop('disabled',false);
+                        $('#upload_perfil_edit').prop('disabled',false);
+                        $("#sua_foto_perfil").html('<img src="http://192.168.0.105/REDE_SOCIAL/BACK-END/'+foto.img+'" class="sua_foto_perfil">');
+                        $("#foto_menu").html('<img src="http://192.168.0.105/REDE_SOCIAL/BACK-END/'+foto.img+'" class="mini_img">'); 
+                      toastCenter.close();
+                  //  editar_info();
+                    update();
+                  $('#foto_perfil_edit').croppie('destroy');
+                }   
+                  $('.popup-close').click();
+              });
+            });
+            }
+          }
+        }); 
+  one = 0; //zera a variavel de controle
+} 
+
+  //funcao de upload foto capa (modo de edição)
+function edita_foto_capa (){
+  
+  $image_crop = $('#foto_capa_edit').croppie({
+    enableExif: true,
+    url:'img/capa.jpg', 
+    viewport: {
+      width: 289,
+      height:200,
+      type:'square', //square
+    },
+    boundary:{
+      width: "100%",
+      height:400,
+    },
+    showZoomer: false,
+  });
+
+  $('#upload_capa_edit').on('change', function(){
+     var img = $('#upload_capa_edit').val();
+     img = img.substr(-4);
+      if (img == "jpeg" || img == ".jpg" || img == ".png") {         
+      var reader = new FileReader();
+      reader.onload = function (event) {
+        $image_crop.croppie('bind', {
+          url: event.target.result
+        }).then(function(){
+          console.log('completo.');
+        });
+      }
+      reader.readAsDataURL(this.files[0]);
+    } else {
+      AlertImg.open();
+      return 0; 
+    }
+  });
+
+  $('.salva_capa_edit').click(function(event){
+    var img = $('#upload_capa_edit').val();
+     if (img == '') { 
+        AlertInsIMG.open();
+       return 0;
+    } else {
+      if (one == 0) {
+      one = 1;
+      var img_capa_delet = localStorage.getItem('foto_capa');
+       $image_crop.croppie('result', {
+        type: 'canvas',
+        size: 'viewport'
+      }).then(function(response){
+        $.ajax({
+          url:"http://192.168.0.105/REDE_SOCIAL/BACK-END/request.php",
+          type: "POST",
+          data:{
+              "F":"FotoCapaEdit",
+              "image_capa_edit": response,
+              "del_image_capa": img_capa_delet
+          },
+          beforeSend : function(){
+               console.log("Enviando requisição...");
+                toastCenter.open();
+                $('.salva_capa_edit').prop('disabled',true);
+          }
+        }).done(function(data){
+              console.log(data);
+              var foto = JSON.parse(data);
+              localStorage.setItem('foto_capa',foto.img);
+                if (foto.img !== "" || foto.img !== null || foto.img !== undefined) {                   
+                  $('.salva_capa_edit').prop('disabled',false);
+                  $("#sua_foto_capa").html('<img src="http://192.168.0.105/REDE_SOCIAL/BACK-END/'+foto.img+'" class="sua_foto_capa">');
+                 toastCenter.close();
+                //editar_info();
+              update();
+            $('#foto_capa_edit').croppie('destroy');
+          }   
+            $('.popup-close').click();
+          });
+        });
+      }
+    }
+  });
+  one = 0; //zera a variavel de controle
+}
+
+function update () {
+
+  var id = localStorage.getItem('id');
+	var estado_m = $('#estado_m_edit').val(); 
+	var cidade_m = $('#cidade_m_edit').val();
+	var estado_e = $('#estado_e_edit').val(); 
+	var cidade_e = $('#cidade_e_edit').val();
+	var univer = $('#univer_edit').val();
+	var curso = $('#curso_edit').val();
+	var nome = $('#nome_edit').val();
+	var sexo = $('#interesse_edit').val(); 
+	var estado_c = $('#estado_c_edit').val();
+	var tam_cabelo =  $("input[type=radio][name='cabelo_edit']:checked").val();
+	var cor_cabelo =  $("input[type=radio][name='cor_cabelo_edit']:checked").val();
+	var relogio = $("input[type=radio][name='relogio_edit']:checked").val();
+	var dente = $("input[type=radio][name='dente_edit']:checked").val();
+	var foto_perfil = localStorage.getItem('foto_perfil');
+	var foto_capa = localStorage.getItem('foto_capa');
+  var biografia = $('#text_biograf_edit').val();
+    
+      if (biografia == '') {    
+          $("#biografia").css({"display":"none"});
+          $("#add_biograf").css({"display":"block"});
+      } else {
+        $("#biografia").css({"display":"block"});
+          $("#add_biograf").css({"display":"none"});
+      }   
+
+   if (estado_m == '0' || cidade_m == '0' || estado_e == '0' || cidade_e == '0' || univer == '0' ||
+       curso == '0' || tam_cabelo == undefined || cor_cabelo == undefined || relogio == undefined ||
+       dente == undefined || nome == '' || sexo == '0' || estado_c == '0') 
+       {    
+            input_vazio.open();
+            return 0;
+       } else {
+  $.ajax({
+          url :"http://192.168.0.105/REDE_SOCIAL/BACK-END/request.php",
+           type : 'post',
+             data : {
+                "F": "Update",
+                'id' : id,
+                'x1' : estado_m,
+                'x2' : cidade_m,
+                'x3' : estado_e,
+                'x4' : cidade_e,
+                'x5' : univer, 
+                'x6' : curso, 
+                'x7' : nome, 
+                'x8' : sexo,
+                'x9' : estado_c,  
+                'x10' :tam_cabelo, 
+                'x11' :cor_cabelo, 
+                'x12' :relogio, 
+                'x13' :dente,
+                'x14' :foto_perfil,
+                'x15' :foto_capa,
+                'x16' : biografia
+          
+              },
+          beforeSend : function(){
+             console.log("Enviando requisição...");
+             toastCenter.open();
+          }
+     })
+     .done(function(result){
+       console.log(result);
+       toastCenter.close();
+       document.getElementById('popup-close').click(); //fecha janela de edição
+       abre_seu_perfil();
+    })
+     .fail(function(jqXHR, textStatus, msg){
+         erroconexao.open();
+       return 0;
+    }); 
+  }
+}
+var flag_zoom = 0;
+$('#foto_perfil_usuarios').click(function () {
+ 
+  if (flag_zoom == 0) {
+      $('.style_ft_zoom').css({
+      "width": "96%",
+      "transition-duration": "0.5s",
+      "margin-left": "auto",
+      "margin-right": "auto",
+      "display": "block",
+      "border":"100px 0px solid grey"
+      });  
+    
+      $('#zero_zoom').css({
+        "transition-duration": "0.5s",
+      "-webkit-transform": "rotate(180deg)",
+      "-ms-transform": "rotate(180deg)",
+      "transform": "rotate(180deg)",
+      "font-size":"22px"
+      });
+   flag_zoom = 1;
+  } else {
+
+      $('.style_ft_zoom').css({
+      "width": "50%",
+      "transition-duration": "0.5s",
+      "margin-left": "auto",
+      "margin-right": "auto",
+      "display": "block",
+      "border":"100px 0px solid grey"
+      });  
+    
+      $('#zero_zoom').css({
+        "transition-duration": "0.5s",
+      "-webkit-transform": "rotate(0deg)",
+      "-ms-transform": "rotate(0deg)",
+      "transform": "rotate(0deg)",
+      "font-size":"15px"
+      });
+      flag_zoom = 0;
+    }
+});
+
+
+
+//funcao para add os valores alterados no edit
+function add_vlr_edit () {
+  $("#nome_perfil").html($("#nome_edit").val());
+  $("#sua-univer").html('<i class="fa fa-university" aria-hidden="true"></i><br>'+$("#univer_edit").val());
+  $("#seu_curso").html('<i class="fa fa-graduation-cap" aria-hidden="true"></i><br>'+$("#curso_edit").val());
+  $("#seu_est_civil").html('<i class="fa fa-heart" aria-hidden="true"></i><br>'+$("#estado_c_edit").val());
+  $("#seu_intere").html('<i class="fa fa-heart-o" aria-hidden="true"></i><br>'+$('#interesse_edit').val());
+  $("#biografia").html('<p class="sua_biografia"><i class="fa fa-book" aria-hidden="true"></i><br>Biografia<br>'+$('#text_biograf_edit').val());
+  
+  }
+  $(function() {
+  $("#grade_pessoas").jsGrid({
+        height: 550,
+        width: "99%",
+ 
+        autoload: true,
+        paging: false,
+        noDataContent: 'carragando...',
+        controller: {
+            loadData: function() {
+                var deferred = $.Deferred();
+
+    var dados = localStorage.getItem('Duser_spotted');
+    dados = JSON.parse(dados);
+    $.ajax({
+          url :"http://192.168.0.105/REDE_SOCIAL/BACK-END/request.php",
+           type : 'post',
+             data : {
+                "F": "ListaPerfils",
+                // "estado_e" : dados[0].estado_e,
+                // "cidade_e" : dados[0].cidade_e,
+                "univer" : dados[0].univer
+             }, success: function(data){
+               var data = JSON.parse(data);
+              deferred.resolve(data);
+           
+             } 
+    });
+    return deferred.promise();
+            }
+        },
+        rowClick: function(item) {
+            console.log(item.item.nome);
+           
+            $("#foto_perfil_usuarios").html('<img class="style_ft_zoom" src="http://192.168.0.105/REDE_SOCIAL/BACK-END/'+item.item.foto_perfil+'" style="width: 50%; margin-top: -120px;  display: block; margin-left: auto; margin-right: auto">');
+            $("#foto_capa_usuarios").html('<img src="http://192.168.0.105/REDE_SOCIAL/BACK-END/'+item.item.foto_capa+'" style="width: 100%; margin-top: -15px">');
+            $("#nome_usuario").html(item.item.nome);
+            $("#univer_usuario").html('<i class="fa fa-university" aria-hidden="true"></i><br>'+item.item.univer);
+            $("#curso_usuario").html('<i class="fa fa-graduation-cap" aria-hidden="true"></i><br>'+item.item.curso);
+            $("#est_civil_usuario").html('<i class="fa fa-heart" aria-hidden="true"></i><br>'+item.item.estado_c);
+            $("#intere_usuario").html('<i class="fa fa-heart-o" aria-hidden="true"></i><br>'+item.item.sexo);
+            if (item.item.biografia == '' || item.item.biografia == null)
+              $("#biograf_usuario").html('');
+            else
+              $("#biograf_usuario").html('<p class="user_biografia"><i class="fa fa-book" aria-hidden="true"></i><br>Biografia<br>'+item.item.biografia);
+                 
+            document.getElementById('perfil_usuarios').click();
+        },
+        rowRenderer: function(item) {
+            var user = item;
+            var $photo = $("<div>").addClass("client-photo").append($("<img  style='width: 40%; float: left; border: transparent thin solid; padding: 5px; margin: 0px 10px 10px 0; max-width: 186px;'>").attr("src",'http://192.168.0.105/REDE_SOCIAL/BACK-END/'+user.foto_perfil));
+            var $info = $("<div>").addClass("client-info")
+              .append($("<p style='font-size:20px'>").text(user.nome.capitalize()))
+               .append($("<p style='margin: 2px;font-size: 18px; margin-top: -10px; color: grey'>").text(user.univer));
+            return $("<tr>").append($("<td style='box-shadow: 2px 3px 8px silver; border-radius: 5px 0px 0px 10px; width:100%'>").append($photo).append($info).append('<br>'));
+        },
+
+    });
+ 
+ 
+    String.prototype.capitalize = function() {
+        return this.charAt(0).toUpperCase() + this.slice(1);
+    };
+ 
+}); 
+
+$("#lista_public").click(function () {
+  $('#mostra_pessoas').css({"display":"none"});
+  $('#mostra_publicacoes').css({"display":"block"});
+});
+
+$("#lista_pessoas").click(function () {
+  $('#mostra_pessoas').css({"display":"block"});
+  $('#mostra_publicacoes').css({"display":"none "});
+})
 </script>
   </body>
 </html>
