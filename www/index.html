@@ -19,8 +19,8 @@
     <link rel="stylesheet" href="css/croppie.css">
     
     <!--fontes do google-->
-    <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet"> <!--logo spotted-->
-    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"><!--subtitulo parte(busca)-->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet"> logo spotted--> 
+    <!-- <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">-subtitulo parte(busca)--> 
     <script src="https://github.com/lazd/iNoBounce/blob/master/inobounce.min.js"></script>
     <script src="https://use.fontawesome.com/a33705502a.js"></script>
 
@@ -38,15 +38,70 @@
     <script src="js/uikit.js"></script>
     <link rel="stylesheet" href="css/uikit.css" type="text/css">
       
+
+    <script src="https://cdn.jsdelivr.net/npm/emojione@4.0.0/lib/js/emojione.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/emojione@4.0.0/extras/css/emojione.min.css"/>
+    
+
+
+
   <style type="text/css">
-  
+
+  /* latin */
+@font-face {
+  font-family: 'Damion';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Damion'), url(https://fonts.gstatic.com/s/damion/v7/hv-XlzJ3KEUe_YZkamw2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Pacifico Regular'), local('Pacifico-Regular'), url(https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6D6MmTpA.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Pacifico Regular'), local('Pacifico-Regular'), url(https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6I6MmTpA.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Pacifico Regular'), local('Pacifico-Regular'), url(https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6J6MmTpA.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Pacifico Regular'), local('Pacifico-Regular'), url(https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6H6Mk.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+    .page-content{
+      background-color: white;  
+    }
+    #voltar>a{
+      color: white;
+    }
     /*estilo do titulo*/
-    .titulo {
+    #titulo {
       text-align: center;
       padding-top: 15px;
       font-family: 'Damion', cursive;
       font-size: 450%;
-       color: #2196f3;
+      color: #2196f3;
+
     }
 
     /*estilo dos campos input*/ 
@@ -200,6 +255,17 @@
    color:grey;
   }
   
+ /* troca senha do menu */
+.exclui_conta {
+   position: relative; 
+   left: 17px; 
+   font-size: 150%; 
+   color:grey;
+  }
+  /* troca senha do menu */
+.exclui_conta>i{
+   color: #f1595f;
+   }   
   /* sair -> menu  */
   .sair {
     position: relative; 
@@ -382,21 +448,87 @@
     }
     /* titulo (spotted) de inicio */
     .titulo_spotted {
-      text-align: center;
+      position: relative;
+      left: 13%;
+      margin-top: 15px;
       font-family: 'Damion', cursive;
       font-size: 150%;
-       color:white;
+      color:white;
+      }
+
+
+  /*começo estilo das mensagens */
+    .ul_msg{
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
+    .ul_msg>li{
+      display:inline-block;
+      clear: both;
+      padding: 15px;
+      border-radius: 30px;
+      margin-bottom: 2px;
+    }
+    .him{
+      background: #eee;
+      float: left;
+      margin-left:8px;
+    }
+    .me{
+      float: right;
+      background: #0084ff;
+      color: #fff;
+      margin-right:8px;
+    }
+    .him + .me{
+      border-bottom-right-radius: 5px;
+    }
+    .me + .me{
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+    .me:last-of-type {
+      border-bottom-right-radius: 30px;
+    }
+  /*fim estilo das mensagens */
+
+  /*padding do checkbox da busca (não sei)*/
+  .padding_checkbox_busca {
+    padding: 10px
+  }
+
+  /*estilo do textarea da sugestao*/
+  .textarea_sugestao {
+     width: 100%; border:1px solid dimgray; border-radius:5px;
+  }
+
+  /*textarea da "biografia" -> status*/
+  #text_biograf {
+    border: 2px solid grey;
+    width: 84%; 
+    border-radius: 9px; 
+    padding: 5px; 
+    color: dimgray; 
+    font-size: 18px; 
+    font-family: sans-serif;
+   } 
+
+   /*titulo da mensagem, aparece qunado entra no bloco msg */
+   #titulo_msg {
+    margin-top: 20px;
+   }
 
   </style> 
   </head>
   <body>
 
- <main id="inicio" style="display: none">   
+ <main id="inicio" style="display: none"> 
+
    <div data-page="index" class="page">
     <div class="page-content">
      <!-- start window login -->
-     <p class="titulo">SPOTTED</p>
+     <p id="titulo">Spotted</p>
       <!-- login -->
       <div class="list no-hairlines-md" id="login">
         <ul>
@@ -525,7 +657,7 @@
                       <li class="item-content item-input" id="itens">
                         <!-- estado onde a pessoa mora-->
                         <div class="item-inner">
-                          <div class="item-title item-label"><h3>* Estado onde você mora.</h3></div>
+                          <div class="item-title item-label"><h4>* Estado onde você mora.</h4></div>
                           <div class="item-input-wrap">
                             <select id="estado_m">
                                 <option value="0">Selecione o Estado onde você mora.</option>
@@ -566,7 +698,7 @@
                           <i class="icon demo-list-icon"></i>
                         </div>
                         <div class="item-inner">
-                          <div class="item-title item-label"><h3>* Cidade onde você mora.</h3></div>
+                          <div class="item-title item-label"><h4>* Cidade onde você mora.</h4></div>
                           <div class="item-input-wrap">
                             <select id="cidade_m">
                                 <option value='0'>Selecione a Cidade onde você mora  .</option>;
@@ -581,7 +713,7 @@
                       </div>
                       <!--estado onde a pessoa estudo-->
                       <div class="item-inner">
-                        <div class="item-title item-label"><h3>* Estado onde você estuda.</h3></div>
+                        <div class="item-title item-label"><h4>* Estado onde você estuda.</h4></div>
                         <div class="item-input-wrap">
                           <select id="estado_e">
                               <option value="0">Selecione o Estado onde você estuda.</option>
@@ -622,7 +754,7 @@
                         <i class="icon demo-list-icon"></i>
                       </div>
                       <div class="item-inner">
-                        <div class="item-title item-label"><h3>* Cidade onde você estuda.</h3></div>
+                        <div class="item-title item-label"><h4>* Cidade onde você estuda.</h4></div>
                         <div class="item-input-wrap">
                           <select id="cidade_e">
                               <option value='0'>Selecione a Cidade onde você estuda.</option>;
@@ -636,12 +768,13 @@
                           <i class="icon demo-list-icon"></i>
                         </div>
                         <div class="item-inner">
-                          <div class="item-title item-label"><h3>* Universidade onde você estuda.</h3></div>
+                          <div class="item-title item-label"><h5>* Universidade onde você estuda.</h5></div>
                           <div class="item-input-wrap">
                             <select id="univer" onkeypress="acionaw">
                               <!--select dinamico feito pelo back end-->
                               <option value='1'>Selecione sua Universidade</option>
                               <option value="Universidade do sagrado coração">Universidade do sagrado coração</option>
+                               <option value="Universidade de cão chupa manga">Universidade de cão chupa manga</option>
                             </select>
                           </div>
                         </div>
@@ -652,7 +785,7 @@
                           <i class="icon demo-list-icon"></i>
                         </div>
                         <div class="item-inner">
-                          <div class="item-title item-label"><h3>* O que você cursa?</h3></div>
+                          <div class="item-title item-label"><h4>* O que você cursa?</h4></div>
                           <div class="item-input-wrap">
                             <select id="curso">
                               <option value="0">Selecione seu curso</option>
@@ -894,7 +1027,7 @@
                         <div class="block">
                           <p class="row">
                              <a class="popup-open" href="#" data-popup=".popup-estuda" id="open_estuda"></a>
-                             <button class="col button button-big col button button-fill color-blue" onclick="nextstep()" id="space_but">Próximo</button>
+                             <button class="col button button-big col button button-fill color-blue" onclick="nextstep()" id="space_but">Próximo</button></a>
                           </p>
                         </div>
                      </ul>
@@ -911,7 +1044,7 @@
                             <i class="icon demo-list-icon"></i>
                           </div>
                           <div class="item-inner">
-                            <div class="item-title item-label"><h3>* Nome</h3></div>
+                            <div class="item-title item-label"><h4>* Nome</h4></div>
                             <div class="item-input-wrap">
                               <input type="text" placeholder="Insrira seu Nome" id="nome" autofocus>
                               <span class="input-clear-button"></span>
@@ -924,7 +1057,7 @@
                               <i class="icon demo-list-icon"></i>
                             </div>
                             <div class="item-inner">
-                              <div class="item-title item-label"><h3>* E-mail</h3></div>
+                              <div class="item-title item-label"><h4>* E-mail</h4></div>
                               <div class="item-input-wrap">
                                 <input type="email" placeholder="Insrira seu E-mail" id="email">
                                 <span class="input-clear-button"></span>
@@ -937,7 +1070,7 @@
                             <i class="icon demo-list-icon"></i>
                           </div>
                           <div class="item-inner">
-                            <div class="item-title item-label"><h3>* Senha</h3></div>
+                            <div class="item-title item-label"><h4>* Senha</h4></div>
                             <small>A senha deve possuir entre 8 a 10 dígitos.</small>
                             <div class="item-input-wrap">
                               <input type="password" placeholder="Insrira uma Senha" id="senha">
@@ -951,7 +1084,7 @@
                               <i class="icon demo-list-icon"></i>
                             </div>
                             <div class="item-inner">
-                              <div class="item-title item-label"><h3>* Interessado em</div>
+                              <div class="item-title item-label"><h4>* Interessado em</h4></div>
                               <div class="item-input-wrap">
                                 <select id="sexo">
                                   <option value="0">Interessado em</option>
@@ -968,7 +1101,7 @@
                               </div>
                               <!--estado onde a pessoa estudo-->
                               <div class="item-inner">
-                                <div class="item-title item-label">* Estado Civil.</div>
+                                <div class="item-title item-label"><h4>* Estado Civil.</h4></div>
                                 <div class="item-input-wrap">
                                   <select id="estado_civil">
                                       <option value="0">Estado Civil.</option>
@@ -1142,6 +1275,31 @@
                           </div> 
                       </div>
                     </div>
+                    <a class="uk-button uk-button-default" href="#modal-termos" uk-toggle id="modal_termos" style="display: none"></a>
+                    <div id="modal-termos" class="uk-flex-top" uk-modal style="z-index: 99999999;">
+                      <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical" style="border-radius: 9px">
+                          <h3><b>Termos e privacidade</b></h3> 
+                          <p>O usuário fica ciente que os dados inseridos por ele ficam armazenados em nossos servidores. Dados como:<br>
+                          <b>Email; Senha; Foto de capa e perfil; Nome; Mensagens; Universidade que estuda; Curso; Estado civil; Status; Interesse</b></p>
+                          <p>Privacidade -  Alguns dos dados do usuário será visualizado por outros usuários tal como, nome;universidade;curso;estado civil;Status.Interesse;foto de perfil e de capa.
+                          -Mensagens trocadas entre você e outros usuários, serão visualizadas somente por vocês, nenhuma outra pessoa além do emissor da mensagem e o receptor poderão visualizar a mesma. 
+                        </p>
+                         <label>
+                          <div class="row"  onclick="aciona_termos()">
+                            <form name="form_termos">
+                              <label>
+                              <label class="checkbox">
+                                <input type="checkbox" name="aceito_termos"><i class="icon-checkbox"></i>
+                              </label>&nbsp;Aceitar e continuar
+                             </label>
+                           </form>
+                         <button type="button" class="col button button-big col button button-fill color-gray" style="background-color:> gray; width:100px" onclick="cadastra_usuario()" id="BotaoFimCadastro">
+                          Entrar
+                         </button>
+                       </div>
+
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1163,32 +1321,30 @@
                        <i class="f7-icons size-22" style='color:white'>bars</i>
                     </a>
                 </div>
-                <!-- titulo spotted-->
-                <div class="center"> 
-                        <p class="titulo_spotted">Spotted</p>
-                </div>
+                <!-- titulo spotted--> 
+                <p class="titulo_spotted">Spotted</p>
 
                 <!-- titulo de mensagem -->
-                <div id="titulo_msg">
+                 <div id="titulo_msg" class="left"> 
                 </div>
                 <div class="right"> 
                     <a class="link popover-open" href="#" data-popover=".popover-visitas">
+                      <label style="margin-left:20px" id="alert_visita"></label>
                         <i class="f7-icons size-22" style='color:white'>bell_fill</i>
                     </a>
                 </div>
             </div>
           
         </div>
-        <div style="margin-top: 40px">
-         <div id="mostra_pessoas" > 
-            <div id="grade_pessoas" style="height:500px"></div>
+         <div id="mostra_pessoas"> 
+            <div id="grade_pessoas"></div>
          </div>
          <!-- tela de mensagens  -->
-         <div id="mostra_lista_mensagem" style="margin-top:60px;">    
+         <div id="mostra_lista_mensagem">    
               
         </div>
         <!-- rodape  -->
-        <div style="position: absolute; bottom: 0; width: 100%; height: 50px;">
+        <div class="height_rodape" style="position: absolute; bottom: 0; width: 100%; height: 50px;">
           <div style="background-color: #2196f3;">
             <div class="row" style="color: white; padding: 10px">
               <i class="f7-icons"  id="lista_pessoas"  style="font-size: 30px; margin-left: 10%;">persons_round_fill</i>
@@ -1226,7 +1382,7 @@
                       <div class="item-inner">
                         <div class="item-title item-label"><h4>&nbsp;Estado onde o crush mora.</h4></div>
                         <div class="item-input-wrap">
-                          <select id="estado_m_busca">
+                          <select id="estado_m_busca" style="padding: 10px">
                               <option value="0">Selecione o Estado.</option>
                               <option value="1">AC</option>
                               <option value="2">AL</option>
@@ -1258,6 +1414,13 @@
                           </select>
                         </div>
                       </div>
+                      <div class="padding_checkbox_busca">
+                          <label>
+                            <label class="checkbox">
+                              <input type="checkbox"><i class="icon-checkbox"></i>
+                            </label>&nbsp;Não sei
+                          </label>
+                     </div>
                     </li>
                     <br>
                     <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush2">
@@ -1265,11 +1428,18 @@
                       <div class="item-inner">
                         <div class="item-title item-label"><h4>&nbsp;Cidade onde o crush mora.</h4></div>
                         <div class="item-input-wrap">
-                          <select id="cidade_m_busca" >
+                          <select id="cidade_m_busca" style="padding: 10px">
                               <option value='0'>Selecione a Cidade.</option>;
                           </select>
                         </div>
                       </div>
+                       <div class="padding_checkbox_busca">
+                          <label>
+                            <label class="checkbox">
+                              <input type="checkbox"><i class="icon-checkbox"></i>
+                            </label>&nbsp;Não sei
+                          </label>
+                     </div>
                     </li>
                   </ul>
                  </div>
@@ -1283,7 +1453,7 @@
                         <div class="item-inner">
                           <div class="item-title item-label"><h4>&nbsp;Estado onde o crush estuda.</h4></div>
                           <div class="item-input-wrap">
-                            <select id="estado_e_busca">
+                            <select id="estado_e_busca" style="padding: 10px">
                                 <option value="0">Selecione o Estado.</option>
                                 <option value="1">AC</option>
                                 <option value="2">AL</option>
@@ -1315,6 +1485,13 @@
                             </select>
                           </div>
                         </div>
+                         <div class="padding_checkbox_busca">
+                          <label>
+                            <label class="checkbox">
+                              <input type="checkbox"><i class="icon-checkbox"></i>
+                            </label>&nbsp;Não sei
+                          </label>
+                         </div>
                       </li>
                       <br>
                       <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush4">
@@ -1322,10 +1499,17 @@
                         <div class="item-inner">
                           <div class="item-title item-label"><h4>&nbsp;Cidade onde o crush estuda.</h4></div>
                           <div class="item-input-wrap">
-                            <select id="cidade_e_busca" >
+                            <select id="cidade_e_busca" style="padding: 10px">
                                 <option value='0'>Selecione a Cidade.</option>;
                             </select>
                           </div>
+                        </div>
+                         <div class="padding_checkbox_busca">
+                          <label>
+                            <label class="checkbox">
+                              <input type="checkbox"><i class="icon-checkbox"></i>
+                            </label>&nbsp;Não sei
+                          </label>
                         </div>
                       </li>
                     </ul>
@@ -1339,12 +1523,19 @@
                             <div class="item-inner">
                               <div class="item-title item-label"><h5>&nbsp;Universidade onde o crush estuda.</h5></div>
                               <div class="item-input-wrap">
-                                <select id="univer_busca" onkeypress="acionaw">
+                                <select id="univer_busca" onkeypress="acionaw" style="padding: 10px">
                                   <!--select dinamico feito pelo back end-->
                                   <option value='0'>Selecione sua Universidade</option>
                                   <option value="Universidade do sagrado coração">Universidade do sagrado coração</option>
                                 </select>
                               </div>
+                            </div>
+                            <div class="padding_checkbox_busca">
+                              <label>
+                               <label class="checkbox">
+                                 <input type="checkbox"><i class="icon-checkbox"></i>
+                               </label>&nbsp;Não sei
+                              </label>
                             </div>
                         </li>
                         <br>
@@ -1352,7 +1543,7 @@
                                 <div class="item-inner">
                                   <div class="item-title item-label"><h4>&nbsp;O que o crush cursa?</h4></div>
                                   <div class="item-input-wrap">
-                                    <select id="curso_busca">
+                                    <select id="curso_busca" style="padding: 10px">
                                       <option value="0">Selecione seu curso</option>
                                         <optgroup label="Ciências biológicas e da Saúde">
                                           <option>Biologia</option>
@@ -1588,9 +1779,16 @@
                                       </select>
                                   </div>
                                 </div>
-                        </li>
-                      </ul>
-                     </div>
+                              <div class="padding_checkbox_busca">
+                                <label>
+                                   <label class="checkbox">
+                                   <input type="checkbox"><i class="icon-checkbox"></i>
+                                 </label>&nbsp;Não sei
+                                </label>
+                              </div>
+                           </li>
+                         </ul>
+                       </div>
                      
                      <div id="campodebusca4">
                         <ul>
@@ -1619,6 +1817,14 @@
                                     </label> 
                                   Longo
                                 </label>
+                                  <div id="space_radio"></div>
+                                  <label>
+                                    <label class="radio">
+                                      <input type="radio" name="cabelo_busca">
+                                      <i class="icon-radio"></i>
+                                    </label> 
+                                   Não sei
+                                </label>
                               </li> 
                               <br>
                               <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush8" style="padding:15px">
@@ -1637,6 +1843,14 @@
                                     <i class="icon-radio"></i>
                                   </label>
                                   Escuro
+                                </label>
+                              <div id="space_radio"></div>
+                                <label>
+                                  <label class="radio">
+                                    <input type="radio" name="cor_cabelo_busca">
+                                    <i class="icon-radio"></i>
+                                  </label>
+                                  Não sei
                                 </label>
                               
                               </li>
@@ -1666,6 +1880,14 @@
                                       </label> 
                                       Parda
                                     </label>
+                                    <div id="space_radio"></div>
+                                    <label>
+                                      <label class="radio">
+                                        <input type="radio" name="pele_busca">
+                                        <i class="icon-radio"></i>
+                                      </label> 
+                                      Não sei
+                                    </label>
                                 </li>
                               </ul>
                           </div>
@@ -1688,6 +1910,14 @@
                                         </label> 
                                         Não 
                                       </label>
+                                      <div id="space_radio"></div>
+                                      <label>
+                                        <label class="radio">
+                                          <input type="radio" name="relogio_busca">
+                                          <i class="icon-radio"></i>
+                                        </label> 
+                                        Não sei
+                                      </label>
                                     </li> 
                                      <br> 
                                     <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush11" style="padding:15px">   
@@ -1707,6 +1937,16 @@
                                           </label> 
                                           Não 
                                         </label>
+                                      <div id="space_radio"></div>
+                                        <label>
+                                          <label class="radio">
+                                            <input type="radio" name="dente_busca">
+                                            <i class="icon-radio"></i>
+                                          </label> 
+                                          Não sei
+                                        </label>
+
+
                                     </li>
                                     </ul>
                                 </div>
@@ -1747,8 +1987,23 @@
                     </a>
                 </p>
                 <p>
-                  <a class="popup-open popover-close troca_senha" style="color: grey" href="#" data-popup=".popup-teste">
+                  <a class="popup-open popover-close sobre_menu" style="color:grey" href="#" data-popup=".popup-melhoria">
+                      <i class="fa fa-wrench" aria-hidden="true"></i>&nbsp;Sugerir melhoria
+                    </a>
+                </p>
+                 <p>
+                  <a class="popup-open popover-close sobre_menu" style="color:grey" href="#" data-popup=".popup-problema">
+                      <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;Relatar problema
+                    </a>
+                </p>
+                <p>
+                  <a class="troca_senha" style="color: grey" onclick="trocar_senha()">
                       <i class="fa fa-lock" aria-hidden="true"></i>&nbsp;Trocar Senha
+                  </a>
+                </p>
+                 <p>
+                  <a class="exclui_conta" style="color: grey" onclick="excluir_conta();">
+                      <i class="fa fa-trash" aria-hidden="true"></i>&nbsp;Excluir Conta
                   </a>
                 </p>
                 <p> 
@@ -1762,13 +2017,18 @@
 
       <!-- aba de visitas (identica a aba de menu) -->
       <div class="popover popover-visitas" style="width: 97%">
-          <div class="popover-inner" style="width: 100%">
+          <div class="popover-inner" style="width: 100%; background-color: white">
               <div id="container">
                 <!-- bloco de cima de visitas  -->
                 <div>
-                  <p style="text-align: center; color: grey;">Pessoas que visitaram seu perfil.</p>
+                  <p style="font-size: 20px; text-align: center; color: dimgrey; margin-top: 10px;">Pessoas que visitaram seu perfil.
+                  <p id="limpavisitas" style="background-color: #2196f3; color: white; border-radius: 90px; padding:5px 10px 5px 10px; float:right; font-size: 15px; margin-top: -15px; margin-right: 5%" onclick="LimpaHistorVisi()">Limpar histórico</p>
+                </p><br>
                 </div>
-               <div id="visitas">
+               <div id="visitas" style="height: 300px">
+                 <center>
+                  <p id="frase_visita">Nenhuma pessoa visitou seu perfil</p>
+                </center>
                </div>
               </div>       
           </div>
@@ -1801,12 +2061,12 @@
                      <h1 id="nome_perfil"></h1>
                      <div class="accordion-item" id="add_biograf">
                         <a href="#" style="width: 60%;" class="item-content item-link col button button-raised button-fill button-round" >
-                          <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add biografia
+                          <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add status
                         </a>
                           <div class="accordion-item-content">   
                             <p>
                               <p id="qt_carac">400</p>
-                                <textarea style="border: 2px solid grey; width: 84%; border-radius: 9px; padding: 5px; color: dimgray; font-size: 18px; font-family: sans-serif" rows="7" onkeyUp="conta_carac()" id="text_biograf" maxlength="400"></textarea>
+                                <textarea rows="7" onkeyUp="conta_carac()" id="text_biograf" maxlength="400"></textarea>
                                <p>
                                   <button class="col button button-fill color-green" style="width: 20%" onclick="salvar_biograf()">Salvar</button>
                                </p>
@@ -1815,25 +2075,6 @@
                           </div>
                       </div>
                       <br>
-
-                      <!-- arrumar depois a parte de add  musica  -->
-
-                      <!-- adiciona uma musica favorita  -->
-                      <div class="accordion-item" id="add_biograf">
-                        <a href="#" style="width: 60%;" class="item-content item-link col button button-raised button-fill button-round color-pink" >
-                          <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add música favorita
-                        </a>
-                          <div class="accordion-item-content">   
-                            <p>
-                              <p id="qt_carac">400</p>
-                                <textarea style="border: 2px solid grey; width: 84%; border-radius: 9px; padding: 5px; color: dimgray; font-size: 18px; font-family: sans-serif" rows="7" onkeyUp="conta_carac()" id="text_biograf" maxlength="400"></textarea>
-                               <p>
-                                  <button class="col button button-fill color-green" style="width: 20%" onclick="salvar_biograf()">Salvar</button>
-                               </p>
-                              <hr style="width:80%">  
-                            </p>
-                          </div>
-                      </div>
                     </center>
                    <!-- botao de editar informações-->
                    
@@ -1864,23 +2105,72 @@
 
         <!-- sobre o app  -->
         <div class="popup popup-sobre">
+           <div class="page-content">
           <div class="block">
-            <p>sobre</p>
             <!-- Close Popup -->
-            <p><a class="link popup-close" href="#">Close popup</a></p>
-            <p>Lorem ipsum dolor sit amet...</p>
+            <p><a class="link popup-close f7-icons" href="#">close</a></p>
+            <h3>Sobre o Spotted</h3>
+            <p>&nbsp;Spotted é uma rede social, que tem como objetivo facilitar o encontro entre jovens de uma mesma universidade ou de outras.</p>
+            <p>&nbsp;O diferencial do Spotted de outras redes sociais, é que você pode ter duas formas de achar seu crush, a primeira, é você vendo ele em sua universidade e com base nas características vistas dele você encontrá-lo no Spotted, a outra forma é você buscar uma pessoa, sem ter visto a mesma, porém você irá traçar um perfil desejado, se o perfil que você traçou as características existir, ele irá trazer os usuários com as mesmas características que você inseriu.</p> 
+            <p>&nbsp;Importante ressaltar, que no início do aplicativo irá aparecer uma lista de pessoas da mesma universidade sua e do sexo desejado seu, no qual você pode conhecer, essa lista irá trazer 1.000 pessoas aleatoriamente, todas as vezes que você entrar no app.
+            </p>
+          </div>
           </div>
         </div>
 
-        <!-- trocar senha do usuario logado -->
-        <div class="popup popup-teste">
+        <!-- sugesão de melhoria do spotted  -->
+        <div class="popup popup-melhoria">
+         <div class="page-content">
           <div class="block">
-            <p>Senha</p>
             <!-- Close Popup -->
-            <p><a class="link popup-close" href="#">Close popup</a></p>
-            <p>Lorem ipsum dolor sit amet...</p>
+             <div style="margin-top:-20px">
+              <p>
+               <a class="link popup-close f7-icons" href="#">close</a>
+              </p>
+              <h3>
+               <center>Sugestão de melhoria.</center>
+              </h3>
+               <p>
+                Envie para nós, sua sugestão de melhoria, isso é muito importante para nós, pois ficaremos muito feliz em estar melhorando nosso aplicativo, tornando-o cada vez mais sofisticado.
+               </p>
+               <textarea placeholder="Digite..." rows="10" class="textarea_sugestao" id="texto_sugestao"></textarea><br>
+              <center>
+              <button type="button" class="col button button-fill button-round" style="width: 50%;" onclick="EnviaMelhoria()">Enviar</button>
+            </center>
+           </div>
           </div>
+         </div>
         </div>
+
+        <!-- popup de relatar problema-->
+        <div class="popup popup-problema">
+         <div class="page-content">
+          <div class="block">
+            <!-- Close Popup -->
+             <div style="margin-top:-20px">
+              <p>
+               <a class="link popup-close f7-icons" href="#">close</a>
+              </p>
+              <h3>
+                <center>
+                  Relatar problema no SPOTTED
+                </center>
+              </h3>
+               <h4>
+                <center>
+                Relatar algum problema, erro de funcionalidade do aplicativo.
+              </center>
+               </h4>
+               <textarea placeholder="Digite..." rows="10" class="textarea_sugestao" id="textoproblema"></textarea><br>
+              <center>
+              <button type="button" class="col button button-fill button-round" style="width: 50%;" onclick="EnviaProblema()">Enviar</button>
+            </center>
+           </div>
+          </div>
+         </div>
+        </div>
+
+
 
          <!-- editar informações do usuario -->
          <div class="popup popup-edit_infor">
@@ -2250,7 +2540,7 @@
                           <!-- nome do usuario  -->
                           <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px">
                             <div class="item-inner">
-                             <div class="item-title item-label"><h3 style=" font-size:18px;">* Sua biografia.</h3></div>
+                             <div class="item-title item-label"><h3 style=" font-size:18px;">* Seu Status.</h3></div>
                              <p id="qt_carac_edit">400</p>
                              <textarea style="border: 1px solid silver;width: 100%; border-radius: 9px; padding: 5px; color: dimgray; font-size: 18px; font-family: sans-serif" rows="7" onkeyUp="conta_carac_edit()" id="text_biograf_edit" maxlength="400"></textarea>
                             <p>
@@ -2421,16 +2711,17 @@
             <div class="popup popup-perfil_usuarios" id="fundo_ft_perfil"> 
               <div data-page="index" class="page">
                 <div class="page-content">
-                  <p>
-                    <a class="link popup-close f7-icons" id="fecha_perfil_visitado" href="#" style="position: absolute; top: 4px; left: 8px; z-index:9999; font-size: 25px; color: white;">close</a>
+                  <p id="volta_grade_pessoas">
+  
                   </p>   
                    <center>
                     <!-- foto de capa do perfil do usuario nao logado -->
                     <p id="foto_capa_usuarios"></p> 
                     
                     <!-- foto de perfil do perfil do usuario nao logado -->
-                    <p id="foto_perfil_usuarios"></p>
-                    <a class="uk-button uk-button-default" href="#modal-center" uk-toggle>Open</a>
+                    <a href="#modal-center" uk-toggle>
+                      <p id="foto_perfil_usuarios"></p>
+                    </a>
 
                     <div id="modal-center" class="uk-flex-left" uk-modal style='z-index:999999; background-color: rgba(0,0,0,0.9);'>
                         <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical" style="background-color: transparent;">
@@ -2458,45 +2749,83 @@
             </div>  
             <!-- modal de mensagem -> onde o usuario digita a mensagem  -->
             <div class="popup popup-envia_msg">
-              <div class="navbar">
-                  
-                 <div class="navbar-inner" style="position: fixed; top:1px;">
-                    <p>
-                      <div class="left" id="sai_batepapo">
-                      </div>
-                    </p>       
-                    <!-- foto de perfil msg e nome de perfil msg -->
-                    <div srtle="display: inline">
-                      <p> 
-                        <span id="foto_perfil_msg" style="margin-left: 3%; margin-top: 3%;"></span>
-                        &nbsp;&nbsp;<span id="nome_perfil_msg" style="position: relative; top:-16px;"></span>
-                      </p>
-                    </div>
+              <div class="page">
+                 <div class="navbar">
+                  <!-- fecha msg quando a visualização do perfil e pela caixa de msg -->
+                  <div id="fecha_msg" style="display: none"></div>       
+                   <div class="navbar-inner" style="position: fixed; background-color:#2196f3;">
+                      <table>
+                       <tr>
+                        <td class="uk-animation-slide-right  repeat: true">
+                           <div class="left" id="sai_batepapo">
+                            </div> 
+                        </td>
+                        <td style="width: 40px" class="uk-animation-slide-right repeat: true">
+                          <div id="foto_perfil_msg" style="width: 100%;">
+                          </div>
+                        </td>
+                        <td class="uk-animation-slide-right  repeat: true">
+                          <div id="nome_perfil_msg" style="margin-left: 20%; color: white">
+                          </div>
+                        </td>
+                        <td>
+                          <div class="right">
+                             <p class="link popover-open" href="#" data-popover=".popover-ver_perfil_bloquear" style="padding:20px; margin-top: -30px">
+                                 <i class="f7-icons size-22" style='color:white'>more_vertical_fill</i>
+                             </p>
+                          </div>
+                         </td>
+                       </tr>
+                      </table>
+                   </div>
                  </div>
-              </div>
-                     <div data-page="index" class="page"> 
-                        <div id="scroll_msg" class="page-content" style="height:400px;">
-                          <div id="mensagens"></div>
-                        </div>
-                    </div>
-                    <div style="position: relative;top:80%; bottom: 0; width: 100%; height: 50px;">
-                          <hr>
-                          <!-- <div class="row">
-                          <textarea  style="margin-left:10px; margin-bottom:5px; font-size: 23px; color: black; border: 2px solid #958e8e; padding: 5px 15px 5px 15px; border-radius: 90px; width: 80%;" rows="1" id="mensagem"></textarea>
-                            <i class="f7-icons" style="padding:3px; margin-right: 10px; background-color:#2196f3; border-radius: 90px; color:white; font-size:30px" onclick="envia_msg()">paper_plane</i> 
-                          </div> -->
-                          <div class="toolbar messagebar">
-                              <div class="toolbar-inner">
-                                <div class="messagebar-area">
-                                  <textarea class="resizable" placeholder="Message" id="mensagem"></textarea>
-                                </div><a onclick="envia_msg()">Send</a>
-                              </div>
-                            </div>
-                    </div>
-                
-              </div>  
-           
+              
 
+
+
+                        <div id="scroll_msg" class="page-content" style="height: 90%; margin-top:25px">
+                          <div class="wrapper">
+                            <ul class="ul_msg" id="mensagens">
+                            
+                            </ul>
+                           </div>
+                         </div>
+
+                        <!--    <div class="toolbar messagebar">
+                            <div class="toolbar-inner">
+                              <div class="messagebar-area">
+                                <textarea class="resizable" placeholder="Message" id="mensagem"></textarea>
+                              </div><a class="link send-link" href="#">Send</a>
+                            </div>
+                          </div> -->
+                    <div class="toolbar messagebar">
+                          <div class="toolbar-inner">
+                            <textarea id="mensagem" class="resizable"></textarea>
+                            <a onclick="envia_msg()" href="#">Enviar</a>
+                          </div>
+                    </div>
+
+
+          
+  
+      
+            </div>
+          </div>
+           
+          <!-- popup de (ver perfil e bloquear) -->
+         <div class="popover popover-ver_perfil_bloquear" style="width: 70%">
+          <div class="popover-inner" style="width: 100%">
+              <div style="padding:20px; color: grey; font-size: 20px; height: 100%">
+                 <p style="padding-top:10px" onclick="ver_perfil_msg();decrementa_time()">
+                   <i class="fa fa-user" aria-hidden="true"></i>&nbsp;Ver perfil 
+                </p>
+                <hr id="hr_block_perfil">
+                <p onclick="BloquearChat()" id="bloqueia_perfil">
+                  <i class="fa fa-lock" aria-hidden="true"></i>&nbsp;Bloquear perfil
+                </p>
+              </div>       
+          </div>
+      </div>
 </main>
 <script>
   
@@ -2505,7 +2834,6 @@
   //liberar a funcao somente quando ela for one == 0, assim que executada a funcao
   //ela passa a receber o valor 1, assim ela nao executa a funcao que pede a condicional
   //one == 0
-
 
 
   var app = new Framework7();
@@ -2585,7 +2913,7 @@
     
     // Create toast with icon
     var toastIcon = app.toast.create({
-      text: '<h2>Falta Pouco!</h3>',
+      text: '<h3 style="color:white">Falta Pouco!</h3>',
       position: 'center',
       closeTimeout: 2000,
     });
@@ -2633,303 +2961,328 @@
 		  closeTimeout: 2500,
 		});
 
-  //botao do "proximo" da primeira tela de cadastro
-  function nextstep () {
-      document.getElementById("nome").autofocus;
-      var estado_m = $("#estado_m").val();
-      var cidade_m = $("#cidade_m").val();
-      var estado_e = $("#estado_e").val();
-      var cidade_e = $("#cidade_e").val();
-      var univer = $("#univer").val();
-      var curso = $("#curso").val();
+     // entrando no spotted   
+    var entrando = app.toast.create({
+      text: 'Entrando...',
+      position: 'center',
+      closeTimeout: 2500,
+    });
+//botao do "proximo" da primeira tela de cadastro
+function nextstep () 
+/***/{
+/****/document.getElementById("nome").autofocus;
+/****/var estado_m = $("#estado_m").val();
+/****/var cidade_m = $("#cidade_m").val();
+/****/var estado_e = $("#estado_e").val();
+/****/var cidade_e = $("#cidade_e").val();
+/****/var univer = $("#univer").val();
+/****/var curso = $("#curso").val();
 
-      if (estado_m == '0' || 
-          cidade_m == '0' ||
-          estado_e == '0' ||
-          cidade_e == '0' ||
-           univer == '0' ||
-          curso == '0') 
-          {
-            input_vazio.open();
-            return 0;
-          }
+/****/if (estado_m == '0' || 
+/*******/cidade_m == '0' ||
+/*******/estado_e == '0' ||
+/*******/cidade_e == '0' ||
+/*******/univer == '0' ||
+/*******/curso == '0') 
+/*********/{
+/***********/input_vazio.open();
+/***********/return 0;
+/*********/}
       
-     $("#voltar").html("<a class='link tab-link' href='#tab1' onclick='voltar()'>Voltar</a>");
-     document.getElementById('tabe2').click();
-  }
+/*******/$("#voltar").html("<a class='link tab-link' href='#tab1' onclick='voltar()'>Voltar</a>");
+/******/document.getElementById('tabe2').click();
+/***/}
 
-  //botao do "proximo" da segunda pagina 
-  function nextstep2 () 
-    {
-      document.getElementById("cabelo").autofocus;
-      var nome = $("#nome").val(); 
-      var email = $("#email").val(); 
-      var senha = $("#senha").val(); 
-      var sexo = $("#sexo").val(); 
-      var estado_civil = $("#estado_civil").val(); 
+//botao do "proximo" da segunda pagina 
+function nextstep2 () 
+/***/{
+/****/document.getElementById("cabelo").autofocus;
+/****/var nome = $("#nome").val(); 
+/****/var email = $("#email").val(); 
+/****/var senha = $("#senha").val(); 
+/****/var sexo = $("#sexo").val(); 
+/****/var estado_civil = $("#estado_civil").val(); 
       
       //armazena para logar assim que a conta e criada 
-      localStorage.setItem('email',email);
-      localStorage.setItem('senha',senha);
+/****/localStorage.setItem('email',email); 
+/****/localStorage.setItem('senha',senha);
     
       //condiçoes de entrada 
-      if (nome == '' || email == '' || senha == '' || sexo == '0' || estado_civil == '0') {
-          input_vazio.open();
-          return 0;
-        }else {
-          if (email) {
-            var txt = $("#email").val();
-              if ((txt.length != 0) && ((txt.indexOf("@") < 1) || (txt.indexOf('.') < 7)))
-                {
-                  alertemail.open();
-                  $("#email").focus();
-                  return 0; 
-                } else {
-                  if (senha.length < 8 || senha.length > 10) {
-                    quant_senha.open();   
-                    return 0;
-                }
-              }
-            }
-          } 
+/****/if (nome == '' || email == '' || senha == '' || sexo == '0' || estado_civil == '0') {
+/********/input_vazio.open();
+/********/return 0;
+/*****/}else {
+/********/if (email) {
+/***********/var txt = $("#email").val();
+/************/if ((txt.length != 0) && ((txt.indexOf("@") < 1) || (txt.indexOf('.') < 7)))
+/*************/{
+/****************/alertemail.open();
+/****************/$("#email").focus();
+/****************/return 0; 
+/*************/} else {
+/**************/if (senha.length < 8 || senha.length > 10) {
+/******************/quant_senha.open();   
+/******************/return 0;
+/**************/}
+/************/}
+/**********/}
+/********/} 
          
           //ajax para verificar email existente 
-          $.ajax({
-            url : "http://192.168.15.4/REDE_SOCIAL/BACK-END/request.php",
-            dataType: 'JSON',
-            type : 'post',
-            data : {
-              "F":"EmailExiste",
-              "email" : email
-            },
-            beforeSend : function(){
-               console.log("Enviando requisição...");
-               toastCenter.open();
-            }
-         }).done(function(msg){
-           var jsonData = msg;
-           var flag = 0;
-           for (var i = 0; i < jsonData.length; i++) {
-             if (jsonData[i].email) {
-               flag += 1;
-             } 
-           }
-           if(flag > 0) {
-              EmailExistente.open();
-              return false; 
-            }else {
-                document.getElementById('tabe3').click();
-                $("#voltar").html("<a class='link tab-link' href='#tab2' onclick='voltar2()'>Voltar</a>");
-                notificationWithButton.open();
-              }
-             toastCenter.close();
-          }).fail(function(jqXHR, textStatus, msg){
-           erroconexao.open();
-         return 0;
-      });      
-    }
+/********/$.ajax({
+/**********/url : "https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+/**********/dataType: 'JSON',
+/**********/type : 'post',
+/**********/data : {
+/************/"F":"EmailExiste",
+/************/"email" : email
+/**********/},
+/***********/beforeSend : function(){
+/*************/console.log("Enviando requisição...");
+/*************/toastCenter.open();
+/***********/}
+/********/}).done(function(msg){
+/*********/var jsonData = msg;
+/*********/var flag = 0;
+/**********/for (var i = 0; i < jsonData.length; i++) {
+/***********/if (jsonData[i].email) {
+/*************/flag += 1;
+/************/} 
+/***********/}
+/**********/if(flag > 0) {
+/************/EmailExistente.open();
+/***********/return false; 
+/**********/}else {
+/************/document.getElementById('tabe3').click();
+/************/$("#voltar").html("<a class='link tab-link' href='#tab2' onclick='voltar2()'>Voltar</a>");
+/************/notificationWithButton.open();
+/***********/}
+/**********/toastCenter.close();
+/*********/}).fail(function(jqXHR, textStatus, msg){
+/********/erroconexao.open();
+/*******/return 0;
+/******/});      
+/*****/}
 
-  //insere o voltar na tela foto de perfil para voltar para a tela de caracteristicas
-  function nextstep3 () 
-   {
-      var tam_cabelo = $("input[type=radio][name='cabelo']:checked").val();
-      var cor_cabelo = $("input[type=radio][name='cor_cabelo']:checked").val();
-      var cor_pele = $("input[type=radio][name='pele']:checked").val();
-      var relogio = $("input[type=radio][name='relogio']:checked").val();
-      var dente = $("input[type=radio][name='dente']:checked").val();
+//insere o voltar na tela foto de perfil para voltar para a tela de caracteristicas
+function nextstep3 () 
+/***/{
+/****/var tam_cabelo = $("input[type=radio][name='cabelo']:checked").val();
+/****/var cor_cabelo = $("input[type=radio][name='cor_cabelo']:checked").val();
+/****/var cor_pele = $("input[type=radio][name='pele']:checked").val();
+/****/var relogio = $("input[type=radio][name='relogio']:checked").val();
+/****/var dente = $("input[type=radio][name='dente']:checked").val();
 
-      if (tam_cabelo == undefined || cor_cabelo == undefined || cor_pele == undefined || relogio == undefined || dente == undefined) {
-        input_vazio.open();
-        return 0;
-      } else {
-       toastIcon.open();
-       document.getElementById("tabe4").click();
-       $("#voltar").html("");
-       $(".title").html('<p>Escolha uma foto de perfil.</p>');
+/*****/if (tam_cabelo == undefined || cor_cabelo == undefined || cor_pele == undefined || relogio == undefined || dente == undefined) {
+/*******/input_vazio.open();
+/*******/return 0;
+/****/} else {
+/*****/toastIcon.open();
+/*****/document.getElementById("tabe4").click();
+/*****/$("#voltar").html("");
+/*****/$(".title").html('<p>Escolha uma foto de perfil.</p>');
         
-      //  funcao para recortar imagem de perfil 
-       $(document).ready(function(){
-         $image_crop = $('#image_demo').croppie({
-         url:'img/perfil.png',
-         enableExif: true,
-         viewport: {
-           width:288,
-           height:288,
-           type:'circle', //square
-        },
-        boundary:{
-          width: "100%",
-          height: 450,
-        },
-         showZoomer: false,
-       });
+      //funcao para recortar imagem de perfil 
+/*****/$(document).ready(function(){
+/*******/$image_crop = $('#image_demo').croppie({
+/*******/url:'img/perfil.png',
+/*******/enableExif: true,
+/*******/viewport: {
+/*********/width:288,
+/*********/height:288,
+/*********/type:'circle', //square
+/******/},
+/******/boundary:{
+/********/width: "100%",
+/********/height: 450,
+/*******/},
+/******/showZoomer: false,
+/*****/});
 
        //funcao para buscar a imagem, que esta no input
-       $('#upload_image').on('change', function(){
-       var img = $('#upload_image').val();
-        img = img.substr(-4);
-         if (img == "jpeg" || 
-            img == ".jpg" ||
-            img == ".png" ||
-            img == "JPEG" ||
-            img == ".JPG" ||
-            img == ".PNG") {         
-        var reader = new FileReader();
-        reader.onload = function (event) {
-        $image_crop.croppie('bind', {
-        url: event.target.result
-        }).then(function(){
-            console.log('completo.');
-          });
-         }
-        reader.readAsDataURL(this.files[0]);
-       } else{
-         AlertImg.open();
-          return 0; 
-        }
-      });
+/******/$('#upload_image').on('change', function(){
+/******/var img = $('#upload_image').val();
+/******/img = img.substr(-4);
+/******/if (img == "jpeg" || 
+/********/img == ".jpg" ||
+/********/img == ".png" ||
+/********/img == "JPEG" ||
+/********/img == ".JPG" ||
+/********/img == ".PNG") {         
+/******/var reader = new FileReader();
+/******/reader.onload = function (event) {
+/******/$image_crop.croppie('bind', {
+/******/url: event.target.result
+/*****/}).then(function(){
+/********/console.log('completo.');
+/******/});
+/*****/}
+/*****/reader.readAsDataURL(this.files[0]);
+/*****/} else{
+/*******/AlertImg.open();
+/*******/return 0; 
+/*****/}
+/**/});
     
-    // funcao que envia a foto para o php fazer o upload
-    $('.crop_image').click(function(event){
-      var img = $('#upload_image').val();
-       if (img == '') {
-        AlertInsIMG.open();
-        return 0;
-       }
-      $image_crop.croppie('result', {
-        type: 'canvas',
-        size: 'viewport'
-      }).then(function(response){ 
-        $.ajax({
-          url:"http://192.168.15.4/REDE_SOCIAL/BACK-END/request.php",
-          type: "POST",
-          data:{
-            "F":"FotoPerfil",
-            "image": response},
-            beforeSend : function(){
-               console.log("Enviando requisição...");
-              $('#upload_image').prop('disabled',true);
-              toastCenter.open();
-          },
-          success:function(data)
-          {
-            console.log(data);
-            var foto = JSON.parse(data);
-            localStorage.setItem('foto_perfil',foto.img);
-            nextstep4();
-            toastCenter.close();
-            $('#upload_image').prop('disabled',false);
-          }
-          }).fail(function(jqXHR, textStatus, msg){
-          erroconexao.open();
-          return 0;
-    }); 
-        });
-      });
-    }); 
-  } 
-}
+       //funcao que envia a foto para o php fazer o upload
+/******/$('.crop_image').click(function(event){
+/******/var img = $('#upload_image').val();
+/******/if (img == '') {
+/*******/AlertInsIMG.open();
+/*******/return 0;
+/******/}
+/******/$image_crop.croppie('result', {
+/******/type: 'canvas',
+/******/size: 'viewport'
+/*****/}).then(function(response){ 
+/******/$.ajax({
+/********/url:"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+/********/type: "POST",
+/********/data:{
+/**********/"F":"FotoPerfil",
+/**********/"image": response
+/********/},
+/**********/beforeSend : function(){
+/************/console.log("Enviando requisição...");
+/************/$('#upload_image').prop('disabled',true);
+/************/toastCenter.open();
+/*********/},
+/*********/success:function(data)
+/********/{
+/**********/console.log(data);
+/**********/var foto = JSON.parse(data);
+/**********/localStorage.setItem('foto_perfil',foto.img);
+/**********/nextstep4(); //funcao para o bloco 4° do cadastro 
+/**********/toastCenter.close();
+/**********/$('#upload_image').prop('disabled',false);
+/*********/}
+/*******/}).fail(function(jqXHR, textStatus, msg){
+/*******/erroconexao.open();
+/*******/return 0;
+/******/}); 
+/*****/});
+/****/});
+/**/}); 
+   } 
+ }
 
 //insere o voltar na tela de foto de capa para voltar para foto d
 function nextstep4 () 
-  {
-    document.getElementById("tabe5").click();
-    $("#voltar").html("");
-     $(".title").html('<p>Escolha uma foto de capa.</p>');
-    $(document).ready(function(){
-      $image_crop = $('#image_demo_capa').croppie({
-        enableExif: false,
-        url: 'img/capa.jpg',
-        viewport: {
-          width: 289,
-          height:200,
-          type:'square' //circle
-        },
-        boundary:{
-          width: "100%",
-          height: 450
-        },
-        showZoomer: false,
-      });
+/***/{
+/****/document.getElementById("tabe5").click();
+/****/$("#voltar").html("");
+/****/$(".title").html('<p>Escolha uma foto de capa.</p>');
+/****/$(document).ready(function(){
+/****/$image_crop = $('#image_demo_capa').croppie({
+/******/enableExif: false,
+/******/url: 'img/capa.jpg',
+/******/viewport: {
+/********/width: 289,
+/********/height:200,
+/********/type:'square' //circle
+/******/},
+/******/boundary:{
+/********/width: "100%",
+/********/height: 450
+/******/},
+/*****/showZoomer: false,
+/****/});
       
-      $('#upload_image_capa').on('change', function(){
-        var img = $('#upload_image_capa').val();
-          img = img.substr(-4);
-          if (img == "jpeg" || 
-            img == ".jpg" ||
-            img == ".png" ||
-            img == "JPEG" ||
-            img == ".JPG" ||
-            img == ".PNG") {        
-        var reader = new FileReader();
-        reader.onload = function (event) {
-          $image_crop.croppie('bind', {
-            url: event.target.result
-          }).then(function(){
-           console.log("completo.");
-          });
-        }
-        reader.readAsDataURL(this.files[0]);
-        } else{
-          AlertImg.open();
-          return 0;
-        }
-      });
+/****/$('#upload_image_capa').on('change', function(){
+/*******/var img = $('#upload_image_capa').val();
+/*******/img = img.substr(-4);
+/********/if (img == "jpeg" || 
+/*********/img == ".jpg" ||
+/*********/img == ".png" ||
+/*********/img == "JPEG" ||
+/*********/img == ".JPG" ||
+/*********/img == ".PNG") {        
+/*******/var reader = new FileReader();
+/*******/reader.onload = function (event) {
+/********/$image_crop.croppie('bind', {
+/**********/url: event.target.result
+/********/}).then(function(){
+/**********/console.log("completo.");
+/*******/});
+/******/}
+/******/reader.readAsDataURL(this.files[0]);
+/******/} else{
+/*********/AlertImg.open();
+/*********/return 0;
+/******/}
+/****/});
 
+/****/$('.crop_image_capa').click(function(event){
+/*******/var img = $('#upload_image_capa').val();
+/********/if (img == '') {
+/*********/AlertInsIMG.open();
+/*********/return 0;
+/********/}
+/*******/$image_crop.croppie('result', {
+/********/type: 'canvas',
+/********/size: 'viewport'
+/******/}).then(function(response2){
+/********/$.ajax({
+/**********/url:"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+/**********/type: "POST",
+/**********/data:{
+/************/"F":"FotoCapa",
+/************/"image_capa": response2
+/**********/},
+/**********/beforeSend : function(){
+/************/console.log("Enviando requisição...");
+/************/$('#upload_image_capa').prop('disabled',true);
+/************/toastCenter.open();
+/**********/},
+/***********/success:function(data)
+/**********/{
+/************/document.getElementById('modal_termos').click();
+/************/var foto = JSON.parse(data);
+/************/localStorage.setItem('foto_capa',foto.img);
+/************/$('#upload_image_capa').prop('disabled',false);
+/************/toastCenter.close();
+/***********/}
+/**********/}).fail(function(jqXHR, textStatus, msg){
+/************/erroconexao.open();
+/************/return 0;
+/*******/}); 
+/******/});
+/*****/});
+/****/});
+/***/}
   
-
-    $('.crop_image_capa').click(function(event){
-      var img = $('#upload_image_capa').val();
-       if (img == '') {
-        AlertInsIMG.open();
-        return 0;
-       }
-        $image_crop.croppie('result', {
-          type: 'canvas',
-          size: 'viewport'
-        }).then(function(response2){
-          $.ajax({
-            url:"http://192.168.15.4/REDE_SOCIAL/BACK-END/request.php",
-            type: "POST",
-            data:{
-              "F":"FotoCapa",
-              "image_capa": response2
-            },
-            beforeSend : function(){
-              console.log("Enviando requisição...");
-              $('#upload_image_capa').prop('disabled',true);
-              toastCenter.open();
-            },
-            success:function(data)
-            {
-              var foto = JSON.parse(data);
-               localStorage.setItem('foto_capa',foto.img);
-               cadastra_usuario();
-               $('#upload_image_capa').prop('disabled',false);
-               toastCenter.close();
-            }
-          }).fail(function(jqXHR, textStatus, msg){
-              erroconexao.open();
-            return 0;
-         }); 
-       });
-     });
-   });
- }
-
-//funcao voltar para o login
-function voltar () 
+  document.getElementById('BotaoFimCadastro').disabled = true;
+  function delay_funcao()
+      {
+        if (document.form_termos.aceito_termos.checked == true) 
+        { 
+          $('#BotaoFimCadastro').css({'background-color':'#2196f3'});
+          document.getElementById('BotaoFimCadastro').disabled = false;
+        }else {
+          $('#BotaoFimCadastro').css({'background-color':'gray'});
+          document.getElementById('BotaoFimCadastro').disabled = true;
+        }
+      }
+  function aciona_termos()
    {
-    $("#voltar").html("<a class='link popup-close'>Voltar</a>");
-    $(".title").html('<p>Criar Conta</p>');
+     window.setTimeout( delay_funcao, 100 );
    }
 
+
+
+//funcao voltar para o login
+/***/function voltar () 
+/****/{
+/*****/$("#voltar").html("<a class='link popup-close'>Voltar</a>");
+/*****/$(".title").html('<p>Criar Conta</p>');
+/****/}
+
 //funcao voltar para a primeira tala do cadastro   
-function voltar2 () 
-  {
-    $("#voltar").html("<a class='link tab-link' href='#tab1' onclick='voltar()'>Voltar</a>");
-    $(".title").html('<p>Criar Conta</p>');
-  }
+/***/function voltar2 () 
+/****/{
+/*****/$("#voltar").html("<a class='link tab-link' href='#tab1' onclick='voltar()'>Voltar</a>");
+/*****/$(".title").html('<p>Criar Conta</p>');
+/***/}
 
  //funcao para voltar para a segunda tela de cadasro  
 // function voltar3() 
@@ -2948,144 +3301,146 @@ function voltar2 ()
 
 
 // lista cidade onde o usuario mora
-$('#estado_m').on('change', function() {
-  var estado = $("#estado_m").val();
-       $.ajax({
-          url : "http://192.168.15.4/REDE_SOCIAL/BACK-END/request.php",
-          dataType: 'JSON',
-          type : 'post',
-          data : {
-               "F":"ListaCidade",
-               "estado" : estado
-          },
-          beforeSend : function(){
-               console.log("Enviando requisição...");
-              toastCenter.open();
-          }
-     })
-     .done(function(msg){
-        var jsonData = msg; 
-        var cidades = "<option value='0'>Selecione a Cidade onde você mora.</option>";
-        for (var i = 0; i < jsonData.length; i++) {
-          cidades += "<option>"+jsonData[i].nome+"</option>";
-         }
-          $("#cidade_m").html(cidades);
-         toastCenter.close();
-       })
-     .fail(function(jqXHR, textStatus, msg){
-          erroconexao.open();
-          return 0;
-    }); 
- });
+/***/$('#estado_m').on('change', function() {
+/****/var estado = $("#estado_m").val();
+/******/$.ajax({
+/*******/url : "https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+/*******/dataType: 'JSON',
+/*******/type : 'post',
+/*******/data : {
+/**********/"F":"ListaCidade",
+/**********/"estado" : estado
+/********/},
+/********/beforeSend : function(){
+/**********/console.log("Enviando requisição...");
+/**********/toastCenter.open();
+/********/}
+/*******/})
+/******/.done(function(msg){
+/*******/var jsonData = msg; 
+/*******/var cidades = "<option value='0'>Selecione a Cidade onde você mora.</option>";
+/********/for (var i = 0; i < jsonData.length; i++) {
+/*********/cidades += "<option>"+jsonData[i].nome+"</option>";
+/********/}
+/********/$("#cidade_m").html(cidades);
+/********/toastCenter.close();
+/*******/}).fail(function(jqXHR, textStatus, msg){
+/*********/erroconexao.open();
+/*********/return 0;
+/****/}); 
+/***/});
 
-//lista cidade onde o usuario estuda
-  $('#estado_e').on('change', function() {
-    var estado = $("#estado_e").val();
-         $.ajax({
-            url :"http://192.168.15.4/REDE_SOCIAL/BACK-END/request.php",
-            dataType: 'JSON',
-            type : 'post',
-            data : {
-                "F":"ListaCidade",
-                 "estado" : estado
-            },
-            beforeSend : function(){
-                 console.log("Enviando requisição...");
-               toastCenter.open();
-            }
-       })
-       .done(function(msg){
-             var jsonData = msg; 
-            var cidades = "<option value='0'>Selecione a Cidade onde você estuda.</option>";
-            for (var i = 0; i < jsonData.length; i++) {
-              cidades += "<option>"+jsonData[i].nome+"</option>";
-            }
-             $("#cidade_e").html(cidades);
-            toastCenter.close();
-       })
-       .fail(function(jqXHR, textStatus, msg){
-              erroconexao.open();
-            return 0;
-       }); 
-  });
+  //lista cidade onde o usuario estuda
+/***/$('#estado_e').on('change', function() {
+/****/var estado = $("#estado_e").val();
+/******/$.ajax({
+/********/url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+/********/dataType: 'JSON',
+/********/type : 'post',
+/********/data : {
+/***********/"F":"ListaCidade",
+/***********/"estado" : estado
+/********/},
+/*********/beforeSend : function(){
+/**********/console.log("Enviando requisição...");
+/**********/toastCenter.open();
+/********/}
+/*******/}).done(function(msg){
+/**********/var jsonData = msg; 
+/**********/var cidades = "<option value='0'>Selecione a Cidade onde você estuda.</option>";
+/***********/for (var i = 0; i < jsonData.length; i++) {
+/************/cidades += "<option>"+jsonData[i].nome+"</option>";
+/***********/}
+/***********/$("#cidade_e").html(cidades);
+/***********/toastCenter.close();
+/*********/}).fail(function(jqXHR, textStatus, msg){
+/***********/erroconexao.open();
+/***********/return 0;
+/****/}); 
+/***/});
 
 //funcao para buscar as universidades 
-function acionaw () {
-     alert("funciona");
-  }
+/**/function acionaw () 
+/***/{
+/****/alert("funciona");
+/***/}
 
 //funcao para finalizar cadastro de usuario
-function cadastra_usuario () {
+/***/function cadastra_usuario () 
+/****/{ 
+/*******/var estado_m = $("#estado_m").val();
+/*******/var cidade_m = $("#cidade_m").val();
+/*******/var estado_e = $("#estado_e").val();
+/*******/var cidade_e = $("#cidade_e").val();
+/*******/var univer = $("#univer").val();
+/*******/var curso = $("#curso").val();
+/*******/var nome = $("#nome").val();
+/*******/var email = $("#email").val();
+/*******/var senha = $("#senha").val();
+/*******/var sexo = $("#sexo").val();
+/*******/var estado_c = $("#estado_civil").val();
+/*******/var tam_cabelo = $("input[type=radio][name='cabelo']:checked").val();
+/*******/var cor_cabelo = $("input[type=radio][name='cor_cabelo']:checked").val();
+/*******/var cor_pele = $("input[type=radio][name='pele']:checked").val();
+/*******/var relogio = $("input[type=radio][name='relogio']:checked").val();
+/*******/var dente = $("input[type=radio][name='dente']:checked").val();
+/*******/var foto_perfil =  localStorage.getItem('foto_perfil');
+/*******/var foto_capa =  localStorage.getItem('foto_capa');
+/*******/var aceita_termos = document.form_termos.aceito_termos.checked;
+          if (aceita_termos == true) 
+           {
+            aceita_termos = 'usuario aceitou o termo.';
+           }
 
-      var estado_m = $("#estado_m").val();
-      var cidade_m = $("#cidade_m").val();
-      var estado_e = $("#estado_e").val();
-      var cidade_e = $("#cidade_e").val();
-      var univer = $("#univer").val();
-      var curso = $("#curso").val();
-      var nome = $("#nome").val();
-      var email = $("#email").val();
-      var senha = $("#senha").val();
-      var sexo = $("#sexo").val();
-      var estado_c = $("#estado_civil").val();
-      var tam_cabelo = $("input[type=radio][name='cabelo']:checked").val();
-      var cor_cabelo = $("input[type=radio][name='cor_cabelo']:checked").val();
-      var cor_pele = $("input[type=radio][name='pele']:checked").val();
-      var relogio = $("input[type=radio][name='relogio']:checked").val();
-      var dente = $("input[type=radio][name='dente']:checked").val();
-      var foto_perfil =  localStorage.getItem('foto_perfil');
-      var foto_capa =  localStorage.getItem('foto_capa');
-
-       $.ajax({
-          url :"http://192.168.15.4/REDE_SOCIAL/BACK-END/request.php",
-           type : 'post',
-             data : {
-                "F": "CadastraUsuario",
-                'x1' : estado_m,  
-                'x2' : cidade_m,  
-                'x3' : estado_e,  
-                'x4' : cidade_e, 
-                'x5' : univer,
-                'x6' : curso,
-                'x7' : nome,
-                'x8' : email,
-                'x9' : senha,
-                'x10' : sexo, 
-                'x11' : estado_c,
-                'x12' : tam_cabelo, 
-                'x13' : cor_cabelo,
-                'x14' : cor_pele,
-                'x15' : relogio,
-                'x16' : dente,
-                'x17' : foto_perfil,
-                'x18' : foto_capa
-              },
-          beforeSend : function(){
-             console.log("Enviando requisição...");
-          }
-     })
-     .done(function(data){
-         console.log(data);
-         var data = JSON.parse(data);
-         if (data.aprovacao == 1){
-          location.reload();
-         }
-         insira_senha.open();
-    })
-     .fail(function(jqXHR, textStatus, msg){
-          erroconexao.open();
-        return 0;
-     }); 
-}  
+/*******/$.ajax({
+/********/url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+/*********/type : 'post',
+/*********/data : {
+/***********/"F": "CadastraUsuario",
+/***********/'x1' : estado_m,  
+/***********/'x2' : cidade_m,  
+/***********/'x3' : estado_e,  
+/***********/'x4' : cidade_e, 
+/***********/'x5' : univer,
+/***********/'x6' : curso,
+/***********/'x7' : nome,
+/***********/'x8' : email,
+/***********/'x9' : senha,
+/***********/'x10' : sexo, 
+/***********/'x11' : estado_c,
+/***********/'x12' : tam_cabelo, 
+/***********/'x13' : cor_cabelo,
+/***********/'x14' : cor_pele,
+/***********/'x15' : relogio,
+/***********/'x16' : dente,
+/***********/'x17' : foto_perfil,
+/***********/'x18' : foto_capa,
+/***********/'x19' : aceita_termos
+/*********/},
+/**********/beforeSend : function(){
+/***********/entrando.open();
+/********/}
+/*******/}).done(function(data){
+/*********/console.log(data);
+/*********/var data = JSON.parse(data);
+/**********/if (data.aprovacao == 1){
+/**********/entrando.close(); 
+/**********/location.reload();
+/*********/}
+/*****/}).fail(function(jqXHR, textStatus, msg){
+/*******/erroconexao.open();
+/*******/return 0;
+/****/}); 
+/***/}  
 
 
-//funcao para trocar de senha
-//nao pode estar em funcionamene enquanto nao estiver no hospedado
-function TrocarSenha () {
+    //funcao para trocar de senha
+    //nao pode estar em funcionamene enquanto nao estiver no hospedado
+/***/function TrocarSenha () {
 
   var email = $("#envia_email").val();
      $.ajax({
-      url : "http://192.168.15.4/REDE_SOCIAL/BACK-END/request.php",
+      url : "https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
       dataType: 'JSON',
       type : 'post',
         data : {
@@ -3107,8 +3462,7 @@ function TrocarSenha () {
         if(flag > 0) {
 
              $.ajax({
-                url : "http://192.168.15.4/REDE_SOCIAL/BACK-END/request.php",
-                dataType: 'JSON',
+                url :"http://plistone.requestwf.com.br/teste_email.php",
                 type : 'post',
                   data : {
                     "F":"TrocaSenha",
@@ -3137,245 +3491,242 @@ function TrocarSenha () {
       }); 
 }
 
-function login () {
+$('#senha_user').keydown(function(e){
+ if (e.which == 13){
+   login() // executa o que vc precisar
+ }
+})
 
-        var email = $("#email_user").val();
-        var senha = $("#senha_user").val();
-        if (email !== '' && senha !== '') {
-          email = $("#email_user").val();
-          senha = $("#senha_user").val();
-        } else {
-          email = localStorage.getItem('email');
-          senha = localStorage.getItem('senha');
-        }
-        
-        if (email == '') {
-           insira_email.open();
-          return 0;
-        } else {  
-         if (senha == '') {
-            insira_senha.open();
-           return 0;
-          }
-        }
-
-        if (email.length >= 50) {
-           carac_email.open();
-           return 0;
-        } else {
-          if (senha.length >= 16) {
-            carac_senha.open();
-            return 0;
-          }
-        }
-       $.ajax({
-          url :"http://192.168.15.4/REDE_SOCIAL/BACK-END/request.php",
-          type : 'post',
-          data : {
-                "F": "Login",
-                'email' : email,  
-                'senha' : senha,  
-              },
-            beforeSend : function(){
-              console.log("Enviando requisição...");
-              toastCenter.open();
-            }
-          }).done(function(msg){
-             console.log(msg);
-             localStorage.setItem('Duser_spotted',msg);
-             jsonData = JSON.parse(msg);
-             for (var i = 0; i < jsonData.length; i++) {
-                var email = jsonData[i].email;
-                var senha = jsonData[i].senha;
-                var perfil = jsonData[i].foto_perfil;
-                var capa = jsonData[i].foto_capa;
-                var nome = jsonData[i].nome;
-                var univer = jsonData[i].univer;
-                var curso = jsonData[i].curso;
-                var est_civil = jsonData[i].estado_c;
-                var intere = jsonData[i].sexo;
-                var biograf = jsonData[i].biografia;
-                var id = jsonData[i].id;
-
-            }
-             if (email == undefined && senha == undefined || email == "" && senha == ""){
-                 msg_login.open();
-                 $("#inicio").css({"display":"block"});
-                 $("#feed").css({"display":"none"});
-                 return 0;
-              } else {
-                 localStorage.setItem('email',email);
-                 localStorage.setItem('senha',senha);
-                 localStorage.setItem('id',id);
-                 localStorage.setItem('foto_perfil',perfil);
-                 $("#inicio").css({"display":"none"});
-                 $("#feed").css({"display":"block"});
-                 coloca_dados(perfil,nome,capa,univer,curso,est_civil,intere,biograf) 
-                 toastCenter.close();
-            }
-        }).fail(function(jqXHR, textStatus, msg){
-          erroconexao.open();
-         return 0;
-      }); 
-}
+/***/function login ()
+/****/{
+/******/var email = $("#email_user").val();
+/******/var senha = $("#senha_user").val();
+/*******/if (email !== '' && senha !== '') {
+/********/email = $("#email_user").val();
+/********/senha = $("#senha_user").val();
+/******/} else {
+/********/email = localStorage.getItem('email');
+/********/senha = localStorage.getItem('senha');
+/******/}        
+/******/if (email == '') {
+/********/insira_email.open();
+/********/return 0;
+/*******/} else {  
+/*******/if (senha == '') {
+/********/insira_senha.open();
+/********/return 0;
+/*******/}
+/******/}
+/******/if (email.length >= 50) {
+/*******/carac_email.open();
+/*******/return 0;
+/******/} else {
+/********/if (senha.length >= 16) {
+/*********/carac_senha.open();
+/*********/return 0;
+/********/}
+/*******/}
+/******/$.ajax({
+/********/url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+/*********/type : 'post',
+/*********/data : {
+/***********/"F": "Login",
+/***********/'email' : email,  
+/***********/'senha' : senha,  
+/***********/},
+/***********/beforeSend : function(){
+/*************/console.log("Enviando requisição...");
+/*************/toastCenter.open();
+/***********/}
+/**********/}).done(function(msg){
+/*************/console.log(msg);
+/*************/localStorage.setItem('Duser_spotted',msg);
+/*************/jsonData = JSON.parse(msg);
+/**************/for (var i = 0; i < jsonData.length; i++) {
+/****************/var email = jsonData[i].email;
+/****************/var senha = jsonData[i].senha;
+/****************/var perfil = jsonData[i].foto_perfil;
+/****************/var capa = jsonData[i].foto_capa;
+/****************/var nome = jsonData[i].nome;
+/****************/var univer = jsonData[i].univer;
+/****************/var curso = jsonData[i].curso;
+/****************/var est_civil = jsonData[i].estado_c;
+/****************/var intere = jsonData[i].sexo;
+/****************/var biograf = jsonData[i].biografia;
+/****************/var id = jsonData[i].id;
+/**************/}
+/*************/if (email == undefined && senha == undefined || email == "" && senha == ""){
+/***************/msg_login.open();
+/***************/$("#inicio").css({"display":"block"});
+/***************/$("#feed").css({"display":"none"});
+/***************/return 0;
+/*************/} else {
+/***************/localStorage.setItem('email',email);
+/***************/localStorage.setItem('senha',senha);
+/***************/localStorage.setItem('id',id);
+/***************/localStorage.setItem('foto_perfil',perfil);
+/***************/$("#inicio").css({"display":"none"});
+/***************/$("#feed").css({"display":"block"});
+/***************/coloca_dados(perfil,nome,capa,univer,curso,est_civil,intere,biograf) 
+/***************/toastCenter.close();
+/***************/grade_pessoas();
+/*********/}
+/********/}).fail(function(jqXHR, textStatus, msg){
+/*********/erroconexao.open();
+/*********/return 0;
+/****/}); 
+/***/}
    
-var user = localStorage.getItem('email');
-var pass = localStorage.getItem('senha');
 
-if(user == "" && pass == "" || user == null && pass == null || user == undefined && pass == undefined) {
-  $("#feed").css({"display":"none"});
-  $("#inicio").css({"display":"block"})
-  
-}else {
+/***/$(document).ready(function () {
+/*****/var user = localStorage.getItem('email');
+/*****/var pass = localStorage.getItem('senha');
+/******/if(user == "" && pass == "" || user == null && pass == null || user == undefined && pass == undefined) {
+/*******/$("#feed").css({"display":"none"});
+/*******/$("#inicio").css({"display":"block"})
+/******/}else {
+/*******/$("#feed").css({"display":"block"});
+/*******/$("#inicio").css({"display":"none"});
+/*********/$.ajax({
+/**********/url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+/***********/type : 'post',
+/***********/data : {
+/*************/"F": "Login",
+/*************/'email' : user,  
+/*************/'senha' : pass,  
+/***********/},
+/**********/beforeSend : function(){
+/***********/console.log("Enviando requisição...");
+/**********/}
+/*********/}).done(function(msg){
+/************/localStorage.setItem('Duser_spotted',msg);
+/************/jsonData = JSON.parse(msg);
+/*************/if (jsonData) {
+/**************/for (var i = 0; i < jsonData.length; i++) {
+/***************/var email = jsonData[i].email;
+/***************/var senha = jsonData[i].senha;
+/***************/var perfil = jsonData[i].foto_perfil;
+/***************/var capa = jsonData[i].foto_capa;
+/***************/var nome = jsonData[i].nome;
+/***************/var univer = jsonData[i].univer;
+/***************/var curso = jsonData[i].curso;
+/***************/var est_civil = jsonData[i].estado_c;
+/***************/var intere = jsonData[i].sexo;
+/***************/var biograf = jsonData[i].biografia;
+/***************/var id = jsonData[i].id;
+/*************/}
+/************/}    
+/***********/if (email == undefined && senha == undefined || email == "" && senha == ""){
+/*************/$("#inicio").css({"display":"block"});
+/*************/$("#feed").css({"display":"none"});
+/*************/logout();
+/*************/return 0;
+/***********/} else {
+/*************/localStorage.setItem('email',email);
+/*************/localStorage.setItem('senha',senha);
+/*************/localStorage.setItem('id',id);
+/*************/localStorage.setItem('foto_perfil',perfil);
+/*************/localStorage.setItem('foto_capa',capa);
+/*************/$("#inicio").css({"display":"none"});
+/*************/$("#feed").css({"display":"block"});
+/**************/coloca_dados(perfil,nome,capa,univer,curso,est_civil,intere,biograf);
+/**********/}
+/*********/}).fail(function(jqXHR, textStatus, msg){
+/************/$("#inicio").css({"display":"block"});
+/************/$("#feed").css({"display":"none"});
+/************/erroconexao.open();
+/************/return 0;
+/*****/}); 
+/****/}
+/***/});
 
-    $("#feed").css({"display":"block"});
-    $("#inicio").css({"display":"none"});
-    $.ajax({
-          url :"http://192.168.15.4/REDE_SOCIAL/BACK-END/request.php",
-          type : 'post',
-          data : {
-                "F": "Login",
-                'email' : user,  
-                'senha' : pass,  
-              },
-            beforeSend : function(){
-              console.log("Enviando requisição...");
-            }
-          }).done(function(msg){
-            localStorage.setItem('Duser_spotted',msg);
-             jsonData = JSON.parse(msg);
-           
-             if (jsonData) {
-             for (var i = 0; i < jsonData.length; i++) {
-                var email = jsonData[i].email;
-                var senha = jsonData[i].senha;
-                var perfil = jsonData[i].foto_perfil;
-                var capa = jsonData[i].foto_capa;
-                var nome = jsonData[i].nome;
-                var univer = jsonData[i].univer;
-                var curso = jsonData[i].curso;
-                var est_civil = jsonData[i].estado_c;
-                var intere = jsonData[i].sexo;
-                var biograf = jsonData[i].biografia;
-                var id = jsonData[i].id;
-              }
-            }    
-            if (email == undefined && senha == undefined || email == "" && senha == ""){
-                 $("#inicio").css({"display":"block"});
-                 $("#feed").css({"display":"none"});
-                 logout();
-                 return 0;
-             } else {
-                 localStorage.setItem('email',email);
-                 localStorage.setItem('senha',senha);
-                 localStorage.setItem('id',id);
-                 localStorage.setItem('foto_perfil',perfil);
-                 localStorage.setItem('foto_capa',capa);
+/***/function logout() 
+/****/{
+/******/$("#feed").css({"display":"none"});
+/******/$("#inicio").css({"display":"block"});
+/******/localStorage.setItem('email','');
+/******/localStorage.setItem('senha','');
+/******/localStorage.setItem('id','');
+/******/localStorage.setItem('foto_capa','');
+/******/localStorage.setItem('foto_perfil','');
+/******/localStorage.setItem('nome','');
+/******/localStorage.setItem('Duser_spotted','');
+/******/$("#senha_user").val("");
+/***/}
 
-                 $("#inicio").css({"display":"none"});
-                 $("#feed").css({"display":"block"});
-                 coloca_dados(perfil,nome,capa,univer,curso,est_civil,intere,biograf);
-            }
-        }).fail(function(jqXHR, textStatus, msg){
-          $("#inicio").css({"display":"block"});
-          $("#feed").css({"display":"none"});
-          erroconexao.open();
-         return 0;
-      }); 
-}
-
-function logout() {
-  
-  $("#feed").css({"display":"none"});
-  $("#inicio").css({"display":"block"});
-  localStorage.setItem('email','');
-  localStorage.setItem('senha','');
-  localStorage.setItem('id','');
-  localStorage.setItem('foto_capa','');
-  localStorage.setItem('foto_perfil','');
-  localStorage.setItem('nome','');
-  localStorage.setItem('Duser_spotted','');
-  $("#senha_user").val("");
-}
-
-//  a funcao coloca dados e responsavel por inserir do js para o html os dados do usario
-function coloca_dados(perfil,nome,capa,univer,curso,est_civil,intere,biograf) {
-  //foto de perfil do bloco de publicacao 
-  $("#foto_per_publicacao").html('<img src="http://192.168.15.4/REDE_SOCIAL/BACK-END/'+perfil+'" style="width: 15%; margin-left:10px;">');  
-  $("#foto_menu").html('<img src="http://192.168.15.4/REDE_SOCIAL/BACK-END/'+perfil+'" class="mini_img">');  
-  $("#nome_perfil").html(nome); 
-  $("#mini_nome").html(nome);
-  $("#sua_univer").html('<i class="fa fa-university" aria-hidden="true"></i><br>'+univer); 
-  $("#seu_curso").html('<i class="fa fa-graduation-cap" aria-hidden="true"></i><br>'+curso); 
-  $("#seu_est_civil").html('<i class="fa fa-heart" aria-hidden="true"></i><br>'+est_civil);
-  $("#sua_foto_capa").html('<img src="http://192.168.15.4/REDE_SOCIAL/BACK-END/'+capa+'" class="sua_foto_capa">');
-  $("#sua_foto_perfil").html('<img src="http://192.168.15.4/REDE_SOCIAL/BACK-END/'+perfil+'" class="sua_foto_perfil">');
-   
-  $("#seu_intere").html('<i class="fa fa-heart-o" aria-hidden="true"></i><br>'+intere);              
-   if (biograf == "" || biograf == null || biograf== undefined) {
-      $("#add_biograf").css({"display":"block"});
-      $("#biografia").css({"display":"none"});
-   } else {
-    $("#biografia").css({"display":"block"});
-    $("#biografia").html('<p class="sua_biografia"><i class="fa fa-book" aria-hidden="true"></i><br>Biografia<br>'+biograf+'</p>');
-    $("#add_biograf").css({"display":"none"});
-   }   
-}
-
+//a funcao coloca dados e responsavel por inserir do js para o html os dados do usario
+/***/function coloca_dados(perfil,nome,capa,univer,curso,est_civil,intere,biograf) 
+/****/{
+      //foto de perfil do bloco de publicacao 
+/******/$("#foto_menu").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+perfil+'" class="mini_img">');  
+/******/$("#nome_perfil").html(nome); 
+/******/$("#mini_nome").html(nome);
+/******/$("#sua_univer").html('<i class="fa fa-university" aria-hidden="true"></i><br>'+univer); 
+/******/$("#seu_curso").html('<i class="fa fa-graduation-cap" aria-hidden="true"></i><br>'+curso); 
+/******/$("#seu_est_civil").html('<i class="fa fa-heart" aria-hidden="true"></i><br>'+est_civil);
+/******/$("#sua_foto_capa").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+capa+'" class="sua_foto_capa">');
+/******/$("#sua_foto_perfil").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+perfil+'" class="sua_foto_perfil">');  
+/******/$("#seu_intere").html('<i class="fa fa-heart-o" aria-hidden="true"></i><br>'+intere);              
+/********/if (biograf == "" || biograf == null || biograf== undefined) {
+/**********/$("#add_biograf").css({"display":"block"});
+/**********/$("#biografia").css({"display":"none"});
+/********/} else {
+/**********/$("#biografia").css({"display":"block"});
+/**********/$("#biografia").html('<p class="sua_biografia"><i class="fa fa-book" aria-hidden="true"></i><br>Status<br>'+emojione.shortnameToUnicode(biograf)+'</p>');
+/**********/$("#add_biograf").css({"display":"none"});
+/******/}   
+/***/}
 
 // funcao para incluir biografia 
-function salvar_biograf () {
-  var texto = $('#text_biograf').val();
-  var id = localStorage.getItem('id');
-  $.ajax({
-          url :"http://192.168.15.4/REDE_SOCIAL/BACK-END/request.php",
-           type : 'post',
-             data : {
-                "F": "Add_biografia",
-                "x1": texto,
-                "x2": id
-              },
-          beforeSend : function(){
-             console.log("Enviando requisição...");
-          }
-     })
-     .done(function(data){
-        var data = JSON.parse(data);
-        if (data.resultado == '1') {
-          $("#biografia").css({"display":"block"});
-          $("#biografia").html('<p class="sua_biografia"><i class="fa fa-book" aria-hidden="true"></i><br>Biografia<br>'+texto+'</p>');
-          $("#add_biograf").css({"display":"none"});
-        }
-    })
-     .fail(function(jqXHR, textStatus, msg){
-         erroconexao.open();
-       return 0;
-    }); 
-}
+/***/function salvar_biograf () 
+/****/{
+/*****/var texto = emojione.toShort($('#text_biograf').val());
+/*****/var id = localStorage.getItem('id');
+/******/$.ajax({
+/********/url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+/**********/type : 'post',
+/**********/data : {
+/************/"F": "Add_biografia",
+/************/"x1": texto,
+/************/"x2": id
+/************/},
+/************/beforeSend : function(){
+/************/console.log("Enviando requisição...");
+/**********/}
+/*********/}).done(function(data){
+/*********/var data = JSON.parse(data);
+/*********/if (data.resultado == '1') {
+/**********/$("#biografia").css({"display":"block"});
+/**********/$("#biografia").html('<p class="sua_biografia"><i class="fa fa-book" aria-hidden="true"></i><br>Status<br>'+emojione.shortnameToUnicode(texto)+'</p>');
+/**********/$("#add_biograf").css({"display":"none"});
+/*********/}
+/*******/}).fail(function(jqXHR, textStatus, msg){
+/********/erroconexao.open();
+/********/return 0;
+/*****/}); 
+/***/}
 
-// funcao para contar caractere na biografia
-function conta_carac () {
-  
-    var qt_max = 400;
-    var qt_digit = $('#text_biograf').val();
-    var qt_final = qt_max - qt_digit.length;
-    $('#qt_carac').html(qt_final);
-    
-}
-// funcao para contar caractere na biografia (edit)
-function conta_carac_edit () {
-  
-  var qt_max = 400;
-  var qt_digit = $('#text_biograf_edit').val();
-  var qt_final = qt_max - qt_digit.length;
-  $('#qt_carac_edit').html(qt_final);
-  
-}
+//funcao para contar caractere na biografia
+/***/function conta_carac () 
+/****/{
+/*****/var qt_max = 400;
+/*****/var qt_digit = $('#text_biograf').val();
+/*****/var qt_final = qt_max - qt_digit.length;
+/*****/$('#qt_carac').html(qt_final);  
+/****/}
+
+//funcao para contar caractere na biografia (edit)
+/****/function conta_carac_edit () 
+/****/{
+/*****/var qt_max = 400;
+/*****/var qt_digit = $('#text_biograf_edit').val();
+/*****/var qt_final = qt_max - qt_digit.length;
+/*****/$('#qt_carac_edit').html(qt_final);  
+/****/}
  
-$(document).ready(function () {
-  
+$(document).ready(function () {  
   $.ajax({
-          url :"http://192.168.15.4/REDE_SOCIAL/BACK-END/request.php",
+          url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
           type : 'post',
           data : {
                 "F": "PegaDadosUser",
@@ -3386,7 +3737,7 @@ $(document).ready(function () {
               console.log("Enviando requisição...");
             }
           }).done(function(msg){
-               console.log(msg);
+            if (msg !== "[]") {
               Duser = JSON.parse(msg);
               $('#estado_m_edit').val(Duser[0].estado_m);
               $('#cidade_m_edit').html('<option selected="selected">'+Duser[0].cidade_m+'</option>');
@@ -3401,7 +3752,8 @@ $(document).ready(function () {
               $("input[name=cor_cabelo_edit][value="+Duser[0].cor_cabelo+"]").prop("checked",true);
               $("input[name=relogio_edit][value="+Duser[0].relogio+"]").prop("checked",true);
               $("input[name=dente_edit][value="+Duser[0].dente+"]").prop("checked", true);
-              $('#text_biograf_edit').val(Duser[0].biografia);
+              $('#text_biograf_edit').val(emojione.shortnameToUnicode(Duser[0].biografia));
+           }
         }).fail(function(jqXHR, textStatus, msg){
           erroconexao.open();
          return 0;
@@ -3427,9 +3779,19 @@ function editar_foto () {
 }
 
 function fecha_perfil_msg () { 
-  $('#sai_batepapo').html('<a class="link popup-close" onclick="abre_perfil_visitado()"><i class="f7-icons size-22">chevron_left</i></a>');
+  $('#sai_batepapo').html('<a class="link popup-close" onclick="decrementa_time()" style="color:white"><i class="f7-icons size-22">chevron_left</i></a>');
   document.getElementById('fecha_perfil_visitado').click();  
+  valor_time = 1000;
+  busca_msg();
 }
+
+function volta_msg () {
+  document.getElementById('fecha_perfil_visitado').click();  
+  document.getElementById('abre_msg_lista').click();
+  valor_time = 1000;
+  busca_msg();
+}
+
 function abre_perfil_visitado () {
   document.getElementById('perfil_usuarios').click();
 }
@@ -3441,7 +3803,7 @@ $('#cidade_m_edit').click('change', function() {
   var estado = $("#estado_m_edit").val(); 
     
        $.ajax({
-          url : "http://192.168.15.4/REDE_SOCIAL/BACK-END/request.php",
+          url : "https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
           dataType: 'JSON',
           type : 'post',
           data : {
@@ -3473,7 +3835,7 @@ $('#cidade_e_edit').click('change', function() {
   
     var estado = $("#estado_m_edit").val();   
        $.ajax({
-          url : "http://192.168.15.4/REDE_SOCIAL/BACK-END/request.php",
+          url : "https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
           dataType: 'JSON',
           type : 'post',
           data : {
@@ -3509,7 +3871,7 @@ $('#estado_e_edit').on('change', function() {
   var estado = $("#estado_e_edit").val();
   
        $.ajax({
-          url : "http://192.168.15.4/REDE_SOCIAL/BACK-END/request.php",
+          url : "https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
           dataType: 'JSON',
           type : 'post',
           data : {
@@ -3588,7 +3950,7 @@ function edita_foto_perfil (){
             size: 'viewport'
           }).then(function(response){
             $.ajax({
-              url:"http://192.168.15.4/REDE_SOCIAL/BACK-END/request.php",
+              url:"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
               type: "POST",
               data:{
                     "F":"FotoPerfilEdit",
@@ -3609,8 +3971,8 @@ function edita_foto_perfil (){
                     if (foto.img !== "" || foto.img !== null || foto.img !== undefined) {            
                       $('.salva_foto_edit').prop('disabled',false);
                         $('#upload_perfil_edit').prop('disabled',false);
-                        $("#sua_foto_perfil").html('<img src="http://192.168.15.4/REDE_SOCIAL/BACK-END/'+foto.img+'" class="sua_foto_perfil">');
-                        $("#foto_menu").html('<img src="http://192.168.15.4/REDE_SOCIAL/BACK-END/'+foto.img+'" class="mini_img">'); 
+                        $("#sua_foto_perfil").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+foto.img+'" class="sua_foto_perfil">');
+                        $("#foto_menu").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+foto.img+'" class="mini_img">'); 
                       toastCenter.close();
                   //  editar_info();
                     update();
@@ -3676,7 +4038,7 @@ function edita_foto_capa (){
         size: 'viewport'
       }).then(function(response){
         $.ajax({
-          url:"http://192.168.15.4/REDE_SOCIAL/BACK-END/request.php",
+          url:"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
           type: "POST",
           data:{
               "F":"FotoCapaEdit",
@@ -3694,7 +4056,7 @@ function edita_foto_capa (){
               localStorage.setItem('foto_capa',foto.img);
                 if (foto.img !== "" || foto.img !== null || foto.img !== undefined) {                   
                   $('.salva_capa_edit').prop('disabled',false);
-                  $("#sua_foto_capa").html('<img src="http://192.168.15.4/REDE_SOCIAL/BACK-END/'+foto.img+'" class="sua_foto_capa">');
+                  $("#sua_foto_capa").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+foto.img+'" class="sua_foto_capa">');
                  toastCenter.close();
                 //editar_info();
               update();
@@ -3727,7 +4089,7 @@ function update () {
 	var dente = $("input[type=radio][name='dente_edit']:checked").val();
 	var foto_perfil = localStorage.getItem('foto_perfil');
 	var foto_capa = localStorage.getItem('foto_capa');
-  var biografia = $('#text_biograf_edit').val();
+  var biografia = emojione.toShort($('#text_biograf_edit').val());
     
       if (biografia == '') {    
           $("#biografia").css({"display":"none"});
@@ -3745,7 +4107,7 @@ function update () {
             return 0;
        } else {
   $.ajax({
-          url :"http://192.168.15.4/REDE_SOCIAL/BACK-END/request.php",
+          url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
            type : 'post',
              data : {
                 "F": "Update",
@@ -3796,75 +4158,98 @@ function add_vlr_edit () {
   $("#seu_curso").html('<i class="fa fa-graduation-cap" aria-hidden="true"></i><br>'+$("#curso_edit").val());
   $("#seu_est_civil").html('<i class="fa fa-heart" aria-hidden="true"></i><br>'+$("#estado_c_edit").val());
   $("#seu_intere").html('<i class="fa fa-heart-o" aria-hidden="true"></i><br>'+$('#interesse_edit').val());
-  $("#biografia").html('<p class="sua_biografia"><i class="fa fa-book" aria-hidden="true"></i><br>Biografia<br>'+$('#text_biograf_edit').val());
+  $("#biografia").html('<p class="sua_biografia"><i class="fa fa-book" aria-hidden="true"></i><br>Status<br>'+$('#text_biograf_edit').val());
   
   }
+ var height_grade = 0;
+ var height = window.innerHeight;
+ var menu = $(".navbar").height();
+ var rodape = $(".height_rodape").height();
+ var vlr_height = menu+rodape;
+ height = (parseFloat(height)-vlr_height);
 
-  $(function() {
+ $('#mostra_lista_mensagem').css({'margin-top':+menu+'px'});
+ $('#mostra_pessoas').css({'margin-top':+menu+'px'});
+  window.onresize = function() {
+     height = window.innerHeight;
+     height = (parseFloat(height)-vlr_height);
+     if (height_grade == 0) {
+       grade_pessoas();
+     }else {
+        lista_msg();
+     }
+   }
+grade_pessoas();
+ function grade_pessoas () {
   $('#mostra_lista_mensagem').css({'display':'none'});
-  
   $("#grade_pessoas").jsGrid({
         width: "100%",
-        height:500,
+        height:height,
         autoload: true,
         paging: false,
         loadIndication: false,
         loadIndicationDelay: 0,
-        loadMessage: "Please, wait...",
+        loadMessage: "Carregando...",
         loadShading: false,
-        noDataContent: 'carragando...',
+        noDataContent: 'Neste momento, não há pessoas.',
         controller: {
             loadData: function() {
                 var deferred = $.Deferred();
 
     var dados = localStorage.getItem('Duser_spotted');
-    dados = JSON.parse(dados);
-    $.ajax({
-          url :"http://192.168.15.4/REDE_SOCIAL/BACK-END/request.php",
-           type : 'post',
-             data : {
-                "F": "ListaPerfils",
-                // "estado_e" : dados[0].estado_e,
-                // "cidade_e" : dados[0].cidade_e,
-                "univer" : dados[0].univer
-             }, success: function(data){
-               var data = JSON.parse(data);
-              deferred.resolve(data);
-           
-             } 
-    });
+    if (dados !== ""){
+      dados = JSON.parse(dados);
+        $.ajax({
+              url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+               type : 'post',
+                 data : {
+                    "F": "ListaPerfils",
+                    "estado_e" : dados[0].estado_e,
+                    "cidade_e" : dados[0].cidade_e,
+                    "univer" : dados[0].univer,
+                    "sexo" : dados[0].sexo
+                 }, success: function(data){
+                  if (data !== '') {
+                   var data = JSON.parse(data);
+                deferred.resolve(data);
+                   }
+                 } 
+        });
+     }
     return deferred.promise();
             }
         },
         rowClick: function(item) {
-            MarcaVisita();
-            localStorage.setItem('id_receptor',item.item.id); //id do usuario  
-            $("#foto_perfil_usuarios_zoom").html('<img src="http://192.168.15.4/REDE_SOCIAL/BACK-END/'+item.item.foto_perfil+'" style="width: 200%; margin-top: -90px;  display: block; margin-left: auto; margin-right: auto">');
+            localStorage.setItem('id_receptor',item.item.id); //id do usuario
+              MarcaVisita();  
+            $("#foto_perfil_usuarios_zoom").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+item.item.foto_perfil+'" style="width: 200%; margin-top: -90px;  display: block; margin-left: auto; margin-right: auto">');
             
-            $("#foto_perfil_usuarios").html('<img src="http://192.168.15.4/REDE_SOCIAL/BACK-END/'+item.item.foto_perfil+'" style="width: 50%; margin-top: -120px;  display: block; margin-left: auto; margin-right: auto">');
-            $("#foto_capa_usuarios").html('<img src="http://192.168.15.4/REDE_SOCIAL/BACK-END/'+item.item.foto_capa+'" style="width: 100%; margin-top: -15px">');
+            $("#foto_perfil_usuarios").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+item.item.foto_perfil+'" style="width: 50%; margin-top: -120px;  display: block; margin-left: auto; margin-right: auto">');
+            $("#foto_capa_usuarios").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+item.item.foto_capa+'" style="width: 100%; margin-top: -20px">');
             $("#nome_usuario").html(item.item.nome);
             $("#univer_usuario").html('<i class="fa fa-university" aria-hidden="true"></i><br>'+item.item.univer);
             $("#curso_usuario").html('<i class="fa fa-graduation-cap" aria-hidden="true"></i><br>'+item.item.curso);
             $("#est_civil_usuario").html('<i class="fa fa-heart" aria-hidden="true"></i><br>'+item.item.estado_c);
             $("#intere_usuario").html('<i class="fa fa-heart-o" aria-hidden="true"></i><br>'+item.item.sexo);
-            $("#foto_perfil_msg").html('<img src="http://192.168.15.4/REDE_SOCIAL/BACK-END/'+item.item.foto_perfil+'" style="width:15%; margin-top: 5px">');
+            $("#foto_perfil_msg").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+item.item.foto_perfil+'">');
             $("#nome_perfil_msg").html(item.item.nome);
 
             if (item.item.biografia == '' || item.item.biografia == null)
               $("#biograf_usuario").html('');
             else
-              $("#biograf_usuario").html('<p class="user_biografia"><i class="fa fa-book" aria-hidden="true"></i><br>Biografia<br>'+item.item.biografia);
+              $("#biograf_usuario").html('<p class="user_biografia"><i class="fa fa-book" aria-hidden="true"></i><br>Status<br>'+emojione.shortnameToUnicode(item.item.biografia)); 
+            $('#volta_grade_pessoas').html('<a class="link popup-close f7-icons" id="fecha_perfil_visitado" href="#" style="position: absolute; top: 4px; left: 8px; z-index:9999; font-size: 25px; color: white;">close</a>');
+              
                  
             document.getElementById('perfil_usuarios').click();
         },
         rowRenderer: function(item) {
             var user = item;
-            var $photo = $("<div>").addClass("client-photo").append($("<img  style='width: 45%; float: left; border: transparent thin solid; padding: 5px; margin: 0px 10px 10px 0; max-width: 186px;'>").attr("src",'http://192.168.15.4/REDE_SOCIAL/BACK-END/'+user.foto_perfil));
+            var $photo = $("<div>").addClass("client-photo").append($("<img  style='width: 45%; float: left; border: transparent thin solid; padding: 5px; margin: 0px 10px 10px 0; max-width: 186px;'>").attr("src",'https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+user.foto_perfil));
             var $info = $("<div>").addClass("client-info")
-              .append($("<p style='font-size:20px'>").text(user.nome.capitalize()))
-               .append($("<p style='margin: 2px;font-size: 18px; margin-top: -10px; color: grey'>").text(user.univer));
-            return $("<tr>").append($("<td class='uk-card uk-card-default uk-card-body uk-width-1-2@m uk-animation-fade repeat: true'>").append($photo).append($info).append('<br>'));
+            .append($("<p style='font-size:20px'>").text(user.nome.capitalize()))
+            .append($("<p style='margin: 2px;font-size: 18px; margin-top: -10px; color: grey'>").text(user.univer));
+            return $("<tr style='overflow-y:scroll;'>").append($("<td class='uk-card uk-card-default uk-card-small uk-card-body uk-width-1-2@m uk-animation-fade repeat: true'>").append($photo).append($info).append('<br>'));
         },
 
     });
@@ -3874,52 +4259,102 @@ function add_vlr_edit () {
         return this.charAt(0).toUpperCase() + this.slice(1);
     };
  
-}); 
+}
 
 $("#lista_msg").click(function () {
   $('#mostra_pessoas').css({"display":"none"});
   $('#mostra_lista_mensagem').css({"display":"block"});
-  $('#titulo_msg').html('<p>Mensagens</p>');
+  $('#titulo_msg').html('<p>Mensagens</p>'); 
+  $('.titulo_spotted').css({'display':'none'});          
+  height_grade = 1;
 });
 
 $("#lista_pessoas").click(function () {
   $('#mostra_pessoas').css({"display":"block"});
   $('#mostra_lista_mensagem').css({"display":"none "});
-})
+  $('.titulo_spotted').css({'display':'block'}); 
+  $('#titulo_msg').html('');          
+  height_grade = 0;
+});
 
 
 
-//funcao para a busca de todos msg de determido usuario
+
+
+// // Init Messages
+var messages = app.messages.create({
+  el: '.messages'
+});
+
+// // Init Messagebar
+var messagebar = app.messagebar.create({
+  el: '.messagebar'
+});
+
+// Response flag
+// var responseInProgress = false;
+
+// Send Message
 function envia_msg () {
-  
+  messagebar.focus();
+  // Return focus to area
+  var msg = $('#mensagem').val();
+  $('#mensagem').val(''); 
   var emissor = localStorage.getItem('id'); //id emissor
   var receptor = localStorage.getItem('id_receptor'); //id_receptor 
-  var msg = $('#mensagem').val();
-  $('#mensagem').val('');
-  $.ajax({
-          url :"http://192.168.15.4/REDE_SOCIAL/BACK-END/request.php",
-           type : 'post',
-             data : {
-                "F": "EnviaMsg",
-                "emissor" : emissor,
-                "receptor" : receptor,
-                "msg": msg
-            }
-     }).done(function(data){
+   $.ajax({
+        url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+         type : 'post',
+           data : {
+              "F": "VerBloqueio",
+              "emissor" : emissor,
+              "receptor" : receptor
+            },
+           }).done(function(retorno){
+              if (retorno == emissor) {
+                app.dialog.confirm('','Ops! perfil bloqueado, deseja desbloquear este perfil ?', function () {
+                   block_desblock(0);
+                 });     
+               } else {
+                  if (retorno == receptor) {
+                      app.dialog.alert('','Este perfil bloqueou você.');
+                       $('#bloqueia_perfil').css({'display':'none'});
+                       $('#hr_block_perfil').css({'display':'none'});
+                       return 0; 
+                   } else {
+                    $('#bloqueia_perfil').html('<i class="fa fa-lock" aria-hidden="true"></i>&nbsp;bloquear perfil');    
+                    $('#hr_block_perfil').css({'display':'block'}); 
+                     msg = emojione.toShort(msg);
+                      messagebar.clear();
+                      $.ajax({
+                        url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+                         type : 'post',
+                           data : {
+                              "F": "EnviaMsg",
+                              "emissor" : emissor,
+                              "receptor" : receptor,
+                              "msg": msg
+                          },
+                        });
+                    }   
+                  }
+          }).fail(function(jqXHR, textStatus, msg){
+            alert('erro de internet');
+           return 0;
+        }); 
+       scroll_msg();
+  }
 
-       }).fail(function(jqXHR, textStatus, msg){
-        alert('erro');
-       return 0;
-    }); 
-}
+
+
+
 
 //funcao para a busca de todos msg de determido usuario
 function BuscaTodasMsg () {
-                
   var emissor = localStorage.getItem('id'); //id emissor
   var receptor = localStorage.getItem('id_receptor'); //id_receptor 
   $.ajax({
-          url :"http://192.168.15.4/REDE_SOCIAL/BACK-END/request.php",
+          url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
            type : 'post',
              data : {
                 "F": "BuscaMsg",
@@ -3930,125 +4365,134 @@ function BuscaTodasMsg () {
         }
      })
      .done(function(data){
+        if (data !== "") {
             var jsonData = JSON.parse(data);
             var msg = '';
               for (var i = 0; i < jsonData.length; i++) {
-                  var texto_msg = jsonData[i].msg;
+                  var texto_msg = emojione.shortnameToUnicode(jsonData[i].msg);
                   var id_emissor = jsonData[i].id_emissor;
                   var data_hora = jsonData[i].data;
+
                     if (id_emissor == emissor) { //se o id for seu msg "blue" SUA MENSAGEM
-                    
-                    msg += '<div style="float:right; width: 200px"><p style="width: 100px; color: white; background:#2196f3; padding: 10px 15px 10px 15px; border-radius:15px; margin-right:10px; margin-top:-5px">'+texto_msg+'</p><p style="font-size:13px; margin-top:-10px; margin-right:10px; float:right; color:#6d6d6d">'+data_hora+' '+icone+'</p></div>';
-                               
-                  } else { //MENSAGEM DA PESSOA
-                    msg += '<div style="float:left; width: 200px"><p style="width: 100px; color: black; background:#d6d6d6; padding: 10px 15px 10px 15px; border-radius:15px; margin-left:10px; margin-top:-5px">'+texto_msg+'</p><p style="font-size:13px; margin-top:-10px; margin-left:10px; float:left; color:#6d6d6d">'+data_hora+'</p></div>';
-                           
+                     msg +='<li class="me class="uk-animation-slide-right repeat:true">'+texto_msg+'</li><li style="float:right; font-size:11px; margin-top-10px">'+data_hora+'</li>';                          
+                    } else { //MENSAGEM DA PESSOA
+                     msg +=  '<li class="him class="uk-animation-slide-left repeat:true">'+texto_msg+'</li><li style="float:left; font-size:11px; margin-top-10px;">'+data_hora+'</li>';       
                      }
                    }
                 $('#mensagens').html(msg);
+                scroll_msg();
+            }
        }).fail(function(jqXHR, textStatus, msg){
        return 0;
     }); 
 }
 
 // funcao para buscar mensagens
-var icone;
-var n_msg;
-var time=100000000;
-
+var n_msg,valor_time=0;
 function scroll_msg () 
   {
     var n = $('#scroll_msg').html();
     $("#scroll_msg").scrollTop(n.length)
-    var p = document.getElementById('scroll_msg');
+    var p = $('#scroll_msg').html();
     p.scrollTop = n.length*100000;
   }
+
+
 function busca_msg () {
- 
+
   var emissor = localStorage.getItem('id'); //id emissor
   var receptor = localStorage.getItem('id_receptor'); //id_receptor 
   var msg = $('#mensagem').val();
-        
   $.ajax({
-          url :"http://192.168.15.4/REDE_SOCIAL/BACK-END/request.php",
+          url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
            type : 'post',
              data : {
                 "F": "BuscaMsg",
                 "emissor" : emissor,
                 "receptor" : receptor
-            },
-            beforeSend : function(){
-              //colocar um carregando...
-              //ajax para mostrar se o usuario receptor visualizou a mensagem
-              $.ajax({
-                url :"http://192.168.15.4/REDE_SOCIAL/BACK-END/request.php",
-                type : 'post',
-                data : { "F": "Notifica","emissor" : emissor,"receptor" : receptor }
-               })
-              .done(function(visual){
-                if (visual != emissor)
-                  icone = '<i>V<i>';
-                else 
-                  icone = '<i>o<i>';  
-           });
-        }
+            }
      })
      .done(function(data){        
               var jsonData = JSON.parse(data);
               if (n_msg < jsonData.length) {
                 msg = $('#mensagens').html();
-                for (var i = n_msg; i < jsonData.length; i++) {
-                            var texto_msg = jsonData[i].msg;
-                            var id_emissor = jsonData[i].id_emissor;
-                            var data_hora = jsonData[i].data;
+                      for (var i = n_msg; i < jsonData.length; i++) {
+                         var texto_msg = emojione.shortnameToUnicode(jsonData[i].msg);
+                         var id_emissor = jsonData[i].id_emissor;
+                         var data_hora = jsonData[i].data;
                             if (id_emissor == emissor) { //se o id for seu msg "blue"
-                                // msg += '<div style="float:right; width: 200px"><p style="color: white; background:#2196f3; padding: 10px 15px 10px 15px; border-radius:15px; margin-right:10px; margin-top:-5px">'+texto_msg+'</p><p style="font-size:13px; margin-top:-10px; margin-right:10px; float:right; color:#6d6d6d">'+data_hora+' '+icone+'</p></div>';
-                                // msg += '<div class="message message-sent" style="float:right"><div class="message-content"><div class="message-bubble"><div class="message-text">'+texto_msg+'</div></div><div class="message-text-footer">Text footer</div></div></div>';
-                                   msg += '<p class="uk-badge" style="float:right; width:100pxs">'+texto_msg+'</p>';
-                                scroll_msg();
+                              msg +='<li class="me">'+texto_msg+'</li><li style="float:right; font-size:11px; margin-top-10px">'+data_hora+'</li>';
                             } else {
-                              // msg += '<div style="float:left; width: 200px"><p style="color: black; background:#d6d6d6; padding: 10px 15px 10px 15px; border-radius:15px; margin-left:10px; margin-top:-5px">'+texto_msg+'</p><p style="font-size:13px; margin-top:-10px; margin-left:10px; float:left; color:#6d6d6d">'+data_hora+'</p></div>';
-                              // msg += '<div class="message message-received" style="float:left"><div class="message-content"><div class="message-bubble"><div class="message-text">'+texto_msg+'</div></div><div class="message-text-footer">Text footer</div></div></div>';
-                                scroll_msg();
+                              msg +='<li class="him">'+texto_msg+'</li><li style="float:left; font-size:11px; margin-top-10px">'+data_hora+'</li>';
+                          }
                         }
-                      }
-              
                       $('#mensagens').html(msg);
+                     scroll_msg();  
                     } 
                     n_msg = jsonData.length;
-                }).fail(function(jqXHR, textStatus, msg){
-            
+                }).fail(function(jqXHR, textStatus, msg){  
             return 0;
-          }); 
-          
-          setTimeout(busca_msg,1000);
-        }busca_msg();
+          });  
+
+            if (valor_time !== 0) { //condicional de controle de tempo (tempo de requisição de mensagem)
+              setTimeout(busca_msg,valor_time);
+           } 
+
+        }
 
 function decrementa_time () {
-  time = 10000000;
+  valor_time = 0;
+  busca_msg();
 }
 
-var id_receptor='',nome='',foto_perfil='',user_data = '',visual_msg='';
+
+var id_receptor='',nome='',foto_perfil='',user_data = '',visual_msg='',flag_notifica='',data_historico="";
 function busca_notificacao () {
       var id = localStorage.getItem('id');
       
         $.ajax({
-          url :"http://192.168.15.4/REDE_SOCIAL/BACK-END/request.php",
+          url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
           type : 'post',
             data : {"F": "Notifica","emissor" : id},
         }).done(function(visual){
           
-          visual_msg  = JSON.parse(visual); //notificacao de mensagens uso global
-          lista_msg();
+         if (visual !== "") {
+          visual_msg = JSON.parse(visual); //notificacao de mensagens uso global
+          flag_notifica = 0;
+          for (var i=0;i<visual_msg.length; i++) {
+             if (visual_msg[i].visualiza !== id) {
+                 flag_notifica += 1;
+             }
+             if (flag_notifica >= 1) {
+              $('#alert_new_msg').css({
+                 'width':'15px',
+                 'height':'15px',
+                 'border-radius':'90px',
+                 'background-color':'red'
+               });
+             } else {
+                 $('#alert_new_msg').css({
+                 'width':'0px',
+                 'height':'0px'
+               });
+             }
+          }
+          if (data_historico !== ""){
+            for (var i=0;i<data_historico.length;i++) {
+              if (data_historico[i].msg !== visual_msg[i].msg) {
+                lista_msg();
+              }
+            }
+          }
+        }
       });
-      setTimeout(busca_notificacao,7000);
+    setTimeout(busca_notificacao,3000);
   }
 busca_notificacao();
 
-  function lista_msg () {
-
+function lista_msg () {
     $("#mostra_lista_mensagem").jsGrid({
-          height: 500,
+          height: height,
           width: "99%",
 
           autoload: true,
@@ -4056,21 +4500,23 @@ busca_notificacao();
           paging: false,
           loadIndication: false,
           loadShading: false,
+          noDataContent: 'Não há conversas.',
+          loadMessage: "Carregando...",
           controller: {
             loadData: function() {
             
             var deferred = $.Deferred();
             var id = localStorage.getItem('id');
         
-            user_data = '';
+              user_data = '';
               $.ajax({
-                    url :"http://192.168.15.4/REDE_SOCIAL/BACK-END/request.php",
+                    url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
                     type : 'post',
                       data : {
                           "F": "ListaDeMsg",
                           "id" : id
-    
                       }, success: function(data){
+                        if (data !== "") {
                           var data = JSON.parse(data);
                           var id = localStorage.getItem('id'); //id do usuario logado
                           for(var i=0;i<data.length;i++){
@@ -4079,24 +4525,34 @@ busca_notificacao();
                               var foto_perfil = data[i].foto_perfil;
                               var visual = visual_msg[i].visualiza;
                               var data_hora = visual_msg[i].data_hora;
-                              var ultima_msg = visual_msg[i].msg;
+                              var ultima_msg = emojione.shortnameToUnicode(visual_msg[i].msg);
                               user_data += '{"id":"'+id_receptor+'","nome":"'+nome+'","foto_perfil":"'+foto_perfil+'","visual":"'+visual+'","data_hora":"'+data_hora+'","msg":"'+ultima_msg+'"},';
-                          } 
-                          user_data = '['+user_data.slice(0,-1)+']';
-                          user_data = JSON.parse(user_data);
+                          }
 
-                          // console.log(JSON.stringify(user_data));
-                       
-                          // var data_maior = '40/40/4000',dados_ordenados = '';   
-                          // for (var i=0;i<user_data.length;i++) {
-                            //  if (user_data[i].data_hora < data_maior) {
-                            //    data_maior = user_data[i].data_hora;
-                            //    dados_ordenados += JSON.stringify(user_data[i]);
-                            //  }
-                            //  alert(dados_ordenados);
-                          // }
-                      deferred.resolve(user_data);
+                          user_data = user_data.slice(0,-1);
+                          data_historico = JSON.parse('['+user_data+']');
+                          var dados = '{"dados":['+user_data+']}';
+                          dados = JSON.parse(dados);
+                          var data_for = "";
+                          for (var i=0; i < dados.dados.length; i++) {
+                            for (var y=0; y < dados.dados.length; y++) {
+                              if (dados.dados[i].data_hora >= dados.dados[y].data_hora) {
+                                  var aux = dados.dados[i];
+                                  dados.dados[i] = dados.dados[y]; 
+                                  dados.dados[y] = aux;
+                               }
+                             }
+                           }
+                          var order_data="";
+                          for (var i=0; i<dados.dados.length; i++) {
+                            order_data += JSON.stringify(dados.dados[i])+',';
+                          }
+                      order_data = order_data.slice(0,-1);
+                      order_data = '['+order_data+']';
+                      order_data = JSON.parse(order_data);
+                      deferred.resolve(order_data);
                   } 
+                }
               });
                 return deferred.promise();
             }
@@ -4104,31 +4560,35 @@ busca_notificacao();
           rowClick: function(dados) {
             $('#mensagens').html('');
             localStorage.setItem('id_receptor',dados.item.id); //id do usuario
-            time = 1000;  
-            BuscaTodasMsg();
-            $("#foto_perfil_msg").html('<img src="http://192.168.15.4/REDE_SOCIAL/BACK-END/'+dados.item.foto_perfil+'" style="width:15%; margin-top:1.5%">');
+            var foto_visualiza = 'https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+dados.item.foto_perfil;
+            $("#foto_perfil_msg").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+dados.item.foto_perfil+'">');
             $("#nome_perfil_msg").html(dados.item.nome);
             document.getElementById('abre_msg_lista').click();
-            $('#sai_batepapo').html('<a class="link popup-close" onclick="decrementa_time()"><i class="f7-icons size-22">chevron_left</i></a>');
+            $('#sai_batepapo').html('<a class="link popup-close" onclick="decrementa_time()" style="color:white"><i class="f7-icons size-22">chevron_left</i></a>');
+            BuscaTodasMsg();
+            busca_bloqueio();
+            valor_time = 1000;
+            busca_msg();
+
+            
+      
           },
           rowRenderer: function(user) {
-            // $('#alert_new_msg').css( <--- notificacao no icone da msg
-          
             // user.visual -> ultima pessoa que enviou a msg
             // user.id usuario receptor
-            
             if (user.visual == user.id) {
               var cor_ultima_msg = 'color:black; margin-top:-1px;';
             }else{
               var cor_ultima_msg = 'color:gray; margin-top:-1px;';
             }
+
             if (user.msg.length > 15) {
               var ultima_msg = user.msg.substring(0,15)+'...';
             } else {
               var ultima_msg = user.msg;
             }
 
-                var $photo = $("<div>").addClass("client-photo").append($("<img  style='margin:3px; width: 15%; float: left; border: transparent thin solid; max-width: 186px;'>").attr("src",'http://192.168.15.4/REDE_SOCIAL/BACK-END/'+user.foto_perfil));
+                var $photo = $("<div>").addClass("client-photo").append($("<img  style='margin:3px; width: 15%; float: left; border: transparent thin solid; max-width: 186px;'>").attr("src",'https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+user.foto_perfil));
                  var $info = $("<div>").addClass("client-info")
                 .append($("<p style='margin-top: 3px; font-size: 17px;'>").text(user.nome.capitalize()).append($("<p style='float:right; margin-right:7px; margin-top: -1px; font-size: 15px; color:grey;'>").text(user.data_hora.slice(0,-9))).append($("<p style='"+cor_ultima_msg+"'>").text(ultima_msg)))
                 return $("<tr class='uk-card uk-card-default uk-card-body uk-width-1-2@m'>").append($("<td style='border-bottom:1px solid #f5f5f5; width:100%'>").append($photo).append($info));
@@ -4143,31 +4603,34 @@ busca_notificacao();
 
 //////////////// bloco de busca de crush
 
+var t = 0;
 function FundoBuscaCrush ()
   {
-    var t = Math.floor(Math.random()*5);
-    var vetor_color = new Array('#3679f6','#306cdb','#295ebf','#2351a6','#1c428a','#143269','#102854','#0c2044');
+    
+    var vetor_color = new Array('#4cadff ','#49a7f5','#449be4','#3d8ccd','#3579b3','#2e6899','#25557d','#245278','#224d71','#1c405e');
   
     $('#fundo_busca_crush').css({
       'background-color':vetor_color[t],
-      'transition-duration':'5s'
+      'transition-duration':'2s'
     });
     $('#botao_busca_crush').css({
       'background-color':vetor_color[t],
-      'transition-duration':'5s'
+      'transition-duration':'2s'
     });
     $('#botao_cancelar_crush').css({
       'background-color':vetor_color[t],
-      'transition-duration':'5s'
+      'transition-duration':'2s'
     });
     for(var i=0;i<12;i++){
       $('#borda_busca_crush'+i).css({
         'border':'2px solid' +vetor_color[t],
-        'transition-duration':'5s'
+        'transition-duration':'2s'
       });
     }
-    
-     setTimeout(FundoBuscaCrush,3000);
+    setTimeout(FundoBuscaCrush,2000);
+    t+=1;
+    if (t >= 10)
+       t=0; 
   }FundoBuscaCrush();  
 
 
@@ -4180,7 +4643,6 @@ function ProximaBlocoBusca ()
     $('#campodebusca1').css({
       'display': 'none'
     });
-
     $('#campodebusca2').css({
       'display': 'block'
     });
@@ -4228,7 +4690,6 @@ function ProximaBlocoBusca ()
          'width':'70%',
          'color':'white'
         });
-        
        }
       }
      }
@@ -4281,7 +4742,7 @@ function ProximaEtapaBusca ()
         loadIndication: false,
         loadIndicationDelay: 0,
         loadShading: false,
-        noDataContent: 'carragando...',
+        noDataContent: 'carregando...',
         controller: {
             loadData: function() {
                 var deferred = $.Deferred();
@@ -4289,7 +4750,7 @@ function ProximaEtapaBusca ()
     var dados = localStorage.getItem('Duser_spotted');
     dados = JSON.parse(dados);
     $.ajax({
-          url :"http://192.168.15.4/REDE_SOCIAL/BACK-END/request.php",
+          url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
            type : 'post',
            data : {
                 "F": "BuscaCrush",
@@ -4315,32 +4776,32 @@ function ProximaEtapaBusca ()
         },
         rowClick: function(item) {
             localStorage.setItem('id_receptor',item.item.id); //id do usuario  
-            $("#foto_perfil_usuarios_zoom").html('<img src="http://192.168.15.4/REDE_SOCIAL/BACK-END/'+item.item.foto_perfil+'" style="width: 200%; margin-top: -90px;  display: block; margin-left: auto; margin-right: auto">');
+            $("#foto_perfil_usuarios_zoom").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+item.item.foto_perfil+'" style="width: 200%; margin-top: -90px;  display: block; margin-left: auto; margin-right: auto">');
             
-            $("#foto_perfil_usuarios").html('<img src="http://192.168.15.4/REDE_SOCIAL/BACK-END/'+item.item.foto_perfil+'" style="width: 50%; margin-top: -120px;  display: block; margin-left: auto; margin-right: auto">');
-            $("#foto_capa_usuarios").html('<img src="http://192.168.15.4/REDE_SOCIAL/BACK-END/'+item.item.foto_capa+'" style="width: 100%; margin-top: -15px">');
+            $("#foto_perfil_usuarios").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+item.item.foto_perfil+'" style="width: 50%; margin-top: -120px;  display: block; margin-left: auto; margin-right: auto">');
+            $("#foto_capa_usuarios").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+item.item.foto_capa+'" style="width: 100%; margin-top: -20px">');
             $("#nome_usuario").html(item.item.nome);
             $("#univer_usuario").html('<i class="fa fa-university" aria-hidden="true"></i><br>'+item.item.univer);
             $("#curso_usuario").html('<i class="fa fa-graduation-cap" aria-hidden="true"></i><br>'+item.item.curso);
             $("#est_civil_usuario").html('<i class="fa fa-heart" aria-hidden="true"></i><br>'+item.item.estado_c);
             $("#intere_usuario").html('<i class="fa fa-heart-o" aria-hidden="true"></i><br>'+item.item.sexo);
-            $("#foto_perfil_msg").html('<img src="http://192.168.15.4/REDE_SOCIAL/BACK-END/'+item.item.foto_perfil+'" style="width:15%; margin-top: 5px">');
+            $("#foto_perfil_msg").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+item.item.foto_perfil+'">');
             $("#nome_perfil_msg").html(item.item.nome);
 
             if (item.item.biografia == '' || item.item.biografia == null)
               $("#biograf_usuario").html('');
             else
-              $("#biograf_usuario").html('<p class="user_biografia"><i class="fa fa-book" aria-hidden="true"></i><br>Biografia<br>'+item.item.biografia);
+              $("#biograf_usuario").html('<p class="user_biografia"><i class="fa fa-book" aria-hidden="true"></i><br>Status<br>'+emojione.shortnameToUnicode(item.item.biografia));
                  
             document.getElementById('perfil_usuarios').click();
         },
-        rowRenderer: function(item) {
-            var user = item;
-            var $photo = $("<div>").addClass("client-photo").append($("<img  style='width: 45%; float: left; border: transparent thin solid; padding: 5px; margin: 0px 10px 10px 0; max-width: 186px;'>").attr("src",'http://192.168.15.4/REDE_SOCIAL/BACK-END/'+user.foto_perfil));
+        rowRenderer: function(user) {
+            var $photo = $("<div>").addClass("client-photo").append($("<img  style='width: 45%; float: left; border: transparent thin solid; padding: 5px; margin: 0px 10px 10px 0; max-width: 186px;'>").attr("src",'https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+user.foto_perfil));
             var $info = $("<div>").addClass("client-info")
               .append($("<p style='font-size:20px'>").text(user.nome.capitalize()))
                .append($("<p style='margin: 2px;font-size: 18px; margin-top: -10px; color: grey'>").text(user.univer));
             return $("<tr>").append($("<td class='uk-card uk-card-default uk-card-body uk-width-1-2@m uk-animation-fade repeat: true'>").append($photo).append($info).append('<br>'));
+        
         },
 
     });
@@ -4367,7 +4828,6 @@ function nova_busca ()
     $('#grade_crush_busca').css({
          'display': 'none'
     });
-    ProximaBlocoBusca();
   
     $('#campodebusca1').css({
       'display': 'block'
@@ -4375,17 +4835,19 @@ function nova_busca ()
   }
 
   //funcao para marcar visita (sua em perfil)
-  function MarcaVisita (id_visitado)
+  function MarcaVisita ()
     { 
       var Duser = JSON.parse(localStorage.getItem('Duser_spotted')); //seus dados armazenados 
       var id_receptor = localStorage.getItem('id_receptor'); //id do perfil visitado
       $.ajax({
-          url :"http://192.168.15.4/REDE_SOCIAL/BACK-END/request.php",
+          url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
            type : 'post',
              data : {
                 "F" : "MarcaVisita",
                 "id" : Duser[0].id,
                 "sexo" : Duser[0].sexo,
+                "univer" : Duser[0].univer,
+                "curso" : Duser[0].curso,
                 "id_visitado" : id_receptor
             }
      }).done(function(data){
@@ -4395,30 +4857,349 @@ function nova_busca ()
        return 0;
     }); 
   }
+
 lista_visitas();
+var cont_vistas = 0;
  function lista_visitas () 
     {
-       var Duser = JSON.parse(localStorage.getItem('Duser_spotted')); //seus dados armazenados 
-       alert(Duser[0].id);
-      $.ajax({
-          url :"http://192.168.15.4/REDE_SOCIAL/BACK-END/request.php",
-           type : 'post',
-             data : {
-                "F" : "ListaVisita",
+       var Duser = localStorage.getItem('Duser_spotted'); //seus dados armazenados 
+        if (Duser !== "") {
+          Duser = JSON.parse(Duser);
+         $.ajax({
+          url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+            type : 'post',
+            data : {
+              "F" : "ListaVisita",
+              "id" : Duser[0].id,
+              }
+            }).done(function(data){        
+              if (data == '[]') {
+                $('#limpavisitas').css({"display":"none"});
+                $('#frase_visita').css({"display":"block"});
+              }else {
+                if(data !== "[]") { 
+                  var visitas = JSON.parse(data);
+                  if (visitas.length !== cont_vistas || visitas.length == 0) {
+                  cont_vistas = visitas.length;
+                  $('#limpavisitas').css({"display":"block"});
+                  $('#frase_visita').css({"display":"none"});
+                   if(visitas.length > 0){
+                     $('#alert_visita').css({
+                       'width':'10px',
+                       'height':'10px',
+                       'background-color':'#f03e44',
+                       'border-radius':'90px'
+                     });
+                    }
+                    var visitas_modal ='';
+                    for (var i=visitas.length-1; i>-1; i--) 
+                    {
+                      // alert(i);  
+                      if (visitas[i].sexo == 'masculino') {
+                          var icone_sexo = '<i style="font-size:25px; color: #2196f3;" class="fa fa-mars" aria-hidden="true"></i>';
+                        } else {
+                          var icone_sexo = '<i style="font-size:25px; color: pink;" class="fa fa-venus" aria-hidden="true"></i>';
+                        }
+                        visitas_modal += '<div class="uk-card uk-card-default uk-card-body uk-width-1-2@m uk-animation-fade repeat: true"><p>'+icone_sexo+'Uma pessoa do sexo <b>'+visitas[i].sexo+'</b> visitou seu perfil, essa pessoa estuda na <b>'+visitas[i].univer+'</b> e cursa <b>'+visitas[i].curso+'</b></p><p>'+visitas[i].data+'</p></div>';
+                     }
+                    $('#visitas').html(visitas_modal); 
+                  }
+               }
+             }
+         }).fail(function(jqXHR, textStatus, msg){
+          alert('erro');
+        return 0;
+      }); 
+        }
+        
+         setTimeout(lista_visitas,2000); 
+    }
+
+//funcao para excluir a conta 
+function excluir_conta () {
+  var Duser = JSON.parse(localStorage.getItem('Duser_spotted'));
+   app.dialog.prompt('','Insira sua senha para deletar sua conta.', function (senha) {
+    if (senha == Duser[0].senha) {
+     app.dialog.confirm('','Sua conta será excluída permanentemente, você realmente deseja excluir?', function () {
+       $.ajax({
+          url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+          type : 'post',
+            data : {
+              "F": "ExcluirConta",
+              "id" : Duser[0].id
+            },
+        }).done(function(visual){
+             if (visual==1) { 
+               app.dialog.alert('','Sua conta foi excluida com sucesso!', function () {
+                location.reload();
+              });
+            }              
+         });
+      });
+     }else {
+      app.dialog.alert('','Senha Incorreta.');
+    }
+  });
+ }
+
+// funcao para trocar a senha 
+function trocar_senha () 
+  {
+    var Duser = JSON.parse(localStorage.getItem('Duser_spotted'));
+      app.dialog.prompt('','Insira sua senha atual.', function (senha) {
+        if (senha == Duser[0].senha) {  
+            app.dialog.prompt('','Insira sua nova senha.', function (new_senha) {
+              $.ajax({
+               url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+               type : 'post',
+              data : {
+                "F": "AlteraSenha",
                 "id" : Duser[0].id,
-            }
-     }).done(function(data){
-      var vivistas = JSON.parse(data);
-      var visitas_modal ='';
-      for (var i=0;i< vivistas.length; i++) {
-        visitas_modal += '<p>Uma pessoa do sexo '+vivistas[i].sexo+' visitou seu perfil</p>';
-      }
-      $('#visitas').html(visitas_modal); 
-       }).fail(function(jqXHR, textStatus, msg){
-        alert('erro');
-       return 0;
-    }); 
-    } 
+                "senha": new_senha
+                },
+               }).done(function(visual){
+               if (visual==1) { 
+                  app.dialog.alert('','Sua senha foi alterada com sucesso!', function () {
+              });
+            }              
+         })
+
+          });   
+        }else {
+          app.dialog.alert('','Senha Incorreta.');
+        }
+     });   
+  } 
+
+
+ //funcao para bloquear no chat
+ function BloquearChat () 
+  {
+    var id_receptor = localStorage.getItem('id_receptor'); //id do recepitor 
+    var id = localStorage.getItem('id'); //id do emissor
+      $.ajax({
+        url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+         type : 'post',
+         data : {
+              "F": "VerBloqueio",
+              "emissor" : id,
+              "receptor" : id_receptor
+            },
+          }).done(function(retorno){ 
+                  if (retorno == id_receptor) {
+                    app.dialog.alert('','Esta pessoa te bloqueou');
+                   } else {
+                     if (retorno == 0 || retorno == null) {
+                          app.dialog.confirm('','Deseja bloquear este perfil ?', function () {
+                          block_desblock(id);
+                           $('#bloqueia_perfil').html('<i class="fa fa-unlock-alt" aria-hidden="true"></i>&nbsp;Desbloquear perfil'); 
+                      });     
+                    }else {
+                      if (retorno == id) {
+                        app.dialog.confirm('','Deseja desbloquear este perfil ?', function () {
+                          block_desblock(0);
+                          $('#bloqueia_perfil').html('<i class="fa fa-lock" aria-hidden="true"></i>&nbsp;Desbloquear perfil');});       
+                         }
+                       }
+                     }       
+                }).fail(function(jqXHR, textStatus, msg){
+                  alert('erro de internet');
+                return 0;
+            }); 
+         } 
+
+
+  //funcao para bloquear ou desbloquer perfil 
+  function block_desblock (par) 
+    { 
+      var id_receptor = localStorage.getItem('id_receptor'); //id do recepitor 
+      var id = localStorage.getItem('id'); //id do emissor
+      $.ajax({
+        url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+         type : 'post',
+           data : {
+              "F": "BloquearChat",
+              "id" : id,
+              "id_receptor" : id_receptor,
+              "Parametro" : par
+            },
+           }).done(function(retorno){
+               if (retorno == 1) {
+                 app.dialog.alert('','Procedimento concluído!');     
+               } else {
+                  app.dialog.alert('','Ops! Algo deu errado, tente mais tarde.');
+               }
+          }).fail(function(jqXHR, textStatus, msg){
+            alert('erro de internet');
+           return 0;
+       }); 
+    }
+
+
+//aciona bota de bloqueio
+function busca_bloqueio ()
+  {
+    var id_receptor = localStorage.getItem('id_receptor'); //id do recepitor 
+    var id = localStorage.getItem('id'); //id do emissor
+      $.ajax({
+        url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+         type : 'post',
+           data : {
+              "F": "VerBloqueio",
+              "emissor" : id,
+              "receptor" : id_receptor
+            },
+           }).done(function(retorno){ 
+                  if (retorno == id_receptor) {
+                    app.dialog.alert('','Esta pessoa te bloqueou');
+                    $('#bloqueia_perfil').css({'display':'none'});
+                   } else {
+                     if (retorno == id || retorno == 0 || retorno == null) {
+                          $('#bloqueia_perfil').css({'display':'block'});
+                      }     
+                    }
+                  if (retorno == id) {
+                      $('#bloqueia_perfil').html('<i class="fa fa-unlock-alt" aria-hidden="true"></i>&nbsp;Desbloquear perfil');            
+                      }
+                        
+          }).fail(function(jqXHR, textStatus, msg){
+            alert('erro de internet');
+           return 0;
+        }); 
+  }    
+
+
+  //funcao para visualizar perfil de usuario de conversa
+  function ver_perfil_msg () 
+    {
+      var id_receptor = localStorage.getItem('id_receptor'); //id do recepitor  
+       $.ajax({
+        url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+         type : 'post',
+           data : {
+              "F": "BuscaPerfilMsg",
+              "id_receptor" : id_receptor
+            },
+           }).done(function(retorno){
+              var dados = JSON.parse(retorno);
+              $("#foto_perfil_usuarios_zoom").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+dados[0].foto_perfil+'" style="width: 200%; margin-top: -90px;  display: block; margin-left: auto; margin-right: auto">');
+              
+              $("#foto_perfil_usuarios").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+dados[0].foto_perfil+'" style="width: 50%; margin-top: -120px;  display: block; margin-left: auto; margin-right: auto">');
+              $("#foto_capa_usuarios").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+dados[0].foto_capa+'" style="width: 100%; margin-top: -20px">');
+              $("#nome_usuario").html(dados[0].nome);
+              $("#univer_usuario").html('<i class="fa fa-university" aria-hidden="true"></i><br>'+dados[0].univer);
+              $("#curso_usuario").html('<i class="fa fa-graduation-cap" aria-hidden="true"></i><br>'+dados[0].curso);
+              $("#est_civil_usuario").html('<i class="fa fa-heart" aria-hidden="true"></i><br>'+dados[0].estado_c);
+              $("#intere_usuario").html('<i class="fa fa-heart-o" aria-hidden="true"></i><br>'+dados[0].sexo);
+              $("#foto_perfil_msg").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+dados[0].foto_perfil+'">');
+              $("#nome_perfil_msg").html(dados[0].nome);
+
+              if (dados[0].biografia == '' || dados[0].biografia == null)
+                $("#biograf_usuario").html('');
+              else
+                $("#biograf_usuario").html('<p class="user_biografia"><i class="fa fa-book" aria-hidden="true"></i><br>Status<br>'+emojione.shortnameToUnicode(dados[0].biografia));
+               $('#fecha_msg').html('<a id="close_msg" class="link popup-close"></a>'); 
+               $('#volta_grade_pessoas').html('<a class="link popup-close f7-icons" id="fecha_perfil_visitado" href="#" style="position: absolute; top: 4px; left: 8px; z-index:9999; font-size: 25px; color: white;" onclick="volta_msg();">close</a>'); 
+                document.getElementById('close_msg').click();
+              document.getElementById('perfil_usuarios').click();
+
+
+          }).fail(function(jqXHR, textStatus, msg){
+            alert('erro de internet');
+           return 0;
+       }); 
+    }
+
+
+  //funcao para limpar historico de visitas 
+  function LimpaHistorVisi () 
+    {
+      var id = localStorage.getItem('id'); //id do emissor
+      $.ajax({
+        url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+         type : 'post',
+           data : {
+              "F": "LimpaHistorVisitas",
+              "receptor" : id //passa seu id para que possa ser deletado somente seu historico de visitas
+             },
+           }).done(function(retorno){
+              if (retorno == 1) {
+                cont_vistas = 0;
+                $('#visitas').html('');
+                $('#alert_visita').css({'width':'0px','height':'0px'});
+                 $('#frase_visita').css({"display":"block"});
+
+              } 
+          }).fail(function(jqXHR, textStatus, msg){
+            alert('erro de internet');
+           return 0;
+       }); 
+    }
+
+//funcao para enviar emial de problema (bug) no spotted 
+function EnviaProblema () {
+ var texto = $('#textoproblema').val();
+ var Duser = localStorage.getItem('Duser_spotted');
+ if (Duser !== "") {
+   Duser = JSON.parse(Duser);
+ }
+  $.ajax({
+        url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+         type : 'post',
+           data : {
+              "F": "RelataProblem",
+              "texto" : texto, //passa seu id para que possa ser deletado somente seu historico de visitas
+              "email" : Duser[0].email
+             },
+             beforeSend : function(){
+              console.log("Enviando requisição...");
+              toastCenter.open();
+              }
+           }).done(function(retorno){
+              if (retorno == 1) {
+                 toastCenter.close();
+                $('#textoproblema').val('');
+               app.dialog.alert('','Texto enviado com sucesso! Obrigado por informar.');
+              } 
+          }).fail(function(jqXHR, textStatus, msg){
+            alert('erro de internet');
+           return 0;
+     }); 
+}
+
+
+//funcao para o envio de melhoria (email)
+function EnviaMelhoria () {
+ var texto = $('#texto_sugestao').val();
+ var Duser = localStorage.getItem('Duser_spotted');
+ if (Duser !== "") {
+   Duser = JSON.parse(Duser);
+ }
+  $.ajax({
+        url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+         type : 'post',
+           data : {
+              "F": "RelataMelhoria",
+              "texto" : texto, //passa seu id para que possa ser deletado somente seu historico de visitas
+              "email" : Duser[0].email
+             },
+             beforeSend : function(){
+              console.log("Enviando requisição...");
+              toastCenter.open();
+              }
+           }).done(function(retorno){
+              if (retorno == 1) {
+                 toastCenter.close();
+                $('#texto_sugestao').val('');
+               app.dialog.alert('','Texto enviado com sucesso! Obrigado por nos ajudar a melhor cada dia mais o spotted.');
+              } 
+          }).fail(function(jqXHR, textStatus, msg){
+            alert('erro de internet');
+           return 0;
+     }); 
+}
+
+
 </script>
   </body>
 </html>
