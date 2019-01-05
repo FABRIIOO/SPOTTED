@@ -3150,6 +3150,7 @@ function nextstep3 ()
 /*********/success:function(data)
 /********/{
 /**********/console.log(data);
+           alert(data);
 /**********/var foto = JSON.parse(data);
 /**********/localStorage.setItem('foto_perfil',foto.img);
 /**********/nextstep4(); //funcao para o bloco 4° do cadastro 
