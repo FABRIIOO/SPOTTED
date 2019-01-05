@@ -3150,7 +3150,6 @@ function nextstep3 ()
 /*********/success:function(data)
 /********/{
 /**********/console.log(data);
-           alert(data);
 /**********/var foto = JSON.parse(data);
 /**********/localStorage.setItem('foto_perfil',foto.img);
 /**********/nextstep4(); //funcao para o bloco 4° do cadastro 
@@ -4456,8 +4455,7 @@ function busca_notificacao () {
           type : 'post',
             data : {"F": "Notifica","emissor" : id},
         }).done(function(visual){
-          
-         if (visual !== "") {
+         if (visual !== "[]") {
           visual_msg = JSON.parse(visual); //notificacao de mensagens uso global
           flag_notifica = 0;
           for (var i=0;i<visual_msg.length; i++) {
