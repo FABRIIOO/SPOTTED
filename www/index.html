@@ -137,17 +137,17 @@
 
 /*class dimensão foto perfil*/
 .thumb-image{
-	width: 100%;
+  width: 100%;
 }
 
 /*class space to button space_upload */
 .space_upload{
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 /*space in DIV of top at bottom*/
 #image-holder,#image-holder-wall {
-	height: 250px;
+  height: 250px;
 }
 
 /* spacing between fields */
@@ -1250,9 +1250,9 @@
                 <!-- inicio da foto de perfil -->
                   <div class="tab list" id="tab4">
                       <div class="" style="margin-top: -73px;">
-                          	
+                            
                               <div id="image_demo"></div> 
-                              <div class="row block">	
+                              <div class="row block"> 
                                 <label class="col button button-big col button button-fill color-blue" style="margin-bottom: 5px;">
                                   Escolher foto
                                   <input type="file" name="upload_image" id="upload_image" accept="image/png, image/jpeg" />
@@ -2837,70 +2837,70 @@
 
 
   var app = new Framework7();
-  	var $$ = Dom7;
+    var $$ = Dom7;
     
     //erro de conexão com a internet 
     var erroconexao = app.toast.create({
-		  text: 'Erro de conexão. verifique a conexão com a internet',
-		  position: 'top',
-		  closeTimeout: 2500,
-		});
-	  
+      text: 'Erro de conexão. verifique a conexão com a internet',
+      position: 'top',
+      closeTimeout: 2500,
+    });
+    
     // msg for inputs 
-		var input_vazio = app.toast.create({
-		  text: 'Por favor, preencha todos os campos obrigatórios.',
-		  position: 'top',
-		  closeTimeout: 2500,
-		});
+    var input_vazio = app.toast.create({
+      text: 'Por favor, preencha todos os campos obrigatórios.',
+      position: 'top',
+      closeTimeout: 2500,
+    });
 
-		// select img profile 
-		var photo_perfil = app.toast.create({
-		  text: 'Por favor, selecione uma foto de perfil.',
-		  position: 'top',
-		  closeTimeout: 2500,
-		});
+    // select img profile 
+    var photo_perfil = app.toast.create({
+      text: 'Por favor, selecione uma foto de perfil.',
+      position: 'top',
+      closeTimeout: 2500,
+    });
 
-	    // select wallpaper 
-		var photo_wallp = app.toast.create({
-		  text: 'Por favor, selecione uma foto de fundo.',
-		  position: 'top',
-		  closeTimeout: 2500,
-		});
-			
-	  // password incomplet 
-		var quant_senha = app.toast.create({
-		  text: 'A senha deve possuir entre 8 a 10 dígitos.',
-		  position: 'top',
-		  closeTimeout: 2500,
-		});	
+      // select wallpaper 
+    var photo_wallp = app.toast.create({
+      text: 'Por favor, selecione uma foto de fundo.',
+      position: 'top',
+      closeTimeout: 2500,
+    });
+      
+    // password incomplet 
+    var quant_senha = app.toast.create({
+      text: 'A senha deve possuir entre 8 a 10 dígitos.',
+      position: 'top',
+      closeTimeout: 2500,
+    }); 
     
     // email  
-		var alertemail = app.toast.create({
-		  text: 'Digite um e-mail valido.',
-		  position: 'top',
-		  closeTimeout: 2500,
-		});
+    var alertemail = app.toast.create({
+      text: 'Digite um e-mail valido.',
+      position: 'top',
+      closeTimeout: 2500,
+    });
 
     // email ja existe   
-		var EmailExistente = app.toast.create({
-		  text: 'Este E-mail já está cadastrado.',
-		  position: 'top',
-		  closeTimeout: 2500,
-		});
+    var EmailExistente = app.toast.create({
+      text: 'Este E-mail já está cadastrado.',
+      position: 'top',
+      closeTimeout: 2500,
+    });
 
     // tipo imagem  
-		var AlertImg = app.toast.create({
-		  text: '<h3>Insira somente imagens.</h3>',
-		  position: 'top',
-		  closeTimeout: 2500,
-		});
+    var AlertImg = app.toast.create({
+      text: '<h3>Insira somente imagens.</h3>',
+      position: 'top',
+      closeTimeout: 2500,
+    });
 
      // inserir image,  
-		var AlertInsIMG = app.toast.create({
-		  text: '<h3>Insira uma imagem.</h3>',
-		  position: 'top',
-		  closeTimeout: 2500,
-		});
+    var AlertInsIMG = app.toast.create({
+      text: '<h3>Insira uma imagem.</h3>',
+      position: 'top',
+      closeTimeout: 2500,
+    });
     // Create notification with close button
     var notificationWithButton = app.notification.create({
       icon: '',
@@ -2920,24 +2920,24 @@
     
     //usuario e/ou senha incorretos 
     var msg_login = app.toast.create({
-		  text: '<p>Usuário e ou senhas inválido.</p>',
-		  position: 'top',
-		  closeTimeout: 2500,
-		});
+      text: '<p>Usuário e ou senhas inválido.</p>',
+      position: 'top',
+      closeTimeout: 2500,
+    });
 
     //numero alto de caractere no email 
     var carac_email = app.toast.create({
-		  text: '<p>Número elevado de caractere no e-mail.</p>',
-		  position: 'top',
-		  closeTimeout: 2500,
-		});
+      text: '<p>Número elevado de caractere no e-mail.</p>',
+      position: 'top',
+      closeTimeout: 2500,
+    });
 
     //numero alto de caractere na senha 
     var carac_senha = app.toast.create({
-		  text: '<p>Número elevado de caractere na senha.</p>',
-		  position: 'top',
-		  closeTimeout: 2500,
-		});
+      text: '<p>Número elevado de caractere na senha.</p>',
+      position: 'top',
+      closeTimeout: 2500,
+    });
 
     //mensagem de carregamento
     // Create center toast
@@ -2948,18 +2948,18 @@
     });
 
      // email vazio   
-		var insira_email = app.toast.create({
-		  text: 'Insira um e-mail.',
-		  position: 'top',
-		  closeTimeout: 2500,
-		});
+    var insira_email = app.toast.create({
+      text: 'Insira um e-mail.',
+      position: 'top',
+      closeTimeout: 2500,
+    });
   
      // senha vazio   
-		var insira_senha = app.toast.create({
-		  text: 'Insira uma senha.',
-		  position: 'top',
-		  closeTimeout: 2500,
-		});
+    var insira_senha = app.toast.create({
+      text: 'Insira uma senha.',
+      position: 'top',
+      closeTimeout: 2500,
+    });
 
      // entrando no spotted   
     var entrando = app.toast.create({
@@ -3030,7 +3030,7 @@ function nextstep2 ()
          
           //ajax para verificar email existente 
 /********/$.ajax({
-/**********/url : "https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+/**********/url : "http://35.227.24.94/request.php",
 /**********/dataType: 'JSON',
 /**********/type : 'post',
 /**********/data : {
@@ -3136,7 +3136,7 @@ function nextstep3 ()
 /******/size: 'viewport'
 /*****/}).then(function(response){ 
 /******/$.ajax({
-/********/url:"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+/********/url:"http://35.227.24.94/request.php",
 /********/type: "POST",
 /********/data:{
 /**********/"F":"FotoPerfil",
@@ -3223,7 +3223,7 @@ function nextstep4 ()
 /********/size: 'viewport'
 /******/}).then(function(response2){
 /********/$.ajax({
-/**********/url:"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+/**********/url:"http://35.227.24.94/request.php",
 /**********/type: "POST",
 /**********/data:{
 /************/"F":"FotoCapa",
@@ -3304,7 +3304,7 @@ function nextstep4 ()
 /***/$('#estado_m').on('change', function() {
 /****/var estado = $("#estado_m").val();
 /******/$.ajax({
-/*******/url : "https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+/*******/url : "http://35.227.24.94/request.php",
 /*******/dataType: 'JSON',
 /*******/type : 'post',
 /*******/data : {
@@ -3334,7 +3334,7 @@ function nextstep4 ()
 /***/$('#estado_e').on('change', function() {
 /****/var estado = $("#estado_e").val();
 /******/$.ajax({
-/********/url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+/********/url :"http://35.227.24.94/request.php",
 /********/dataType: 'JSON',
 /********/type : 'post',
 /********/data : {
@@ -3393,7 +3393,7 @@ function nextstep4 ()
            }
 
 /*******/$.ajax({
-/********/url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+/********/url :"http://35.227.24.94/request.php",
 /*********/type : 'post',
 /*********/data : {
 /***********/"F": "CadastraUsuario",
@@ -3440,7 +3440,7 @@ function nextstep4 ()
 
   var email = $("#envia_email").val();
      $.ajax({
-      url : "https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+      url : "http://35.227.24.94/request.php",
       dataType: 'JSON',
       type : 'post',
         data : {
@@ -3462,7 +3462,7 @@ function nextstep4 ()
         if(flag > 0) {
 
              $.ajax({
-                url :"http://plistone.requestwf.com.br/teste_email.php",
+                url :"http://35.227.24.94/request.php",
                 type : 'post',
                   data : {
                     "F":"TrocaSenha",
@@ -3527,7 +3527,7 @@ $('#senha_user').keydown(function(e){
 /********/}
 /*******/}
 /******/$.ajax({
-/********/url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+/********/url :"http://35.227.24.94/request.php",
 /*********/type : 'post',
 /*********/data : {
 /***********/"F": "Login",
@@ -3588,7 +3588,7 @@ $('#senha_user').keydown(function(e){
 /*******/$("#feed").css({"display":"block"});
 /*******/$("#inicio").css({"display":"none"});
 /*********/$.ajax({
-/**********/url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+/**********/url :"http://35.227.24.94/request.php",
 /***********/type : 'post',
 /***********/data : {
 /*************/"F": "Login",
@@ -3658,14 +3658,14 @@ $('#senha_user').keydown(function(e){
 /***/function coloca_dados(perfil,nome,capa,univer,curso,est_civil,intere,biograf) 
 /****/{
       //foto de perfil do bloco de publicacao 
-/******/$("#foto_menu").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+perfil+'" class="mini_img">');  
+/******/$("#foto_menu").html('<img src="http://35.227.24.94/'+perfil+'" class="mini_img">');  
 /******/$("#nome_perfil").html(nome); 
 /******/$("#mini_nome").html(nome);
 /******/$("#sua_univer").html('<i class="fa fa-university" aria-hidden="true"></i><br>'+univer); 
 /******/$("#seu_curso").html('<i class="fa fa-graduation-cap" aria-hidden="true"></i><br>'+curso); 
 /******/$("#seu_est_civil").html('<i class="fa fa-heart" aria-hidden="true"></i><br>'+est_civil);
-/******/$("#sua_foto_capa").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+capa+'" class="sua_foto_capa">');
-/******/$("#sua_foto_perfil").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+perfil+'" class="sua_foto_perfil">');  
+/******/$("#sua_foto_capa").html('<img src="http://35.227.24.94/'+capa+'" class="sua_foto_capa">');
+/******/$("#sua_foto_perfil").html('<img src="http://35.227.24.94/'+perfil+'" class="sua_foto_perfil">');  
 /******/$("#seu_intere").html('<i class="fa fa-heart-o" aria-hidden="true"></i><br>'+intere);              
 /********/if (biograf == "" || biograf == null || biograf== undefined) {
 /**********/$("#add_biograf").css({"display":"block"});
@@ -3683,7 +3683,7 @@ $('#senha_user').keydown(function(e){
 /*****/var texto = emojione.toShort($('#text_biograf').val());
 /*****/var id = localStorage.getItem('id');
 /******/$.ajax({
-/********/url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+/********/url :"http://35.227.24.94/request.php",
 /**********/type : 'post',
 /**********/data : {
 /************/"F": "Add_biografia",
@@ -3726,7 +3726,7 @@ $('#senha_user').keydown(function(e){
  
 $(document).ready(function () {  
   $.ajax({
-          url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+          url :"http://35.227.24.94/request.php",
           type : 'post',
           data : {
                 "F": "PegaDadosUser",
@@ -3803,7 +3803,7 @@ $('#cidade_m_edit').click('change', function() {
   var estado = $("#estado_m_edit").val(); 
     
        $.ajax({
-          url : "https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+          url : "http://35.227.24.94/request.php",
           dataType: 'JSON',
           type : 'post',
           data : {
@@ -3835,7 +3835,7 @@ $('#cidade_e_edit').click('change', function() {
   
     var estado = $("#estado_m_edit").val();   
        $.ajax({
-          url : "https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+          url : "http://35.227.24.94/request.php",
           dataType: 'JSON',
           type : 'post',
           data : {
@@ -3871,7 +3871,7 @@ $('#estado_e_edit').on('change', function() {
   var estado = $("#estado_e_edit").val();
   
        $.ajax({
-          url : "https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+          url : "http://35.227.24.94/request.php",
           dataType: 'JSON',
           type : 'post',
           data : {
@@ -3950,7 +3950,7 @@ function edita_foto_perfil (){
             size: 'viewport'
           }).then(function(response){
             $.ajax({
-              url:"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+              url:"http://35.227.24.94/request.php",
               type: "POST",
               data:{
                     "F":"FotoPerfilEdit",
@@ -3971,8 +3971,8 @@ function edita_foto_perfil (){
                     if (foto.img !== "" || foto.img !== null || foto.img !== undefined) {            
                       $('.salva_foto_edit').prop('disabled',false);
                         $('#upload_perfil_edit').prop('disabled',false);
-                        $("#sua_foto_perfil").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+foto.img+'" class="sua_foto_perfil">');
-                        $("#foto_menu").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+foto.img+'" class="mini_img">'); 
+                        $("#sua_foto_perfil").html('<img src="http://35.227.24.94/'+foto.img+'" class="sua_foto_perfil">');
+                        $("#foto_menu").html('<img src="http://35.227.24.94/'+foto.img+'" class="mini_img">'); 
                       toastCenter.close();
                   //  editar_info();
                     update();
@@ -4038,7 +4038,7 @@ function edita_foto_capa (){
         size: 'viewport'
       }).then(function(response){
         $.ajax({
-          url:"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+          url:"http://35.227.24.94/request.php",
           type: "POST",
           data:{
               "F":"FotoCapaEdit",
@@ -4056,7 +4056,7 @@ function edita_foto_capa (){
               localStorage.setItem('foto_capa',foto.img);
                 if (foto.img !== "" || foto.img !== null || foto.img !== undefined) {                   
                   $('.salva_capa_edit').prop('disabled',false);
-                  $("#sua_foto_capa").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+foto.img+'" class="sua_foto_capa">');
+                  $("#sua_foto_capa").html('<img src="http://35.227.24.94/'+foto.img+'" class="sua_foto_capa">');
                  toastCenter.close();
                 //editar_info();
               update();
@@ -4074,21 +4074,21 @@ function edita_foto_capa (){
 function update () {
 
   var id = localStorage.getItem('id');
-	var estado_m = $('#estado_m_edit').val(); 
-	var cidade_m = $('#cidade_m_edit').val();
-	var estado_e = $('#estado_e_edit').val(); 
-	var cidade_e = $('#cidade_e_edit').val();
-	var univer = $('#univer_edit').val();
-	var curso = $('#curso_edit').val();
-	var nome = $('#nome_edit').val();
-	var sexo = $('#interesse_edit').val(); 
-	var estado_c = $('#estado_c_edit').val();
-	var tam_cabelo =  $("input[type=radio][name='cabelo_edit']:checked").val();
-	var cor_cabelo =  $("input[type=radio][name='cor_cabelo_edit']:checked").val();
-	var relogio = $("input[type=radio][name='relogio_edit']:checked").val();
-	var dente = $("input[type=radio][name='dente_edit']:checked").val();
-	var foto_perfil = localStorage.getItem('foto_perfil');
-	var foto_capa = localStorage.getItem('foto_capa');
+  var estado_m = $('#estado_m_edit').val(); 
+  var cidade_m = $('#cidade_m_edit').val();
+  var estado_e = $('#estado_e_edit').val(); 
+  var cidade_e = $('#cidade_e_edit').val();
+  var univer = $('#univer_edit').val();
+  var curso = $('#curso_edit').val();
+  var nome = $('#nome_edit').val();
+  var sexo = $('#interesse_edit').val(); 
+  var estado_c = $('#estado_c_edit').val();
+  var tam_cabelo =  $("input[type=radio][name='cabelo_edit']:checked").val();
+  var cor_cabelo =  $("input[type=radio][name='cor_cabelo_edit']:checked").val();
+  var relogio = $("input[type=radio][name='relogio_edit']:checked").val();
+  var dente = $("input[type=radio][name='dente_edit']:checked").val();
+  var foto_perfil = localStorage.getItem('foto_perfil');
+  var foto_capa = localStorage.getItem('foto_capa');
   var biografia = emojione.toShort($('#text_biograf_edit').val());
     
       if (biografia == '') {    
@@ -4107,7 +4107,7 @@ function update () {
             return 0;
        } else {
   $.ajax({
-          url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+          url :"http://35.227.24.94/request.php",
            type : 'post',
              data : {
                 "F": "Update",
@@ -4200,7 +4200,7 @@ grade_pessoas();
     if (dados !== ""){
       dados = JSON.parse(dados);
         $.ajax({
-              url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+              url :"http://35.227.24.94/request.php",
                type : 'post',
                  data : {
                     "F": "ListaPerfils",
@@ -4222,16 +4222,16 @@ grade_pessoas();
         rowClick: function(item) {
             localStorage.setItem('id_receptor',item.item.id); //id do usuario
               MarcaVisita();  
-            $("#foto_perfil_usuarios_zoom").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+item.item.foto_perfil+'" style="width: 200%; margin-top: -90px;  display: block; margin-left: auto; margin-right: auto">');
+            $("#foto_perfil_usuarios_zoom").html('<img src="http://35.227.24.94/'+item.item.foto_perfil+'" style="width: 200%; margin-top: -90px;  display: block; margin-left: auto; margin-right: auto">');
             
-            $("#foto_perfil_usuarios").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+item.item.foto_perfil+'" style="width: 50%; margin-top: -120px;  display: block; margin-left: auto; margin-right: auto">');
-            $("#foto_capa_usuarios").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+item.item.foto_capa+'" style="width: 100%; margin-top: -20px">');
+            $("#foto_perfil_usuarios").html('<img src="http://35.227.24.94/'+item.item.foto_perfil+'" style="width: 50%; margin-top: -120px;  display: block; margin-left: auto; margin-right: auto">');
+            $("#foto_capa_usuarios").html('<img src="http://35.227.24.94/'+item.item.foto_capa+'" style="width: 100%; margin-top: -20px">');
             $("#nome_usuario").html(item.item.nome);
             $("#univer_usuario").html('<i class="fa fa-university" aria-hidden="true"></i><br>'+item.item.univer);
             $("#curso_usuario").html('<i class="fa fa-graduation-cap" aria-hidden="true"></i><br>'+item.item.curso);
             $("#est_civil_usuario").html('<i class="fa fa-heart" aria-hidden="true"></i><br>'+item.item.estado_c);
             $("#intere_usuario").html('<i class="fa fa-heart-o" aria-hidden="true"></i><br>'+item.item.sexo);
-            $("#foto_perfil_msg").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+item.item.foto_perfil+'">');
+            $("#foto_perfil_msg").html('<img src="http://35.227.24.94/'+item.item.foto_perfil+'">');
             $("#nome_perfil_msg").html(item.item.nome);
 
             if (item.item.biografia == '' || item.item.biografia == null)
@@ -4245,7 +4245,7 @@ grade_pessoas();
         },
         rowRenderer: function(item) {
             var user = item;
-            var $photo = $("<div>").addClass("client-photo").append($("<img  style='width: 45%; float: left; border: transparent thin solid; padding: 5px; margin: 0px 10px 10px 0; max-width: 186px;'>").attr("src",'https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+user.foto_perfil));
+            var $photo = $("<div>").addClass("client-photo").append($("<img  style='width: 45%; float: left; border: transparent thin solid; padding: 5px; margin: 0px 10px 10px 0; max-width: 186px;'>").attr("src",'http://35.227.24.94/'+user.foto_perfil));
             var $info = $("<div>").addClass("client-info")
             .append($("<p style='font-size:20px'>").text(user.nome.capitalize()))
             .append($("<p style='margin: 2px;font-size: 18px; margin-top: -10px; color: grey'>").text(user.univer));
@@ -4303,7 +4303,7 @@ function envia_msg () {
   var emissor = localStorage.getItem('id'); //id emissor
   var receptor = localStorage.getItem('id_receptor'); //id_receptor 
    $.ajax({
-        url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+        url :"http://35.227.24.94/request.php",
          type : 'post',
            data : {
               "F": "VerBloqueio",
@@ -4327,7 +4327,7 @@ function envia_msg () {
                      msg = emojione.toShort(msg);
                       messagebar.clear();
                       $.ajax({
-                        url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+                        url :"http://35.227.24.94/request.php",
                          type : 'post',
                            data : {
                               "F": "EnviaMsg",
@@ -4354,7 +4354,7 @@ function BuscaTodasMsg () {
   var emissor = localStorage.getItem('id'); //id emissor
   var receptor = localStorage.getItem('id_receptor'); //id_receptor 
   $.ajax({
-          url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+          url :"http://35.227.24.94/request.php",
            type : 'post',
              data : {
                 "F": "BuscaMsg",
@@ -4404,7 +4404,7 @@ function busca_msg () {
   var receptor = localStorage.getItem('id_receptor'); //id_receptor 
   var msg = $('#mensagem').val();
   $.ajax({
-          url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+          url :"http://35.227.24.94/request.php",
            type : 'post',
              data : {
                 "F": "BuscaMsg",
@@ -4451,7 +4451,7 @@ function busca_notificacao () {
       var id = localStorage.getItem('id');
       
         $.ajax({
-          url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+          url :"http://35.227.24.94/request.php",
           type : 'post',
             data : {"F": "Notifica","emissor" : id},
         }).done(function(visual){
@@ -4510,7 +4510,7 @@ function lista_msg () {
         
               user_data = '';
               $.ajax({
-                    url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+                    url :"http://35.227.24.94/request.php",
                     type : 'post',
                       data : {
                           "F": "ListaDeMsg",
@@ -4560,8 +4560,8 @@ function lista_msg () {
           rowClick: function(dados) {
             $('#mensagens').html('');
             localStorage.setItem('id_receptor',dados.item.id); //id do usuario
-            var foto_visualiza = 'https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+dados.item.foto_perfil;
-            $("#foto_perfil_msg").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+dados.item.foto_perfil+'">');
+            var foto_visualiza = 'http://35.227.24.94/'+dados.item.foto_perfil;
+            $("#foto_perfil_msg").html('<img src="http://35.227.24.94/'+dados.item.foto_perfil+'">');
             $("#nome_perfil_msg").html(dados.item.nome);
             document.getElementById('abre_msg_lista').click();
             $('#sai_batepapo').html('<a class="link popup-close" onclick="decrementa_time()" style="color:white"><i class="f7-icons size-22">chevron_left</i></a>');
@@ -4588,7 +4588,7 @@ function lista_msg () {
               var ultima_msg = user.msg;
             }
 
-                var $photo = $("<div>").addClass("client-photo").append($("<img  style='margin:3px; width: 15%; float: left; border: transparent thin solid; max-width: 186px;'>").attr("src",'https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+user.foto_perfil));
+                var $photo = $("<div>").addClass("client-photo").append($("<img  style='margin:3px; width: 15%; float: left; border: transparent thin solid; max-width: 186px;'>").attr("src",'http://35.227.24.94/'+user.foto_perfil));
                  var $info = $("<div>").addClass("client-info")
                 .append($("<p style='margin-top: 3px; font-size: 17px;'>").text(user.nome.capitalize()).append($("<p style='float:right; margin-right:7px; margin-top: -1px; font-size: 15px; color:grey;'>").text(user.data_hora.slice(0,-9))).append($("<p style='"+cor_ultima_msg+"'>").text(ultima_msg)))
                 return $("<tr class='uk-card uk-card-default uk-card-body uk-width-1-2@m'>").append($("<td style='border-bottom:1px solid #f5f5f5; width:100%'>").append($photo).append($info));
@@ -4750,7 +4750,7 @@ function ProximaEtapaBusca ()
     var dados = localStorage.getItem('Duser_spotted');
     dados = JSON.parse(dados);
     $.ajax({
-          url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+          url :"http://35.227.24.94/request.php",
            type : 'post',
            data : {
                 "F": "BuscaCrush",
@@ -4776,16 +4776,16 @@ function ProximaEtapaBusca ()
         },
         rowClick: function(item) {
             localStorage.setItem('id_receptor',item.item.id); //id do usuario  
-            $("#foto_perfil_usuarios_zoom").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+item.item.foto_perfil+'" style="width: 200%; margin-top: -90px;  display: block; margin-left: auto; margin-right: auto">');
+            $("#foto_perfil_usuarios_zoom").html('<img src="http://35.227.24.94/'+item.item.foto_perfil+'" style="width: 200%; margin-top: -90px;  display: block; margin-left: auto; margin-right: auto">');
             
-            $("#foto_perfil_usuarios").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+item.item.foto_perfil+'" style="width: 50%; margin-top: -120px;  display: block; margin-left: auto; margin-right: auto">');
-            $("#foto_capa_usuarios").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+item.item.foto_capa+'" style="width: 100%; margin-top: -20px">');
+            $("#foto_perfil_usuarios").html('<img src="http://35.227.24.94/'+item.item.foto_perfil+'" style="width: 50%; margin-top: -120px;  display: block; margin-left: auto; margin-right: auto">');
+            $("#foto_capa_usuarios").html('<img src="http://35.227.24.94/'+item.item.foto_capa+'" style="width: 100%; margin-top: -20px">');
             $("#nome_usuario").html(item.item.nome);
             $("#univer_usuario").html('<i class="fa fa-university" aria-hidden="true"></i><br>'+item.item.univer);
             $("#curso_usuario").html('<i class="fa fa-graduation-cap" aria-hidden="true"></i><br>'+item.item.curso);
             $("#est_civil_usuario").html('<i class="fa fa-heart" aria-hidden="true"></i><br>'+item.item.estado_c);
             $("#intere_usuario").html('<i class="fa fa-heart-o" aria-hidden="true"></i><br>'+item.item.sexo);
-            $("#foto_perfil_msg").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+item.item.foto_perfil+'">');
+            $("#foto_perfil_msg").html('<img src="http://35.227.24.94/'+item.item.foto_perfil+'">');
             $("#nome_perfil_msg").html(item.item.nome);
 
             if (item.item.biografia == '' || item.item.biografia == null)
@@ -4796,7 +4796,7 @@ function ProximaEtapaBusca ()
             document.getElementById('perfil_usuarios').click();
         },
         rowRenderer: function(user) {
-            var $photo = $("<div>").addClass("client-photo").append($("<img  style='width: 45%; float: left; border: transparent thin solid; padding: 5px; margin: 0px 10px 10px 0; max-width: 186px;'>").attr("src",'https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+user.foto_perfil));
+            var $photo = $("<div>").addClass("client-photo").append($("<img  style='width: 45%; float: left; border: transparent thin solid; padding: 5px; margin: 0px 10px 10px 0; max-width: 186px;'>").attr("src",'http://35.227.24.94/'+user.foto_perfil));
             var $info = $("<div>").addClass("client-info")
               .append($("<p style='font-size:20px'>").text(user.nome.capitalize()))
                .append($("<p style='margin: 2px;font-size: 18px; margin-top: -10px; color: grey'>").text(user.univer));
@@ -4840,7 +4840,7 @@ function nova_busca ()
       var Duser = JSON.parse(localStorage.getItem('Duser_spotted')); //seus dados armazenados 
       var id_receptor = localStorage.getItem('id_receptor'); //id do perfil visitado
       $.ajax({
-          url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+          url :"http://35.227.24.94/request.php",
            type : 'post',
              data : {
                 "F" : "MarcaVisita",
@@ -4866,7 +4866,7 @@ var cont_vistas = 0;
         if (Duser !== "") {
           Duser = JSON.parse(Duser);
          $.ajax({
-          url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+          url :"http://35.227.24.94/request.php",
             type : 'post',
             data : {
               "F" : "ListaVisita",
@@ -4922,7 +4922,7 @@ function excluir_conta () {
     if (senha == Duser[0].senha) {
      app.dialog.confirm('','Sua conta será excluída permanentemente, você realmente deseja excluir?', function () {
        $.ajax({
-          url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+          url :"http://35.227.24.94/request.php",
           type : 'post',
             data : {
               "F": "ExcluirConta",
@@ -4950,7 +4950,7 @@ function trocar_senha ()
         if (senha == Duser[0].senha) {  
             app.dialog.prompt('','Insira sua nova senha.', function (new_senha) {
               $.ajax({
-               url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+               url :"http://35.227.24.94/request.php",
                type : 'post',
               data : {
                 "F": "AlteraSenha",
@@ -4978,7 +4978,7 @@ function trocar_senha ()
     var id_receptor = localStorage.getItem('id_receptor'); //id do recepitor 
     var id = localStorage.getItem('id'); //id do emissor
       $.ajax({
-        url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+        url :"http://35.227.24.94/request.php",
          type : 'post',
          data : {
               "F": "VerBloqueio",
@@ -5015,7 +5015,7 @@ function trocar_senha ()
       var id_receptor = localStorage.getItem('id_receptor'); //id do recepitor 
       var id = localStorage.getItem('id'); //id do emissor
       $.ajax({
-        url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+        url :"http://35.227.24.94/request.php",
          type : 'post',
            data : {
               "F": "BloquearChat",
@@ -5042,7 +5042,7 @@ function busca_bloqueio ()
     var id_receptor = localStorage.getItem('id_receptor'); //id do recepitor 
     var id = localStorage.getItem('id'); //id do emissor
       $.ajax({
-        url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+        url :"http://35.227.24.94/request.php",
          type : 'post',
            data : {
               "F": "VerBloqueio",
@@ -5074,7 +5074,7 @@ function busca_bloqueio ()
     {
       var id_receptor = localStorage.getItem('id_receptor'); //id do recepitor  
        $.ajax({
-        url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+        url :"http://35.227.24.94/request.php",
          type : 'post',
            data : {
               "F": "BuscaPerfilMsg",
@@ -5082,16 +5082,16 @@ function busca_bloqueio ()
             },
            }).done(function(retorno){
               var dados = JSON.parse(retorno);
-              $("#foto_perfil_usuarios_zoom").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+dados[0].foto_perfil+'" style="width: 200%; margin-top: -90px;  display: block; margin-left: auto; margin-right: auto">');
+              $("#foto_perfil_usuarios_zoom").html('<img src="http://35.227.24.94/'+dados[0].foto_perfil+'" style="width: 200%; margin-top: -90px;  display: block; margin-left: auto; margin-right: auto">');
               
-              $("#foto_perfil_usuarios").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+dados[0].foto_perfil+'" style="width: 50%; margin-top: -120px;  display: block; margin-left: auto; margin-right: auto">');
-              $("#foto_capa_usuarios").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+dados[0].foto_capa+'" style="width: 100%; margin-top: -20px">');
+              $("#foto_perfil_usuarios").html('<img src="http://35.227.24.94/'+dados[0].foto_perfil+'" style="width: 50%; margin-top: -120px;  display: block; margin-left: auto; margin-right: auto">');
+              $("#foto_capa_usuarios").html('<img src="http://35.227.24.94/'+dados[0].foto_capa+'" style="width: 100%; margin-top: -20px">');
               $("#nome_usuario").html(dados[0].nome);
               $("#univer_usuario").html('<i class="fa fa-university" aria-hidden="true"></i><br>'+dados[0].univer);
               $("#curso_usuario").html('<i class="fa fa-graduation-cap" aria-hidden="true"></i><br>'+dados[0].curso);
               $("#est_civil_usuario").html('<i class="fa fa-heart" aria-hidden="true"></i><br>'+dados[0].estado_c);
               $("#intere_usuario").html('<i class="fa fa-heart-o" aria-hidden="true"></i><br>'+dados[0].sexo);
-              $("#foto_perfil_msg").html('<img src="https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/'+dados[0].foto_perfil+'">');
+              $("#foto_perfil_msg").html('<img src="http://35.227.24.94/request.php'+dados[0].foto_perfil+'">');
               $("#nome_perfil_msg").html(dados[0].nome);
 
               if (dados[0].biografia == '' || dados[0].biografia == null)
@@ -5116,7 +5116,7 @@ function busca_bloqueio ()
     {
       var id = localStorage.getItem('id'); //id do emissor
       $.ajax({
-        url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+        url :"http://35.227.24.94/request.php",
          type : 'post',
            data : {
               "F": "LimpaHistorVisitas",
@@ -5144,7 +5144,7 @@ function EnviaProblema () {
    Duser = JSON.parse(Duser);
  }
   $.ajax({
-        url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+        url :"http://35.227.24.94/request.php",
          type : 'post',
            data : {
               "F": "RelataProblem",
@@ -5176,7 +5176,7 @@ function EnviaMelhoria () {
    Duser = JSON.parse(Duser);
  }
   $.ajax({
-        url :"https://5eb717c4.ngrok.io/REDE_SOCIAL/BACK-END/request.php",
+        url :"http://35.227.24.94/request.php",
          type : 'post',
            data : {
               "F": "RelataMelhoria",
