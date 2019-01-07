@@ -434,6 +434,7 @@
       color: white;
       font-size: 140%;
       text-align: center;
+
     }
 
     /* estilo da lista de itens de busca */
@@ -448,12 +449,13 @@
     }
     /* titulo (spotted) de inicio */
     .titulo_spotted {
-      position: relative;
-      left: 13%;
-      margin-top: 15px;
+      /*margin-top: 15px;*/
       font-family: 'Damion', cursive;
       font-size: 150%;
       color:white;
+        display: block;
+    margin-left: auto;
+    margin-right: auto
       }
 
 
@@ -474,12 +476,15 @@
       background: #eee;
       float: left;
       margin-left:8px;
+      width:120px;
     }
+
     .me{
       float: right;
       background: #0084ff;
       color: #fff;
       margin-right:8px;
+      width:120px;
     }
     .him + .me{
       border-bottom-right-radius: 5px;
@@ -517,8 +522,28 @@
    /*titulo da mensagem, aparece qunado entra no bloco msg */
    #titulo_msg {
     margin-top: 20px;
+
    }
 
+   #mensagem {
+    border: 1px solid grey;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px silver;
+    margin: 5px;
+    padding: 5px 15px 0px 15px;
+   }
+
+   #button_send_msg {
+    color: #2196f3;
+    border:1px solid #2196f3;
+    border-radius: 10px;
+    padding: 3px;
+    margin-right: 5px;
+   }
+
+   #nome_perfil_msg {
+    font-size: 15px;
+   }
   </style> 
   </head>
   <body>
@@ -1315,9 +1340,9 @@
 <main id="feed" style="display:none">
     <div class="page">
         <div class="navbar" style='background-color: #2196f3; color: white'> 
-            <div class="navbar-inner">
+            <div class="navbar-inner" id="cabecalho_inicio">
                 <div class="left">
-                    <a class="link popover-open" href="#" data-popover=".popover-about">
+                    <a class="link popover-open" href="#" data-popover=".popover-about" id="bars">
                        <i class="f7-icons size-22" style='color:white'>bars</i>
                     </a>
                 </div>
@@ -1328,7 +1353,7 @@
                  <div id="titulo_msg" class="left"> 
                 </div>
                 <div class="right"> 
-                    <a class="link popover-open" href="#" data-popover=".popover-visitas">
+                    <a class="link popover-open" href="#" data-popover=".popover-visitas" id="alert_visitas">
                       <label style="margin-left:20px" id="alert_visita"></label>
                         <i class="f7-icons size-22" style='color:white'>bell_fill</i>
                     </a>
@@ -1350,7 +1375,7 @@
               <i class="f7-icons"  id="lista_pessoas"  style="font-size: 30px; margin-left: 10%;">persons_round_fill</i>
                   
               <!-- lupa de busca  -->
-              <a class="popup-open" href="#" data-popup=".popup-busca">
+              <a class="popup-open" href="#" data-popup=".popup-busca" id="busca_crush">
                  <i class="f7-icons" style="font-size: 30px; color: white;">search</i>  
               </a>  
               <i id="alert_new_msg" style="position:absolute; left:85%"></i>
@@ -1364,21 +1389,22 @@
         <div class="popup popup-busca" > 
           <div data-page="index" class="page">
             <div class="page-content">
-              <div id="fundo_busca_crush" style="padding:1px; font-size:25px; box-shadow:2px 2px 2px silver;">
-              <p>
-                <a class="link popup-close f7-icons" href="#"style="position: absolute; top: 4px; left: 8px; z-index:9999; font-size: 25px; color: white;">close</a>
-              </p> 
+              <div id="fundo_busca_crush" style="background-color: #4cadff; padding:1px; font-size:25px; box-shadow:2px 2px 2px silver;">
+              <p style="margin-bottom: 30px;">
+                <a class="link popup-close f7-icons" href="#"style="position: absolute; top: 2px; left: 4px; z-index:9999; font-size: 25px; color: white; padding:10px;" id="close_janela_busca">close</a>
+              </p>
               <p class="titulo_buscador">Buscador de Crush</p>
             </div>
             <div style="width:95%; margin-left:5%; margin-bottom:-20px" class="uk-width-1-2@m uk-animation-slide-top repeat: true" id="msg_top_busca">
-             <p style="color: grey; padding:20px; font-size:17px;"><i style="color: #ffcd45" class="fa fa-hand-o-right" aria-hidden="true"></i>
-              Insira somente informações que você sabe sobre o crush, se você sabe click em próximo. Se não souber click também em próximo.</p>
+              <p style="color: grey; padding:20px; font-size:17px;"><i style="color: #ffcd45" class="fa fa-hand-o-right" aria-hidden="true"></i>
+              Insira somente informações que você sabe sobre o crush, se você sabe click em próximo. Se não souber click não sei.</p>
             </div> 
+            <form id="forme_busca">
              <div style="position:relative;">
               <div id="campodebusca1">
                 <ul>
-                    <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush1">
-                      <!-- estado onde a pessoa mora-->
+                  <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush1">
+                    <!-- estado onde a pessoa mora-->
                       <div class="item-inner">
                         <div class="item-title item-label"><h4>&nbsp;Estado onde o crush mora.</h4></div>
                         <div class="item-input-wrap">
@@ -1421,10 +1447,9 @@
                             </label>&nbsp;Não sei
                           </label>
                      </div>
-                    </li>
-                    <br>
-                    <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush2">
-
+                  </li>  
+                  <br>
+                  <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush2">
                       <div class="item-inner">
                         <div class="item-title item-label"><h4>&nbsp;Cidade onde o crush mora.</h4></div>
                         <div class="item-input-wrap">
@@ -1495,7 +1520,6 @@
                       </li>
                       <br>
                       <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush4">
-  
                         <div class="item-inner">
                           <div class="item-title item-label"><h4>&nbsp;Cidade onde o crush estuda.</h4></div>
                           <div class="item-input-wrap">
@@ -1513,39 +1537,40 @@
                         </div>
                       </li>
                     </ul>
-                   </div>
-
+                 </div>
                    
                  <!-- começo de campo de busca 2 -->
                  <div id="campodebusca3">
-                    <ul>
-                        <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush5">
-                            <div class="item-inner">
-                              <div class="item-title item-label"><h5>&nbsp;Universidade onde o crush estuda.</h5></div>
+                  <ul>
+                      <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush5">
+                          <div class="item-inner">
+                              <div class="item-title item-label">
+                                  <h5>&nbsp;Universidade onde o crush estuda.</h5></div>
                               <div class="item-input-wrap">
-                                <select id="univer_busca" onkeypress="acionaw" style="padding: 10px">
-                                  <!--select dinamico feito pelo back end-->
-                                  <option value='0'>Selecione sua Universidade</option>
-                                  <option value="Universidade do sagrado coração">Universidade do sagrado coração</option>
-                                </select>
+                                  <select id="univer_busca" onkeypress="acionaw" style="padding: 10px">
+                                      <!--select dinamico feito pelo back end-->
+                                      <option value='0'>Selecione sua Universidade</option>
+                                      <option value="Universidade do sagrado coração">Universidade do sagrado coração</option>
+                                  </select>
                               </div>
-                            </div>
-                            <div class="padding_checkbox_busca">
+                          </div>
+                          <div class="padding_checkbox_busca">
                               <label>
-                               <label class="checkbox">
-                                 <input type="checkbox"><i class="icon-checkbox"></i>
-                               </label>&nbsp;Não sei
+                                  <label class="checkbox">
+                                      <input type="checkbox"><i class="icon-checkbox"></i>
+                                  </label>&nbsp;Não sei
                               </label>
-                            </div>
-                        </li>
-                        <br>
-                        <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush6">
-                                <div class="item-inner">
-                                  <div class="item-title item-label"><h4>&nbsp;O que o crush cursa?</h4></div>
-                                  <div class="item-input-wrap">
-                                    <select id="curso_busca" style="padding: 10px">
+                          </div>
+                      </li>
+                      <br>
+                      <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush6">
+                          <div class="item-inner">
+                              <div class="item-title item-label">
+                                  <h4>&nbsp;O que o crush cursa?</h4></div>
+                              <div class="item-input-wrap">
+                                  <select id="curso_busca" style="padding: 10px">
                                       <option value="0">Selecione seu curso</option>
-                                        <optgroup label="Ciências biológicas e da Saúde">
+                                      <optgroup label="Ciências biológicas e da Saúde">
                                           <option>Biologia</option>
                                           <option>Biologia marinha</option>
                                           <option>Biomedicina</option>
@@ -1587,9 +1612,9 @@
                                           <option>Oftálmica</option>
                                           <option>Radiologia</option>
                                           <option>Silvicultura</option>
-                                          <option>Sistemas Biomédicos</option>                            
-                                        </optgroup>
-                                        <optgroup label="Ciências Exatas">
+                                          <option>Sistemas Biomédicos</option>
+                                      </optgroup>
+                                      <optgroup label="Ciências Exatas">
                                           <option>Agronomia</option>
                                           <option>Astronomia</option>
                                           <option>Bioengenharia</option>
@@ -1627,7 +1652,7 @@
                                           <option>Engenharia Naval e Oceânica</option>
                                           <option>Engenharia Nuclear</option>
                                           <option>Engenharia de Pesca</option>
-                                          <option>Engenharia de Petróleo</div>
+                                          <option>Engenharia de Petróleo</option>
                                           <option>Engenharia de Produção</option>
                                           <option>Engenharia Química</option>
                                           <option>Engenharia Sanitária</option>
@@ -1689,8 +1714,8 @@
                                           <option>Sistemas de Navegação Fluvial</option>
                                           <option>Sistemas para Internet</option>
                                           <option>Telemática</option>
-                                        </optgroup>
-                                        <optgroup label="Ciências Humanas">
+                                      </optgroup>
+                                      <optgroup label="Ciências Humanas">
                                           <option>Administração</option>
                                           <option>Antropologia</option>
                                           <option>Arqueologia</option>
@@ -1775,191 +1800,190 @@
                                           <option>Segurança no Trabalho</option>
                                           <option>Transporte Aéreo</option>
                                           <option>Gestão em serviços jurídicos e notariais</option>
-                                            </optgroup>
-                                      </select>
-                                  </div>
-                                </div>
-                              <div class="padding_checkbox_busca">
-                                <label>
-                                   <label class="checkbox">
-                                   <input type="checkbox"><i class="icon-checkbox"></i>
-                                 </label>&nbsp;Não sei
-                                </label>
+                                      </optgroup>
+                                  </select>
                               </div>
-                           </li>
-                         </ul>
-                       </div>
+                          </div>
+                          <div class="padding_checkbox_busca">
+                              <label>
+                                  <label class="checkbox">
+                                      <input type="checkbox"><i class="icon-checkbox"></i>
+                                  </label>&nbsp;Não sei
+                              </label>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
                      
-                     <div id="campodebusca4">
-                        <ul>
-                            <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush7" style="padding:15px">
+                    <div id="campodebusca4">
+                      <ul>
+                          <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush7" style="padding:15px">
                               <p class="title_carac">Qual o tamanho do seu cabelo?</p>
-                                  <label>
-                                    <label class="radio">
-                                    <input type="radio" id="cabelo_busca" name="cabelo_busca" value="curto" autofocus>
+                              <label>
+                                  <label class="radio">
+                                      <input type="radio" name="cabelo_busca" value="curto" autofocus>
                                       <i class="icon-radio"></i>
-                                    </label> 
-                                    Curto
                                   </label>
-                                <div id="space_radio"></div>
-                                  <label>
-                                    <label class="radio">
-                                      <input type="radio" id="cabelo_busca" name="cabelo_busca" value="medio">
+                                  Curto
+                              </label>
+                              <div id="space_radio"></div>
+                              <label>
+                                  <label class="radio">
+                                      <input type="radio" name="cabelo_busca" value="medio">
                                       <i class="icon-radio"></i>
-                                    </label> 
-                                    Médio 
                                   </label>
-                                <div id="space_radio"></div>
-                                  <label>
-                                    <label class="radio">
-                                      <input type="radio" id="cabelo_busca" name="cabelo_busca" value="longo">
+                                  Médio
+                              </label>
+                              <div id="space_radio"></div>
+                              <label>
+                                  <label class="radio">
+                                      <input type="radio" name="cabelo_busca" value="longo">
                                       <i class="icon-radio"></i>
-                                    </label> 
+                                  </label>
                                   Longo
-                                </label>
-                                  <div id="space_radio"></div>
-                                  <label>
-                                    <label class="radio">
+                              </label>
+                              <div id="space_radio"></div>
+                              <label>
+                                  <label class="radio">
                                       <input type="radio" name="cabelo_busca">
                                       <i class="icon-radio"></i>
-                                    </label> 
-                                   Não sei
-                                </label>
-                              </li> 
-                              <br>
-                              <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush8" style="padding:15px">
-                              <p class="title_carac">Cor do cabelo?</p>
-                                <label>
-                                  <label class="radio">
-                                    <input type="radio" name="cor_cabelo_busca" value="claro">
-                                    <i class="icon-radio"></i>
-                                  </label> 
-                                  Claro
-                                </label>
-                              <div id="space_radio"></div>
-                                <label>
-                                  <label class="radio">
-                                    <input type="radio" name="cor_cabelo_busca" value="escuro">
-                                    <i class="icon-radio"></i>
-                                  </label>
-                                  Escuro
-                                </label>
-                              <div id="space_radio"></div>
-                                <label>
-                                  <label class="radio">
-                                    <input type="radio" name="cor_cabelo_busca">
-                                    <i class="icon-radio"></i>
                                   </label>
                                   Não sei
+                              </label>
+                          </li>
+                          <br>
+                          <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush8" style="padding:15px">
+                              <p class="title_carac">Cor do cabelo?</p>
+                              <label>
+                                  <label class="radio">
+                                      <input type="radio" name="cor_cabelo_busca" value="claro">
+                                      <i class="icon-radio"></i>
+                                  </label>
+                                  Claro
+                              </label>
+                              <div id="space_radio"></div>
+                              <label>
+                                  <label class="radio">
+                                      <input type="radio" name="cor_cabelo_busca" value="escuro">
+                                      <i class="icon-radio"></i>
+                                  </label>
+                                  Escuro
+                              </label>
+                              <div id="space_radio"></div>
+                              <label>
+                                  <label class="radio">
+                                      <input type="radio" name="cor_cabelo_busca">
+                                      <i class="icon-radio"></i>
+                                  </label>
+                                  Não sei
+                              </label>
+                          </li>
+                          <br>
+                          <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush9" style="padding:15px">
+                              <p class="title_carac">Cor da pele ?</p>
+                              <label>
+                                  <label class="radio">
+                                      <input type="radio" name="pele_busca" value="branca">
+                                      <i class="icon-radio"></i>
+                                  </label>
+                                  Branca
+                              </label>
+                              <div id="space_radio"></div>
+                              <label>
+                                  <label class="radio">
+                                      <input type="radio" name="pele_busca" value="negra">
+                                      <i class="icon-radio"></i>
+                                  </label>
+                                  Negra
+                              </label>
+                              <div id="space_radio"></div>
+                              <label>
+                                  <label class="radio">
+                                      <input type="radio" name="pele_busca" value="parda">
+                                      <i class="icon-radio"></i>
+                                  </label>
+                                  Parda
+                              </label>
+                              <div id="space_radio"></div>
+                              <label>
+                                  <label class="radio">
+                                      <input type="radio" name="pele_busca">
+                                      <i class="icon-radio"></i>
+                                  </label>
+                                  Não sei
+                              </label>
+                           </li>
+                        </ul>
+                     </div>
+                    <div id="campodebusca5">
+                     <ul>
+                        <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush10" style="padding:15px">
+                            <p class="title_carac"><b>Essa pessoa usa relógio ?</b></p>
+                            <label>
+                                <label class="radio">
+                                    <input type="radio" name="relogio_busca" value="sim">
+                                    <i class="icon-radio"></i>
                                 </label>
-                              
-                              </li>
-                              <br>
-                              <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush9" style="padding:15px">
-                                  <p class="title_carac">Cor da pele ?</p>
-                                    <label>
-                                      <label class="radio">
-                                        <input type="radio" name="pele_busca" value="branca">
-                                        <i class="icon-radio"></i>
-                                      </label>
-                                        Branca
-                                    </label>
-                                  <div id="space_radio"></div>
-                                    <label>
-                                      <label class="radio">
-                                        <input type="radio" name="pele_busca" value="negra">
-                                        <i class="icon-radio"></i>
-                                      </label> 
-                                      Negra
-                                    </label>
-                                    <div id="space_radio"></div>
-                                    <label>
-                                      <label class="radio">
-                                        <input type="radio" name="pele_busca" value="parda">
-                                        <i class="icon-radio"></i>
-                                      </label> 
-                                      Parda
-                                    </label>
-                                    <div id="space_radio"></div>
-                                    <label>
-                                      <label class="radio">
-                                        <input type="radio" name="pele_busca">
-                                        <i class="icon-radio"></i>
-                                      </label> 
-                                      Não sei
-                                    </label>
-                                </li>
-                              </ul>
-                          </div>
-                          <div id="campodebusca5">
-                              <ul>
-                                  <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush10" style="padding:15px">
-                                    <p class="title_carac"><b>Essa pessoa usa relógio ?</b></p>
-                                      <label>
-                                        <label class="radio">
-                                        <input type="radio" id="relogio_busca" name="relogio_busca" value="sim">
-                                          <i class="icon-radio"></i>
-                                        </label> 
-                                        Sim
-                                      </label>
-                                    <div id="space_radio"></div>
-                                      <label>
-                                        <label class="radio">
-                                          <input type="radio" id="relogio_busca" name="relogio_busca" value="nao">
-                                          <i class="icon-radio"></i>
-                                        </label> 
-                                        Não 
-                                      </label>
-                                      <div id="space_radio"></div>
-                                      <label>
-                                        <label class="radio">
-                                          <input type="radio" name="relogio_busca">
-                                          <i class="icon-radio"></i>
-                                        </label> 
-                                        Não sei
-                                      </label>
-                                    </li> 
-                                     <br> 
-                                    <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush11" style="padding:15px">   
-                                      <p style="font-size:12px;"><b>Essa pessoa utiliza aparelho dentario ?</b></p>
-                                        <label>
-                                          <label class="radio">
-                                          <input type="radio" id="dente_busca" name="dente_busca" value="sim">
-                                            <i class="icon-radio"></i>
-                                          </label> 
-                                          Sim
-                                        </label>
-                                      <div id="space_radio"></div>
-                                        <label>
-                                          <label class="radio">
-                                            <input type="radio" id="dente_busca" name="dente_busca" value="nao">
-                                            <i class="icon-radio"></i>
-                                          </label> 
-                                          Não 
-                                        </label>
-                                      <div id="space_radio"></div>
-                                        <label>
-                                          <label class="radio">
-                                            <input type="radio" name="dente_busca">
-                                            <i class="icon-radio"></i>
-                                          </label> 
-                                          Não sei
-                                        </label>
-
-
-                                    </li>
-                                    </ul>
-                                </div>
-                        </div>
+                                Sim
+                            </label>
+                            <div id="space_radio"></div>
+                            <label>
+                                <label class="radio">
+                                    <input type="radio" name="relogio_busca" value="nao">
+                                    <i class="icon-radio"></i>
+                                </label>
+                                Não
+                            </label>
+                            <div id="space_radio"></div>
+                            <label>
+                                <label class="radio">
+                                    <input type="radio" name="relogio_busca">
+                                    <i class="icon-radio"></i>
+                                </label>
+                                Não sei
+                            </label>
+                        </li>
+                        <br>
+                        <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush11" style="padding:15px">
+                            <p style="font-size:12px;"><b>Essa pessoa utiliza aparelho dentario ?</b></p>
+                            <label>
+                                <label class="radio">
+                                    <input type="radio" name="dente_busca" value="sim">
+                                    <i class="icon-radio"></i>
+                                </label>
+                                Sim
+                            </label>
+                            <div id="space_radio"></div>
+                            <label>
+                                <label class="radio">
+                                    <input type="radio" name="dente_busca" value="nao">
+                                    <i class="icon-radio"></i>
+                                </label>
+                                Não
+                            </label>
+                            <div id="space_radio"></div>
+                            <label>
+                                <label class="radio">
+                                    <input type="radio" name="dente_busca">
+                                    <i class="icon-radio"></i>
+                                </label>
+                                Não sei
+                            </label>
+                        </li>
+                      </ul>
+                    </div>
+                 </div>
 
                   <div class="block" id="botoes_busca">
                     <div class="row" style="margin: 10%; margin-top: 10%;">
-                      <button class="col button button-big button-fill" id="botao_cancelar_crush" onclick="PularEtapaBusca()">Cancelar</button>
-                      <button class="col button button-big button-fill" id="botao_busca_crush" onclick="ProximaEtapaBusca()">Proximo</button>
+                      <button type="reset" class="col button button-big button-fill" id="botao_cancelar_crush" onclick="cancela_busca()">Cancelar</button>
+
+                      <button type="button" class="col button button-big button-fill" id="botao_busca_crush" onclick="ProximaEtapaBusca()">Proximo</button>
                     </div>
                   </div>
+                </form>
                   <div id="botao_nova_busca">
-                      <p id="botao_cancelar_crush" style="color:white; text-align: center;" onclick="nova_busca()">Fazer nova busca&nbsp;<i class="f7-icons">refresh</i></p>
+                      <p id="botao_cancelar_crush" style="text-align:center; font-size: 22px; color:white;" onclick="nova_busca()">Fazer nova busca&nbsp;<i class="f7-icons">refresh</i></p>
                   </div>
 
                   <div id="grade_crush_busca"></div>
@@ -2027,7 +2051,8 @@
                 </div>
                <div id="visitas" style="height: 300px">
                  <center>
-                  <p id="frase_visita">Nenhuma pessoa visitou seu perfil</p>
+                  <p id="frase_visita">Nenhuma pessoa visitou seu perfil. Ah quando uma pessoa visitar não será possível dizer quem e essa pessoa ao certo, iremos mostrar algumas características dela.
+                  </p>
                 </center>
                </div>
               </div>       
@@ -2040,7 +2065,7 @@
               <div class="page-content">
                  <!-- Close Popup -->
                  <p>
-                   <a class="link popup-close" href="#" id="seu_perfil_close"><i class="f7-icons size-24" style="color: white; margin-top:-10px;margin-left: 10px">close</i></a>
+                   <a class="link popup-close" href="#" id="seu_perfil_close"><i class="f7-icons size-24" style="color: white; margin-top:-10px;padding: 20px">close</i></a>
                 </p>   
                   <center>
                     <!-- foto da capa usuario logado -->
@@ -2765,12 +2790,12 @@
                           </div>
                         </td>
                         <td class="uk-animation-slide-right  repeat: true">
-                          <div id="nome_perfil_msg" style="margin-left: 20%; color: white">
+                          <div id="nome_perfil_msg" style="color: white">
                           </div>
                         </td>
                         <td>
                           <div class="right">
-                             <p class="link popover-open" href="#" data-popover=".popover-ver_perfil_bloquear" style="padding:20px; margin-top: -30px">
+                             <p class="link popover-open" href="#" data-popover=".popover-ver_perfil_bloquear" style="padding:20px; margin-top: -40px">
                                  <i class="f7-icons size-22" style='color:white'>more_vertical_fill</i>
                              </p>
                           </div>
@@ -2785,7 +2810,7 @@
 
                         <div id="scroll_msg" class="page-content" style="height: 90%; margin-top:25px">
                           <div class="wrapper">
-                            <ul class="ul_msg" id="mensagens">
+                            <ul class="ul_msg" id="mensagens" >
                             
                             </ul>
                            </div>
@@ -2800,8 +2825,8 @@
                           </div> -->
                     <div class="toolbar messagebar">
                           <div class="toolbar-inner">
-                            <textarea id="mensagem" class="resizable"></textarea>
-                            <a onclick="envia_msg()" href="#">Enviar</a>
+                            <textarea id="mensagem" class="resizable" maxlength="400"></textarea>
+                            <a onclick="envia_msg()" href="#" id="button_send_msg">Enviar</a>
                           </div>
                     </div>
 
@@ -4233,12 +4258,13 @@ grade_pessoas();
             $("#intere_usuario").html('<i class="fa fa-heart-o" aria-hidden="true"></i><br>'+item.item.sexo);
             $("#foto_perfil_msg").html('<img src="http://35.227.24.94/'+item.item.foto_perfil+'">');
             $("#nome_perfil_msg").html(item.item.nome);
+            diminui_nome_msg();
 
             if (item.item.biografia == '' || item.item.biografia == null)
               $("#biograf_usuario").html('');
             else
               $("#biograf_usuario").html('<p class="user_biografia"><i class="fa fa-book" aria-hidden="true"></i><br>Status<br>'+emojione.shortnameToUnicode(item.item.biografia)); 
-            $('#volta_grade_pessoas').html('<a class="link popup-close f7-icons" id="fecha_perfil_visitado" href="#" style="position: absolute; top: 4px; left: 8px; z-index:9999; font-size: 25px; color: white;">close</a>');
+            $('#volta_grade_pessoas').html('<a class="link popup-close f7-icons" id="fecha_perfil_visitado" href="#" style="position: absolute; top: 4px; left: 8px; padding:10px; z-index:9999; font-size: 25px; color: white;">close</a>');
               
                  
             document.getElementById('perfil_usuarios').click();
@@ -4311,12 +4337,12 @@ function envia_msg () {
               "receptor" : receptor
             },
            }).done(function(retorno){
-              if (retorno == emissor) {
+              if (parseFloat(retorno) == parseFloat(emissor)) {
                 app.dialog.confirm('','Ops! perfil bloqueado, deseja desbloquear este perfil ?', function () {
                    block_desblock(0);
                  });     
                } else {
-                  if (retorno == receptor) {
+                  if (parseFloat(retorno) == parseFloat(receptor)) {
                       app.dialog.alert('','Este perfil bloqueou você.');
                        $('#bloqueia_perfil').css({'display':'none'});
                        $('#hr_block_perfil').css({'display':'none'});
@@ -4562,6 +4588,7 @@ function lista_msg () {
             var foto_visualiza = 'http://35.227.24.94/'+dados.item.foto_perfil;
             $("#foto_perfil_msg").html('<img src="http://35.227.24.94/'+dados.item.foto_perfil+'">');
             $("#nome_perfil_msg").html(dados.item.nome);
+            diminui_nome_msg();
             document.getElementById('abre_msg_lista').click();
             $('#sai_batepapo').html('<a class="link popup-close" onclick="decrementa_time()" style="color:white"><i class="f7-icons size-22">chevron_left</i></a>');
             BuscaTodasMsg();
@@ -4628,8 +4655,9 @@ function FundoBuscaCrush ()
     }
     setTimeout(FundoBuscaCrush,2000);
     t+=1;
-    if (t >= 10)
+    if (t >= 10){
        t=0; 
+     }
   }FundoBuscaCrush();  
 
 
@@ -4687,7 +4715,9 @@ function ProximaBlocoBusca ()
          'margin':'20px',
          'border-radius':'90px',
          'width':'70%',
-         'color':'white'
+         'color':'white',
+         'margin-left': 'auto',
+         'margin-right': 'auto' 
         });
        }
       }
@@ -4740,8 +4770,9 @@ function ProximaEtapaBusca ()
         paging: false,
         loadIndication: false,
         loadIndicationDelay: 0,
-        loadShading: false,
-        noDataContent: 'carregando...',
+        loadShading: true,
+        noDataContent: 'humm, Não encontramos nada.',
+        loadMessage: "Carregando...",
         controller: {
             loadData: function() {
                 var deferred = $.Deferred();
@@ -4786,6 +4817,7 @@ function ProximaEtapaBusca ()
             $("#intere_usuario").html('<i class="fa fa-heart-o" aria-hidden="true"></i><br>'+item.item.sexo);
             $("#foto_perfil_msg").html('<img src="http://35.227.24.94/'+item.item.foto_perfil+'">');
             $("#nome_perfil_msg").html(item.item.nome);
+            diminui_nome_msg();
 
             if (item.item.biografia == '' || item.item.biografia == null)
               $("#biograf_usuario").html('');
@@ -4793,7 +4825,10 @@ function ProximaEtapaBusca ()
               $("#biograf_usuario").html('<p class="user_biografia"><i class="fa fa-book" aria-hidden="true"></i><br>Status<br>'+emojione.shortnameToUnicode(item.item.biografia));
                  
             document.getElementById('perfil_usuarios').click();
-        },
+            document.getElementById('close_janela_busca').click();
+            $('#volta_grade_pessoas').html('<a class="link popup-close f7-icons" id="fecha_perfil_visitado" href="#" style="position: absolute; top: 4px; left: 8px; padding:10px; z-index:9999; font-size: 25px; color: white;" onclick="abre_lista_busca()">close</a>'); 
+
+        }, 
         rowRenderer: function(user) {
             var $photo = $("<div>").addClass("client-photo").append($("<img  style='width: 45%; float: left; border: transparent thin solid; padding: 5px; margin: 0px 10px 10px 0; max-width: 186px;'>").attr("src",'http://35.227.24.94/'+user.foto_perfil));
             var $info = $("<div>").addClass("client-info")
@@ -4807,8 +4842,12 @@ function ProximaEtapaBusca ()
     String.prototype.capitalize = function() {
         return this.charAt(0).toUpperCase() + this.slice(1);
     };
-    }
-  } 
+  }
+  }
+
+  function abre_lista_busca() {
+      document.getElementById('busca_crush').click();
+  }  
 
 //funcao para começar uma nova busca 
 function nova_busca () 
@@ -4830,6 +4869,9 @@ function nova_busca ()
   
     $('#campodebusca1').css({
       'display': 'block'
+    });
+    $('#forme_busca').each (function(){
+      this.reset();
     });
   }
 
@@ -4871,8 +4913,8 @@ var cont_vistas = 0;
               "F" : "ListaVisita",
               "id" : Duser[0].id,
               }
-            }).done(function(data){        
-              if (data == '[]') {
+            }).done(function(data){     
+              if (JSON.parse(data) == "") {
                 $('#limpavisitas').css({"display":"none"});
                 $('#frase_visita').css({"display":"block"});
               }else {
@@ -4911,7 +4953,7 @@ var cont_vistas = 0;
       }); 
         }
         
-         setTimeout(lista_visitas,2000); 
+         setTimeout(lista_visitas,60000); 
     }
 
 //funcao para excluir a conta 
@@ -4985,20 +5027,21 @@ function trocar_senha ()
               "receptor" : id_receptor
             },
           }).done(function(retorno){ 
-                  if (retorno == id_receptor) {
+                  if (parseFloat(retorno) == parseFloat(id_receptor)) {
                     app.dialog.alert('','Esta pessoa te bloqueou');
                    } else {
-                     if (retorno == 0 || retorno == null) {
+                     if (parseFloat(retorno) == 0 || retorno == null) {
                           app.dialog.confirm('','Deseja bloquear este perfil ?', function () {
                           block_desblock(id);
-                           $('#bloqueia_perfil').html('<i class="fa fa-unlock-alt" aria-hidden="true"></i>&nbsp;Desbloquear perfil'); 
-                      });     
-                    }else {
-                      if (retorno == id) {
-                        app.dialog.confirm('','Deseja desbloquear este perfil ?', function () {
-                          block_desblock(0);
-                          $('#bloqueia_perfil').html('<i class="fa fa-lock" aria-hidden="true"></i>&nbsp;Desbloquear perfil');});       
-                         }
+                          $('#bloqueia_perfil').html('<i class="fa fa-unlock-alt" aria-hidden="true"></i>&nbsp;Desbloquear perfil'); 
+                        });
+                      }    
+                        if(parseFloat(retorno) == parseFloat(id)) {
+                          app.dialog.confirm('','Deseja desbloquear este perfil ?', function () {
+                            block_desblock(0);
+                            $('#bloqueia_perfil').html('<i class="fa fa-lock" aria-hidden="true"></i>&nbsp;Desbloquear perfil');
+                          });       
+                         
                        }
                      }       
                 }).fail(function(jqXHR, textStatus, msg){
@@ -5049,15 +5092,15 @@ function busca_bloqueio ()
               "receptor" : id_receptor
             },
            }).done(function(retorno){ 
-                  if (retorno == id_receptor) {
+                  if (parseFloat(retorno) == parseFloat(id_receptor)) {
                     app.dialog.alert('','Esta pessoa te bloqueou');
                     $('#bloqueia_perfil').css({'display':'none'});
                    } else {
-                     if (retorno == id || retorno == 0 || retorno == null) {
+                     if (parseFloat(retorno) == parseFloat(id) || parseFloat(retorno) == 0 || parseFloat(retorno) == null) {
                           $('#bloqueia_perfil').css({'display':'block'});
                       }     
                     }
-                  if (retorno == id) {
+                  if (parseFloat(retorno) == parseFloat(id)) {
                       $('#bloqueia_perfil').html('<i class="fa fa-unlock-alt" aria-hidden="true"></i>&nbsp;Desbloquear perfil');            
                       }
                         
@@ -5090,15 +5133,15 @@ function busca_bloqueio ()
               $("#curso_usuario").html('<i class="fa fa-graduation-cap" aria-hidden="true"></i><br>'+dados[0].curso);
               $("#est_civil_usuario").html('<i class="fa fa-heart" aria-hidden="true"></i><br>'+dados[0].estado_c);
               $("#intere_usuario").html('<i class="fa fa-heart-o" aria-hidden="true"></i><br>'+dados[0].sexo);
-              $("#foto_perfil_msg").html('<img src="http://35.227.24.94/request.php'+dados[0].foto_perfil+'">');
+              $("#foto_perfil_msg").html('<img src="http://35.227.24.94/'+dados[0].foto_perfil+'">');
               $("#nome_perfil_msg").html(dados[0].nome);
-
+              diminui_nome_msg();
               if (dados[0].biografia == '' || dados[0].biografia == null)
                 $("#biograf_usuario").html('');
               else
                 $("#biograf_usuario").html('<p class="user_biografia"><i class="fa fa-book" aria-hidden="true"></i><br>Status<br>'+emojione.shortnameToUnicode(dados[0].biografia));
                $('#fecha_msg').html('<a id="close_msg" class="link popup-close"></a>'); 
-               $('#volta_grade_pessoas').html('<a class="link popup-close f7-icons" id="fecha_perfil_visitado" href="#" style="position: absolute; top: 4px; left: 8px; z-index:9999; font-size: 25px; color: white;" onclick="volta_msg();">close</a>'); 
+               $('#volta_grade_pessoas').html('<a class="link popup-close f7-icons" id="fecha_perfil_visitado" href="#" style="position: absolute; top: 4px; padding:10px; left: 8px; z-index:9999; font-size: 25px; color: white;" onclick="volta_msg();">close</a>'); 
                 document.getElementById('close_msg').click();
               document.getElementById('perfil_usuarios').click();
 
@@ -5198,6 +5241,58 @@ function EnviaMelhoria () {
      }); 
 }
 
+// $(document).ready(function(){
+//     var titulo = $('.titulo_spotted').width();
+//     var cabecalho = $('#cabecalho_inicio').width();
+//     var bars = $('#bars').width();
+//     var tam = (((cabecalho - (titulo+bars))/2)-bars);
+//     $('.titulo_spotted').css(
+//       {'margin-left':tam+'px'}
+//     );
+// });
+
+
+
+//funcao para cancelar busca por usuarios 
+function cancela_busca () 
+  {
+   if (probusca > 0) {
+    probusca = 0;
+    $('#campodebusca1').css({
+      'display': 'block'
+    });
+    $('#campodebusca2').css({
+      'display': 'none'
+    });
+    $('#campodebusca2').css({
+      'display': 'none'
+    });
+    $('#campodebusca3').css({
+      'display': 'none'
+    });
+    $('#campodebusca3').css({
+      'display': 'none'
+    });
+    $('#campodebusca4').css({
+        'display': 'none'
+    });
+    $('#campodebusca5').css({
+        'display': 'none'
+    });
+   }
+   document.getElementById('close_janela_busca').click();
+  }
+
+
+  function diminui_nome_msg ()  
+    {
+     var nome = $('#nome_perfil_msg').html();
+       if (nome.length >= 20) 
+        {
+          nome = nome.substring(0,20)+'...';
+        }
+      $('#nome_perfil_msg').html(nome);
+    }
 
 </script>
   </body>
