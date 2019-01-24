@@ -1,0 +1,2413 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags-->
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="js/jquery.js"></script>
+    <script src="js/croppie.js"></script>
+
+    <!-- Color theme for statusbar -->
+    <meta name="theme-color" content="#2196f3">
+
+    <!-- Path to Framework7 Library CSS -->
+    <link rel="stylesheet" href="css/framework7.css">
+    <link rel="stylesheet" href="css/framework7.md.css">
+    <!-- croppie -->
+    <link rel="stylesheet" href="css/croppie.css">
+    
+    <!--fontes do google-->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet"> logo spotted--> 
+    <!-- <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">-subtitulo parte(busca)--> 
+    <script src="https://github.com/lazd/iNoBounce/blob/master/inobounce.min.js"></script>
+    <script src="https://use.fontawesome.com/a33705502a.js"></script>
+
+
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <link rel="stylesheet" href="css\icons\framework7icons.css">
+    <script type="text/javascript" src="cordova.js"></script>
+    
+    <!-- jsgrid  -->
+    <link type="text/css" rel="stylesheet" href="grade/jsgrid.css" />
+    <link type="text/css" rel="stylesheet" href="grade/jsgrid-theme.css" />
+    <script type="text/javascript" src="grade/jsgrid.js"></script>
+  
+    <!--uikit-->
+    <script src="js/uikit.js"></script>
+    <link rel="stylesheet" href="css/uikit.css" type="text/css">
+      
+
+    <script src="https://cdn.jsdelivr.net/npm/emojione@4.0.0/lib/js/emojione.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/emojione@4.0.0/extras/css/emojione.min.css"/>
+   
+    <!-- arquivo css principal -->
+    <link rel="stylesheet" href="css/app.css"/>
+  
+  </head>
+  <body>
+
+ <main id="inicio" style="display: none"> 
+
+   <div data-page="index" class="page">
+    <div class="page-content">
+      <p  href="#"  data-popup=".new_universidade" id="criar" class="link popup-open col add_universidade">+ <i class="fa fa-university" aria-hidden="true"></i></p>
+      <div class="popup new_universidade"> 
+        <div class="view">
+          <div class="page">
+            <div class="navbar">
+              <div class="navbar-inner">
+                <div class="title">Incluir universidade</div>
+                <div class="right">
+                  <a class="link popup-close">Voltar</a>
+                </div>
+              </div>
+            </div>
+            <div class="page-content">
+            <div data-page="index" class="page">
+              <div class="page-content">
+                 <p style="font-size: 23px; text-align: center; margin-top: 20px;">
+                  <i class="fa fa-search" aria-hidden="true" style="color: grey;"></i>
+                  <i class="fa fa-plus" aria-hidden="true" style="color: grey;"></i>
+                  <i class="fa fa-heart" aria-hidden="true"style="color: red;"></i>
+                 </p>
+                 <p class="frase_nova_universidade">
+                 Se você pretende criar uma conta no spotted, mas sua universidade não consta em nosso banco de dados, por favor envie o nome da sua universidade no campo abaixo.Acreditamos que no período de 30 min sua universidade estará no spotted.</p>
+               <textarea placeholder="Digite sua universidade" rows="2" class="textarea_sugestao" style="margin:20px; width: 88%; font-size:18px" id="textareauniversidade"></textarea>
+                <center>
+              <button type="button" class="col button button-fill button-round" style="width: 50%;" onclick="Enviauniversidade()">Enviar</button>
+              </div>
+            </div>
+          </div>
+            </div>
+
+          </div>
+        </div>
+      
+     <!-- start window login -->
+     <p id="titulo">Spotted</p>
+      <!-- login -->
+      <div class="list no-hairlines-md" id="login">
+        <ul>
+          <li class="item-content item-input">
+            <div class="item">
+              <i class="icon demo-list-icon"></i>
+            </div>
+            <div class="item-inner">
+              <div class="item-title item-floating-label">E-mail</div>
+              <div class="item-input-wrap">
+                  <input type="text" placeholder="E-mail" id="email_user">
+                <span class="input-clear-button"></span>
+              </div>
+            </div>
+          </li>
+          <li class="item-content item-input">
+            <div class="item">
+              <i class="icon demo-list-icon"></i>
+            </div>
+            <div class="item-inner">
+              <div class="item-title item-floating-label">Senha</div>
+              <div class="item-input-wrap">
+                <input type="password" placeholder="Senha" id="senha_user">
+                <span class="input-clear-button"></span>
+              </div>
+            </div>
+          </li>
+          </ul>
+          <p class="recupera_senha"><a class="link popup-open" href="#" data-popup=".esqueceu-senha">Esqueceu a senha?</a></p>
+        </div>
+      <!-- button of login or create a account-->
+       <div class="block" id="buttonss">
+          <p>
+            <!-- <a href="feed.html" class="link external">teste</a> -->
+           <button class="col button button-big button-fill" onclick="login()">Entrar</button>
+          </p>
+          <p class="row">
+            <button href="#"  data-popup=".my-popup" id="criar" class="link popup-open col button button-big" style="background-color: rgba(245, 241, 241, 0.993)">
+              Criar conta
+            </button>
+          </p>
+       </div>
+    </div>
+  </div>
+
+<!-- window to new passsword -->
+<div class="popup esqueceu-senha">
+  <div class="view">
+    <div class="page">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="title">Redefinir sua senha</div>
+          <div class="right">
+            <a class="link popup-close">Voltar</a>
+          </div>
+        </div>
+      </div>
+          <div class="page-content">
+            <div data-page="index" class="page">
+              <div class="page-content">
+                <p style="font-size: 22px;color: grey; margin-top: 20px; text-align: center;">
+                  <i class="fa fa-envelope" aria-hidden="true" style="color: purple"></i>
+                  <i class="fa"><b>=</b></i>
+                  <i class="fa fa-unlock" aria-hidden="true" style="color: orange"></i>
+                </p>
+                  <p style="margin: 15px; font-size:18px;">
+                    &nbsp;Insira seu E-mail para redefinir sua senha de acesso. 
+                    Fique atento, pois iremos lhe enviar uma e-mail para que você possa redefinir sua senha.</h3>
+                      
+                <div class="list no-hairlines-md">
+                      <ul>
+                        <li class="item-content item-input" id="eviar_email">
+                          <div class="item">
+                            <i class="icon demo-list-icon"></i>
+                          </div>
+                          <div class="item-inner">
+                            <div class="item-title item-label">* Seu E-mail.</div>
+                            <div class="item-input-wrap">
+                             <input type="text" id="envia_email">
+                            </div>
+                          </div>
+                        </li>                          
+                      <div class="block">
+                          <p class="row">
+                            <a class="popup-open" href="#" data-popup=".popup-dados_caracteristicas" id="dados_caracteristicas"></a>
+                            <button class="col button button-big col button button-fill color-blue" onclick="TrocarSenha()" id="space_but">Próximo</button>
+                          </p>
+                      </div>
+               </ul>
+             </div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- window to create account -->
+<div class="popup my-popup">
+  <div class="view">
+    <div class="page">
+      <div class="navbar">
+        <div class="navbar-inner" style="background-color: #2196f3; color: white">
+          <div class="title">Criar Conta</div>
+          <div class="right" id="voltar">
+            <a class="link popup-close">Voltar</a>
+          </div>
+        </div>
+      </div>
+      <div>
+         <div data-page="index" class="page">
+           <div class="page-content">
+            <div>
+
+             <div class="subnavbar-inner" style="margin-top: -10px; width: 100%">
+                <div class="segmented" style="display: none">
+                  <a class="button tab-link" href="#tab1"></a> 
+                  <a class="button tab-link" href="#tab2" id="tabe2"></a> 
+                  <a class="button tab-link" href="#tab3" id="tabe3"></a>
+                  <a class="button tab-link" href="#tab4" id="tabe4"></a>
+                  <a class="button tab-link" href="#tab5" id="tabe5"></a>
+                </div>
+              </div>
+
+        <div class="page-content hide-navbar-on-scroll">
+          <div class="tabs">
+            <div class="tab tab-active list" id="tab1">
+              <div class="block">
+                <div id="pass_one">
+                  <ul>
+                      <li class="item-content item-input" id="itens">
+                        <!-- estado onde a pessoa mora-->
+                        <div class="item-inner">
+                          <div class="item-title item-label"><h4>* Estado onde você mora.</h4></div>
+                          <div class="item-input-wrap">
+                            <select id="estado_m">
+                                <option value="0">Selecione o Estado onde você mora.</option>
+                                <option value="1">AC</option>
+                                <option value="2">AL</option>
+                                <option value="3">AM</option>
+                                <option value="4">AP</option>
+                                <option value="5">BA</option>
+                                <option value="6">CE</option>
+                                <option value="7">DF</option>
+                                <option value="8">ES</option>
+                                <option value="9">GO</option>
+                                <option value="10">MA</option>
+                                <option value="11">MG</option>
+                                <option value="12">MS</option>
+                                <option value="13">MT</option>
+                                <option value="14">PA</option>
+                                <option value="15">PB</option>
+                                <option value="16">PE</option>
+                                <option value="17">PI</option>
+                                <option value="18">PR</option>
+                                <option value="19">RJ</option>
+                                <option value="20">RN</option>
+                                <option value="21">RO</option>
+                                <option value="22">RR</option>
+                                <option value="23">RS</option>
+                                <option value="24">SC</option>
+                                <option value="25">SE</option>
+                                <option value="26">SP</option>
+                                <option value="27">TO</option>
+                            </select>
+                          </div>
+                        </div>
+                      </li>
+                      <div id="space_line"></div>
+                      <li class="item-content item-input"  id="itens">
+                        <div class="item">
+                          <i class="icon demo-list-icon"></i>
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title item-label"><h4>* Cidade onde você mora.</h4></div>
+                          <div class="item-input-wrap">
+                            <select id="cidade_m">
+                                <option value='0'>Selecione a Cidade onde você mora  .</option>;
+                            </select>
+                          </div>
+                        </div>
+                      </li>
+                      <div id="space_line"></div>
+                     <li class="item-content item-input"  id="itens">
+                      <div class="item">
+                        <i class="icon demo-list-icon"></i>
+                      </div>
+                      <!--estado onde a pessoa estudo-->
+                      <div class="item-inner">
+                        <div class="item-title item-label"><h4>* Estado onde você estuda.</h4></div>
+                        <div class="item-input-wrap">
+                          <select id="estado_e">
+                              <option value="0">Selecione o Estado onde você estuda.</option>
+                              <option value="1">AC</option>
+                              <option value="2">AL</option>
+                              <option value="3">AM</option>
+                              <option value="4">AP</option>
+                              <option value="5">BA</option>
+                              <option value="6">CE</option>
+                              <option value="7">DF</option>
+                              <option value="8">ES</option>
+                              <option value="9">GO</option>
+                              <option value="10">MA</option>
+                              <option value="11">MG</option>
+                              <option value="12">MS</option>
+                              <option value="13">MT</option>
+                              <option value="14">PA</option>
+                              <option value="15">PB</option>
+                              <option value="16">PE</option>
+                              <option value="17">PI</option>
+                              <option value="18">PR</option>
+                              <option value="19">RJ</option>
+                              <option value="20">RN</option>
+                              <option value="21">RO</option>
+                              <option value="22">RR</option>
+                              <option value="23">RS</option>
+                              <option value="24">SC</option>
+                              <option value="25">SE</option>
+                              <option value="26">SP</option>
+                              <option value="27">TO</option>
+                          </select>
+                        </div>
+                      </div>
+                    </li> 
+                    <div id="space_line"></div>
+                    <li class="item-content item-input" id="itens">
+                      <div class="item">
+                        <i class="icon demo-list-icon"></i>
+                      </div>
+                      <div class="item-inner">
+                        <div class="item-title item-label"><h4>* Cidade onde você estuda.</h4></div>
+                        <div class="item-input-wrap">
+                          <select id="cidade_e">
+                              <option value='0'>Selecione a Cidade onde você estuda.</option>;
+                          </select>
+                        </div>
+                      </div>
+                    </li>
+                    <div id="space_line"></div>
+                    <li class="item-content item-input" id="itens">
+                        <div class="item">
+                          <i class="icon demo-list-icon"></i>
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title item-label"><h5>* Universidade onde você estuda.</h5></div>
+                          <div class="item-input-wrap">
+                            <select id="univer">
+                              <option value='0'>Selecione a Cidade onde você estuda.</option>
+                            </select>
+                          </div>
+                        </div>
+                      </li>
+                      <div id="space_line"></div>
+                      <li class="item-content item-input" id="itens">
+                        <div class="item">
+                          <i class="icon demo-list-icon"></i>
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title item-label"><h4>* O que você cursa?</h4></div>
+                          <div class="item-input-wrap">
+                            <select id="curso">
+                              <option value="0">Selecione seu curso</option>
+                                <optgroup label="Ciências biológicas e da Saúde">
+                                  <option>Biologia</option>
+                                  <option>Biologia marinha</option>
+                                  <option>Biomedicina</option>
+                                  <option>Botânica</option>
+                                  <option>Ciências Agrárias</option>
+                                  <option>Ciências Ambientais</option>
+                                  <option>Ciências Biológicas</option>
+                                  <option>Ciências da Saúde</option>
+                                  <option>Ciências do Meio Aquático</option>
+                                  <option>Ecologia</option>
+                                  <option>Educação física</option>
+                                  <option>Enfermagem</option>
+                                  <option>Fisioterapia</option>
+                                  <option>Fonoaudiologia</option>
+                                  <option>Gerontologia</option>
+                                  <option>Medicina</option>
+                                  <option>Medicina veterinária</option>
+                                  <option>Meteorologia</option>
+                                  <option>Microbiologia e Imunologia</option>
+                                  <option>Naturologia</option>
+                                  <option>Neurociência</option>
+                                  <option>Nutrição</option>
+                                  <option>Odontologia</option>
+                                  <option>Quiropraxia</option>
+                                  <option>Saúde Coletiva</option>
+                                  <option>Terapia ocupacional</option>
+                                  <option>Zootecnia</option>
+                                  <option>Aquacultura</option>
+                                  <option>Cafeicultura</option>
+                                  <option>Biotecnologia</option>
+                                  <option>Ciência dos Alimentos</option>
+                                  <option>Cosmetologia</option>
+                                  <option>Drenagem e Irrigação</option>
+                                  <option>Enologia</option>
+                                  <option>Fruticultura</option>
+                                  <option>Gestão de Recursos Hídricos</option>
+                                  <option>Horticultura</option>
+                                  <option>Meliponicultura</option>
+                                  <option>Oftálmica</option>
+                                  <option>Radiologia</option>
+                                  <option>Silvicultura</option>
+                                  <option>Sistemas Biomédicos</option>                            
+                                </optgroup>
+                                <optgroup label="Ciências Exatas">
+                                  <option>Agronomia</option>
+                                  <option>Astronomia</option>
+                                  <option>Bioengenharia</option>
+                                  <option>Biofísica</option>
+                                  <option>Ciências Contábeis</option>
+                                  <option>Ciência da Computação</option>
+                                  <option>Ciências Biomoleculares</option>
+                                  <option>Ciências Matemáticas da Terra</option>
+                                  <option>Ciências Naturais </option>
+                                  <option>Ciências Náuticas</option>
+                                  <option>Ciência & Tecnologia</option>
+                                  <option>Educação do Campo </option>
+                                  <option>Engenharia aeroespacial</option>
+                                  <option>Engenharia aeronáutica</option>
+                                  <option>Engenharia Agrícola</option>
+                                  <option>Engenharia de Alimentos</option>
+                                  <option>Engenharia Ambiental</option>
+                                  <option>Engenharia biomédica</option>
+                                  <option>Engenharia Cartográfica</option>
+                                  <option>Engenharia Civil</option>
+                                  <option>Engenharia de Computação</option>
+                                  <option>Engenharia de controle e automação</option>
+                                  <option>Engenharia Elétrica</option>
+                                  <option>Engenharia Física</option>
+                                  <option>Engenharia Florestal</option>
+                                  <option>Engenharia geológica</option>
+                                  <option>Engenharia Industrial Madeireira</option>
+                                  <option>Engenharia de manufatura</option>
+                                  <option>Engenharia de Materiais</option>
+                                  <option>Engenharia Mecânica</option>
+                                  <option>Engenharia Mecatrônica</option>
+                                  <option>Engenharia Metalúrgica</option>
+                                  <option>Engenharia Militar</option>
+                                  <option>Engenharia de Minas</option>
+                                  <option>Engenharia Naval e Oceânica</option>
+                                  <option>Engenharia Nuclear</option>
+                                  <option>Engenharia de Pesca</option>
+                                  <option>Engenharia de Petróleo</div>
+                                  <option>Engenharia de Produção</option>
+                                  <option>Engenharia Química</option>
+                                  <option>Engenharia Sanitária</option>
+                                  <option>Engenharia de Sistemas Eletrônicos</option>
+                                  <option>Engenharia de Software</option>
+                                  <option>Engenharia de Tecidos</option>
+                                  <option>Engenharia de Telecomunicações</option>
+                                  <option>Engenharia Têxtil</option>
+                                  <option>Estatística</option>
+                                  <option>Farmácia (ou Bioquímica)</option>
+                                  <option>Física</option>
+                                  <option>Física computacional</option>
+                                  <option>Física médica</option>
+                                  <option>Geofísica</option>
+                                  <option>Geologia</option>
+                                  <option>Geoprocessamento e Sensoriamento Remoto</option>
+                                  <option>Informática</option>
+                                  <option>Informática biomédica</option>
+                                  <option>Matemática</option>
+                                  <option>Matemática Aplicada</option>
+                                  <option>Matemática computacional</option>
+                                  <option>Nanotecnologia</option>
+                                  <option>Oceanografia </option>
+                                  <option>Química </option>
+                                  <option>Química ambiental</option>
+                                  <option>Química industrial</option>
+                                  <option>Sistemas de Informação</option>
+                                  <option>Agrimensura</option>
+                                  <option>Agroindústria</option>
+                                  <option>Análise e Desenvolvimento de Sistemas</option>
+                                  <option>Automação Industrial</option>
+                                  <option>Biocombustíveis</option>
+                                  <option>Ciências Aeronáuticas</option>
+                                  <option>Ciência dos materiais</option>
+                                  <option>Construção de Edifícios</option>
+                                  <option>Construção de Estradas</option>
+                                  <option>Construção Naval</option>
+                                  <option>Energias Renováveis</option>
+                                  <option>Gestão da Tecnologia da Informação</option>
+                                  <option>Gestão de Petróleo e Gás</option>
+                                  <option>Gestão Portuária</option>
+                                  <option>Manutenção Industrial</option>
+                                  <option>Mecatrônica e Mecânica de Precisão</option>
+                                  <option>Mineração</option>
+                                  <option>Processos Metalúrgicos</option>
+                                  <option>Processamento de Dados</option>
+                                  <option>Produção de Laticínios</option>
+                                  <option>Produção de Materiais Plásticos</option>
+                                  <option>Produção Têxtil</option>
+                                  <option>Produção Sucroalcooeira</option>
+                                  <option>Projetos de Estruturas Aeronáuticas</option>
+                                  <option>Redes de Computadores</option>
+                                  <option>Redes de Telecomunicações</option>
+                                  <option>Saneamento Ambiental</option>
+                                  <option>Segurança da Informação</option>
+                                  <option>Sistemas Biomédicos</option>
+                                  <option>Sistemas Elétricos</option>
+                                  <option>Sistemas Embarcados</option>
+                                  <option>Sistemas de Navegação Fluvial</option>
+                                  <option>Sistemas para Internet</option>
+                                  <option>Telemática</option>
+                                </optgroup>
+                                <optgroup label="Ciências Humanas">
+                                  <option>Administração</option>
+                                  <option>Antropologia</option>
+                                  <option>Arqueologia</option>
+                                  <option>Arquitetura</option>
+                                  <option>Arquivística</option>
+                                  <option>Artes Cênicas</option>
+                                  <option>Artes Visuais </option>
+                                  <option>Biblioteconomia</option>
+                                  <option>Ciências Atuariais</option>
+                                  <option>Ciências Contábeis</option>
+                                  <option>Ciências Humanas</option>
+                                  <option>Ciência Política (ou Ciências do Estado)</option>
+                                  <option>Ciências Sociais</option>
+                                  <option>Cinema</option>
+                                  <option>Comunicação social</option>
+                                  <option>Dança</option>
+                                  <option>Defesa e Gestão Estratégica Internacional</option>
+                                  <option>Desenho Industrial</option>
+                                  <option>Design de Interiores</option>
+                                  <option>Design de Moda</option>
+                                  <option>Direito</option>
+                                  <option>Economia</option>
+                                  <option>Economia Doméstica</option>
+                                  <option>Editoração</option>
+                                  <option>Educação Artística</option>
+                                  <option>Escultura</option>
+                                  <option>Filosofia </option>
+                                  <option>Gastronomia</option>
+                                  <option>Geografia</option>
+                                  <option>Gestão Ambiental</option>
+                                  <option>Gestão Pública</option>
+                                  <option>Gravurismo</option>
+                                  <option>História</option>
+                                  <option>História da Arte</option>
+                                  <option>Hotelaria</option>
+                                  <option>Jornalismo</option>
+                                  <option>Letras</option>
+                                  <option>Linguística</option>
+                                  <option>Museologia</option>
+                                  <option>Música</option>
+                                  <option>Ordenamento do Território</option>
+                                  <option>Paisagismo</option>
+                                  <option>Pedagogia</option>
+                                  <option>Pintura</option>
+                                  <option>Psicologia</option>
+                                  <option>Publicidade & Propaganda</option>
+                                  <option>Produção Audiovisual</option>
+                                  <option>Produção Cultural</option>
+                                  <option>Relações Internacionais</option>
+                                  <option>Relações Públicas</option>
+                                  <option>Segurança Pública</option>
+                                  <option>Serviço Social</option>
+                                  <option>Sociologia</option>
+                                  <option>Teatro</option>
+                                  <option>Teologia</option>
+                                  <option>Transporte Terrestre</option>
+                                  <option>Turismologia</option>
+                                  <option>Urbanismo</option>
+                                  <option>Agroecologia</option>
+                                  <option>Comércio Exterior</option>
+                                  <option>Cooperativismo</option>
+                                  <option>Design de Jogos Digitais</option>
+                                  <option>Design de produto</option>
+                                  <option>Design gráfico</option>
+                                  <option>Eventos</option>
+                                  <option>Esporte e Lazer</option>
+                                  <option>Fotografia</option>
+                                  <option>Gestão do Agronegócio</option>
+                                  <option>Gestão Comercial</option>
+                                  <option>Gestão Financeira</option>
+                                  <option>Gestão Hospitalar</option>
+                                  <option>Gestão de Segurança Privada</option>
+                                  <option>Gestão da Qualidade</option>
+                                  <option>Logística</option>
+                                  <option>Mercadologia</option>
+                                  <option>Negócios Imobiliários</option>
+                                  <option>Processos Escolares</option>
+                                  <option>Produção de Aguardente</option>
+                                  <option>Produção Fonográfica</option>
+                                  <option>Recursos Humanos</option>
+                                  <option>Secretariado</option>
+                                  <option>Segurança no Trabalho</option>
+                                  <option>Transporte Aéreo</option>
+                                  <option>Gestão em serviços jurídicos e notariais</option>
+                                    </optgroup>
+                              </select>
+                          </div>
+                        </div>
+                      </li>
+                        <div class="block">
+                          <p class="row">
+                             <a class="popup-open" href="#" data-popup=".popup-estuda" id="open_estuda"></a>
+                             <button class="col button button-big col button button-fill color-blue" onclick="nextstep()" id="space_but">Próximo</button></a>
+                          </p>
+                        </div>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="tab list" id="tab2">
+              <div class="block">
+                  <div id="pass_one">
+                  <ul id="dentro_ul">
+                     <div id="space_line"></div>
+                       <li class="item-content item-input" id="itens">
+                          <div class="item">
+                            <i class="icon demo-list-icon"></i>
+                          </div>
+                          <div class="item-inner">
+                            <div class="item-title item-label"><h4>* Nome</h4></div>
+                            <div class="item-input-wrap">
+                              <input type="text" placeholder="Insrira seu Nome" id="nome" maxlength="40">
+                              <span class="input-clear-button"></span>
+                            </div>
+                          </div>
+                        </li>
+                        <div id="space_line"></div>
+                        <li class="item-content item-input" id="itens">
+                            <div class="item">
+                              <i class="icon demo-list-icon"></i>
+                            </div>
+                            <div class="item-inner">
+                              <div class="item-title item-label"><h4>* E-mail</h4></div>
+                              <div class="item-input-wrap">
+                                <input type="email" placeholder="Insrira seu E-mail" id="email" maxlength="80">
+                                <span class="input-clear-button"></span>
+                              </div>
+                            </div>
+                          </li>
+                        <div id="space_line"></div>
+                        <li class="item-content item-input" id="itens">
+                          <div class="item">
+                            <i class="icon demo-list-icon"></i>
+                          </div>
+                          <div class="item-inner">
+                            <div class="item-title item-label"><h4>* Senha</h4></div>
+                            <small>A senha deve possuir entre 8 a 10 dígitos.</small>
+                            <div class="item-input-wrap">
+                              <input type="password" placeholder="Insrira uma Senha" id="senha" maxlength="10">
+                              <span class="input-clear-button"></span>
+                            </div>
+                          </div>
+                        </li>
+                        <div id="space_line"></div>
+                        <li class="item-content item-input" id="itens">
+                            <div class="item">
+                              <i class="icon demo-list-icon"></i>
+                            </div>
+                            <div class="item-inner">
+                              <div class="item-title item-label"><h4>* Interessado em</h4></div>
+                              <div class="item-input-wrap">
+                                <select id="sexo">
+                                  <option value="0">Interessado em</option>
+                                  <option value="Homens">Homens</option>
+                                  <option value="Mulheres">Mulheres</option>
+                                </select>
+                              </div>
+                            </div>
+                          </li>
+                          <div id="space_line"></div>
+                          <li class="item-content item-input" id="itens">
+                              <div class="item">
+                                <i class="icon demo-list-icon"></i>
+                              </div>
+                              <!--estado onde a pessoa estudo-->
+                              <div class="item-inner">
+                                <div class="item-title item-label"><h4>* Estado Civil.</h4></div>
+                                <div class="item-input-wrap">
+                                  <select id="estado_civil">
+                                      <option value="0">Estado Civil.</option>
+                                      <option value="Solteiro">Solteiro</option>
+                                      <option value="Em um relacionamento sério">Em um relacionamento sério</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </li>                          
+                          <div class="block">
+                              <p class="row">
+                                <a class="popup-open" href="#" data-popup=".popup-dados_caracteristicas" id="dados_caracteristicas"></a>
+                                <button class="col button button-big col button button-fill color-blue" onclick="nextstep2()" id="space_but">Próximo</button>
+                              </p>
+                          </div>
+                       </ul>
+                   </div>
+                </div>
+             </div>
+
+            <div class="tab list" id="tab3">
+              <div style="margin-top: -60px;">      
+                    <div id="quadro_cabelo" class="block">
+                      <p class="title_carac">Qual o tamanho do seu cabelo?</p>
+                          <label>
+                            <label class="radio">
+                            <input type="radio" id="cabelo" name="cabelo" value="curto" autofocus>
+                              <i class="icon-radio"></i>
+                            </label> 
+                             Curto
+                          </label>
+                        <div id="space_radio"></div>
+                          <label>
+                            <label class="radio">
+                              <input type="radio" id="cabelo" name="cabelo" value="medio">
+                              <i class="icon-radio"></i>
+                            </label> 
+                             Médio 
+                          </label>
+                        <div id="space_radio"></div>
+                          <label>
+                            <label class="radio">
+                              <input type="radio" name="cabelo" value="longo">
+                              <i class="icon-radio"></i>
+                            </label> 
+                           Longo
+                        </label>
+                      <div id="space_radio"></div>
+                    </div>
+                  <div id="space_line"></div>
+                    <div id="quadro_cabelo" class="block">
+                      <p class="title_carac">Cor do cabelo?</p>
+                        <label>
+                          <label class="radio">
+                            <input type="radio" name="cor_cabelo" value="claro">
+                            <i class="icon-radio"></i>
+                          </label> 
+                          Claro
+                        </label>
+                      <div id="space_radio"></div>
+                        <label>
+                          <label class="radio">
+                            <input type="radio" name="cor_cabelo" value="escuro">
+                            <i class="icon-radio"></i>
+                          </label>
+                          Escuro
+                        </label>
+                      <div id="space_radio"></div>
+                          <label>
+                          <label class="radio">
+                            <input type="radio" name="cor_cabelo" value="mista">
+                            <i class="icon-radio"></i>
+                          </label>
+                          Cor mista
+                        </label>
+                       <div id="space_radio"></div>
+                    </div>
+                  <div id="space_line"></div>
+                    <div id="quadro_cabelo" class="block">
+                      <p class="title_carac">Cor da pele ?</p>
+                        <label>
+                          <label class="radio">
+                            <input type="radio" name="pele" value="branca">
+                            <i class="icon-radio"></i>
+                          </label>
+                            Branca
+                        </label>
+                      <div id="space_radio"></div>
+                        <label>
+                          <label class="radio">
+                            <input type="radio" name="pele" value="negra">
+                            <i class="icon-radio"></i>
+                          </label> 
+                          Negra
+                        </label>
+                        <div id="space_radio"></div>
+                        <label>
+                          <label class="radio">
+                            <input type="radio" name="pele" value="parda">
+                            <i class="icon-radio"></i>
+                          </label> 
+                          Parda
+                        </label>
+                      <div id="space_radio"></div>
+                    </div>
+                  <div id="space_line"></div>
+                    <div id="quadro_cabelo" class="block">
+                      <p class="title_carac">Você usa relógio ?</p>
+                        <label>
+                          <label class="radio">
+                            <input type="radio" name="relogio" value="sim">
+                            <i class="icon-radio"></i>
+                          </label> 
+                          Sim
+                        </label>
+                      <div id="space_radio"></div>
+                        <label>
+                          <label class="radio">
+                            <input type="radio" name="relogio" value="nao">
+                            <i class="icon-radio"></i>
+                          </label>
+                          Não
+                        </label>
+                      <div id="space_radio"></div>
+                  </div>
+              <div id="space_line"></div>
+                <div id="quadro_cabelo" class="block">  
+                  <p class="title_carac">Utiliza aparelho dentário ?</p>
+                    <label>
+                      <label class="radio">
+                        <input type="radio" name="dente" value="sim">
+                        <i class="icon-radio"></i>
+                      </label> 
+                      Sim
+                    </label>
+                  <div id="space_radio"></div>
+                    <label>
+                      <label class="radio">
+                        <input type="radio" name="dente" value="nao">
+                        <i class="icon-radio"></i>
+                      </label>
+                      Não
+                    </label>
+                  <div id="space_radio"></div>
+              </div>
+              <div class="block">
+                <p class="row">
+                  <a class="popup-open" href="#" data-popup=".popup-dados_caracteristicas" id="dados_caracteristicas"></a>
+                  <button class="col button button-big col button button-fill color-blue" onclick="nextstep3()" id="space_but">Próximo</button>
+                </p>
+              </div>
+              </div>
+             </div>
+                <!-- inicio da foto de perfil -->
+                  <div class="tab list" id="tab4">
+                      <div class="" style="margin-top: -73px;">
+                            
+                              <div id="image_demo"></div> 
+                              <div class="row block"> 
+                                <label class="col button button-big col button button-fill color-blue" style="margin-bottom: 5px;">
+                                  Escolher foto
+                                  <input type="file" name="upload_image" id="upload_image" accept="image/png, image/jpeg" />
+                                </label>
+                              <button class="col button button-big col button button-fill color-blue btn btn-success crop_image">Proximo</button>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- inicio da foto da capa -->
+                  <div class="tab" id="tab5">
+                      <div style="margin-top: -50px;">
+                      
+                              <div id="image_demo_capa"></div> 
+                              <div class="row block">
+                              <label class="col button button-big col button button-fill color-blue" style="margin-bottom: 2px;">
+                                  Escolher foto
+                                  <input type="file" name="upload_image_capa" id="upload_image_capa" />
+                                </label>
+                                <button class="col button button-big col button button-fill color-blue btn btn-success crop_image_capa">Finalizar</button>
+                          </div> 
+                      </div>
+                    </div>
+                    <a class="uk-button uk-button-default" href="#modal-termos" uk-toggle id="modal_termos" style="display: none"></a>
+                    <div id="modal-termos" class="uk-flex-top" uk-modal style="z-index: 99999999;">
+                      <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical" style="border-radius: 9px">
+                        <span id="load_entrar"></span>
+                          <h3><b>Termos e privacidade</b></h3> 
+                          <p>O usuário fica ciente que os dados inseridos por ele ficam armazenados em nossos servidores. Dados como:<br>
+                          <b>Email; Senha; Foto de capa e perfil; Nome; Mensagens; Universidade que estuda; Curso; Estado civil; Status; Interesse</b></p>
+                          <p>Privacidade -  Alguns dos dados do usuário será visualizado por outros usuários tal como, nome;universidade;curso;estado civil;Status.Interesse;foto de perfil e de capa.
+                          -Mensagens trocadas entre você e outros usuários, serão visualizadas somente por vocês, nenhuma outra pessoa além do emissor da mensagem e o receptor poderão visualizar a mesma. 
+                        </p>
+                         <label>
+                          <div class="row"  onclick="aciona_termos()">
+                            <form name="form_termos">
+                              <label>
+                              <label class="checkbox">
+                                <input type="checkbox" name="aceito_termos"><i class="icon-checkbox"></i>
+                              </label>&nbsp;Aceitar e continuar
+                             </label>
+                           </form>
+                         <button type="button" class="col button button-big col button button-fill color-gray" style="background-color:> gray; width:100px" onclick="cadastra_usuario()" id="BotaoFimCadastro">
+                          Entrar
+                         </button>
+                       </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<!-- fim do login e criar conta -->
+<!-- inicio do feed -->
+<main id="feed" style="display:none">
+    <div class="page">
+        <div class="navbar" style='background-color: #2196f3; color: white'> 
+            <div class="row">
+                    <a class="link popover-open" href="#" data-popover=".popover-about" id="bars">
+                       <i class="f7-icons size-22" style='color:white'>bars</i>
+                    </a>
+                    <!-- titulo spotted--> 
+                    <div id="titulo_e_msg">
+                      <p class="titulo_spotted">Spotted</p>
+                    </div>
+                    
+                    <!-- <div id="titulo_msg" class=""></div> -->
+                    <a class="link popover-open" href="#" data-popover=".popover-visitas" id="alert_visitas">
+                      <label id="alert_visita"></label>
+                        <i class="f7-icons size-22" style='color:white'>bell_fill</i>
+                    </a>
+            </div>
+          
+        </div>
+         <div id="mostra_pessoas"> 
+            <div id="grade_pessoas"></div>
+         </div>
+         <!-- tela de mensagens  -->
+         <div id="mostra_lista_mensagem">    
+              
+        </div>
+        <!-- rodape  -->
+        <div class="height_rodape" style="position: absolute; bottom: 0; width: 100%; height: 50px;">
+          <div style="background-color: #2196f3;">
+            <div class="row" style="color: white; padding: 10px">
+              <i class="f7-icons"  id="lista_pessoas"  style="font-size: 30px; margin-left: 10%;">persons_round_fill</i>
+                  
+              <!-- lupa de busca  -->
+              <a class="popup-open" href="#" data-popup=".popup-busca" id="busca_crush">
+                 <i class="f7-icons" style="font-size: 30px; color: white;">search</i>  
+              </a>  
+              <i id="alert_new_msg" style="position:absolute; left:85%"></i>
+              <i class="f7-icons" id="lista_msg" onclick="lista_msg();" style=" font-size: 30px; margin-right: 10%;">chat_bubble_fill</i>     
+            
+            </div>
+          </div>
+      </div>
+
+      <!-- abre modal de busca  -->
+        <div class="popup popup-busca" > 
+          <div data-page="index" class="page">
+            <div class="page-content">
+              <div id="fundo_busca_crush" style="background-color: #4cadff; padding:1px; font-size:25px; box-shadow:2px 2px 2px silver;">
+              <p style="margin-bottom: 30px;">
+                <a class="link popup-close f7-icons" href="#"style="position: absolute; top: 2px; left: 4px; z-index:9999; font-size: 25px; color: white; padding:10px;" id="close_janela_busca">close</a>
+              </p>
+              <p class="titulo_buscador">Encontrar Pessoa</p>
+            </div>
+            <div style="width:95%; margin-left:5%; margin-bottom:-20px" class="uk-width-1-2@m uk-animation-slide-top repeat: true" id="msg_top_busca">
+              <p style="color: grey; padding:20px; font-size:17px;"><i style="color: #ffcd45" class="fa fa-hand-o-right" aria-hidden="true"></i>
+              Insira somente informações que você sabe sobre o crush, se você sabe click em próximo. Se não souber click não sei.</p>
+            </div> 
+            <form id="forme_busca">
+             <div style="position:relative;">
+              <div id="campodebusca1">
+                <ul>
+                  <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush1">
+                    <!-- estado onde a pessoa mora-->
+                      <div class="item-inner">
+                        <div class="item-title item-label"><h4>&nbsp;Estado onde a pessoa mora.</h4></div>
+                        <div class="item-input-wrap">
+                          <select id="estado_m_busca" style="padding: 10px">
+                              <option value="0">Selecione o Estado.</option>
+                              <option value="1">AC</option>
+                              <option value="2">AL</option>
+                              <option value="3">AM</option>
+                              <option value="4">AP</option>
+                              <option value="5">BA</option>
+                              <option value="6">CE</option>
+                              <option value="7">DF</option>
+                              <option value="8">ES</option>
+                              <option value="9">GO</option>
+                              <option value="10">MA</option>
+                              <option value="11">MG</option>
+                              <option value="12">MS</option>
+                              <option value="13">MT</option>
+                              <option value="14">PA</option>
+                              <option value="15">PB</option>
+                              <option value="16">PE</option>
+                              <option value="17">PI</option>
+                              <option value="18">PR</option>
+                              <option value="19">RJ</option>
+                              <option value="20">RN</option>
+                              <option value="21">RO</option>
+                              <option value="22">RR</option>
+                              <option value="23">RS</option>
+                              <option value="24">SC</option>
+                              <option value="25">SE</option>
+                              <option value="26">SP</option>
+                              <option value="27">TO</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="padding_checkbox_busca">
+                          <label>
+                            <label class="checkbox">
+                              <input type="checkbox"><i class="icon-checkbox"></i>
+                            </label>&nbsp;Não sei
+                          </label>
+                     </div>
+                  </li>  
+                  <br>
+                  <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush2">
+                      <div class="item-inner">
+                        <div class="item-title item-label"><h4>&nbsp;Cidade onde a pessoa mora.</h4></div>
+                        <div class="item-input-wrap">
+                          <select id="cidade_m_busca" style="padding: 10px">
+                              <option value='0'>Selecione a Cidade.</option>;
+                          </select>
+                        </div>
+                      </div>
+                       <div class="padding_checkbox_busca">
+                          <label>
+                            <label class="checkbox">
+                              <input type="checkbox"><i class="icon-checkbox"></i>
+                            </label>&nbsp;Não sei
+                          </label>
+                     </div>
+                    </li>
+                  </ul>
+                 </div>
+                 <!-- fim de campo de busca 1 -->
+
+                 <!-- começo de campo de busca 2 -->
+                 <div id="campodebusca2">
+                  <ul>
+                      <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush3">
+                        <!-- estado onde a pessoa mora-->
+                        <div class="item-inner">
+                          <div class="item-title item-label"><h4>&nbsp;Estado onde a pessoa estuda.</h4></div>
+                          <div class="item-input-wrap">
+                            <select id="estado_e_busca" style="padding: 10px">
+                                <option value="0">Selecione o Estado.</option>
+                                <option value="1">AC</option>
+                                <option value="2">AL</option>
+                                <option value="3">AM</option>
+                                <option value="4">AP</option>
+                                <option value="5">BA</option>
+                                <option value="6">CE</option>
+                                <option value="7">DF</option>
+                                <option value="8">ES</option>
+                                <option value="9">GO</option>
+                                <option value="10">MA</option>
+                                <option value="11">MG</option>
+                                <option value="12">MS</option>
+                                <option value="13">MT</option>
+                                <option value="14">PA</option>
+                                <option value="15">PB</option>
+                                <option value="16">PE</option>
+                                <option value="17">PI</option>
+                                <option value="18">PR</option>
+                                <option value="19">RJ</option>
+                                <option value="20">RN</option>
+                                <option value="21">RO</option>
+                                <option value="22">RR</option>
+                                <option value="23">RS</option>
+                                <option value="24">SC</option>
+                                <option value="25">SE</option>
+                                <option value="26">SP</option>
+                                <option value="27">TO</option>
+                            </select>
+                          </div>
+                        </div>
+                         <div class="padding_checkbox_busca">
+                          <label>
+                            <label class="checkbox">
+                              <input type="checkbox"><i class="icon-checkbox"></i>
+                            </label>&nbsp;Não sei
+                          </label>
+                         </div>
+                      </li>
+                      <br>
+                      <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush4">
+                        <div class="item-inner">
+                          <div class="item-title item-label"><h4>&nbsp;Cidade onde a pessoa estuda.</h4></div>
+                          <div class="item-input-wrap">
+                            <select id="cidade_e_busca" style="padding: 10px">
+                                <option value='0'>Selecione a Cidade.</option>;
+                            </select>
+                          </div>
+                        </div>
+                         <div class="padding_checkbox_busca">
+                          <label>
+                            <label class="checkbox">
+                              <input type="checkbox"><i class="icon-checkbox"></i>
+                            </label>&nbsp;Não sei
+                          </label>
+                        </div>
+                      </li>
+                    </ul>
+                 </div>
+                   
+                 <!-- começo de campo de busca 2 -->
+                 <div id="campodebusca3">
+                  <ul>
+                      <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush5">
+                          <div class="item-inner">
+                              <div class="item-title item-label">
+                                  <h5>&nbsp;Universidade onde a pesssoa estuda.</h5></div>
+                              <div class="item-input-wrap">
+                                  <select id="univer_busca" style="padding: 10px">
+                                    <option value='0'>Selecione a universidade da pessoa.</option>  
+                                  </select>
+                              </div>
+                          </div>
+                          <div class="padding_checkbox_busca">
+                              <label>
+                                  <label class="checkbox">
+                                      <input type="checkbox"><i class="icon-checkbox"></i>
+                                  </label>&nbsp;Não sei
+                              </label>
+                          </div>
+                      </li>
+                      <br>
+                      <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush6">
+                          <div class="item-inner">
+                              <div class="item-title item-label">
+                                  <h4>&nbsp;O que a pessoa cursa?</h4></div>
+                              <div class="item-input-wrap">
+                                  <select id="curso_busca" style="padding: 10px">
+                                      <option value="0">Selecione seu curso</option>
+                                      <optgroup label="Ciências biológicas e da Saúde">
+                                          <option>Biologia</option>
+                                          <option>Biologia marinha</option>
+                                          <option>Biomedicina</option>
+                                          <option>Botânica</option>
+                                          <option>Ciências Agrárias</option>
+                                          <option>Ciências Ambientais</option>
+                                          <option>Ciências Biológicas</option>
+                                          <option>Ciências da Saúde</option>
+                                          <option>Ciências do Meio Aquático</option>
+                                          <option>Ecologia</option>
+                                          <option>Educação física</option>
+                                          <option>Enfermagem</option>
+                                          <option>Fisioterapia</option>
+                                          <option>Fonoaudiologia</option>
+                                          <option>Gerontologia</option>
+                                          <option>Medicina</option>
+                                          <option>Medicina veterinária</option>
+                                          <option>Meteorologia</option>
+                                          <option>Microbiologia e Imunologia</option>
+                                          <option>Naturologia</option>
+                                          <option>Neurociência</option>
+                                          <option>Nutrição</option>
+                                          <option>Odontologia</option>
+                                          <option>Quiropraxia</option>
+                                          <option>Saúde Coletiva</option>
+                                          <option>Terapia ocupacional</option>
+                                          <option>Zootecnia</option>
+                                          <option>Aquacultura</option>
+                                          <option>Cafeicultura</option>
+                                          <option>Biotecnologia</option>
+                                          <option>Ciência dos Alimentos</option>
+                                          <option>Cosmetologia</option>
+                                          <option>Drenagem e Irrigação</option>
+                                          <option>Enologia</option>
+                                          <option>Fruticultura</option>
+                                          <option>Gestão de Recursos Hídricos</option>
+                                          <option>Horticultura</option>
+                                          <option>Meliponicultura</option>
+                                          <option>Oftálmica</option>
+                                          <option>Radiologia</option>
+                                          <option>Silvicultura</option>
+                                          <option>Sistemas Biomédicos</option>
+                                      </optgroup>
+                                      <optgroup label="Ciências Exatas">
+                                          <option>Agronomia</option>
+                                          <option>Astronomia</option>
+                                          <option>Bioengenharia</option>
+                                          <option>Biofísica</option>
+                                          <option>Ciências Contábeis</option>
+                                          <option>Ciência da Computação</option>
+                                          <option>Ciências Biomoleculares</option>
+                                          <option>Ciências Matemáticas da Terra</option>
+                                          <option>Ciências Naturais </option>
+                                          <option>Ciências Náuticas</option>
+                                          <option>Ciência & Tecnologia</option>
+                                          <option>Educação do Campo </option>
+                                          <option>Engenharia aeroespacial</option>
+                                          <option>Engenharia aeronáutica</option>
+                                          <option>Engenharia Agrícola</option>
+                                          <option>Engenharia de Alimentos</option>
+                                          <option>Engenharia Ambiental</option>
+                                          <option>Engenharia biomédica</option>
+                                          <option>Engenharia Cartográfica</option>
+                                          <option>Engenharia Civil</option>
+                                          <option>Engenharia de Computação</option>
+                                          <option>Engenharia de controle e automação</option>
+                                          <option>Engenharia Elétrica</option>
+                                          <option>Engenharia Física</option>
+                                          <option>Engenharia Florestal</option>
+                                          <option>Engenharia geológica</option>
+                                          <option>Engenharia Industrial Madeireira</option>
+                                          <option>Engenharia de manufatura</option>
+                                          <option>Engenharia de Materiais</option>
+                                          <option>Engenharia Mecânica</option>
+                                          <option>Engenharia Mecatrônica</option>
+                                          <option>Engenharia Metalúrgica</option>
+                                          <option>Engenharia Militar</option>
+                                          <option>Engenharia de Minas</option>
+                                          <option>Engenharia Naval e Oceânica</option>
+                                          <option>Engenharia Nuclear</option>
+                                          <option>Engenharia de Pesca</option>
+                                          <option>Engenharia de Petróleo</option>
+                                          <option>Engenharia de Produção</option>
+                                          <option>Engenharia Química</option>
+                                          <option>Engenharia Sanitária</option>
+                                          <option>Engenharia de Sistemas Eletrônicos</option>
+                                          <option>Engenharia de Software</option>
+                                          <option>Engenharia de Tecidos</option>
+                                          <option>Engenharia de Telecomunicações</option>
+                                          <option>Engenharia Têxtil</option>
+                                          <option>Estatística</option>
+                                          <option>Farmácia (ou Bioquímica)</option>
+                                          <option>Física</option>
+                                          <option>Física computacional</option>
+                                          <option>Física médica</option>
+                                          <option>Geofísica</option>
+                                          <option>Geologia</option>
+                                          <option>Geoprocessamento e Sensoriamento Remoto</option>
+                                          <option>Informática</option>
+                                          <option>Informática biomédica</option>
+                                          <option>Matemática</option>
+                                          <option>Matemática Aplicada</option>
+                                          <option>Matemática computacional</option>
+                                          <option>Nanotecnologia</option>
+                                          <option>Oceanografia </option>
+                                          <option>Química </option>
+                                          <option>Química ambiental</option>
+                                          <option>Química industrial</option>
+                                          <option>Sistemas de Informação</option>
+                                          <option>Agrimensura</option>
+                                          <option>Agroindústria</option>
+                                          <option>Análise e Desenvolvimento de Sistemas</option>
+                                          <option>Automação Industrial</option>
+                                          <option>Biocombustíveis</option>
+                                          <option>Ciências Aeronáuticas</option>
+                                          <option>Ciência dos materiais</option>
+                                          <option>Construção de Edifícios</option>
+                                          <option>Construção de Estradas</option>
+                                          <option>Construção Naval</option>
+                                          <option>Energias Renováveis</option>
+                                          <option>Gestão da Tecnologia da Informação</option>
+                                          <option>Gestão de Petróleo e Gás</option>
+                                          <option>Gestão Portuária</option>
+                                          <option>Manutenção Industrial</option>
+                                          <option>Mecatrônica e Mecânica de Precisão</option>
+                                          <option>Mineração</option>
+                                          <option>Processos Metalúrgicos</option>
+                                          <option>Processamento de Dados</option>
+                                          <option>Produção de Laticínios</option>
+                                          <option>Produção de Materiais Plásticos</option>
+                                          <option>Produção Têxtil</option>
+                                          <option>Produção Sucroalcooeira</option>
+                                          <option>Projetos de Estruturas Aeronáuticas</option>
+                                          <option>Redes de Computadores</option>
+                                          <option>Redes de Telecomunicações</option>
+                                          <option>Saneamento Ambiental</option>
+                                          <option>Segurança da Informação</option>
+                                          <option>Sistemas Biomédicos</option>
+                                          <option>Sistemas Elétricos</option>
+                                          <option>Sistemas Embarcados</option>
+                                          <option>Sistemas de Navegação Fluvial</option>
+                                          <option>Sistemas para Internet</option>
+                                          <option>Telemática</option>
+                                      </optgroup>
+                                      <optgroup label="Ciências Humanas">
+                                          <option>Administração</option>
+                                          <option>Antropologia</option>
+                                          <option>Arqueologia</option>
+                                          <option>Arquitetura</option>
+                                          <option>Arquivística</option>
+                                          <option>Artes Cênicas</option>
+                                          <option>Artes Visuais </option>
+                                          <option>Biblioteconomia</option>
+                                          <option>Ciências Atuariais</option>
+                                          <option>Ciências Contábeis</option>
+                                          <option>Ciências Humanas</option>
+                                          <option>Ciência Política (ou Ciências do Estado)</option>
+                                          <option>Ciências Sociais</option>
+                                          <option>Cinema</option>
+                                          <option>Comunicação social</option>
+                                          <option>Dança</option>
+                                          <option>Defesa e Gestão Estratégica Internacional</option>
+                                          <option>Desenho Industrial</option>
+                                          <option>Design de Interiores</option>
+                                          <option>Design de Moda</option>
+                                          <option>Direito</option>
+                                          <option>Economia</option>
+                                          <option>Economia Doméstica</option>
+                                          <option>Editoração</option>
+                                          <option>Educação Artística</option>
+                                          <option>Escultura</option>
+                                          <option>Filosofia </option>
+                                          <option>Gastronomia</option>
+                                          <option>Geografia</option>
+                                          <option>Gestão Ambiental</option>
+                                          <option>Gestão Pública</option>
+                                          <option>Gravurismo</option>
+                                          <option>História</option>
+                                          <option>História da Arte</option>
+                                          <option>Hotelaria</option>
+                                          <option>Jornalismo</option>
+                                          <option>Letras</option>
+                                          <option>Linguística</option>
+                                          <option>Museologia</option>
+                                          <option>Música</option>
+                                          <option>Ordenamento do Território</option>
+                                          <option>Paisagismo</option>
+                                          <option>Pedagogia</option>
+                                          <option>Pintura</option>
+                                          <option>Psicologia</option>
+                                          <option>Publicidade & Propaganda</option>
+                                          <option>Produção Audiovisual</option>
+                                          <option>Produção Cultural</option>
+                                          <option>Relações Internacionais</option>
+                                          <option>Relações Públicas</option>
+                                          <option>Segurança Pública</option>
+                                          <option>Serviço Social</option>
+                                          <option>Sociologia</option>
+                                          <option>Teatro</option>
+                                          <option>Teologia</option>
+                                          <option>Transporte Terrestre</option>
+                                          <option>Turismologia</option>
+                                          <option>Urbanismo</option>
+                                          <option>Agroecologia</option>
+                                          <option>Comércio Exterior</option>
+                                          <option>Cooperativismo</option>
+                                          <option>Design de Jogos Digitais</option>
+                                          <option>Design de produto</option>
+                                          <option>Design gráfico</option>
+                                          <option>Eventos</option>
+                                          <option>Esporte e Lazer</option>
+                                          <option>Fotografia</option>
+                                          <option>Gestão do Agronegócio</option>
+                                          <option>Gestão Comercial</option>
+                                          <option>Gestão Financeira</option>
+                                          <option>Gestão Hospitalar</option>
+                                          <option>Gestão de Segurança Privada</option>
+                                          <option>Gestão da Qualidade</option>
+                                          <option>Logística</option>
+                                          <option>Mercadologia</option>
+                                          <option>Negócios Imobiliários</option>
+                                          <option>Processos Escolares</option>
+                                          <option>Produção de Aguardente</option>
+                                          <option>Produção Fonográfica</option>
+                                          <option>Recursos Humanos</option>
+                                          <option>Secretariado</option>
+                                          <option>Segurança no Trabalho</option>
+                                          <option>Transporte Aéreo</option>
+                                          <option>Gestão em serviços jurídicos e notariais</option>
+                                      </optgroup>
+                                  </select>
+                              </div>
+                          </div>
+                          <div class="padding_checkbox_busca">
+                              <label>
+                                  <label class="checkbox">
+                                      <input type="checkbox"><i class="icon-checkbox"></i>
+                                  </label>&nbsp;Não sei
+                              </label>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                     
+                    <div id="campodebusca4">
+                      <ul>
+                          <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush7" style="padding:15px">
+                              <p class="title_carac">Qual o tamanho do seu cabelo?</p>
+                              <label>
+                                  <label class="radio">
+                                      <input type="radio" name="cabelo_busca" value="curto" autofocus>
+                                      <i class="icon-radio"></i>
+                                  </label>
+                                  Curto
+                              </label>
+                              <div id="space_radio"></div>
+                              <label>
+                                  <label class="radio">
+                                      <input type="radio" name="cabelo_busca" value="medio">
+                                      <i class="icon-radio"></i>
+                                  </label>
+                                  Médio
+                              </label>
+                              <div id="space_radio"></div>
+                              <label>
+                                  <label class="radio">
+                                      <input type="radio" name="cabelo_busca" value="longo">
+                                      <i class="icon-radio"></i>
+                                  </label>
+                                  Longo
+                              </label>
+                              <div id="space_radio"></div>
+                              <label>
+                                  <label class="radio">
+                                      <input type="radio" name="cabelo_busca">
+                                      <i class="icon-radio"></i>
+                                  </label>
+                                  Não sei
+                              </label>
+                          </li>
+                          <br>
+                          <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush8" style="padding:15px">
+                              <p class="title_carac">Cor do cabelo?</p>
+                              <label>
+                                  <label class="radio">
+                                      <input type="radio" name="cor_cabelo_busca" value="claro">
+                                      <i class="icon-radio"></i>
+                                  </label>
+                                  Claro
+                              </label>
+                              <div id="space_radio"></div>
+                              <label>
+                                  <label class="radio">
+                                      <input type="radio" name="cor_cabelo_busca" value="escuro">
+                                      <i class="icon-radio"></i>
+                                  </label>
+                                  Escuro
+                              </label>
+                              <div id="space_radio"></div>
+                               <label>
+                                  <label class="radio">
+                                      <input type="radio" name="cor_cabelo_busca" value="mista">
+                                      <i class="icon-radio"></i>
+                                  </label>
+                                  Cor mista
+                              </label>
+                              <div id="space_radio"></div>
+                              <label>
+                                  <label class="radio">
+                                      <input type="radio" name="cor_cabelo_busca">
+                                      <i class="icon-radio"></i>
+                                  </label>
+                                  Não sei
+                              </label>
+                          </li>
+                          <br>
+                          <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush9" style="padding:15px">
+                              <p class="title_carac">Cor da pele ?</p>
+                              <label>
+                                  <label class="radio">
+                                      <input type="radio" name="pele_busca" value="branca">
+                                      <i class="icon-radio"></i>
+                                  </label>
+                                  Branca
+                              </label>
+                              <div id="space_radio"></div>
+                              <label>
+                                  <label class="radio">
+                                      <input type="radio" name="pele_busca" value="negra">
+                                      <i class="icon-radio"></i>
+                                  </label>
+                                  Negra
+                              </label>
+                              <div id="space_radio"></div>
+                              <label>
+                                  <label class="radio">
+                                      <input type="radio" name="pele_busca" value="parda">
+                                      <i class="icon-radio"></i>
+                                  </label>
+                                  Parda
+                              </label>
+                              <div id="space_radio"></div>
+                              <label>
+                                  <label class="radio">
+                                      <input type="radio" name="pele_busca">
+                                      <i class="icon-radio"></i>
+                                  </label>
+                                  Não sei
+                              </label>
+                           </li>
+                        </ul>
+                     </div>
+                    <div id="campodebusca5">
+                     <ul>
+                        <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush10" style="padding:15px">
+                            <p class="title_carac"><b>Essa pessoa usa relógio ?</b></p>
+                            <label>
+                                <label class="radio">
+                                    <input type="radio" name="relogio_busca" value="sim">
+                                    <i class="icon-radio"></i>
+                                </label>
+                                Sim
+                            </label>
+                            <div id="space_radio"></div>
+                            <label>
+                                <label class="radio">
+                                    <input type="radio" name="relogio_busca" value="nao">
+                                    <i class="icon-radio"></i>
+                                </label>
+                                Não
+                            </label>
+                            <div id="space_radio"></div>
+                            <label>
+                                <label class="radio">
+                                    <input type="radio" name="relogio_busca">
+                                    <i class="icon-radio"></i>
+                                </label>
+                                Não sei
+                            </label>
+                        </li>
+                        <br>
+                        <li class="item-content item-input itens_busca uk-width-1-2@m uk-animation-slide-right repeat: true" id="borda_busca_crush11" style="padding:15px">
+                            <p style="font-size:12px;"><b>Essa pessoa utiliza aparelho dentario ?</b></p>
+                            <label>
+                                <label class="radio">
+                                    <input type="radio" name="dente_busca" value="sim">
+                                    <i class="icon-radio"></i>
+                                </label>
+                                Sim
+                            </label>
+                            <div id="space_radio"></div>
+                            <label>
+                                <label class="radio">
+                                    <input type="radio" name="dente_busca" value="nao">
+                                    <i class="icon-radio"></i>
+                                </label>
+                                Não
+                            </label>
+                            <div id="space_radio"></div>
+                            <label>
+                                <label class="radio">
+                                    <input type="radio" name="dente_busca">
+                                    <i class="icon-radio"></i>
+                                </label>
+                                Não sei
+                            </label>
+                        </li>
+                      </ul>
+                    </div>
+                 </div>
+
+                  <div class="block" id="botoes_busca">
+                    <div class="row" style="margin: 10%; margin-top: 10%;">
+                      <button type="reset" class="col button button-big button-fill" id="botao_cancelar_crush" onclick="cancela_busca()">Cancelar</button>
+
+                      <button type="button" class="col button button-big button-fill" id="botao_busca_crush" onclick="ProximaEtapaBusca()">Proximo</button>
+                    </div>
+                  </div>
+                </form>
+                  <div id="botao_nova_busca">
+                      <p id="botao_cancelar_crush" style="text-align:center; font-size: 22px; color:white;" onclick="nova_busca()">Fazer nova busca&nbsp;<i class="f7-icons">refresh</i></p>
+                  </div>
+
+                  <div id="grade_crush_busca"></div>
+
+           
+           </div>  
+          </div>
+        </div>
+       
+
+
+    
+      <div class="popover popover-about" style="width: 97%">
+          <div class="popover-inner" style="width: 100%">
+              <div id="container">
+                <p>
+                  <p id="foto_menu"></p>
+                  <p class="mini_nome" id="mini_nome"></p>
+                  <p><a class="link popup-open popover-close ver_meu_perfil" href="#" data-popup=".popup-perfil" id="ver_meu_perfil">Ver perfil</a></p>
+                </p>
+                <hr style="width: 89%">
+                <p>
+                  <a class="popup-open popover-close sobre_menu" style="color:grey" href="#" data-popup=".popup-sobre">
+                      <i class="fa fa-newspaper-o" aria-hidden="true"></i>&nbsp;Sobre
+                    </a>
+                </p>
+                <p>
+                  <a class="popup-open popover-close sobre_menu" style="color:grey" href="#" data-popup=".popup-melhoria">
+                      <i class="fa fa-wrench" aria-hidden="true"></i>&nbsp;Sugerir melhoria
+                    </a>
+                </p>
+                 <p>
+                  <a class="popup-open popover-close sobre_menu" style="color:grey" href="#" data-popup=".popup-problema">
+                      <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;Relatar problema
+                    </a>
+                </p>
+                <p>
+                  <a class="troca_senha" style="color: grey" onclick="trocar_senha()">
+                      <i class="fa fa-lock" aria-hidden="true"></i>&nbsp;Trocar Senha
+                  </a>
+                </p>
+                 <p>
+                  <a class="exclui_conta" style="color: grey" onclick="excluir_conta();">
+                      <i class="fa fa-trash" aria-hidden="true"></i>&nbsp;Excluir Conta
+                  </a>
+                </p>
+                <p> 
+                  <a class="link popover-close color-red sair" onclick="logout()">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Sair
+                  </a>
+                </p>
+              </div>       
+          </div>
+      </div>
+
+      <!-- aba de visitas (identica a aba de menu) -->
+      <div class="popover popover-visitas" style="width: 97%">
+          <div class="popover-inner" style="width: 100%; background-color: white">
+              <div id="container">
+                <!-- bloco de cima de visitas  -->
+                <div>
+                  <p style="font-size: 20px; text-align: center; color: dimgrey; margin-top: 10px;">Pessoas que visitaram seu perfil.
+                  <p id="limpavisitas" style="background-color: #2196f3; color: white; border-radius: 90px; padding:5px 10px 5px 10px; float:right; font-size: 15px; margin-top: -15px; margin-right: 5%" onclick="LimpaHistorVisi()">Limpar histórico</p>
+                </p><br>
+                </div>
+               <div id="visitas" style="height: 300px">
+                 <center>
+                  <p id="frase_visita">Nenhuma pessoa visitou seu perfil. Ah quando uma pessoa visitar não será possível dizer quem é essa pessoa ao certo, iremos mostrar algumas características dela.
+                  </p>
+                </center>
+               </div>
+              </div>       
+          </div>
+      </div>
+
+      <!-- perfil de usuario logado -->
+      <div class="popup popup-perfil">
+          <div data-page="index" class="page">  
+              <div class="page-content">
+                 <!-- Close Popup -->
+                 <p>
+                   <a class="link popup-close" href="#" id="seu_perfil_close"><i class="f7-icons size-24" style="color: white; margin-top:-10px;padding: 20px">close</i></a>
+                </p>   
+                  <center>
+                    <!-- foto da capa usuario logado -->
+                    <p id="sua_foto_capa"></p>
+                     <!-- editar a foto da capa do usuario  -->
+                     <a class="popup-open" href="#" data-popup=".popup-foto_capa_edit" onclick="editar_foto();edita_foto_capa()">
+                        <p style="color: black; margin-left: 80%; margin-top: -20px; padding:2px;"><b class="fa fa-camera">&nbsp;Editar</b></p>
+                    </a>
+
+                    <!-- foto perfil usuario logado -->
+                    <a href="#modal-ver_minha_foto" uk-toggle>
+                       <p id="sua_foto_perfil"></p>
+                    </a>
+                     <div id="modal-ver_minha_foto" class="uk-flex-left" uk-modal style='z-index:999999; background-color: rgba(0,0,0,0.9);'>
+                        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical" style="background-color: transparent;">
+                            <p id="minha_foto_perfil_zoom"></p>
+                        </div>
+                    </div>
+
+
+                    <!-- editar foto de perfil do usuario -->
+                    <a class="popup-open" href="#" data-popup=".popup-foto_perfil_edit" onclick="editar_foto();edita_foto_perfil()">
+                        <p style="color: black; margin-top:-23px; padding:2px;"><b class="fa fa-camera">&nbsp;Editar</b></p>
+                    </a>
+                      
+                    <p>
+                     <h1 id="nome_perfil"></h1>
+                     <div class="accordion-item" id="add_biograf">
+                        <a href="#" style="width: 60%;" class="item-content item-link col button button-raised button-fill button-round" >
+                          <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add status
+                        </a>
+                          <div class="accordion-item-content">   
+                            <p>
+                              <p id="qt_carac">400</p>
+                                <textarea rows="7" onkeyUp="conta_carac()" id="text_biograf" maxlength="400"></textarea>
+                               <p>
+                                  <button class="col button button-fill color-green" style="width: 20%" onclick="salvar_biograf()">Salvar</button>
+                               </p>
+                              <hr style="width:80%">  
+                            </p>
+                          </div>
+                      </div>
+                      <br>
+                    </center>
+                   <!-- botao de editar informações-->
+                   
+                   <a class="popup-open" href="#" data-popup=".popup-edit_infor" id="open_modal_edit"></a> <!--abre modal de edição-->
+                  <div class="fab fab-extended fab-center-bottom color-white"  style="position: fixed; bottom:10px;">
+                        <div class="fab-text">
+                            <p class="fa fa-pencil col button button-fill button-round" style="color: #2196f3; box-shadow: 1px 2px 2px silver" onclick="editar_info();">&nbsp;<b>Editar Info</b></p>      
+                        </div>
+                    </div>
+                      <center>
+                    <p id="biografia"></p>  
+                    <!-- inicio primeiro bloco -->
+                    <p class="sua_universidade" id="sua_univer"></p>
+                    <!-- fim primeiro bloco -->
+                    <!-- inicio segundo bloco -->
+                    <p class="seu_curso" id="seu_curso"></p>
+                    <!-- fim segundo bloco -->
+                    <!-- inicio terceiro bloco -->
+                    <p class="seu_estado_civil" id="seu_est_civil"></p>
+                    <!-- fim do terceiro bloco -->
+                    <!-- inicio do quarto bloco -->
+                    <p class="seu_interesse" id="seu_intere"><i class="fa fa-female" aria-hidden="true"><br>Interessado em mulheres</i></p>
+                    <!-- fim do quarto bloco -->
+                  </center> 
+              </div>
+           </div>
+         </div>
+
+        <!-- sobre o app  -->
+        <div class="popup popup-sobre">
+           <div class="page-content">
+          <div class="block">
+            <!-- Close Popup -->
+            <p><a class="link popup-close f7-icons" href="#">close</a></p>
+            <h3>Sobre o Spotted</h3>
+            <p>&nbsp;Spotted é uma rede social, que tem como objetivo facilitar o encontro entre jovens de uma mesma universidade ou de outras.</p>
+            <p>&nbsp;O diferencial do Spotted de outras redes sociais, é que você pode ter duas formas de achar seu crush, a primeira, é você vendo ele em sua universidade e com base nas características vistas dele você encontrá-lo no Spotted, a outra forma é você buscar uma pessoa, sem ter visto a mesma, porém você irá traçar um perfil desejado, se o perfil que você traçou as características existir, ele irá trazer os usuários com as mesmas características que você inseriu.</p> 
+            <p>&nbsp;Importante ressaltar, que no início do aplicativo irá aparecer uma lista de pessoas da mesma universidade sua e do sexo desejado seu, no qual você pode conhecer, essa lista irá trazer 1.000 pessoas aleatoriamente, todas as vezes que você entrar no app.
+            </p>
+          </div>
+          </div>
+        </div>
+
+        <!-- sugesão de melhoria do spotted  -->
+        <div class="popup popup-melhoria">
+         <div class="page-content">
+          <div class="block">
+            <!-- Close Popup -->
+             <div style="margin-top:-20px">
+              <p>
+               <a class="link popup-close f7-icons" href="#">close</a>
+              </p>
+              <h3>
+               <center>Sugestão de melhoria.</center>
+              </h3>
+               <p>
+                Envie para nós, sua sugestão de melhoria, isso é muito importante para nós, pois ficaremos muito feliz em estar melhorando nosso aplicativo, tornando-o cada vez mais sofisticado.
+               </p>
+               <textarea placeholder="Digite..." rows="10" class="textarea_sugestao" id="texto_sugestao"></textarea><br>
+              <center>
+              <button type="button" class="col button button-fill button-round" style="width: 50%;" onclick="EnviaMelhoria()">Enviar</button>
+            </center>
+           </div>
+          </div>
+         </div>
+        </div>
+
+        <!-- popup de relatar problema-->
+        <div class="popup popup-problema">
+         <div class="page-content">
+          <div class="block">
+            <!-- Close Popup -->
+             <div style="margin-top:-20px">
+              <p>
+               <a class="link popup-close f7-icons" href="#">close</a>
+              </p>
+              <h3>
+                <center>
+                  Relatar problema no SPOTTED
+                </center>
+              </h3>
+               <h4>
+                <center>
+                Relatar algum problema, erro de funcionalidade do aplicativo.
+              </center>
+               </h4>
+               <textarea placeholder="Digite..." rows="10" class="textarea_sugestao" id="textoproblema"></textarea><br>
+              <center>
+              <button type="button" class="col button button-fill button-round" style="width: 50%;" onclick="EnviaProblema()">Enviar</button>
+            </center>
+           </div>
+          </div>
+         </div>
+        </div>
+
+
+
+         <!-- editar informações do usuario -->
+         <div class="popup popup-edit_infor">
+            <div data-page="index" class="page">  
+                <div class="page-content">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                              <p style="margin: 10px">Editar informações</p>
+                            <div class="right">
+                                <p style="margin: 10px;" onclick="update()">Concluído</p>
+                                <!-- fecha janela de edição -->
+                                <a class="link popup-close" id="popup-close" href="#"></a>
+                              </div>
+                        </div>
+                    </div>
+              
+              <!-- Close Popup -->
+              <!-- <p><a class="link popup-close" onclick="abre_seu_perfil()" href="#">Close popup</a></p> -->
+              <div class="block">
+                  <div id="pass_one">
+                        <div id="itens" style="margin-top: 80px; border: 4px solid silver;padding:10px">
+                         <!-- estado onde a pessoa mor -->
+                          <div class="item-inner">
+                            <div class="item-title item-label"><h3 style="font-size:18px;">* Estado onde você mora.</h3></div>
+                              <select id="estado_m_edit" style="padding: 10px; font-size:18px;">
+                                  <option value="0">Selecione.</option>
+                                  <option value="1">AC</option>
+                                  <option value="2">AL</option>
+                                  <option value="3">AM</option>
+                                  <option value="4">AP</option>
+                                  <option value="5">BA</option>
+                                  <option value="6">CE</option>
+                                  <option value="7">DF</option>
+                                  <option value="8">ES</option>
+                                  <option value="9">GO</option>
+                                  <option value="10">MA</option>
+                                  <option value="11">MG</option>
+                                  <option value="12">MS</option>
+                                  <option value="13">MT</option>
+                                  <option value="14">PA</option>
+                                  <option value="15">PB</option>
+                                  <option value="16">PE</option>
+                                  <option value="17">PI</option>
+                                  <option value="18">PR</option>
+                                  <option value="19">RJ</option>
+                                  <option value="20">RN</option>
+                                  <option value="21">RO</option>
+                                  <option value="22">RR</option>
+                                  <option value="23">RS</option>
+                                  <option value="24">SC</option>
+                                  <option value="25">SE</option>
+                                  <option value="26">SP</option>
+                                  <option value="27">TO</option>
+                              </select>
+                           </div>
+                          </div>
+                          <!-- lista cidade onde o usuario mora -->
+                        <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px">
+                          <div class="item-inner">
+                            <div class="item-title item-label"><h3 style=" font-size:18px;">* Cidade onde você mora.</h3></div>
+                                <select id="cidade_m_edit" style="padding: 10px; font-size:18px;">
+                                  <option value='0'>Selecione.</option>;
+                                </select>
+                            </div> 
+                          </div>
+                          <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px">
+                            <!-- estado onde a pessoa estuda-->
+                             <div class="item-inner">
+                               <div class="item-title item-label"><h3 style=" font-size:18px;">* Estado onde você estuda.</h3></div>
+                                 <select id="estado_e_edit" style="padding: 10px; font-size:18px;">
+                                     <option value="0">Selecione.</option>
+                                     <option value="1">AC</option>
+                                     <option value="2">AL</option>
+                                     <option value="3">AM</option>
+                                     <option value="4">AP</option>
+                                     <option value="5">BA</option>
+                                     <option value="6">CE</option>
+                                     <option value="7">DF</option>
+                                     <option value="8">ES</option>
+                                     <option value="9">GO</option>
+                                     <option value="10">MA</option>
+                                     <option value="11">MG</option>
+                                     <option value="12">MS</option>
+                                     <option value="13">MT</option>
+                                     <option value="14">PA</option>
+                                     <option value="15">PB</option>
+                                     <option value="16">PE</option>
+                                     <option value="17">PI</option>
+                                     <option value="18">PR</option>
+                                     <option value="19">RJ</option>
+                                     <option value="20">RN</option>
+                                     <option value="21">RO</option>
+                                     <option value="22">RR</option>
+                                     <option value="23">RS</option>
+                                     <option value="24">SC</option>
+                                     <option value="25">SE</option>
+                                     <option value="26">SP</option>
+                                     <option value="27">TO</option>
+                                 </select>
+                              </div>
+                             </div>
+                             <!-- lista cidade onde o usuario estuda -->
+                           <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px">
+                             <div class="item-inner">
+                               <div class="item-title item-label"><h3 style=" font-size:18px;">* Cidade onde você estuda.</h3></div>
+                                   <select id="cidade_e_edit" style="padding: 10px; font-size:18px;">
+                                     <option value='0'>Selecione.</option>;
+                                   </select>
+                               </div> 
+                             </div>
+                            <!-- universidade onde o usuario estuda -->
+                           <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px">
+                              <div class="item-inner">
+                               <div class="item-title item-label"><h3  style=" font-size:18px;">* Universidade onde você estuda.</h3></div>
+                                  <select id="univer_edit" style="padding: 10px; font-size:18px;">
+                                    <option value='0'>Selecione.</option>;
+                                  </select>
+                              </div> 
+                           </div>
+                           <!-- Curos que o usuario faz -->
+                           <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px">
+                            <div class="item-inner">
+                             <div class="item-title item-label"><h3  style=" font-size:18px;">* O que você cursa.</h3></div>
+                                <select id="curso_edit" style="padding: 10px; font-size:18px;">
+                                  <option value='0'>Selecione.</option>;
+                                  <optgroup label="Ciências biológicas e da Saúde">
+                                    <option>Biologia</option>
+                                    <option>Biologia marinha</option>
+                                    <option>Biomedicina</option>
+                                    <option>Botânica</option>
+                                    <option>Ciências Agrárias</option>
+                                    <option>Ciências Ambientais</option>
+                                    <option>Ciências Biológicas</option>
+                                    <option>Ciências da Saúde</option>
+                                    <option>Ciências do Meio Aquático</option>
+                                    <option>Ecologia</option>
+                                    <option>Educação física</option>
+                                    <option>Enfermagem</option>
+                                    <option>Fisioterapia</option>
+                                    <option>Fonoaudiologia</option>
+                                    <option>Gerontologia</option>
+                                    <option>Medicina</option>
+                                    <option>Medicina veterinária</option>
+                                    <option>Meteorologia</option>
+                                    <option>Microbiologia e Imunologia</option>
+                                    <option>Naturologia</option>
+                                    <option>Neurociência</option>
+                                    <option>Nutrição</option>
+                                    <option>Odontologia</option>
+                                    <option>Quiropraxia</option>
+                                    <option>Saúde Coletiva</option>
+                                    <option>Terapia ocupacional</option>
+                                    <option>Zootecnia</option>
+                                    <option>Aquacultura</option>
+                                    <option>Cafeicultura</option>
+                                    <option>Biotecnologia</option>
+                                    <option>Ciência dos Alimentos</option>
+                                    <option>Cosmetologia</option>
+                                    <option>Drenagem e Irrigação</option>
+                                    <option>Enologia</option>
+                                    <option>Fruticultura</option>
+                                    <option>Gestão de Recursos Hídricos</option>
+                                    <option>Horticultura</option>
+                                    <option>Meliponicultura</option>
+                                    <option>Oftálmica</option>
+                                    <option>Radiologia</option>
+                                    <option>Silvicultura</option>
+                                    <option>Sistemas Biomédicos</option>                            
+                                  </optgroup>
+                                  <optgroup label="Ciências Exatas">
+                                    <option>Agronomia</option>
+                                    <option>Astronomia</option>
+                                    <option>Bioengenharia</option>
+                                    <option>Biofísica</option>
+                                    <option>Ciências Contábeis</option>
+                                    <option>Ciência da Computação</option>
+                                    <option>Ciências Biomoleculares</option>
+                                    <option>Ciências Matemáticas da Terra</option>
+                                    <option>Ciências Naturais </option>
+                                    <option>Ciências Náuticas</option>
+                                    <option>Ciência & Tecnologia</option>
+                                    <option>Educação do Campo </option>
+                                    <option>Engenharia aeroespacial</option>
+                                    <option>Engenharia aeronáutica</option>
+                                    <option>Engenharia Agrícola</option>
+                                    <option>Engenharia de Alimentos</option>
+                                    <option>Engenharia Ambiental</option>
+                                    <option>Engenharia biomédica</option>
+                                    <option>Engenharia Cartográfica</option>
+                                    <option>Engenharia Civil</option>
+                                    <option>Engenharia de Computação</option>
+                                    <option>Engenharia de controle e automação</option>
+                                    <option>Engenharia Elétrica</option>
+                                    <option>Engenharia Física</option>
+                                    <option>Engenharia Florestal</option>
+                                    <option>Engenharia geológica</option>
+                                    <option>Engenharia Industrial Madeireira</option>
+                                    <option>Engenharia de manufatura</option>
+                                    <option>Engenharia de Materiais</option>
+                                    <option>Engenharia Mecânica</option>
+                                    <option>Engenharia Mecatrônica</option>
+                                    <option>Engenharia Metalúrgica</option>
+                                    <option>Engenharia Militar</option>
+                                    <option>Engenharia de Minas</option>
+                                    <option>Engenharia Naval e Oceânica</option>
+                                    <option>Engenharia Nuclear</option>
+                                    <option>Engenharia de Pesca</option>
+                                    <option>Engenharia de Petróleo</div>
+                                    <option>Engenharia de Produção</option>
+                                    <option>Engenharia Química</option>
+                                    <option>Engenharia Sanitária</option>
+                                    <option>Engenharia de Sistemas Eletrônicos</option>
+                                    <option>Engenharia de Software</option>
+                                    <option>Engenharia de Tecidos</option>
+                                    <option>Engenharia de Telecomunicações</option>
+                                    <option>Engenharia Têxtil</option>
+                                    <option>Estatística</option>
+                                    <option>Farmácia (ou Bioquímica)</option>
+                                    <option>Física</option>
+                                    <option>Física computacional</option>
+                                    <option>Física médica</option>
+                                    <option>Geofísica</option>
+                                    <option>Geologia</option>
+                                    <option>Geoprocessamento e Sensoriamento Remoto</option>
+                                    <option>Informática</option>
+                                    <option>Informática biomédica</option>
+                                    <option>Matemática</option>
+                                    <option>Matemática Aplicada</option>
+                                    <option>Matemática computacional</option>
+                                    <option>Nanotecnologia</option>
+                                    <option>Oceanografia </option>
+                                    <option>Química </option>
+                                    <option>Química ambiental</option>
+                                    <option>Química industrial</option>
+                                    <option>Sistemas de Informação</option>
+                                    <option>Agrimensura</option>
+                                    <option>Agroindústria</option>
+                                    <option>Análise e Desenvolvimento de Sistemas</option>
+                                    <option>Automação Industrial</option>
+                                    <option>Biocombustíveis</option>
+                                    <option>Ciências Aeronáuticas</option>
+                                    <option>Ciência dos materiais</option>
+                                    <option>Construção de Edifícios</option>
+                                    <option>Construção de Estradas</option>
+                                    <option>Construção Naval</option>
+                                    <option>Energias Renováveis</option>
+                                    <option>Gestão da Tecnologia da Informação</option>
+                                    <option>Gestão de Petróleo e Gás</option>
+                                    <option>Gestão Portuária</option>
+                                    <option>Manutenção Industrial</option>
+                                    <option>Mecatrônica e Mecânica de Precisão</option>
+                                    <option>Mineração</option>
+                                    <option>Processos Metalúrgicos</option>
+                                    <option>Processamento de Dados</option>
+                                    <option>Produção de Laticínios</option>
+                                    <option>Produção de Materiais Plásticos</option>
+                                    <option>Produção Têxtil</option>
+                                    <option>Produção Sucroalcooeira</option>
+                                    <option>Projetos de Estruturas Aeronáuticas</option>
+                                    <option>Redes de Computadores</option>
+                                    <option>Redes de Telecomunicações</option>
+                                    <option>Saneamento Ambiental</option>
+                                    <option>Segurança da Informação</option>
+                                    <option>Sistemas Biomédicos</option>
+                                    <option>Sistemas Elétricos</option>
+                                    <option>Sistemas Embarcados</option>
+                                    <option>Sistemas de Navegação Fluvial</option>
+                                    <option>Sistemas para Internet</option>
+                                    <option>Telemática</option>
+                                  </optgroup>
+                                  <optgroup label="Ciências Humanas">
+                                    <option>Administração</option>
+                                    <option>Antropologia</option>
+                                    <option>Arqueologia</option>
+                                    <option>Arquitetura</option>
+                                    <option>Arquivística</option>
+                                    <option>Artes Cênicas</option>
+                                    <option>Artes Visuais </option>
+                                    <option>Biblioteconomia</option>
+                                    <option>Ciências Atuariais</option>
+                                    <option>Ciências Contábeis</option>
+                                    <option>Ciências Humanas</option>
+                                    <option>Ciência Política (ou Ciências do Estado)</option>
+                                    <option>Ciências Sociais</option>
+                                    <option>Cinema</option>
+                                    <option>Comunicação social</option>
+                                    <option>Dança</option>
+                                    <option>Defesa e Gestão Estratégica Internacional</option>
+                                    <option>Desenho Industrial</option>
+                                    <option>Design de Interiores</option>
+                                    <option>Design de Moda</option>
+                                    <option>Direito</option>
+                                    <option>Economia</option>
+                                    <option>Economia Doméstica</option>
+                                    <option>Editoração</option>
+                                    <option>Educação Artística</option>
+                                    <option>Escultura</option>
+                                    <option>Filosofia </option>
+                                    <option>Gastronomia</option>
+                                    <option>Geografia</option>
+                                    <option>Gestão Ambiental</option>
+                                    <option>Gestão Pública</option>
+                                    <option>Gravurismo</option>
+                                    <option>História</option>
+                                    <option>História da Arte</option>
+                                    <option>Hotelaria</option>
+                                    <option>Jornalismo</option>
+                                    <option>Letras</option>
+                                    <option>Linguística</option>
+                                    <option>Museologia</option>
+                                    <option>Música</option>
+                                    <option>Ordenamento do Território</option>
+                                    <option>Paisagismo</option>
+                                    <option>Pedagogia</option>
+                                    <option>Pintura</option>
+                                    <option>Psicologia</option>
+                                    <option>Publicidade & Propaganda</option>
+                                    <option>Produção Audiovisual</option>
+                                    <option>Produção Cultural</option>
+                                    <option>Relações Internacionais</option>
+                                    <option>Relações Públicas</option>
+                                    <option>Segurança Pública</option>
+                                    <option>Serviço Social</option>
+                                    <option>Sociologia</option>
+                                    <option>Teatro</option>
+                                    <option>Teologia</option>
+                                    <option>Transporte Terrestre</option>
+                                    <option>Turismologia</option>
+                                    <option>Urbanismo</option>
+                                    <option>Agroecologia</option>
+                                    <option>Comércio Exterior</option>
+                                    <option>Cooperativismo</option>
+                                    <option>Design de Jogos Digitais</option>
+                                    <option>Design de produto</option>
+                                    <option>Design gráfico</option>
+                                    <option>Eventos</option>
+                                    <option>Esporte e Lazer</option>
+                                    <option>Fotografia</option>
+                                    <option>Gestão do Agronegócio</option>
+                                    <option>Gestão Comercial</option>
+                                    <option>Gestão Financeira</option>
+                                    <option>Gestão Hospitalar</option>
+                                    <option>Gestão de Segurança Privada</option>
+                                    <option>Gestão da Qualidade</option>
+                                    <option>Logística</option>
+                                    <option>Mercadologia</option>
+                                    <option>Negócios Imobiliários</option>
+                                    <option>Processos Escolares</option>
+                                    <option>Produção de Aguardente</option>
+                                    <option>Produção Fonográfica</option>
+                                    <option>Recursos Humanos</option>
+                                    <option>Secretariado</option>
+                                    <option>Segurança no Trabalho</option>
+                                    <option>Transporte Aéreo</option>
+                                    <option>Gestão em serviços jurídicos e notariais</option>
+                                      </optgroup>
+                                </select>
+                            </div> 
+                         </div>
+                         <!-- nome do usuario  -->
+                         <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px">
+                          <div class="item-inner">
+                           <div class="item-title item-label"><h3 style=" font-size:18px;">* Seu nome.</h3></div>
+                              <input type="text" style="padding: 5px; font-size:18px;" id="nome_edit" maxlength="50">
+                          </div> 
+                       </div>
+                          <!-- nome do usuario  -->
+                          <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px">
+                            <div class="item-inner">
+                             <div class="item-title item-label"><h3 style=" font-size:18px;">* Seu Status.</h3></div>
+                             <p id="qt_carac_edit">400</p>
+                             <textarea style="border: 1px solid silver;width: 100%; border-radius: 9px; padding: 5px; color: dimgray; font-size: 18px; font-family: sans-serif" rows="7" onkeyUp="conta_carac_edit()" id="text_biograf_edit" maxlength="400"></textarea>
+                            <p>
+                            </div> 
+                         </div>
+                       <!-- iteresse do usuario homens/mulheres -->
+                        <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px">
+                          <div class="item-inner">
+                            <div class="item-title item-label"><h3 style=" font-size:18px;">* Interessado em.</h3></div>
+                              <select id="interesse_edit" style="padding: 10px; font-size:18px;">
+                                  <option value="0">Interessado em</option>
+                                  <option value="Homens">Homens</option>
+                                  <option value="Mulheres">Mulheres</option>
+                              </select>
+                          </div> 
+                        </div>
+                       <!-- estado civil do usuario -->
+                       <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px">
+                          <div class="item-inner">
+                            <div class="item-title item-label"><h3 style=" font-size:18px;">* Estado Civil.</h3></div>
+                              <select id="estado_c_edit" style="padding: 10px; font-size:18px;">
+                                  <option value="0">Estado Civil.</option>
+                                  <option value="Solteiro">Solteiro</option>
+                                  <option value="Em um relacionamento sério">Em um relacionamento sério</option>
+                              </select>
+                          </div> 
+                        </div>
+                        <!-- tamanho do cabelo do usuario -->
+                        <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px; border-radius: 9px;" class="block">
+                          <div class="item-inner">
+                          <p class="title_carac"><b>Qual o tamanho do seu cabelo ?</b></p>
+                              <label>
+                                <label class="radio color-gray">
+                                <input type="radio" id="cabelo_edit" name="cabelo_edit" value="curto">
+                                  <i class="icon-radio"></i>
+                                </label> 
+                                 Curto
+                              </label>
+                             <div id="space_radio"></div>
+                              <label>
+                                <label class="radio color-gray">
+                                  <input type="radio" id="cabelo_edit" name="cabelo_edit" value="medio">
+                                  <i class="icon-radio"></i>
+                                </label> 
+                                 Médio 
+                              </label>
+                            <div id="space_radio"></div>
+                              <label>
+                                <label class="radio color-gray">
+                                  <input type="radio" id="cabelo_edit" name="cabelo_edit" value="longo">
+                                  <i class="icon-radio"></i>
+                                </label> 
+                               Longo
+                            </label>
+                            </div>
+                          <div id="space_radio"></div>
+                        </div>
+                      <!-- cor do cabelo do usuario -->
+                        <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px; border-radius: 9px;" class="block">
+                          <div class="item-inner">
+                            <p class="title_carac"><b>Cor do cabelo ?</b></p>
+                              <label>
+                                <label class="radio color-gray">
+                                <input type="radio" id="cor_cabelo_edit" name="cor_cabelo_edit" value="claro">
+                                  <i class="icon-radio"></i>
+                                </label> 
+                                 Claro
+                              </label>
+                             <div id="space_radio"></div>
+                              <label>
+                                <label class="radio color-gray">
+                                  <input type="radio" id="cor_cabelo_edit" name="cor_cabelo_edit" value="escuro">
+                                  <i class="icon-radio"></i>
+                                </label> 
+                                 Escuro 
+                              </label>
+                               <div id="space_radio"></div>
+                              <label>
+                                <label class="radio color-gray">
+                                  <input type="radio" id="cor_cabelo_edit" name="cor_cabelo_edit" value="mista">
+                                  <i class="icon-radio"></i>
+                                </label> 
+                                 Cor mista
+                              </label>
+                            </div>
+                          <div id="space_radio"></div>
+                        </div>
+                       <!-- relogio do usuario -->
+                         <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px; border-radius: 9px;" class="block">
+                          <div class="item-inner">
+                            <p class="title_carac"><b>Você usa relógio ?</b></p>
+                              <label>
+                                <label class="radio color-gray">
+                                <input type="radio" id="relogio_edit" name="relogio_edit" value="sim">
+                                  <i class="icon-radio"></i>
+                                </label> 
+                                 Sim
+                              </label>
+                             <div id="space_radio"></div>
+                              <label>
+                                <label class="radio color-gray">
+                                  <input type="radio" id="relogio_edit" name="relogio_edit" value="nao">
+                                  <i class="icon-radio"></i>
+                                </label> 
+                                 Não 
+                              </label>
+                            </div>
+                          <div id="space_radio"></div>
+                        </div>
+                       <!-- aparelho dentario do usuario -->
+                         <div id="itens" style="margin-top: 5px; border: 4px solid silver;padding:10px; border-radius: 9px;" class="block">
+                          <div class="item-inner">
+                            <p class="title_carac"><b>Utiliza aparelho dentario ?</b></p>
+                              <label>
+                                <label class="radio color-gray">
+                                <input type="radio" id="" name="dente_edit" value="sim">
+                                  <i class="icon-radio"></i>
+                                </label> 
+                                 Sim
+                              </label>
+                             <div id="space_radio"></div>
+                              <label>
+                                <label class="radio color-gray">
+                                  <input type="radio" id="" name="dente_edit" value="nao">
+                                  <i class="icon-radio"></i>
+                                </label> 
+                                 Não 
+                              </label>
+                            </div>
+                        </div>
+                     </div>
+                  </div> 
+               </div>
+            </div>
+          <!-- altera foto de perfil do usuario logado -->
+             <div class="popup popup-foto_perfil_edit">
+               <div data-page="index" class="page">  
+                  <div class="page-content">
+                   <p>
+                     <a class="link popup-close f7-icons" href="#" onclick="abre_seu_perfil()" style="position: absolute; top: 4px; left: 8px; z-index:9999; font-size: 25px; color: white;">close</a>
+                   </p>       
+                     <!-- edit foto de perfil -->
+                     <div id="foto_perfil_edit" style="width: 100%; margin-top: -15px;"></div> 
+                        <div class="block" style="margin-top: -150px;">
+                           <label class="col button button-big col button button-fill color-blue" style="margin-bottom: 5px;">
+                             Escolha uma nova foto 
+                             <input type="file" id="upload_perfil_edit" accept="image/png, image/jpeg" />
+                            </label>
+                           <button class="col button button-big col button button-fill color-blue btn btn-success salva_foto_edit">Proximo</button>
+                        </div>
+                   </div>
+                </div> 
+              </div> 
+             <!-- altera foto da capa do usuario logado -->
+             <div class="popup popup-foto_capa_edit">
+                <div data-page="index" class="page">
+                   <div class="page-content">
+                    <p>
+                      <a class="link popup-close f7-icons" href="#" onclick="abre_seu_perfil()" style="position: absolute; top: 4px; left: 8px; z-index:9999; font-size: 25px; color: white;">close</a>
+                    </p>       
+                      <div id="foto_capa_edit" style="width: 100%; margin-top: -15px;"></div> 
+                         <div class="block" style="margin-top: -150px;">
+                            <label class="col button button-big col button button-fill color-blue" style="margin-bottom: 5px;">
+                              Escolha uma nova foto 
+                              <input type="file" id="upload_capa_edit" accept="image/png, image/jpeg" />
+                             </label>
+                            <button class="col button button-big col button button-fill color-blue btn btn-success salva_capa_edit">Proximo</button>
+                         </div> 
+                    </div>
+                </div> 
+              </div>  
+             
+            <!-- link para abrir perfil de usuarios  -->
+            <a class="link popup-open popover-close" href="#" data-popup=".popup-perfil_usuarios" id="perfil_usuarios"></a>
+            <!-- abre modal de usuarios  -->
+            <div class="popup popup-perfil_usuarios" id="fundo_ft_perfil"> 
+              <div data-page="index" class="page">
+                <div class="page-content">
+                  <p id="volta_grade_pessoas">
+  
+                  </p>   
+                   <center>
+                    <!-- foto de capa do perfil do usuario nao logado -->
+                    <p id="foto_capa_usuarios"></p> 
+                    
+                    <!-- foto de perfil do perfil do usuario nao logado -->
+                    <a href="#modal-center" uk-toggle>
+                      <p id="foto_perfil_usuarios"></p>
+                    </a>
+                    <!-- modal para abrir o "ver foto de perfil" -->
+                    <div id="modal-center" class="uk-flex-left" uk-modal style='z-index:999999; background-color: rgba(0,0,0,0.9);'>
+                        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical" style="background-color: transparent;">
+                            <p id="foto_perfil_usuarios_zoom"></p>
+                        </div>
+                    </div>
+                    <!-- nome do usuario nao logado (perfil) -->
+                    <h1 id="nome_usuario"></h1>
+                    
+                    <a href="#" data-popup=".popup-envia_msg" onclick="fecha_perfil_msg()" class="btn_msg link popup-open item-content item-link col button button-raised button-fill button-round">
+                      <i class="fa fa-comments" aria-hidden="true"></i>&nbsp;Enviar mensagem
+                    </a> 
+                    <!-- link para abrir pelo JS a pagina de bate papo -->
+                    <a href="#" data-popup=".popup-envia_msg" class="link popup-open" id="abre_msg_lista"></a>
+
+                    <p id="biograf_usuario" class="user_biografia"></p>
+                    <p id="univer_usuario" class="user_universidade"></p>
+                    <p id="curso_usuario" class="user_curso"></p>
+                    <p id="est_civil_usuario" class="user_estado_civil"></p>
+                    <p id="intere_usuario" class="user_interesse"></p>
+               
+                  </center>
+                </div>
+              </div> 
+            </div>  
+            <!-- modal de mensagem -> onde o usuario digita a mensagem  -->
+            <div class="popup popup-envia_msg">
+              <div class="page">
+                 <div class="navbar">
+                  <!-- fecha msg quando a visualização do perfil e pela caixa de msg -->
+                  <div id="fecha_msg" style="display: none"></div>       
+                   <div class="navbar-inner" style="position: fixed; background-color:#2196f3;">
+                      <table>
+                       <tr>
+                        <td class="uk-animation-slide-right  repeat: true">
+                           <div class="left" id="sai_batepapo">
+                            </div> 
+                        </td>
+                        <td style="width: 40px" class="uk-animation-slide-right repeat: true">
+                          <div id="foto_perfil_msg" style="width: 100%;">
+                          </div>
+                        </td>
+                        <td class="uk-animation-slide-right  repeat: true">
+                          <div id="nome_perfil_msg" style="color: white">
+                          </div>
+                        </td>
+                        <td>
+                          <div class="right">
+                             <p class="link popover-open" href="#" data-popover=".popover-ver_perfil_bloquear" id="fecha_modal_msg" style="padding:20px; margin-top: -40px">
+                                 <i class="f7-icons size-22" style='color:white'>more_vertical_fill</i>
+                             </p>
+                          </div>
+                         </td>
+                       </tr>
+                      </table>
+                   </div>
+                 </div>
+              
+
+
+
+                        <div id="scroll_msg" class="page-content" style="height: 90%; margin-top:25px">
+                          <div class="wrapper">
+                            <ul class="ul_msg" id="mensagens" >
+                            
+                            </ul>
+                           </div>
+                         </div>
+                        <div class="toolbar messagebar">
+                          <div class="toolbar-inner">
+                            <textarea id="mensagem" class="resizable" rows="4" maxlength="400" onkeyup="MsgBranco()"></textarea>
+                            <a onclick="envia_msg()" href="#" id="button_send_msg">Enviar</a>
+                          </div>
+                    </div>      
+            </div>
+          </div>
+           
+          <!-- popup de (ver perfil e bloquear) -->
+         <div class="popover popover-ver_perfil_bloquear" style="width: 70%">
+          <div class="popover-inner" style="width: 100%">
+              <div style="padding:20px; color: grey; font-size: 20px; height: 100%">
+                 <p style="padding-top:10px" onclick="ver_perfil_msg();decrementa_time()">
+                   <i class="fa fa-user" aria-hidden="true"></i>&nbsp;Ver perfil 
+                </p>
+                <hr id="hr_block_perfil">
+                <p onclick="BloquearChat()" id="bloqueia_perfil">
+                  <i class="fa fa-lock" aria-hidden="true"></i>&nbsp;Bloquear perfil
+                </p>
+                <hr id="hr_block_perfil2">
+                <p onclick="ExcluiPerfilMsg()">
+                  <i class="fa fa-trash-o" aria-hidden="true" style="color: #ec1c24"></i>&nbsp;Excluir perfil
+                </p>
+               <a href="#" id="close_menu_msg" class="link popover-close" style="display: none"></a>
+              </div>       
+          </div>
+      </div>
+</main>
+<!-- arquivo js principal -->
+<script src="js/app.js"></script>
+  </body>
+</html>
